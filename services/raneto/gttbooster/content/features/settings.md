@@ -1,0 +1,3 @@
+<img class="cth-icon-large" src="/icons/settings32.png" title="Takes you to the settings screen">
+<br><br><br><br>
+This icon takes you to the settings screen. For the time being, please refer to the on-hover tooltips which is displayed for each settings item when you hover the item in question. If the tooltip does not answer any question you may have, please do not hesitate to get in touch with us – we would love to hear your question. Your feedback is crucial for us to make the documentation as good as possible!

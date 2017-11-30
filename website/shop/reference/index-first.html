@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .img-gray {
+            -webkit-filter: grayscale(1); /* Webkit */
+            filter: gray; /* IE6-9 */
+            filter: grayscale(1); /* W3C */
+        }
+    </style>
+    <meta charset="utf-8"/>
+    <title>Index</title>
+    <script src="https://js.braintreegateway.com/js/braintree-2.30.0.min.js"></script>
+    <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+</head>
+
+<body>
+You have reached a temporary test page. Please get in touch at <a href="mailto:gttbooster@gmail.com">gttbooster@gmail.com</a> to discuss subscription(s) for yourself or on behalf of your company until this page has been completed. Thank you.
+
+<hr/>
+Developer's notes to self:<br/>
+TODO: Change the below button to a table with multiple month options - 1, 3 or even a bundle of 6, with "save x %".
+<hr/>
+Do you wish to purchase multiple licenses at one time? Then please get in touch by email to discuss your needs and receive a special offer :-)
+<hr/>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+    <input type="hidden" name="cmd" value="_s-xclick">
+    <input type="hidden" name="hosted_button_id" value="JYJBK3CGJUGM2">
+    <table>
+        <tr>
+            <td><input type="hidden" name="on0" value="GTT/Sesame account name to authorize">Your GTT account
+                name
+            </td>
+        </tr>
+        <tr>
+            <td><input id="inputfield" type="text" name="os0" maxlength="200"></td>
+        </tr>
+    </table>
+    <input id='subscribe-button' type="image" src="https://www.paypalobjects.com/en_US/NO/i/btn/btn_subscribeCC_LG.gif"
+           border="0"
+           name="submit" alt="PayPal - The safer, easier way to pay online!">
+    <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
+    <input type="hidden" name="cmd" value="_s-xclick">
+    <input type="hidden" name="hosted_button_id" value="ZGBHCX7V6DNPA">
+    <table>
+        <tr>
+            <td><input type="hidden" name="on0" value="Your account">Your account</td>
+        </tr>
+        <tr>
+            <td><input type="text" name="os0" maxlength="200"></td>
+        </tr>
+    </table>
+    <input type="image" src="https://www.sandbox.paypal.com/no_NO/NO/i/btn/btn_subscribeCC_LG.gif" border="0"
+           name="submit" alt="PayPal – en trygg og enkel betalingsmetode på nettet!">
+    <img alt="" border="0" src="https://www.sandbox.paypal.com/no_NO/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+
+<script>
+    $(document).ready(() => {
+        const emailRe = /\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b/i // supports 99% of e-mails
+        const $subscribeButton = $('#subscribe-button')
+        const $inputfield = $('#inputfield')
+        // Sometimes on page load text may already be present in the input field, and in this instance the button should not be greyed out.
+        if ($inputfield[0].value.length === 0) {
+            $subscribeButton.addClass('img-gray')
+        }
+
+        $inputfield.on('input', function () {
+            if (this.value.length > 0) {
+                console.log("OK")
+                $subscribeButton.removeClass('img-gray')
+            } else {
+                $subscribeButton.addClass('img-gray')
+            }
+        })
+
+        $subscribeButton.click(function (e) {
+            const userInput = $inputfield[0].value
+            if (userInput.length === 0) {
+                e.preventDefault()
+                e.stopPropagation()
+                alert("Please input the GTT e-mail address you would like to use with GTT Booster!")
+            } else if (!userInput.match(emailRe)) {
+                e.preventDefault()
+                e.stopPropagation()
+                alert("Please input a *valid* e-mail address! If you believe you are receiving this message in error, please e-mail gttbooster@gmail.com for assistance.")
+            }
+        })
+    })
+</script>
+
+</body>
+</html>

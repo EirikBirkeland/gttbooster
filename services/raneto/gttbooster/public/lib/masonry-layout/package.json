@@ -1,0 +1,101 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "masonry-layout@3.3.2",
+        "scope": null,
+        "escapedName": "masonry-layout",
+        "name": "masonry-layout",
+        "rawSpec": "3.3.2",
+        "spec": "3.3.2",
+        "type": "version"
+      },
+      "/home/eb/Share/00_obelisk/services/raneto"
+    ]
+  ],
+  "_from": "masonry-layout@3.3.2",
+  "_id": "masonry-layout@3.3.2",
+  "_inCache": true,
+  "_location": "/masonry-layout",
+  "_nodeVersion": "0.12.2",
+  "_npmUser": {
+    "name": "desandro",
+    "email": "desandrocodes@gmail.com"
+  },
+  "_npmVersion": "2.7.4",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "masonry-layout@3.3.2",
+    "scope": null,
+    "escapedName": "masonry-layout",
+    "name": "masonry-layout",
+    "rawSpec": "3.3.2",
+    "spec": "3.3.2",
+    "type": "version"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/masonry-layout/-/masonry-layout-3.3.2.tgz",
+  "_shasum": "b90c0c0a509a5ed2a806bbc8a8112890a76341ba",
+  "_shrinkwrap": null,
+  "_spec": "masonry-layout@3.3.2",
+  "_where": "/home/eb/Share/00_obelisk/services/raneto",
+  "author": {
+    "name": "David DeSandro"
+  },
+  "bugs": {
+    "url": "https://github.com/desandro/masonry/issues"
+  },
+  "dependencies": {
+    "fizzy-ui-utils": "^1.0.1",
+    "get-size": "~1.2.2",
+    "outlayer": "~1.4.0"
+  },
+  "description": "Cascading grid layout library",
+  "devDependencies": {
+    "doc-ready": "1.x",
+    "grunt": "^0.4.4",
+    "grunt-contrib-jshint": "^0.9.2",
+    "grunt-contrib-uglify": "^0.4.0",
+    "grunt-requirejs": "^0.4.1",
+    "jquery": ">=1.4.3 <2",
+    "jquery-bridget": "1.1.x",
+    "qunitjs": "^1.12"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "dist": {
+    "shasum": "b90c0c0a509a5ed2a806bbc8a8112890a76341ba",
+    "tarball": "https://registry.npmjs.org/masonry-layout/-/masonry-layout-3.3.2.tgz"
+  },
+  "gitHead": "556d44869268c5e308676386aa30bf4bad4c0a5a",
+  "homepage": "http://masonry.desandro.com",
+  "keywords": [
+    "DOM",
+    "browser",
+    "grid",
+    "layout",
+    "outlayer"
+  ],
+  "license": "MIT",
+  "main": "masonry.js",
+  "maintainers": [
+    {
+      "name": "desandro",
+      "email": "desandrocodes@gmail.com"
+    }
+  ],
+  "name": "masonry-layout",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/desandro/masonry.git"
+  },
+  "scripts": {
+    "test": "test/index.html"
+  },
+  "version": "3.3.2"
+}

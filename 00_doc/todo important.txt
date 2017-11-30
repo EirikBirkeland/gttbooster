@@ -1,0 +1,47 @@
+IMPORTANT:
+Sometimes TM is duplicated several times; avoid this by checking for existing.
+
+Quick tasks:
+TODO: 1 hour: Add different manifest.json versioning for DEV build by editing gulp/zip/manifest
+TODO: Disable MT suggestions by default?
+TODO: Add space after autocomplete insertion IF NOT end of string; (but avoid implementing for HE/AR, in case something weirdly breaks for RTL languages)
+TODO: The spellchecker sometimes conflicts with QA. This should be fixed by running QA first, and only after doing the spellchecking.
+FIXME: When inserting Autocomplete word that contains a hyphen, the entire segment content disappears!!
+
+Medium time tasks:
+TODO: 2-4 hours: Create a new GitHub/other for OBELISK
+TODO: 2-3 hours: Add details to the "100% complete 185 words" analysis
+TODO: Lock feature for ICE segments
+TODO: Confirm segment feature
+TODO: Autocorrect quote types with a button
+TODO: Sometimes the glossary matches do not show up ('no glossary matches available'
+TODO: Add a 'session toggle' for the glossary window, or similar, so that the user doesn't always have to turn it on.
+TODO: Glossaries: Add a button for 'mark all new as seen' (thereby removing the labels)
+TODO: Include highlights for related products as well. E.g. DFP should include AdWordsUpdated, Analytics, AdSense,
+TODO: Add orange warning label: "A keyword filter is currently applied"
+TODO: Add a 'always require' button next to a glossary item, thereby adding it to validation ;) this allows users to flexibly change this while working.
+TODO: Add right-click options for links to open them on the support.google.com page ;)
+TODO: When merging views (proofreading mode), the positioning of the edit window should be adjusted by scrolling it into view using MagicFocus.
+TODO: Add auto-propagation
+TODO: Show details about an individual check when hovering over a check message.
+TODO: In the Custom Translation Search, glossary text disappears! Looks unprofessional. Solution:
+- only apply glossary operations to ".gtc-tools-autosearch", while avoiding ".gtc-tools-customsearch"
+
+TOOD: Create an object for retrieving "related projects" - e.g. DFP and Ad series are related
+
+TODO: TM entries should be sorted according to match %, so that 100% matches are listed first
+
+TODO: Avoid getting MT garbage in the Autocomplete feature.
+
+TODO: Sort the TM entries so that the high % are listed first.
+
+Unknown time length tasks:
+TODO: <unknown> hours: Create a "filter map" / doc map ... like in Sublime, a miniature version of the document. For cool effect. Use canvas...?
+TODO: Fix/remove /debug or implement it differently.
+TODO: Rename entire placeholder at the same time. E.g. when you rename {0}, then {/0} should be renamed as well.
+TODO: When having compressed glossaries, expand details upon hover in the separate glossaries window ;)
+TOOD: The spellchecker shows e.g. Exchange-søk as an error, and while the string can be added as an exception, it remains an error next time the spellchecker is run. E.g. https://translate.google.com/toolkit/workbench?did=009yfa301oquahlt6o00&hl=en#
+
+
+TODO: "Spying glass" mode ;-) I would click an icon to reveal hidden info about each segment, included edit time (color-coded), and the colors would change from 'edited' (green) to the original status (as observed by the client).
+TODO: Do not submit unedited segments for spellchecking

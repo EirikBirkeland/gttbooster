@@ -1,0 +1,37 @@
+Dear trial users,
+
+GTT Booster is now moving from open testing to sales. We thank you for testing the product, and we hope that you did not experience many issues and that the product has been useful to you.
+
+We will continue developing and tweaking this product to further improve the GTT experience, and your support will help us allocate resources towards its continued development.
+
+Next time you start GTT Booster, you will get a 7 day official trial. When this trial expires, you will be redirected to the store page upon launching GTT Booster, where you can make a purchase.
+
+For simplicity, you can head on over to the store now and make an early purchase. Purchased time will be added to your trial time!
+
+Store location
+https://shop.gtt-booster.com
+
+How to install
+The GTT Booster URL will remain the same, and your existing extension will be updated automatically. For your information, here is the download URL:
+https://chrome.google.com/webstore/detail/gtt-booster/pjankaakojbendjaejlcnpgeldmfpjed
+
+Support
+We answer inquiries within 24 hours (excluding weekends). Please direct all inquiries to gttbooster@gmail.com.
+
+In development
+A flexible feature voting screen will be added to the interface. You will be able to flexibly enter your vote for the next feature or tweak you wish to see added. But naturally, you can still contact us by e-mail separately if we can help you in any way.
+
+This voting feature will help set and change priorities flexibly as the product develops in line with the requirements of our users.
+
+Recent changes
+- Font-resizing now persists between sessions
+- Tweaks made to Autocomplete in accordance with feedback*
+- TM highlighting is now more accurate (placeholder-related)
+- You may now use ALT+1, ALT+2 and similar hotkeys to insert the first and second TM matches in the Automatic Translation Search.
+- Built-in QA tests have been improved
+
+* Note: However, RTL languages are currently not guaranteed to work for Autocomplete, but we welcome your feedback and suggestions.
+
+Best regards,
+GTT Booster team
+Birkeland Translation

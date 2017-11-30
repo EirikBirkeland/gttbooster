@@ -1,0 +1,1 @@
+- make sure the extension always loads.

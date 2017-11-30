@@ -1,0 +1,14 @@
+{
+  "name": "cth-logger",
+  "version": "0.0.1",
+  "description": "Custom logger for obelisk",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "Eirik Birkeland",
+  "license": "MIT",
+  "dependencies": {
+    "loglevel": "^1.5.0"
+  }
+}

@@ -1,0 +1,5 @@
+List of known issues or bugs:
+
+1. When clicking a NEW icon in the glossary screen or in the detached glossaries window, the icon does not disappear in the other view. There is no need to worry about this, as it is just a cosmetic issue.
+2. The spreadsheet documentation is missing one crucial step: After you follow every step and create your own copy of a spreadsheet, you also need to go to <code>File > Publish to the web...</code>. Details coming soon!
+3. The spellchecker sometimes experiences a client-side issue where some of the highlighting may go missing in action. We are tuning this feature now to be more reliable.

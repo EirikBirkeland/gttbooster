@@ -1,0 +1,16 @@
+--- $25 per month, "minimal"
+Features
+* Full access
+* Limited e-mail support
+* Limited influence over development
+
+--- $40 per month, "VIP access" ---
+Benefits:
+* Full access
+* Priority e-mail support
+* Exert higher influence over the tool's development - your issues and bug requests gain priority and will usually be prioritized
+
+Automatic monthly renewal unless cancelled (you can manage recurring payments through PayPal's online settings).
+
+"early backers" (well i've already made it ...)
+"kickstarter" (well i've already made it ...)

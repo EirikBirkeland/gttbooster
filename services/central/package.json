@@ -1,0 +1,46 @@
+{
+  "name": "filehosting",
+  "version": "1.0.0",
+  "description": "Just a test for hosting files with Access-Control-Allow-Origin",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava -c 4",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-eslint": "^7.2.3",
+    "blackbird": "^0.0.3",
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.15.0",
+    "chalk": "^1.1.3",
+    "colors": "^1.1.2",
+    "commander": "^2.11.0",
+    "express": "^4.13.4",
+    "express-cors": "0.0.3",
+    "express-limiter": "^1.6.0",
+    "express-rate-limit": "^2.8.0",
+    "limiter": "^1.1.0",
+    "lodash": "^4.17.4",
+    "lodash.includes": "^4.1.2",
+    "mail2": "^1.2.0",
+    "moment": "^2.18.1",
+    "mongoose": "^4.9.8",
+    "mongoose-immutable": "0.0.2",
+    "ndb": "^0.2.4",
+    "nodemailer": "^3.0.0",
+    "pmx": "^1.2.0",
+    "redis": "^2.7.1"
+  },
+  "devDependencies": {
+    "ava": "^0.19.1",
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.8",
+    "babel-preset-flow": "^6.23.0",
+    "babel-register": "^6.18.0",
+    "eslint": "^3.19.0",
+    "superagent": "^3.0.0"
+  }
+}

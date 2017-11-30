@@ -1,0 +1,15 @@
+{
+  "name": "cth-getDate",
+  "version": "0.0.1",
+  "description": "Retrieves a date in my preferred format",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eirik Birkeland",
+  "license": "MIT",
+  "dependencies": {
+    "date-format": "^1.1.0",
+    "moment": "^2.18.1"
+  }
+}

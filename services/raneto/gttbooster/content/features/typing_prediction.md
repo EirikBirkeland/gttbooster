@@ -1,0 +1,1 @@
+When this feature is enabled, suggestions will automatically appear while you are entering terms found in the glossary list. By default, TM matches are not included, but you can enable them in the options screen.

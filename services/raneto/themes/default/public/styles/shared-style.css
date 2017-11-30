@@ -1,0 +1,60 @@
+.cth-centered {
+    margin: auto;
+    margin-bottom: 10px;
+    width: 50%;
+}
+
+/* Raneto overrides */
+
+.header {
+    background: linear-gradient(#2C323D, #FFFFFF);
+    color: #CCC;
+}
+
+.header a {
+    color: white;
+}
+
+.cth-horizontal-images img{
+    float:left;
+}
+
+.cth-centered {
+    margin: auto;
+    margin-bottom: 10px;
+    width: 50%
+}
+
+img.cth-icon {
+    height: 32px;
+    width: 32px;
+}
+
+img.cth-icon-large {
+    height: 48px;
+    width: 48px;
+    float: left;
+}
+
+img.cth-input {
+    height: 32px;
+}
+
+img.cth-separate-image {
+    margin: 10px;
+}
+
+img.cth-zoom-on-hover:hover {
+    transform: scale(3);
+}
+
+img.cth-zoom-on-hover {
+    cursor: -moz-zoom-in;
+    cursor: -webkit-zoom-in;
+    cursor: zoom-in;
+
+    white-space: nowrap;
+    height:250px;
+    transition: all 1s ease-in-out;
+    transition-delay: .4s;
+}
