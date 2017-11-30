@@ -1,0 +1,743 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/2_body/lib/Segment/Segment.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">All files</a> / <a href="index.html">src/2_body/lib/Segment</a> Segment.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">30.93% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>30/97</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">9.09% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>2/22</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/13</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">31.58% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>30/95</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* global cth */
+import _ from 'lodash'
+import convertPlaceholders from '../../../0_model/Segment/convertPlaceholders'
+import consistencyCheck from '../Qa/checks/consistencyCheck'
+import {SourceDocument, TargetDocument} from '../Document/Document'
+import filterSegmentTypes from './filterSegmentTypes'
+&nbsp;
+const $ = typeof window === 'undefined' ? require('cheerio') : <span class="branch-1 cbranch-no" title="branch not covered" >require('jquery')</span>
+&nbsp;
+const debug = require('cth-debug')(__filename.replace(/^src\//, ''))
+&nbsp;
+// INIT LABELS
+// 1. get labels from localStorage
+// 2. init them all by running toggleLabel on relevant segments
+&nbsp;
+// TODO: Make Segment, and then SourceSegment and TargetSegment. TargetSegment will have a few extra methods.
+const Segment = {
+  create(googGtcUnit) {
+    const newObj = Object.create(this)
+    newObj.init(googGtcUnit)
+    newObj.isBasedOn = 'Segment'
+    return newObj
+  },
+&nbsp;
+  init(googGtcUnit) {
+    this.googGtcUnit = googGtcUnit
+    this.translatable = $(googGtcUnit).find('.goog-gtc-translatable')[0]
+    this.id = $(googGtcUnit).attr('id')
+    this._isExcluded = false
+    this.cache = {
+      index: null
+    }
+  },
+&nbsp;
+  toggleLabel({bsStyle, id}) {
+    const $thing = <span class="cstat-no" title="statement not covered" >$(this.googGtcUnit).find(`.label-${bsStyle}`)</span>
+<span class="cstat-no" title="statement not covered" >    if ($thing.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >      $thing.parent().remove()</span>
+<span class="cstat-no" title="statement not covered" >      return delete window.cth.segmentLabels[this.id + bsStyle]</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    window.cth.segmentLabels[this.id + bsStyle] = {segmentId: this.id, bsStyle, addDate: Date.now()}</span>
+&nbsp;
+    const $wrapper = <span class="cstat-no" title="statement not covered" >$('&lt;span/&gt;')</span>
+      .addClass('bootstrap-wrapper')
+      .css({margin: '0.5em'})
+      .attr('id', id)
+&nbsp;
+    const $content = <span class="cstat-no" title="statement not covered" >$('&lt;span/&gt;')</span>
+      .html(bsStyle + ' &lt;span class=\'cth-X\'&gt;&lt;/span&gt;')
+      .addClass(`label-${bsStyle} label`)
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    $content.find('.cth-X')</span>
+      .click(<span class="fstat-no" title="function not covered" >() =&gt; </span>{
+<span class="cstat-no" title="statement not covered" >        $wrapper.remove()</span>
+      })
+      .css({cursor: 'pointer'})
+&nbsp;
+    const $combined = <span class="cstat-no" title="statement not covered" >$wrapper.append($content)</span>
+<span class="cstat-no" title="statement not covered" >    $(this.googGtcUnit).append($combined)</span>
+  },
+&nbsp;
+  toggleLabels({bsStyle, id}) {
+<span class="cstat-no" title="statement not covered" >    this.toggleLabel({bsStyle, id})</span>
+    const indices = <span class="cstat-no" title="statement not covered" >this._duplicateIndices</span>
+<span class="cstat-no" title="statement not covered" >    if (indices.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >      _.forEach(indices, <span class="fstat-no" title="function not covered" >index =&gt; </span>{</span>
+        const dupSeg = <span class="cstat-no" title="statement not covered" >this.create($(window.cth.dom.targetDoc).find('#goog-gtc-unit-' + (index + 1))[0])</span>
+<span class="cstat-no" title="statement not covered" >        dupSeg.toggleLabel({bsStyle, id})</span>
+      })
+    }
+  },
+&nbsp;
+  get index() {
+<span class="cstat-no" title="statement not covered" >    if (this.cache.index) {</span>
+<span class="cstat-no" title="statement not covered" >      return this.cache.index</span>
+    }
+&nbsp;
+    const sourceId = <span class="cstat-no" title="statement not covered" >Array.from($(cth.dom.sourceDocClone).find('.goog-gtc-unit')).indexOf(this.googGtcUnit)</span>
+    const targetId = <span class="cstat-no" title="statement not covered" >Array.from(cth.dom.targetSegments).indexOf(this.googGtcUnit)</span>
+&nbsp;
+    const theIndex = <span class="cstat-no" title="statement not covered" >sourceId !== -1 ? sourceId : targetId</span>
+<span class="cstat-no" title="statement not covered" >    this.cache.index = theIndex</span>
+<span class="cstat-no" title="statement not covered" >    return theIndex</span>
+  },
+&nbsp;
+  get inner() {
+    return $(this.translatable).html()
+  },
+&nbsp;
+  get innerWithConvertedPlaceholders() {
+    return convertPlaceholders($(this.getSanitizedNodeCopy()))
+  },
+&nbsp;
+  getSanitizedNodeCopy() {
+    // Make a copy to avoid editing original
+    const copy = $(this.googGtcUnit).clone()
+&nbsp;
+    $(copy).children().find('*').each(<span class="fstat-no" title="function not covered" >(i</span>, ele) =&gt; {
+      const toUnwrap = <span class="cstat-no" title="statement not covered" >[</span>
+        'cth-searchHighlight-highlight-source',
+        'cth-searchHighlight-container-source',
+        'cth-searchHighlight-highlight-target',
+        'cth-searchHighlight-container-target',
+        'cth_redWiggle'
+      ]
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      toUnwrap.forEach(<span class="fstat-no" title="function not covered" >x =&gt; </span>{</span>
+<span class="cstat-no" title="statement not covered" >        if ($(ele).hasClass(x)) {</span>
+<span class="cstat-no" title="statement not covered" >          debug.log('unwrapping')</span>
+<span class="cstat-no" title="statement not covered" >          $(ele).contents().unwrap()</span>
+        }
+      })
+    })
+    return copy
+  },
+&nbsp;
+  get segmentType() {
+    return filterSegmentTypes($(this.translatable).attr('class').split(/\s+/))
+  },
+&nbsp;
+  get description() {
+    const messageblock = $(this.googGtcUnit).closest('.goog-gtt-messageblock')
+    const messageHeader = messageblock.find('.messageHeader')
+    const notranslate = messageHeader.find('.notranslate')
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (notranslate.length &gt; 0) {
+      return $(notranslate[1]).html()
+    }
+<span class="cstat-no" title="statement not covered" >    return null</span>
+  },
+&nbsp;
+  get isPartOfList() {
+    return Boolean($(this.translatable).closest('ul, ol').length)
+  },
+&nbsp;
+  get isInsideAListItem() {
+<span class="cstat-no" title="statement not covered" >    return Boolean($(this.googGtcUnit).closest('li').length)</span>
+  },
+&nbsp;
+  get hasInconsistencies() {
+<span class="cstat-no" title="statement not covered" >    return this.inconsistentSegmentIds ? this.inconsistentSegmentIds.length : null</span>
+  },
+&nbsp;
+  get hasDuplicates() {
+<span class="cstat-no" title="statement not covered" >    return Boolean(this._duplicateIndices.length)</span>
+  },
+&nbsp;
+  get numDuplicates() {
+<span class="cstat-no" title="statement not covered" >    return this._duplicateIndices.length</span>
+  },
+&nbsp;
+  copyContentsToDuplicates() {
+<span class="cstat-no" title="statement not covered" >    if (this._duplicateIndices.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >      _.forEach(this._duplicateIndices, <span class="fstat-no" title="function not covered" >ele =&gt; </span>{</span>
+<span class="cstat-no" title="statement not covered" >        cth.dom.targetSegments[ele].firstChild.innerHTML = this.translatable.innerHTML</span>
+      })
+    }
+  },
+&nbsp;
+  get _duplicateIndices() {
+<span class="cstat-no" title="statement not covered" >    debug.log('The segment id being tested will be omitted from this array (_duplicateIndices)')</span>
+&nbsp;
+    const sourceStrippedArr = <span class="cstat-no" title="statement not covered" >(<span class="fstat-no" title="function not covered" >() =&gt; </span>{</span>
+      const <span class="cstat-no" title="statement not covered" >doc = SourceDocument</span>
+<span class="cstat-no" title="statement not covered" >      return doc.getStrippedArr()</span>
+    })()
+&nbsp;
+    const str = <span class="cstat-no" title="statement not covered" >sourceStrippedArr[this.index]</span>
+&nbsp;
+    const res = <span class="cstat-no" title="statement not covered" >_.chain(sourceStrippedArr)</span>
+      .map(<span class="fstat-no" title="function not covered" >(e</span>le, i) =&gt; <span class="cstat-no" title="statement not covered" >ele === str ? i : null)</span>
+      .filter(<span class="fstat-no" title="function not covered" >ele =&gt; <span class="cstat-no" title="statement not covered" ></span>ele !== null &amp;&amp; ele !== undefined)</span>
+      .value()
+&nbsp;
+    /**
+         * Shockingly, the following is not standard JS. The same thing can be achieved with "splice", but mutating sucks.
+         * @param array
+         * @param value
+         */
+    function <span class="fstat-no" title="function not covered" >returnExcept(array, value) {</span>
+      const index = <span class="cstat-no" title="statement not covered" >array.indexOf(value)</span>
+<span class="cstat-no" title="statement not covered" >      return array.slice(0, index).concat(array.slice(index + 1))</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return returnExcept(res, this.index)</span>
+  },
+&nbsp;
+  get inconsistentSegmentIds() {
+    const sourceStrippedArr = <span class="cstat-no" title="statement not covered" >(<span class="fstat-no" title="function not covered" >() =&gt; </span>{</span>
+      const <span class="cstat-no" title="statement not covered" >doc = SourceDocument</span>
+<span class="cstat-no" title="statement not covered" >      return doc.getStrippedArr()</span>
+    })()
+&nbsp;
+    const targetStrippedArr = <span class="cstat-no" title="statement not covered" >(<span class="fstat-no" title="function not covered" >() =&gt; </span>{</span>
+      const <span class="cstat-no" title="statement not covered" >doc = TargetDocument</span>
+<span class="cstat-no" title="statement not covered" >      return doc.getStrippedArr()</span>
+    })()
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    debug.log('sourceStrippedArr: ', sourceStrippedArr)</span>
+<span class="cstat-no" title="statement not covered" >    debug.log('targetStrippedArr: ', targetStrippedArr)</span>
+&nbsp;
+    const num = <span class="cstat-no" title="statement not covered" >this.id.replace(/.*?([0-9]+).*/, '$1')</span>
+    const check = <span class="cstat-no" title="statement not covered" >consistencyCheck.init(parseInt(num, 10) - 1, sourceStrippedArr, targetStrippedArr)</span>
+    const res = <span class="cstat-no" title="statement not covered" >check.getResults()</span>
+<span class="cstat-no" title="statement not covered" >    debug.log(res)</span>
+<span class="cstat-no" title="statement not covered" >    return res.inconsistentIds</span>
+  },
+&nbsp;
+  get isUnitAttribute() {
+<span class="cstat-no" title="statement not covered" >    Boolean($(this.googGtcUnit).attr('id').match(/goog-gtc-unit-attr-[0-9]+/))</span>
+  },
+&nbsp;
+  get isUrlEntity() {
+<span class="cstat-no" title="statement not covered" >    Boolean($(this.translatable).html().match(/^https?\/\/\S+$/))</span>
+  },
+&nbsp;
+  hasExtraneousPlaceholders() {
+    // Info: Normal placeholders should be wrapped in a span with the class notranslate.
+    const arr = <span class="cstat-no" title="statement not covered" >Array.from($(this.translatable).contents()).filter(<span class="fstat-no" title="function not covered" >ele =&gt; <span class="cstat-no" title="statement not covered" ></span>ele.textContent.match(/{[0-9]+}/))</span></span>
+<span class="cstat-no" title="statement not covered" >    return Boolean(arr.every(<span class="fstat-no" title="function not covered" >ele =&gt; <span class="cstat-no" title="statement not covered" ></span>!$(ele).parent().hasClass('notranslate')))</span></span>
+  }
+}
+// Prevent object consumer from adding new properties
+Object.preventExtensions(Segment)
+&nbsp;
+export {Segment}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat Nov 18 2017 15:34:53 GMT+0100 (CET)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

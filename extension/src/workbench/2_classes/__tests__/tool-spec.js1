@@ -1,0 +1,2 @@
+import * as tool from '../tool.js'
+import test from 'ava'

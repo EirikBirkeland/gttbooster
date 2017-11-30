@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/3_lower/lib/glossaries/organizeGlossaries.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">All files</a> / <a href="index.html">src/3_lower/lib/glossaries</a> organizeGlossaries.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">33.33% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>8/24</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/5</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">16.67% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">34.78% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>8/23</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// Copyright © 2016 Eirik Birkeland. All rights reserved.
+/**
+ * Created by eb on 2016/02/19.
+ */
+'use strict'
+const $ = require('jquery')
+const _ = require('lodash')
+&nbsp;
+import tinysort from '../../../../vendor/tinysort'
+import highlightRelevant from './organizeGlossaries/highlightRelevant'
+&nbsp;
+const debug = require('cth-debug')(__filename.replace(/^src\//, ""))
+&nbsp;
+/**
+ *
+ * @param productName {string} - the product name, e.g. as retrieved from the document title
+ */
+function <span class="fstat-no" title="function not covered" >alphabetizeAndHighlight(productName) {</span>
+    let $glossItems = <span class="cstat-no" title="statement not covered" >$('.gtc-tools-autosearch')</span>
+        .find('div.gtc-glossary-content-holder')
+        .find('li.gtc-glossary-match-holder')
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if ($glossItems &amp;&amp; $glossItems.length &amp;&amp; $glossItems.length &gt; 1) {</span>
+<span class="cstat-no" title="statement not covered" >        tinysort($glossItems)</span>
+<span class="cstat-no" title="statement not covered" >        highlightRelevant(productName)</span>
+    }
+}
+&nbsp;
+&nbsp;
+const sendToBackground = (() =&gt; {
+    const debouncedSend = _.debounce(<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(</span>header, body) =&gt; chrome.runtime.sendMessage({header, body}, <span class="fstat-no" title="function not covered" >(</span>response) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        debug.log(response)</span>
+    }), 250, {'leading': false, 'trailing': true})
+&nbsp;
+    return <span class="fstat-no" title="function not covered" >function () </span>{
+        const header = <span class="cstat-no" title="statement not covered" >'glossaries'</span>
+        const body = <span class="cstat-no" title="statement not covered" >_prepareGlossaryPage()</span>
+&nbsp;
+        let combined = <span class="cstat-no" title="statement not covered" >{header, body}</span>
+<span class="cstat-no" title="statement not covered" >        debug.log(combined)</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        debouncedSend(header, body)</span>
+&nbsp;
+        function <span class="fstat-no" title="function not covered" >_prepareGlossaryPage() {</span>
+            const glossaryContentHolder = <span class="cstat-no" title="statement not covered" >$(document).find('.gtc-tools-autosearch').find('.gtc-glossary-content-holder')</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            try {</span>
+                var glossaryList = <span class="cstat-no" title="statement not covered" >glossaryContentHolder[0].innerHTML</span>
+            } catch (err) {
+<span class="cstat-no" title="statement not covered" >                debug.log('gtc-glossary-content-holder was not ready?')</span>
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            return glossaryList</span>
+        }
+    }
+})()
+&nbsp;
+export {alphabetizeAndHighlight, sendToBackground}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Oct 29 2017 11:30:24 GMT+0100 (CET)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

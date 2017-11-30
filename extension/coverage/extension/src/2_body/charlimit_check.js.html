@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for extension/src/2_body/charlimit_check.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">All files</a> / <a href="index.html">extension/src/2_body</a> charlimit_check.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">78.13% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>25/32</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">56.52% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>13/23</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">78.13% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>25/32</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// Copyright © 2016 Eirik Birkeland. All rights reserved.
+/**
+ * Created by eb on 2016/03/02.
+ */
+"use strict"
+import * as eastAsianWidth from 'east-asian-width'
+const logger = logger || require('cth-logger')
+&nbsp;
+/**
+ *
+ * @param {jquery} $sourceSegment
+ * @param {jquery} $targetSegment
+ * @param {jquery} sourceDoc
+ * @param [$] - Cheerio (or jQuery) override
+ * @returns {string|null}
+ */
+export default function runCharLimitCheck($sourceSegment, $targetSegment, sourceDoc, $ = <span class="branch-0 cbranch-no" title="branch not covered" >window.$) {</span>
+&nbsp;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if ($(sourceDoc).find('.goog-gtt-messageblock').length == 0) {
+<span class="cstat-no" title="statement not covered" >        return null</span>
+    }
+&nbsp;
+    // _TODO: Replace or merge with the 'convert to placeholders' thing.
+    // _FIXME: Needs much more testing.
+    const _normalize = (str) =&gt; {
+        str = str
+            .replace(/\r?\n/g, " ")
+            .replace(/&lt;span class="goog-gtc-glossary-highlight"[^&gt;]+&gt;(.*?)&lt;\/span&gt;/g, "$1")
+            .replace(/&lt;span class="cth[^&gt;]+&gt;(.*?)&lt;\/span&gt;/g, "$1") // preserve my own wrapped stuff
+            .replace(/&lt;span[^&gt;]+&gt;&amp;nbsp;&lt;\/span&gt;/g, " ") // preserve NBSPs
+            .replace(/&lt;span[^&gt;]+&gt; &lt;\/span&gt;/g, " ") // preserve spaces
+            .replace(/&lt;span[^&gt;]+&gt;&lt;\/span&gt;/g, "") // strip empty PH
+            .replace(/&lt;span[^&gt;]+&gt;.*?&lt;\/span&gt;/g, "") // strip all concrete PHs
+            .replace(/&lt;bdi[^&gt;]+&gt;.*?&lt;\/bdi&gt;/g, "") // strip all concrete BDI PHs
+            .replace(/&amp;amp;/g, "&amp;")
+        return str
+    }
+&nbsp;
+    const description = $(sourceDoc).find("#" + $targetSegment.attr("id")).closest('.goog-gtt-messageblock')
+    let charLimit =
+        description.html().match(/CHAR[ _]LIMIT.*?=([0-9]+).*?\]/)
+            ? description.html().match(/CHAR[ _]LIMIT.*?=([0-9]+).*?\]/)[1]
+            : <span class="branch-1 cbranch-no" title="branch not covered" >description.html().match(/([0-9]+) characters/)</span>
+            ? description.html().match(/([0-9]+) characters/)[1]
+            : null
+&nbsp;
+    logger.debug("**********")
+    logger.debug($sourceSegment.children().html())
+    logger.debug($targetSegment.children().html())
+&nbsp;
+    let strippedTarget = _normalize($targetSegment.children().html())
+    let strippedSource = _normalize($sourceSegment.children().html())
+&nbsp;
+    const adjustedWidth = eastAsianWidth.str_width(strippedTarget)
+&nbsp;
+    logger.debug("charlimit: " + charLimit)
+    logger.debug("adjustedWidth: " + adjustedWidth)
+&nbsp;
+    logger.debug("Standard length: ", strippedTarget.length)
+    logger.debug("East Asian width: ", adjustedWidth)
+&nbsp;
+    let returnMsg = ''
+&nbsp;
+    let gtcTextNode = $targetSegment.find('.gtc-text').html()
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (gtcTextNode) {
+        c</span>onst gtcTextLength = <span class="cstat-no" title="statement not covered" >parseInt(gtcTextNode.replace(/.*?(\d+).*/, "$1"))
+<span class="cstat-no" title="statement not covered" >        if (gtcTextLength !== adjustedWidth) {</span>
+<span class="cstat-no" title="statement not covered" >            returnMsg += `WARNING: The calculated target segment width was different from Google's own.&lt;br/&gt;`</span>
+<span class="cstat-no" title="statement not covered" >            logger.log(`gtcText: ${gtcTextLength}`)</span>
+<span class="cstat-no" title="statement not covered" >            logger.log(`adjustedWidth: ${adjustedWidth}`)</span>
+<span class="cstat-no" title="statement not covered" >            logger.log(strippedTarget)</span>
+        }
+    }
+&nbsp;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (charLimit
+        &amp;&amp; charLimit.match(/^\d+$/)
+        &amp;&amp; charLimit &gt; 0) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (adjustedWidth &gt; charLimit) {
+            returnMsg += `CHAR LIMIT exceeded by ${adjustedWidth - charLimit}&lt;br&gt;Source string length is ${strippedSource.length}`
+        }
+    }
+    return returnMsg
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Dec 01 2016 05:02:00 GMT+0100 (CET)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

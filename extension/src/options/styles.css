@@ -1,0 +1,32 @@
+table input[type="checkbox"] {
+    margin-right: 25px;
+}
+
+.margin {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.cth-content-container {
+    /* TODO: What color is best here? */
+    background-color: snow;
+}
+
+body {
+    /* Just some margins for the entire body */
+    margin: 2%;
+}
+
+.container {
+    margin: 10px
+}
+
+.row {
+    /* To get some space between individual options */
+    margin-top: 10px;
+}
+
+/* Following class is for the React toggle package*/
+.custom-classname.react-toggle--checked .react-toggle-track {
+    background-color: #5cb85c;
+}

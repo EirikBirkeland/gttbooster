@@ -1,0 +1,35 @@
+.ui-menu {
+    /*The whole pop-up menu*/
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 0.7em;
+    border: 1px solid #dddddd !important;
+    background: #ffffff !important;
+    color: #333333 !important;
+    max-width: 150px !important;
+}
+
+.ui-menu-item-wrapper {
+    /* Every single menu item has this class*/
+
+}
+
+.ui-state-active {
+    /*Currently highlighted7active menu item*/
+    border: 1px solid #399bff !important;
+    background: #E6F1F5 !important;
+    color: black !important;
+    font-weight: normal !important;
+}
+
+.ui-autocomplete {
+    color: green;
+}
+
+.ui-autocomplete-input {
+    /*Change styling of the input element*/
+    width:120px;
+}
+
+.ui-autocomplete-loading {
+    /*Is added to input element while data for Autocomplete is being loaded*/
+}

@@ -1,0 +1,791 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for extension/src/4_other/tool.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">All files</a> / <a href="index.html">extension/src/4_other</a> tool.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">30.17% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>35/116</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">15.91% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>7/44</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">23.08% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>9/39</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">31.25% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>35/112</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// Copyright © 2016 Eirik Birkeland. All rights reserved.
+"use strict";
+&nbsp;
+const _ = require('lodash')
+&nbsp;
+const <span class="fstat-no" title="function not covered" >uniqFilter = <span class="cstat-no" title="statement not covered" >(</span>ele, i, arr) =&gt; arr.indexOf(ele) === i</span>
+&nbsp;
+// Put the three following functions in 1 object/function as methods.
+const wrapBorders = {
+    new: <span class="fstat-no" title="function not covered" >function (</span>e) {
+<span class="cstat-no" title="statement not covered" >        return "(?:^|[^a-zA-ZæøåÆØÅ0-9](?=[a-zA-ZæøåÆØÅ0-9]))" + e + "(?![a-zA-ZæøåÆØÅ0-9])";</span>
+    },
+    standard: f</span>unction <span class="fstat-no" title="function not covered" >standard(e) {
+<span class="cstat-no" title="statement not covered" >        return "/\\b" + e + "/\\b";</span>
+    },
+    space: f</span>unction <span class="fstat-no" title="function not covered" >space(e) {
+<span class="cstat-no" title="statement not covered" >        return "/\\s" + e + "\\s/";</span>
+    }
+}
+&nbsp;
+f</span>unction <span class="fstat-no" title="function not covered" >moveToSegmentAndEdit(nodeId) {
+<span class="cstat-no" title="statement not covered" >    nodeId.firstChild.click();</span>
+}
+&nbsp;
+// delay2, if defined, is used for the repetition. if not defined, the first delay is applied to both calls.
+f</span>unction <span class="fstat-no" title="function not covered" >doTwice(fn, firstDelay, secondDelay) {
+<span class="cstat-no" title="statement not covered" >    setTimeout(<span class="fstat-no" title="function not covered" >function () </span>{</span>
+<span class="cstat-no" title="statement not covered" >        fn();</span>
+<span class="cstat-no" title="statement not covered" >        setTimeout(<span class="fstat-no" title="function not covered" >function () </span>{</span>
+<span class="cstat-no" title="statement not covered" >            fn();</span>
+        }, secondDelay || firstDelay);
+    }, firstDelay);
+}
+&nbsp;
+f</span>unction <span class="fstat-no" title="function not covered" >doThrice(fn, firstDelay, secondDelay, thirdDelay) {
+<span class="cstat-no" title="statement not covered" >    setTimeout(<span class="fstat-no" title="function not covered" >function () </span>{</span>
+<span class="cstat-no" title="statement not covered" >        fn();</span>
+<span class="cstat-no" title="statement not covered" >        setTimeout(<span class="fstat-no" title="function not covered" >function () </span>{</span>
+<span class="cstat-no" title="statement not covered" >            setTimeout(<span class="fstat-no" title="function not covered" >function () </span>{</span>
+<span class="cstat-no" title="statement not covered" >                fn();</span>
+            }, thirdDelay)
+        }, secondDelay || firstDelay);
+    }, firstDelay);
+}
+&nbsp;
+function contrastColor(hexColor, option = </span>0) <span class="branch-1 cbranch-no" title="branch not covered" ><span class="branch-1 cbranch-no" title="branch not covered" >{ // takes a hex string such as "ab12ef" + integer 0, 1</span>
+    var rgb = hexColor.match(/.{2}/g);
+    var r = parseInt(rgb[0], 16);
+    var g = parseInt(rgb[1], 16);
+    var b = parseInt(rgb[2], 16);
+&nbsp;
+    var d = 0;
+&nbsp;
+    var opposite;
+&nbsp;
+    switch (option) {
+        case 0: // Luminance (standard for certain colour spaces)
+            r *= 0.2126;
+            g *= 0.7152;
+            b *= 0.0722;
+            opposite = r + g + b;
+            break;
+<span class="branch-1 cbranch-no" title="branch not covered" >        case 1: // Luminance (perceived option 1)</span>
+<span class="cstat-no" title="statement not covered" >            r *= 0.299;</span>
+<span class="cstat-no" title="statement not covered" >            g *= 0.587;</span>
+<span class="cstat-no" title="statement not covered" >            b *= 0.114;</span>
+<span class="cstat-no" title="statement not covered" >            opposite = r + g + b;</span>
+<span class="cstat-no" title="statement not covered" >            break;</span>
+<span class="branch-2 cbranch-no" title="branch not covered" >        case 2: // Luminance (perceived option 2, slower to calculate): (NB: This may not be working currently!)</span>
+<span class="cstat-no" title="statement not covered" >            r = 0.299 * Math.pow(r, 2);</span>
+<span class="cstat-no" title="statement not covered" >            g = 0.587 * Math.pow(g, 2);</span>
+<span class="cstat-no" title="statement not covered" >            b = 0.114 * Math.pow(b, 2);</span>
+<span class="cstat-no" title="statement not covered" >            opposite = Math.sqrt(r + g + b);</span>
+<span class="cstat-no" title="statement not covered" >            break;</span>
+    }
+    var a = 1 - (opposite / 255);
+&nbsp;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (a &lt; 0.5)
+<span class="cstat-no" title="statement not covered" >        d = "000000";</span>
+    else
+        d = "ffffff";
+&nbsp;
+    return d;
+}
+&nbsp;
+f</span>unction <span class="fstat-no" title="function not covered" >contrastColorShort(hexColor) { // takes a hex string such as "ab12ef"
+    v</span>ar rgb = <span class="cstat-no" title="statement not covered" >hexColor.match(/.{2}/g);
+    v</span>ar r = <span class="cstat-no" title="statement not covered" >parseInt(rgb[0], 16);
+    v</span>ar g = <span class="cstat-no" title="statement not covered" >parseInt(rgb[1], 16);
+    v</span>ar b = <span class="cstat-no" title="statement not covered" >parseInt(rgb[2], 16);
+&nbsp;
+    v</span>ar d = <span class="cstat-no" title="statement not covered" >0;
+&nbsp;
+    var opposite;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    r *= 0.2126;</span>
+<span class="cstat-no" title="statement not covered" >    g *= 0.7152;</span>
+<span class="cstat-no" title="statement not covered" >    b *= 0.0722;</span>
+<span class="cstat-no" title="statement not covered" >    opposite = r + g + b;</span>
+&nbsp;
+    v</span>ar a = <span class="cstat-no" title="statement not covered" >1 - (opposite / 255);
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (a &lt; 0.5)</span>
+<span class="cstat-no" title="statement not covered" >        d = "000000";</span>
+    else
+<span class="cstat-no" title="statement not covered" >        d = "ffffff";</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return d;</span>
+}
+&nbsp;
+function returnGreatest(a, b) {
+    r</span>eturn a &gt; b ? a : <span class="branch-1 cbranch-no" title="branch not covered" >a &lt; b ? b : a == b ? a : null
+}
+&nbsp;
+f</span>unction <span class="fstat-no" title="function not covered" >makeLiteral() {
+<span class="cstat-no" title="statement not covered" >    _.once(<span class="fstat-no" title="function not covered" >function (</span>arr) {</span>
+<span class="cstat-no" title="statement not covered" >        arr.forEach(<span class="fstat-no" title="function not covered" >function (</span>el) {</span>
+<span class="cstat-no" title="statement not covered" >            el.term = escape(el.term)</span>
+        });
+<span class="cstat-no" title="statement not covered" >        return arr;</span>
+    })
+}
+&nbsp;
+f</span>unction <span class="fstat-no" title="function not covered" >makeSimpleSourceTargetLiteral() {
+<span class="cstat-no" title="statement not covered" >    _.once(<span class="fstat-no" title="function not covered" >function () </span>{</span>
+        l</span>et dataArray = <span class="cstat-no" title="statement not covered" >cth.dataJSON.Data.elements;
+<span class="cstat-no" title="statement not covered" >        dataArray.forEach(<span class="fstat-no" title="function not covered" >function (</span>el) {</span>
+<span class="cstat-no" title="statement not covered" >            el.source_simple = escape(el.source_simple);</span>
+<span class="cstat-no" title="statement not covered" >            el.target_simple = escape(el.target_simple);</span>
+        });
+    })
+}
+&nbsp;
+f</span>unction <span class="fstat-no" title="function not covered" >replacePairwise(str, arr) {
+<span class="cstat-no" title="statement not covered" >    arr.forEach(<span class="fstat-no" title="function not covered" >(</span>element, pos, array) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        if (pos % 2 == 0)</span>
+<span class="cstat-no" title="statement not covered" >            str = str.replace(new RegExp(array[pos], 'g'), array[pos + 1], 'g');</span>
+    });
+<span class="cstat-no" title="statement not covered" >    return str;</span>
+}
+&nbsp;
+f</span>unction <span class="fstat-no" title="function not covered" >timeThis(fn) {
+    l</span>et t0 = <span class="cstat-no" title="statement not covered" >performance.now();
+<span class="cstat-no" title="statement not covered" >    fn();</span>
+    l</span>et t1 = <span class="cstat-no" title="statement not covered" >performance.now();
+<span class="cstat-no" title="statement not covered" >    return ("Call to do stuff took " + (t1 - t0) + " milliseconds.")</span>
+}
+&nbsp;
+f</span>unction <span class="fstat-no" title="function not covered" >getProto(obj) {
+    l</span>et proto = <span class="cstat-no" title="statement not covered" >Object.getPrototypeOf(obj);
+<span class="cstat-no" title="statement not covered" >    if (proto !== null) {</span>
+<span class="cstat-no" title="statement not covered" >        logger.log(proto);</span>
+<span class="cstat-no" title="statement not covered" >        getProto(proto);</span>
+    }
+}
+&nbsp;
+Object.deepFreeze = f</span>unction <span class="fstat-no" title="function not covered" >deepFreeze(obj) {
+    // Retrieve the property names defined on obj
+    v</span>ar propNames = <span class="cstat-no" title="statement not covered" >Object.getOwnPropertyNames(obj);
+    // Freeze properties before freezing self
+<span class="cstat-no" title="statement not covered" >    propNames.forEach(<span class="fstat-no" title="function not covered" >function (</span>name) {</span>
+        v</span>ar prop = <span class="cstat-no" title="statement not covered" >obj[name];
+        // Freeze prop if it is an object
+<span class="cstat-no" title="statement not covered" >        if (typeof prop == 'object' &amp;&amp; prop !== null &amp;&amp; !Object.isFrozen(prop))</span>
+<span class="cstat-no" title="statement not covered" >            deepFreeze(prop);</span>
+    });
+    // Freeze self
+<span class="cstat-no" title="statement not covered" >    return Object.freeze(obj);</span>
+}
+&nbsp;
+// Generates a 32 bit hash
+function generateHashCode(str) {
+    var hash = 0
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (str.length == 0)
+<span class="cstat-no" title="statement not covered" >        return hash</span>
+    _.forEach(str, (ele, i) =&gt; {
+        let chr = str.charCodeAt(i)
+        hash = ((hash &lt;&lt; 5) - hash) + chr
+        hash |= 0; // Convert to 32bit integer
+    })
+    return hash
+}
+&nbsp;
+function hexEncode(str) {
+    return _.reduce(str, (acc, ele, i) =&gt; {
+        let hex = str.charCodeAt(i).toString(16)
+        return acc += ("000" + hex).slice(-4);
+    }, '')
+}
+&nbsp;
+function hexDecode(str) {
+    l</span>et hexes = str.match(/.{1,4}/g) || <span class="branch-1 cbranch-no" title="branch not covered" >[]
+    return _.reduce(hexes, (acc, ele) =&gt; {
+        return acc += String.fromCharCode(parseInt(ele, 16))
+    }, '')
+}
+&nbsp;
+function stripPlaceholders(str) {
+    return str.replace(/{[0-9]+\/?}|{\/?[0-9]+}/g, "")
+}
+&nbsp;
+f</span>unction <span class="fstat-no" title="function not covered" >normalizeStringifiedValue(val) {
+<span class="cstat-no" title="statement not covered" >    if (typeof val === "string") {</span>
+<span class="cstat-no" title="statement not covered" >        if (val.match(/^(?:true|false)$/)) {</span>
+<span class="cstat-no" title="statement not covered" >            val = JSON.parse(val)</span>
+        } else <span class="cstat-no" title="statement not covered" >if (val.match(/^[0-9]+$/)) {</span>
+<span class="cstat-no" title="statement not covered" >            val = JSON.parse(val)</span>
+        }
+    }
+<span class="cstat-no" title="statement not covered" >    return val</span>
+}
+&nbsp;
+f</span>unction <span class="fstat-no" title="function not covered" >promisify(fn) {
+<span class="cstat-no" title="statement not covered" >    return <span class="fstat-no" title="function not covered" >function (...<span class="cstat-no" title="statement not covered" >args) <span class="cstat-no" title="statement not covered" ></span>{</span></span></span>
+<span class="cstat-no" title="statement not covered" >        return new Promise(<span class="fstat-no" title="function not covered" >function (</span>resolve, reject) {</span>
+<span class="cstat-no" title="statement not covered" >            fn.call(this, ...args, <span class="fstat-no" title="function not covered" >function (</span>result) {</span>
+<span class="cstat-no" title="statement not covered" >                i</span>f (result !== undefined) <span class="cstat-no" title="statement not covered" >resolve(result)</span>
+                else <span class="cstat-no" title="statement not covered" >reject(result)</span>
+            })
+        })
+    }
+}
+&nbsp;
+export {
+    contrastColorShort,
+    contrastColor,
+    doTwice,
+    generateHashCode,
+    getProto,
+    hexDecode,
+    hexEncode,
+    makeLiteral,
+    makeSimpleSourceTargetLiteral,
+    moveToSegmentAndEdit,
+    replacePairwise,
+    returnGreatest,
+    timeThis,
+    doThrice,
+    stripPlaceholders,
+    normalizeStringifiedValue,
+    uniqFilter,
+    promisify
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Dec 01 2016 05:02:00 GMT+0100 (CET)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

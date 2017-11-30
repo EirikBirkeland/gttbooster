@@ -1,0 +1,19 @@
+DON'T STACK GOLD ON SHIT
+
+- Add customizable left quote /right quote
+- Revamp the glossary window
+- Extend the # of words analysis
+- ChangeReport feature
+- Built-in glossary checks (let the user build it)
+-  "Edited" indication in VP
+    - Create a 'docInfo' to sync with VP
+- Download feature
+- Create a hotkey to toggle between views - normal > combined > source > target (ctrl-pageup or ctrl-pagedown)
+- Resize TransEditor dynamically in all views
+- Add context menu for performing TC search - hide it from invalid users (not 003vendor)
+- Make labels apply to all duplicates
+
+- Add a right-click option for looking up a phrase in TC directly!!!
+
+Flights of fancy:
+- Create feature to reinsert PHs for inserted TM match

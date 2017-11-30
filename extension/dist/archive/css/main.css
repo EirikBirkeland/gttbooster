@@ -1,0 +1,96 @@
+.cth_effect:hover {
+    -webkit-transform: scale(1.35); /* Safari and Chrome */
+    -moz-transform: scale(1.35); /* Firefox */
+    -ms-transform: scale(1.35); /* IE 9 */
+    -o-transform: scale(1.35); /* Opera */
+    transform: scale(1.35);
+    z-index: 555555;
+}
+
+.cth_effect {
+    -webkit-transition: all 0.5s ease; /* Safari and Chrome */
+    -moz-transition: all 0.5s ease; /* Firefox */
+    -ms-transition: all 0.5s ease; /* IE 9 */
+    -o-transition: all 0.5s ease; /* Opera */
+    transition: all 0.5s ease;
+    z-index: -1;
+}
+
+.cth_input {
+    /*bottom: 1px;*/
+}
+
+.cth_buttonImage {
+    width: 16px;
+    height: 16px;
+    top: -3px;
+    position: relative;
+    vertical-align: middle;
+}
+
+.cth_highlight {
+    border-top: solid;
+    border-bottom: solid;
+    border-width: 1px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+.cth_googleGreen {
+    border-color: #59cc59;
+    background-color: #BBFFBB;
+}
+
+.cth_googleRed {
+    border-color: #e56464;
+    background-color: #FFBBBB;
+}
+
+.cth_pop-up {
+    display: none;
+    position: absolute;
+    width: 280px;
+    padding: 10px;
+    background: #eeeeee;
+    color: #000000;
+    border: 1px solid #1a1a1a;
+    font-size: 90%;
+}
+
+.cth-code {
+    font-family: monospace !important;
+}
+
+.cth-highlight-error {
+    background-color: red;
+}
+
+/* the greyed out text */
+.cth-filtering-exclude {
+}
+
+.cth-filtering-hidden {
+    display: none;
+}
+
+.cth-spacious {
+    margin: 5px;
+}
+
+del {
+    text-decoration: none !important;
+}
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/*Override default*/
+.gtc-tm-suggestion-hilite {
+    background-color: #ccffcc !important
+}

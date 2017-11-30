@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for extension/src/3_lower/Glossaries.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">All files</a> / <a href="index.html">extension/src/3_lower</a> Glossaries.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">54.29% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>19/35</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">16.67% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>1/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">23.08% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>3/13</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">57.58% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>19/33</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// Copyright © 2016 Eirik Birkeland. All rights reserved.
+/**
+ * Created by eb on 24.07.2016.
+ */
+"use strict"
+&nbsp;
+const _ = require('lodash')
+import {alphabetize, sendToBackground} from './Glossaries/organize_glossaries'
+import {removeDuplicates} from './Glossaries/remove_duplicates'
+import {uniqFilter} from '../4_other/tool'
+require('../../../lib/Prototype')
+let $
+<span class="missing-if-branch" title="if path not taken" >I</span>if (process.env.APP_ENV === 'browser') {
+<span class="cstat-no" title="statement not covered" >    $ = window.jquery || require('jquery');</span>
+} else {
+    $ = require('cheerio')
+}
+&nbsp;
+// This object should become a basis for all other object stuff. It should be as complete as possible.
+function buildObject($) {
+    const $nodeList = $('.gtc-tool-right-floating').find('.gtc-glossary-content-holder').find('.gtc-glossary-match-holder')
+&nbsp;
+    return _.map($nodeList, item =&gt; {
+        const $sourceTerm = $(item).find('.gtc-glossary-sourceterm')
+        const $targetData = $(item).find('.gtc-glossary-terms')
+&nbsp;
+        return {
+            $sourceTerm: $sourceTerm,
+            targetTerms: _.map($targetData, x =&gt; {
+&nbsp;
+                const $container = $(x)
+                const $targetTerm = $(x).find('.gtc-glossary-translation')
+                const $partOfSpeech = $(x).find('.gtc-glossary-pos')
+                const $product = $(x).find('.gtc-glossary-source')
+                const $description = $(x).find('.gtc-glossary-description')
+&nbsp;
+                const combined = $sourceTerm.text()
+                    + $targetTerm.text()
+                    + $partOfSpeech.text()
+                    + $product.text()
+                    + $description.text()
+&nbsp;
+                return {
+                    $container: $container,
+                    $targetTerm: $targetTerm,
+                    $partOfSpeech: $partOfSpeech,
+                    $product: $product,
+                    $description: $description,
+                    hashedItem: combined.hashCode()
+                }
+            })
+        }
+    })
+}
+&nbsp;
+// These should be checked against the database for each key. If the "hashedItem" is a different value, the entire entry should be updated.
+f</span>unction <span class="fstat-no" title="function not covered" >extractDbFormatEntries() {
+    c</span>onst $gloss = <span class="cstat-no" title="statement not covered" >buildObject($)
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return _.map($gloss, <span class="fstat-no" title="function not covered" >ele =&gt; </span>{</span>
+<span class="cstat-no" title="statement not covered" >        return _.map(ele.targetTerms, <span class="fstat-no" title="function not covered" >el =&gt; </span>{</span>
+            c</span>onst productName = <span class="cstat-no" title="statement not covered" >$(el.$product).text().replace(/^Source: (.*)/, "$1")
+            c</span>onst keyName = `${<span class="cstat-no" title="statement not covered" >$(ele.$sourceTerm).text()}-${$(el.$targetTerm).text()}-${productName}`
+<span class="cstat-no" title="statement not covered" >            return {</span>
+                [keyName]: {
+                    hashedItem: el.hashedItem,
+                    lastUpdated: Date.now(),
+                    sourceTerm: $(ele.$sourceTerm).text(),
+                    targetTerm: $(el.$targetTerm).text(),
+                    product: productName,
+                    keyName: keyName
+                }
+            }
+        })
+    }).concatAll()
+}
+&nbsp;
+// Retrieve database entr yif available,
+const <span class="fstat-no" title="function not covered" >getUniqueTranslationsArray = f</span>unction () {
+<span class="cstat-no" title="statement not covered" >    return buildObject($)</span>
+        .map(<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >ele=&gt;ele.targetTerms)</span></span>
+        .map(<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >ele=&gt;ele.map(<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >ele=&gt;$(ele.$targetTerm).text()))</span></span></span></span>
+        .reduce(<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(</span>ele, acc)=&gt;acc.concat(ele), [])</span>
+        .sort()
+        .filter(uniqFilter)
+}
+&nbsp;
+const Glossaries = {
+    getUniqueTranslationsArray,
+    alphabetize,
+    sendToBackground,
+    removeDuplicates,
+    extractDbFormatEntries
+}
+&nbsp;
+f</span>unction <span class="fstat-no" title="function not covered" >monad (val) {
+<span class="cstat-no" title="statement not covered" >    if(typeof val == 'string') {</span>
+<span class="cstat-no" title="statement not covered" >        val = [val]</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return val.map(<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >ele=&gt;ele)</span></span></span>
+}
+&nbsp;
+export {Glossaries, buildObject}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Dec 01 2016 05:02:00 GMT+0100 (CET)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

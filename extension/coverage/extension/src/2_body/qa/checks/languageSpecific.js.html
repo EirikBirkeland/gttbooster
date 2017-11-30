@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for extension/src/2_body/qa/checks/languageSpecific.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../index.html">All files</a> / <a href="index.html">extension/src/2_body/qa/checks</a> languageSpecific.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">83.87% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>26/31</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">61.11% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>11/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>5/5</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">83.87% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>26/31</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import XRegExp from 'xregexp'
+&nbsp;
+function extraSpacesBefore(string, symbols) {
+    s</span>ymbols = symbols ? XRegExp.escape(symbols) : <span class="branch-1 cbranch-no" title="branch not covered" >symbols
+    const re = new RegExp(`\\s([${symbols}])`, "g")
+&nbsp;
+    const matchArr = string.match(re)
+&nbsp;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (matchArr) {
+        return {msg: `Extra space(s) found in front of ${matchArr.join(" and ")}`, error: matchArr.join("")}
+    }
+    else <span class="cstat-no" title="statement not covered" >return {msg: null, error: null}</span>
+}
+&nbsp;
+function forbiddenCharacters(string, symbols) {
+    symbols = XRegExp.escape(symbols)
+    const re = new RegExp(`[${symbols}]`, "g")
+    const matchArr = string.match(re)
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (matchArr)
+            return {msg: `Forbidden character(s) found: ${matchArr.join(" and ")}`, error: matchArr.join("")}
+    else <span class="cstat-no" title="statement not covered" >return {msg: null, error: null}</span>
+}
+&nbsp;
+function missingEndPunctuation(sourceStr, targetStr, symbols) {
+    symbols = XRegExp.escape(symbols)
+    const re = new RegExp(`[${symbols}]$`, "g")
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (sourceStr.match(re) &amp;&amp; !targetStr.match(re)) {
+        const missingSymbol = sourceStr.match(re)[0]
+        return {
+            msg: `Missing end-punctuation in target: ${missingSymbol}`, error: `${missingSymbol}`
+        }
+    } else <span class="cstat-no" title="statement not covered" >return {msg: null, error: null}</span>
+}
+&nbsp;
+function redundantEndPunctuation(sourceStr, targetStr, symbols) {
+    symbols = XRegExp.escape(symbols)
+    const re = new RegExp(`([${symbols}])$`, "g")
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (!sourceStr.match(re) &amp;&amp; targetStr.match(re)) {
+        const matchArr = targetStr.match(re)
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (matchArr)
+            return {
+                msg: `Redundant end-punctuation in target: ${matchArr.join(" and ")}`, error: matchArr.join("")
+            }
+        else <span class="cstat-no" title="statement not covered" >return {msg: null, error: null}</span>
+    }
+}
+&nbsp;
+function consecutivePunctuation(string, symbols) {
+    symbols = XRegExp.escape(symbols)
+    const re = new RegExp("([" + symbols + "}])\\1", "g")
+    const matchArr = string.match(re)
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (matchArr)
+        return {
+            msg: `Consecutive punctuation: ${matchArr.join(" and ")}`,
+            error: matchArr.join("")
+        }
+    else <span class="cstat-no" title="statement not covered" >return {msg: null, error: null}</span>
+}
+&nbsp;
+export {
+    extraSpacesBefore,
+    forbiddenCharacters,
+    missingEndPunctuation,
+    redundantEndPunctuation,
+    consecutivePunctuation
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Dec 01 2016 05:02:00 GMT+0100 (CET)
+</div>
+</div>
+<script src="../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../sorter.js"></script>
+</body>
+</html>

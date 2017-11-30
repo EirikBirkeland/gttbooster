@@ -1,0 +1,1 @@
+This file merely maps the GTT DOM to an object. The object serves as the interface for step two: the classes.

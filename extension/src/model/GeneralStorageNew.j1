@@ -1,0 +1,95 @@
+// @flow
+/* global chrome */
+// Copyright © 2016 Eirik Birkeland. All rights reserved.
+/**
+ * Created by eb on 27.08.2016.
+ */
+'use strict'
+import localforage from 'localforage'
+import {ChromeProxy} from './ChromeProxy'
+import pify from 'pify'
+
+const debug = require('cth-debug')(__filename.replace(/^src\//, ''))
+
+const sendMessage = ChromeProxy.runtime.sendMessage
+const common = {header: 'storage'}
+const logError = debug.log.bind(debug)
+
+/**
+ *  FIXME: Background.js must be updated to use promises as well for this to work! ! !
+ */
+
+/**
+ * Intended as a storage API to be used both on background and content page. Stuff is handled internally to make sure everything works.
+ */
+
+function isBackground() {
+  if (/background.html$/.test(location.href)) {
+    return true
+  }
+}
+
+const _Storage = {
+  get(opts: Object, key: string, cb: Function) {
+    if (!opts.storeName) {
+      return console.warn('Provide a storeName option.')
+    }
+
+    if (isBackground()) {
+      const store = localforage.createInstance({name: opts.storeName})
+      store.getItem(key).then(cb).catch(logError)
+    } else {
+      sendMessage(
+        {...common, name: opts.storeName, type: 'get', key}, cb)
+    }
+  },
+
+  set(opts: Object, key: string, value: any, cb: Function) {
+    if (!opts.storeName) {
+      return console.warn('Provide a storeName option.')
+    }
+
+    if (isBackground()) {
+      const store = localforage.createInstance({name: opts.storeName})
+      if (Array.isArray(key)) {
+        key.forEachAsync(ele => {
+          store.setItem(ele, value)
+        }, 1)
+        cb()
+      } else {
+        store.setItem(key, value).then(cb).catch(logError)
+      }
+    } else {
+      sendMessage({...common, name: opts.storeName, type: 'set', key, value}, cb)
+    }
+  },
+
+  keys(opts: Object, cb: Function) {
+    if (!opts.storeName) {
+      return console.warn('Provide a storeName option.')
+    }
+
+    if (isBackground()) {
+      const store = localforage.createInstance({name: opts.storeName})
+      store.keys().then(cb).catch(logError)
+    } else {
+      sendMessage({...common, name: opts.storeName, type: 'keys'}, cb)
+    }
+  },
+
+  remove(opts: Object, key: string, cb: Function) {
+    if (!opts.storeName) {
+      return console.warn('Provide a storeName option.')
+    }
+
+    if (isBackground()) {
+      const store = localforage.createInstance({name: opts.storeName})
+      store.removeItem(key).then(cb).catch(logError)
+    } else {
+      sendMessage({...common, name: opts.storeName, type: 'remove', key}, cb)
+    }
+  }
+}
+
+const Storage = pify(_Storage)
+export {Storage}

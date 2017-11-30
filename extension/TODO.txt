@@ -1,0 +1,1 @@
+When hovering "cth-searchHighlight-highlight-source", show the segment in the background (which will contain the glossaries ;))

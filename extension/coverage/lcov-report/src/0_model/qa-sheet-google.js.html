@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/0_model/qa-sheet-google.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">src/0_model</a> qa-sheet-google.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">87.23% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>41/47</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">56.25% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>9/16</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">90% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>9/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">86.96% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>40/46</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">275x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">275x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">275x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">275x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// Copyright © 2016 Eirik Birkeland. All rights reserved.
+&nbsp;
+const _ = require('lodash')
+const Tabletop = require('../../vendor/tabletop/tabletop.js')
+const debug = require('cth-debug')(__filename.replace(/^src\//, ''))
+&nbsp;
+// TODO: Move escapeHtml back into its separate file ... it wasn't working - so I moved it here temporarily.
+/**
+ *
+ * @param string {string}
+ * @returns {string}
+ */
+function escapeHtml(string) {
+  const entityMap = Object.freeze({
+    '&amp;': '&amp;amp;',
+    '&lt;': '&amp;lt;',
+    '&gt;': '&amp;gt;',
+    '"': '&amp;quot;',
+    '\'': '&amp;#39;',
+    '/': '&amp;#x2F;'
+  })
+&nbsp;
+  return String(string).replace(/[&amp;&lt;&gt;"'\/]/g, <span class="fstat-no" title="function not covered" >s =&gt; </span>{
+<span class="cstat-no" title="statement not covered" >    return entityMap[s]</span>
+  })
+}
+&nbsp;
+// TODO: I might as well use a class here, so that I can instantiate multiple spreadsheets as an object.
+class Sheet {
+  /**
+     *
+     * @param {Object} opts
+     * @param {string} opts.url - the url to a spreadsheet
+     * @param {string} opts.sheetname - the name of a particular sheet / tab
+     * @param {Function} opts.onValidationError - a callback to exe cute if a validation error occurs
+     * @param {Function} opts.onError - a callback to execute if error occurs.
+     */
+  constructor(opts) {
+    const {url, sheetname, onValidationError, onError} = opts
+    this.url = url
+    this.sheetname = sheetname
+    this.onValidationError = onValidationError
+    this.onError = onError
+&nbsp;
+    this.data = null
+&nbsp;
+    this.SPREADSHEET_UPDATE_INTERVAL = 100000
+&nbsp;
+    this.messages = {
+      headerError: 'There is an error in the spreadsheet column header.',
+      unreachable: 'The provided optional spreadsheet URL may not be valid. No valid resource could be fetched.',
+      noData: 'No data found. You need to first fetch a sheet.',
+      noDataToValidate: 'No spreadsheet available to validate! Fetch one first.',
+      urlNotInitialized: 'You need to initialize an URL!',
+      sheetMissing: 'The provided optional spreadsheet URL is valid, but the sheet you have specified could not be found. Please go to the options screen and confirm that you have provided a valid sheet name.'
+    }
+&nbsp;
+    this.httpErrors = {
+      400: '&lt;b&gt;400 Bad Request&lt;/b&gt; – The network request was malformed. Are you sure the provided URL leads to a valid public spreadsheet?',
+      403: '&lt;b&gt;403 Forbidden&lt;/b&gt; – Your request to view the public version of the spreadsheet was rejected by Google\'s servers. Please ensure that you have made your spreadsheet public. For guidance, please see &lt;a href=\'https://base.gtt-booster.com/custom%20qa/custom_qa_checks\' target=\'_blank\'&gt;the custom qa article&lt;/a&gt;.',
+      404: '&lt;b&gt;404 Not Found&lt;/b&gt; – The provided spreadsheet URL is not a valid Internet resource. Please ensure that there are no typos in your URL!'
+    }
+&nbsp;
+    this._processUrl()
+  }
+&nbsp;
+  fetch(cb) {
+    Tabletop.init({
+      key: this.url,
+      sheetId: 1,
+      callback: (err, res) =&gt; {
+        debug.log('Err: ', err)
+        debug.log('Fetched data: ', res)
+        this.data = res
+        this.sheetNames = res ? Object.keys(res) : <span class="branch-1 cbranch-no" title="branch not covered" >null</span>
+        debug.log(this.sheetNames)
+        this._filter(this.sheetname)
+        this._validate()
+        debug.log('this.data', this.data)
+&nbsp;
+        return cb(err, this.data, this.sheetNames)
+      },
+      simpleSheet: false,
+      debug: false
+    })
+  }
+&nbsp;
+  _processUrl() {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!this.url) {
+<span class="cstat-no" title="statement not covered" >      return this.onError(this.messages.urlNotInitialized)</span>
+    }
+&nbsp;
+    const public_spreadsheet_url = this.url
+&nbsp;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (public_spreadsheet_url &amp;&amp; public_spreadsheet_url.match(/(?:\/edit#gid=[0-9]+|\/pubhtml)$/)) {
+<span class="cstat-no" title="statement not covered" >      this.url = public_spreadsheet_url.replace(/\/edit#gid=[0-9]+$/, '/pubhtml')</span>
+    }
+  }
+&nbsp;
+  _validate() {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!this.data.length) {
+<span class="cstat-no" title="statement not covered" >      return this.onError(this.messages.noDataToValidate)</span>
+    }
+&nbsp;
+    const validKeys = ['priority', 'products', 'source_pattern', 'target_pattern', 'message', 'toggle', 'special', 'case_sensitive', 'match_type', 'comment']
+&nbsp;
+    const sheetKeys = Object.keys(this.data[0])
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (validKeys.sort().toString() === sheetKeys.sort().toString()) {
+      // Valid
+    } else {
+      this.onValidationError(this.messages.headerError + '. Columns ' + _.difference(validKeys, sheetKeys).join(' ') + ' are missing or contain a typo.'.replace(/\s{2,}/g, ' '))
+    }
+  }
+&nbsp;
+  _filter(sheetname) { // RETURNS
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!this.data) {
+<span class="cstat-no" title="statement not covered" >      return this.onError(this.messages.noData)</span>
+    } <span class="missing-if-branch" title="if path not taken" >I</span>if (!this.data[sheetname]) {
+<span class="cstat-no" title="statement not covered" >      return this.onError(this.messages.sheetMissing)</span>
+    }
+&nbsp;
+    _.forEach(this.data[sheetname].elements, (ele, i, arr) =&gt; {
+      arr[i].message = escapeHtml(arr[i].message)
+    })
+&nbsp;
+    // Filter out those items that are "ON"
+    const filtered = this.data[sheetname].elements.filter(ele =&gt; ele.toggle === 'on')
+&nbsp;
+    this.data = filtered
+  }
+}
+&nbsp;
+module.exports = Sheet
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat Nov 18 2017 15:34:53 GMT+0100 (CET)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

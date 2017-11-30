@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/3_lower/lib/glossaries/removeDuplicateGlossaries/removeDuplicateGlossaries.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../index.html">All files</a> / <a href="index.html">src/3_lower/lib/glossaries/removeDuplicateGlossaries</a> removeDuplicateGlossaries.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/29</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/29</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export default function <span class="fstat-no" title="function not covered" >removeDuplicateGlossaries() {</span>
+    const glossArea = <span class="cstat-no" title="statement not covered" >$('.gtc-tools-autosearch').find('.gtc-tool-right-floating')[0]</span>
+    const glossaryList = <span class="cstat-no" title="statement not covered" >$(glossArea).find('.gtc-glossary-match-holder')</span>
+&nbsp;
+    let unique = <span class="cstat-no" title="statement not covered" >[]</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    for (let i = 0; i &lt; glossaryList.length; i++) {</span>
+        let currentGlossItem = <span class="cstat-no" title="statement not covered" >glossaryList[i].innerHTML</span>
+        /**
+         * Remove unique numbers
+         */
+<span class="cstat-no" title="statement not covered" >        currentGlossItem = currentGlossItem.replace(/(gtc-gl-name-)[0-9]+/g, '$1number')</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (unique.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >            for (let j = 0, uniqueLength = unique.length; j &lt; uniqueLength; j++) {</span>
+<span class="cstat-no" title="statement not covered" >                if (unique[j] === currentGlossItem) {</span>
+<span class="cstat-no" title="statement not covered" >                    $(glossaryList[i]).addClass('cth-redundant-gloss-item')</span>
+<span class="cstat-no" title="statement not covered" >                    $(glossaryList[i]).hide()</span>
+<span class="cstat-no" title="statement not covered" >                    break</span>
+                } else <span class="cstat-no" title="statement not covered" >if (j === uniqueLength - 1) {</span>
+<span class="cstat-no" title="statement not covered" >                    unique.push(currentGlossItem)</span>
+<span class="cstat-no" title="statement not covered" >                    break</span>
+                }
+            }
+        } else {
+<span class="cstat-no" title="statement not covered" >            unique.push(currentGlossItem)</span>
+        }
+    }
+    const filtered = <span class="cstat-no" title="statement not covered" >_.filter(glossaryList, <span class="fstat-no" title="function not covered" >ele =&gt; </span>{</span>
+<span class="cstat-no" title="statement not covered" >        return $(ele).find('.gtc-glossary-source-name').html() === ''</span>
+    })
+<span class="cstat-no" title="statement not covered" >    $(filtered).addClass('cth-redundant-gloss-item')</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    $(filtered).hide()</span>
+&nbsp;
+    const visibleItems = <span class="cstat-no" title="statement not covered" >_.filter(glossaryList, <span class="fstat-no" title="function not covered" >ele =&gt; </span>{</span>
+<span class="cstat-no" title="statement not covered" >        return ele.style.display === ''</span>
+    })
+    const invisibleItems = <span class="cstat-no" title="statement not covered" >_.filter(glossaryList, <span class="fstat-no" title="function not covered" >ele =&gt; </span>{</span>
+<span class="cstat-no" title="statement not covered" >        return ele.style.display === 'none'</span>
+    })
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    $('.gtc-tool-title.gtc-tool-glossary')</span>
+        .html(`&lt;span class="bootstrap-wrapper"&gt;
+                   &lt;a href="#"&gt;Glossary (${visibleItems.length})&lt;/a&gt;
+                   &lt;br/&gt;
+                   &lt;small style="color: grey" class="cth-hidden-glossary-msg"&gt;${invisibleItems.length} redundant items are currently hidden.&lt;/small&gt;
+                   &lt;/span&gt;`)
+        .find('a')
+        .attr('data-toggle', 'tooltip')
+        .attr('title', `${invisibleItems.length} duplicates are currently being hidden by GTT Booster. Click here to switch between old and new list.`)
+        .click(<span class="fstat-no" title="function not covered" >() =&gt; </span>{
+<span class="cstat-no" title="statement not covered" >            $('.cth-redundant-gloss-item').toggle()</span>
+<span class="cstat-no" title="statement not covered" >            $('.cth-hidden-glossary-msg').html("")</span>
+<span class="cstat-no" title="statement not covered" >            $('.gtc-tool-title.gtc-tool-glossary')</span>
+                .find('a')
+                .html(`Glossary (${_.filter(glossaryList, <span class="fstat-no" title="function not covered" >ele =&gt; </span>{
+<span class="cstat-no" title="statement not covered" >                    return ele.style.display === ''</span>
+                }).length})`)
+        })
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Oct 29 2017 11:30:24 GMT+0100 (CET)
+</div>
+</div>
+<script src="../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../sorter.js"></script>
+</body>
+</html>

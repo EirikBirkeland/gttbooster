@@ -1,0 +1,1715 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for vendor/tinysort.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">All files</a> / <a href="index.html">vendor</a> tinysort.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">10.28% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>22/214</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">4.98% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>10/201</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">10.34% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>3/29</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">11.46% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>22/192</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525
+526
+527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537
+538
+539
+540
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * TinySort is a small script that sorts HTML elements. It sorts by text- or attribute value, or by that of one of it's children.
+ * @summary A nodeElement sorting script.
+ * @version 2.3.6
+ * @license MIT
+ * @author Ron Valstar &lt;ron@ronvalstar.nl&gt;
+ * @copyright Ron Valstar &lt;ron@ronvalstar.nl&gt;
+ * @namespace tinysort
+ */
+(function (root,tinysort) {
+  'use strict';
+&nbsp;
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (typeof define==='function'&amp;&amp;<span class="branch-1 cbranch-no" title="branch not covered" >define.amd) {</span>
+<span class="cstat-no" title="statement not covered" >    define('tinysort',singleton);</span>
+  } else {
+    root.tinysort = tinysort;
+  }
+  function <span class="fstat-no" title="function not covered" >singleton(){</span>
+<span class="cstat-no" title="statement not covered" >    return tinysort;</span>
+  }// old value was "this" for the below
+}(<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-1 cbranch-no" title="branch not covered" >typeof </span>global !== undefined ? global : this,(function() {</span>
+  'use strict';
+&nbsp;
+  var fls = !1
+    ,undef
+    ,nll = null // old value was simply window for the below
+    ,win = (<span class="branch-0 cbranch-no" title="branch not covered" >typeof </span>global !== undefined ? global : <span class="branch-1 cbranch-no" title="branch not covered" >window)</span>
+    ,doc = win.document
+    ,parsefloat = parseFloat
+    ,regexLastNr = /(-?\d+\.?\d*)\s*$/g    // regex for testing strings ending on numbers
+    ,regexLastNrNoDash = /(\d+\.?\d*)\s*$/g  // regex for testing strings ending on numbers ignoring dashes
+    ,plugins = []
+    ,numCriteria = 0
+    ,criteriumIndex = 0
+    ,largeChar = String.fromCharCode(0xFFF)
+    ,/**options*/defaults = {        // default settings
+&nbsp;
+      selector: nll      // CSS selector to select the element to sort to
+&nbsp;
+      ,order: 'asc'      // order: asc, desc or rand
+&nbsp;
+      ,attr: nll         // order by attribute value
+      ,data: nll         // use the data attribute for sorting
+      ,useVal: fls       // use element value instead of text
+&nbsp;
+      ,place: 'org'      // place ordered elements at position: start, end, org (original position), first, last
+      ,returns: fls      // return all elements or only the sorted ones (true/false)
+&nbsp;
+      ,cases: fls        // a case sensitive sort orders [aB,aa,ab,bb]
+&nbsp;
+      ,natural: fls      // use natural sort order
+&nbsp;
+      ,forceStrings:fls  // if false the string '2' will sort with the value 2, not the string '2'
+&nbsp;
+      ,ignoreDashes:fls  // ignores dashes when looking for numerals
+&nbsp;
+      ,sortFunction: nll // override the default sort function
+&nbsp;
+      ,useFlex:fls
+      ,emptyEnd:fls
+    }
+  ;
+&nbsp;
+  /**
+   * Options object
+   * @typedef {Object} options
+   * @property {String} [selector] A CSS selector to select the element to sort to.
+   * @property {String} [order='asc'] The order of the sorting method. Possible values are 'asc', 'desc' and 'rand'.
+   * @property {String} [attr=null] Order by attribute value (ie title, href, class)
+   * @property {String} [data=null] Use the data attribute for sorting.
+   * @property {String} [place='org'] Determines the placement of the ordered elements in respect to the unordered elements. Possible values 'start', 'end', 'first', 'last' or 'org'.
+   * @property {Boolean} [useVal=false] Use element value instead of text.
+   * @property {Boolean} [cases=false] A case sensitive sort (orders [aB,aa,ab,bb])
+   * @property {Boolean} [natural=false] Use natural sort order.
+   * @property {Boolean} [forceStrings=false] If false the string '2' will sort with the value 2, not the string '2'.
+   * @property {Boolean} [ignoreDashes=false] Ignores dashes when looking for numerals.
+   * @property {Function} [sortFunction=null] Override the default sort function. The parameters are of a type {elementObject}.
+   * @property {Boolean} [useFlex=true] If one parent and display flex, ordering is done by CSS (instead of DOM)
+   * @property {Boolean} [emptyEnd=true] Sort empty values to the end instead of the start
+   */
+&nbsp;
+  /**
+   * TinySort is a small and simple script that will sort any nodeElement by it's text- or attribute value, or by that of one of it's children.
+   * @memberof tinysort
+   * @public
+   * @param {NodeList|HTMLElement[]|String} nodeList The nodelist or array of elements to be sorted. If a string is passed it should be a valid CSS selector.
+   * @param {options} [options] A list of options.
+   * @returns {HTMLElement[]}
+   */
+  function <span class="fstat-no" title="function not covered" >tinysort(nodeList,options){</span>
+<span class="cstat-no" title="statement not covered" >    if (isString(nodeList)) <span class="cstat-no" title="statement not covered" >n</span>odeList = doc.querySelectorAll(nodeList);</span>
+<span class="cstat-no" title="statement not covered" >    if (nodeList.length===0) {</span>
+<span class="cstat-no" title="statement not covered" >      console.warn('No elements to sort');</span>
+    }
+&nbsp;
+    var fragment = <span class="cstat-no" title="statement not covered" >doc.createDocumentFragment()</span>
+      /** both sorted and unsorted elements
+       * @type {elementObject[]} */
+      ,elmObjsAll = <span class="cstat-no" title="statement not covered" >[]</span>
+      /** sorted elements
+       * @type {elementObject[]} */
+      ,elmObjsSorted = <span class="cstat-no" title="statement not covered" >[]</span>
+      /** unsorted elements
+       * @type {elementObject[]} */
+      ,elmObjsUnsorted = <span class="cstat-no" title="statement not covered" >[]</span>
+      /** sorted elements before sort
+       * @type {elementObject[]} */
+      ,elmObjsSortedInitial
+      /** @type {criteriumIndex[]} */
+      ,criteria = <span class="cstat-no" title="statement not covered" >[]</span>
+      /** @type {HTMLElement} */
+      ,parentNode
+      ,isSameParent = <span class="cstat-no" title="statement not covered" >true</span>
+      ,firstParent = <span class="cstat-no" title="statement not covered" >nodeList.length&amp;&amp;nodeList[0].parentNode</span>
+      ,isFragment = <span class="cstat-no" title="statement not covered" >firstParent.rootNode!==document</span>
+      ,isFlex = <span class="cstat-no" title="statement not covered" >nodeList.length&amp;&amp;(options===undef||options.useFlex!==false)&amp;&amp;!isFragment&amp;&amp;getComputedStyle(firstParent,null).display.indexOf('flex')!==-1</span>
+    ;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    initCriteria.apply(nll,Array.prototype.slice.call(arguments,1));</span>
+<span class="cstat-no" title="statement not covered" >    initSortList();</span>
+<span class="cstat-no" title="statement not covered" >    elmObjsSorted.sort(sortFunction);</span>
+<span class="cstat-no" title="statement not covered" >    applyToDOM();</span>
+&nbsp;
+    /**
+     * Create criteria list
+     */
+    function <span class="fstat-no" title="function not covered" >initCriteria(){</span>
+<span class="cstat-no" title="statement not covered" >      if (arguments.length===0) {</span>
+<span class="cstat-no" title="statement not covered" >        addCriterium({}); // have at least one criterium</span>
+      } else {
+<span class="cstat-no" title="statement not covered" >        loop(arguments,<span class="fstat-no" title="function not covered" >function(</span>param){</span>
+<span class="cstat-no" title="statement not covered" >          addCriterium(isString(param)?{selector:param}:param);</span>
+        });
+      }
+<span class="cstat-no" title="statement not covered" >      numCriteria = criteria.length;</span>
+    }
+&nbsp;
+    /**
+     * A criterium is a combination of the selector, the options and the default options
+     * @typedef {Object} criterium
+     * @property {String} selector - a valid CSS selector
+     * @property {String} order - order: asc, desc or rand
+     * @property {String} attr - order by attribute value
+     * @property {String} data - use the data attribute for sorting
+     * @property {Boolean} useVal - use element value instead of text
+     * @property {String} place - place ordered elements at position: start, end, org (original position), first
+     * @property {Boolean} returns - return all elements or only the sorted ones (true/false)
+     * @property {Boolean} cases - a case sensitive sort orders [aB,aa,ab,bb]
+     * @property {Boolean} natural - use natural sort order
+     * @property {Boolean} forceStrings - if false the string '2' will sort with the value 2, not the string '2'
+     * @property {Boolean} ignoreDashes - ignores dashes when looking for numerals
+     * @property {Function} sortFunction - override the default sort function
+     * @property {boolean} hasSelector - options has a selector
+     * @property {boolean} hasFilter - options has a filter
+     * @property {boolean} hasAttr - options has an attribute selector
+     * @property {boolean} hasData - options has a data selector
+     * @property {number} sortReturnNumber - the sort function return number determined by options.order
+     */
+&nbsp;
+    /**
+     * Adds a criterium
+     * @memberof tinysort
+     * @private
+     * @param {Object} [options]
+     */
+    function <span class="fstat-no" title="function not covered" >addCriterium(options){</span>
+      var hasSelector = <span class="cstat-no" title="statement not covered" >!!options.selector</span>
+        ,hasFilter = <span class="cstat-no" title="statement not covered" >hasSelector&amp;&amp;options.selector[0]===':'</span>
+        ,allOptions = <span class="cstat-no" title="statement not covered" >extend(options||{},defaults)</span>
+      ;
+<span class="cstat-no" title="statement not covered" >      criteria.push(extend({</span>
+        // has find, attr or data
+        hasSelector: hasSelector
+        ,hasAttr: !(allOptions.attr===nll||allOptions.attr==='')
+        ,hasData: allOptions.data!==nll
+        // filter
+        ,hasFilter: hasFilter
+        ,sortReturnNumber: allOptions.order==='asc'?1:-1
+      },allOptions));
+    }
+&nbsp;
+    /**
+     * The element object.
+     * @typedef {Object} elementObject
+     * @property {HTMLElement} elm - The element
+     * @property {number} pos - original position
+     * @property {number} posn - original position on the partial list
+     */
+&nbsp;
+    /**
+     * Creates an elementObject and adds to lists.
+     * Also checks if has one or more parents.
+     * @memberof tinysort
+     * @private
+     */
+    function <span class="fstat-no" title="function not covered" >initSortList(){</span>
+<span class="cstat-no" title="statement not covered" >      loop(nodeList,<span class="fstat-no" title="function not covered" >function(</span>elm,i){</span>
+<span class="cstat-no" title="statement not covered" >        if (!parentNode) <span class="cstat-no" title="statement not covered" >parentNode = elm.parentNode;</span></span>
+        else <span class="cstat-no" title="statement not covered" >if (parentNode!==elm.parentNode) <span class="cstat-no" title="statement not covered" >i</span>sSameParent = false;</span>
+        var criterium = <span class="cstat-no" title="statement not covered" >criteria[0]</span>
+          ,hasFilter = <span class="cstat-no" title="statement not covered" >criterium.hasFilter</span>
+          ,selector = <span class="cstat-no" title="statement not covered" >criterium.selector</span>
+          ,isPartial = <span class="cstat-no" title="statement not covered" >!selector||(hasFilter&amp;&amp;elm.matchesSelector(selector))||(selector&amp;&amp;elm.querySelector(selector))</span>
+          ,listPartial = <span class="cstat-no" title="statement not covered" >isPartial?elmObjsSorted:elmObjsUnsorted</span>
+          ,elementObject = <span class="cstat-no" title="statement not covered" >{</span>
+            elm: elm
+            ,pos: i
+            ,posn: listPartial.length
+          }
+        ;
+<span class="cstat-no" title="statement not covered" >        elmObjsAll.push(elementObject);</span>
+<span class="cstat-no" title="statement not covered" >        listPartial.push(elementObject);</span>
+      });
+<span class="cstat-no" title="statement not covered" >      elmObjsSortedInitial = elmObjsSorted.slice(0);</span>
+    }
+&nbsp;
+    /**
+     * Compare strings using natural sort order
+     * http://web.archive.org/web/20130826203933/http://my.opera.com/GreyWyvern/blog/show.dml/1671288
+     */
+    function <span class="fstat-no" title="function not covered" >naturalCompare(a, b, chunkify) {</span>
+      var aa = <span class="cstat-no" title="statement not covered" >chunkify(a.toString())</span>
+        ,bb = <span class="cstat-no" title="statement not covered" >chunkify(b.toString());</span>
+<span class="cstat-no" title="statement not covered" >      for (var x = 0; aa[x] &amp;&amp; bb[x]; x++) {</span>
+<span class="cstat-no" title="statement not covered" >        if (aa[x]!==bb[x]) {</span>
+          var c = <span class="cstat-no" title="statement not covered" >Number(aa[x])</span>
+            ,d = <span class="cstat-no" title="statement not covered" >Number(bb[x]);</span>
+<span class="cstat-no" title="statement not covered" >          if (c == aa[x] &amp;&amp; d == bb[x]) {</span>
+<span class="cstat-no" title="statement not covered" >            return c - d;</span>
+          } else <span class="cstat-no" title="statement not covered" >return aa[x]&gt;bb[x]?1:-1;</span>
+        }
+      }
+<span class="cstat-no" title="statement not covered" >      return aa.length - bb.length;</span>
+    }
+&nbsp;
+    /**
+     * Split a string into an array by type: numeral or string
+     * @memberof tinysort
+     * @private
+     * @param {string} t
+     * @returns {Array}
+     */
+    function <span class="fstat-no" title="function not covered" >chunkify(t) {</span>
+      var tz = <span class="cstat-no" title="statement not covered" >[], x = <span class="cstat-no" title="statement not covered" >0, y = <span class="cstat-no" title="statement not covered" >-1, n = <span class="cstat-no" title="statement not covered" >0, i, j;</span></span></span></span>
+<span class="cstat-no" title="statement not covered" >      while (i = (j = t.charAt(x++)).charCodeAt(0)) {</span>
+        var m = (<span class="cstat-no" title="statement not covered" >i == 46 || (i &gt;=48 &amp;&amp; i &lt;= 57));</span>
+<span class="cstat-no" title="statement not covered" >        if (m !== n) {</span>
+<span class="cstat-no" title="statement not covered" >          tz[++y] = '';</span>
+<span class="cstat-no" title="statement not covered" >          n = m;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        tz[y] += j;</span>
+      }
+<span class="cstat-no" title="statement not covered" >      return tz;</span>
+    }
+&nbsp;
+    /**
+     * Sort all the things
+     * @memberof tinysort
+     * @private
+     * @param {elementObject} a
+     * @param {elementObject} b
+     * @returns {number}
+     */
+    function <span class="fstat-no" title="function not covered" >sortFunction(a,b){</span>
+      var sortReturnNumber = <span class="cstat-no" title="statement not covered" >0;</span>
+<span class="cstat-no" title="statement not covered" >      if (criteriumIndex!==0) <span class="cstat-no" title="statement not covered" >c</span>riteriumIndex = 0;</span>
+<span class="cstat-no" title="statement not covered" >      while (sortReturnNumber===0&amp;&amp;criteriumIndex&lt;numCriteria) {</span>
+        /** @type {criterium} */
+        var criterium = <span class="cstat-no" title="statement not covered" >criteria[criteriumIndex]</span>
+          ,regexLast = <span class="cstat-no" title="statement not covered" >criterium.ignoreDashes?regexLastNrNoDash:regexLastNr;</span>
+        //
+<span class="cstat-no" title="statement not covered" >        loop(plugins,<span class="fstat-no" title="function not covered" >function(</span>plugin){</span>
+          var pluginPrepare = <span class="cstat-no" title="statement not covered" >plugin.prepare;</span>
+<span class="cstat-no" title="statement not covered" >          if (pluginPrepare) <span class="cstat-no" title="statement not covered" >p</span>luginPrepare(criterium);</span>
+        });
+        //
+<span class="cstat-no" title="statement not covered" >        if (criterium.sortFunction) { // custom sort</span>
+<span class="cstat-no" title="statement not covered" >          sortReturnNumber = criterium.sortFunction(a,b);</span>
+        } else <span class="cstat-no" title="statement not covered" >if (criterium.order=='rand') { // random sort</span>
+<span class="cstat-no" title="statement not covered" >          sortReturnNumber = Math.random()&lt;0.5?1:-1;</span>
+        } else { // regular sort
+          var isNumeric = <span class="cstat-no" title="statement not covered" >fls</span>
+            // prepare sort elements
+            ,valueA = <span class="cstat-no" title="statement not covered" >getSortBy(a,criterium)</span>
+            ,valueB = <span class="cstat-no" title="statement not covered" >getSortBy(b,criterium)</span>
+            ,noA = <span class="cstat-no" title="statement not covered" >valueA===''||valueA===undef</span>
+            ,noB = <span class="cstat-no" title="statement not covered" >valueB===''||valueB===undef</span>
+          ;
+<span class="cstat-no" title="statement not covered" >          if (valueA===valueB) {</span>
+<span class="cstat-no" title="statement not covered" >            sortReturnNumber = 0;</span>
+          } else <span class="cstat-no" title="statement not covered" >if (criterium.emptyEnd&amp;&amp;(noA||noB)) {</span>
+<span class="cstat-no" title="statement not covered" >            sortReturnNumber = noA&amp;&amp;noB?0:noA?1:-1;</span>
+          } else {
+<span class="cstat-no" title="statement not covered" >            if (!criterium.forceStrings) {</span>
+              // cast to float if both strings are numeral (or end numeral)
+              var  valuesA = <span class="cstat-no" title="statement not covered" >isString(valueA)?valueA&amp;&amp;valueA.match(regexLast):fls// todo: isString superfluous because getSortBy returns string|undefined</span>
+                ,valuesB = <span class="cstat-no" title="statement not covered" >isString(valueB)?valueB&amp;&amp;valueB.match(regexLast):fls</span>
+              ;
+<span class="cstat-no" title="statement not covered" >              if (valuesA&amp;&amp;valuesB) {</span>
+                var  previousA = <span class="cstat-no" title="statement not covered" >valueA.substr(0,valueA.length-valuesA[0].length)</span>
+                  ,previousB = <span class="cstat-no" title="statement not covered" >valueB.substr(0,valueB.length-valuesB[0].length);</span>
+<span class="cstat-no" title="statement not covered" >                if (previousA==previousB) {</span>
+<span class="cstat-no" title="statement not covered" >                  isNumeric = !fls;</span>
+<span class="cstat-no" title="statement not covered" >                  valueA = parsefloat(valuesA[0]);</span>
+<span class="cstat-no" title="statement not covered" >                  valueB = parsefloat(valuesB[0]);</span>
+                }
+              }
+            }
+<span class="cstat-no" title="statement not covered" >            if (valueA===undef||valueB===undef) {</span>
+<span class="cstat-no" title="statement not covered" >              sortReturnNumber = 0;</span>
+            } else {
+              // todo: check here
+<span class="cstat-no" title="statement not covered" >              if (!criterium.natural||(!isNaN(valueA)&amp;&amp;!isNaN(valueB))) {</span>
+<span class="cstat-no" title="statement not covered" >                sortReturnNumber = valueA&lt;valueB?-1:(valueA&gt;valueB?1:0);</span>
+              } else {
+<span class="cstat-no" title="statement not covered" >                sortReturnNumber = naturalCompare(valueA, valueB, chunkify);</span>
+              }
+            }
+          }
+        }
+<span class="cstat-no" title="statement not covered" >        loop(plugins,<span class="fstat-no" title="function not covered" >function(</span>o){</span>
+          var pluginSort = <span class="cstat-no" title="statement not covered" >o.sort;</span>
+<span class="cstat-no" title="statement not covered" >          if (pluginSort) <span class="cstat-no" title="statement not covered" >s</span>ortReturnNumber = pluginSort(criterium,isNumeric,valueA,valueB,sortReturnNumber);</span>
+        });
+<span class="cstat-no" title="statement not covered" >        sortReturnNumber *= criterium.sortReturnNumber; // lastly assign asc/desc</span>
+<span class="cstat-no" title="statement not covered" >        if (sortReturnNumber===0) <span class="cstat-no" title="statement not covered" >c</span>riteriumIndex++;</span>
+      }
+<span class="cstat-no" title="statement not covered" >      if (sortReturnNumber===0) <span class="cstat-no" title="statement not covered" >s</span>ortReturnNumber = a.pos&gt;b.pos?1:-1;</span>
+      //console.log('sfn',a.pos,b.pos,valueA,valueB,sortReturnNumber); // todo: close log;
+<span class="cstat-no" title="statement not covered" >      return sortReturnNumber;</span>
+    }
+&nbsp;
+    /**
+     * Applies the sorted list to the DOM
+     * @memberof tinysort
+     * @private
+     */
+    function <span class="fstat-no" title="function not covered" >applyToDOM(){</span>
+      var hasSortedAll = <span class="cstat-no" title="statement not covered" >elmObjsSorted.length===elmObjsAll.length;</span>
+<span class="cstat-no" title="statement not covered" >      if (isSameParent&amp;&amp;hasSortedAll) {</span>
+<span class="cstat-no" title="statement not covered" >        if (isFlex) {</span>
+<span class="cstat-no" title="statement not covered" >          elmObjsSorted.forEach(<span class="fstat-no" title="function not covered" >function(</span>elmObj,i){</span>
+<span class="cstat-no" title="statement not covered" >            elmObj.elm.style.order = i;</span>
+          });
+        } else {
+<span class="cstat-no" title="statement not covered" >          if (parentNode) <span class="cstat-no" title="statement not covered" >parentNode.appendChild(sortedIntoFragment());</span></span>
+          else <span class="cstat-no" title="statement not covered" >console.warn('parentNode has been removed');</span>
+        }
+      } else {
+        var criterium = <span class="cstat-no" title="statement not covered" >criteria[0]</span>
+          ,place = <span class="cstat-no" title="statement not covered" >criterium.place</span>
+          ,placeOrg = <span class="cstat-no" title="statement not covered" >place==='org'</span>
+          ,placeStart = <span class="cstat-no" title="statement not covered" >place==='start'</span>
+          ,placeEnd = <span class="cstat-no" title="statement not covered" >place==='end'</span>
+          ,placeFirst = <span class="cstat-no" title="statement not covered" >place==='first'</span>
+          ,placeLast = <span class="cstat-no" title="statement not covered" >place==='last'</span>
+        ;
+<span class="cstat-no" title="statement not covered" >        if (placeOrg) {</span>
+<span class="cstat-no" title="statement not covered" >          elmObjsSorted.forEach(addGhost);</span>
+<span class="cstat-no" title="statement not covered" >          elmObjsSorted.forEach(<span class="fstat-no" title="function not covered" >function(</span>elmObj,i) {</span>
+<span class="cstat-no" title="statement not covered" >            replaceGhost(elmObjsSortedInitial[i],elmObj.elm);</span>
+          });
+        } else <span class="cstat-no" title="statement not covered" >if (placeStart||placeEnd) {</span>
+          var startElmObj = <span class="cstat-no" title="statement not covered" >elmObjsSortedInitial[placeStart?0:elmObjsSortedInitial.length-1]</span>
+            ,startParent = <span class="cstat-no" title="statement not covered" >startElmObj&amp;&amp;startElmObj.elm.parentNode</span>
+            ,startElm = <span class="cstat-no" title="statement not covered" >startParent&amp;&amp;(placeStart&amp;&amp;startParent.firstChild||startParent.lastChild);</span>
+<span class="cstat-no" title="statement not covered" >          if (startElm) {</span>
+<span class="cstat-no" title="statement not covered" >            if (startElm!==startElmObj.elm) <span class="cstat-no" title="statement not covered" >s</span>tartElmObj = {elm:startElm};</span>
+<span class="cstat-no" title="statement not covered" >            addGhost(startElmObj);</span>
+<span class="cstat-no" title="statement not covered" >            placeEnd&amp;&amp;startParent.appendChild(startElmObj.ghost);</span>
+<span class="cstat-no" title="statement not covered" >            replaceGhost(startElmObj,sortedIntoFragment());</span>
+          }
+        } else <span class="cstat-no" title="statement not covered" >if (placeFirst||placeLast) {</span>
+          var firstElmObj = <span class="cstat-no" title="statement not covered" >elmObjsSortedInitial[placeFirst?0:elmObjsSortedInitial.length-1];</span>
+<span class="cstat-no" title="statement not covered" >          replaceGhost(addGhost(firstElmObj),sortedIntoFragment());</span>
+        }
+      }
+    }
+&nbsp;
+    /**
+     * Adds all sorted elements to the document fragment and returns it.
+     * @memberof tinysort
+     * @private
+     * @returns {DocumentFragment}
+     */
+    function <span class="fstat-no" title="function not covered" >sortedIntoFragment(){</span>
+<span class="cstat-no" title="statement not covered" >      elmObjsSorted.forEach(<span class="fstat-no" title="function not covered" >function(</span>elmObj){</span>
+<span class="cstat-no" title="statement not covered" >        fragment.appendChild(elmObj.elm);</span>
+      });
+<span class="cstat-no" title="statement not covered" >      return fragment;</span>
+    }
+&nbsp;
+    /**
+     * Adds a temporary element before an element before reordering.
+     * @memberof tinysort
+     * @private
+     * @param {elementObject} elmObj
+     * @returns {elementObject}
+     */
+    function <span class="fstat-no" title="function not covered" >addGhost(elmObj){</span>
+      var element = <span class="cstat-no" title="statement not covered" >elmObj.elm</span>
+        ,ghost = <span class="cstat-no" title="statement not covered" >doc.createElement('div')</span>
+      ;
+<span class="cstat-no" title="statement not covered" >      elmObj.ghost = ghost;</span>
+<span class="cstat-no" title="statement not covered" >      element.parentNode.insertBefore(ghost,element);</span>
+<span class="cstat-no" title="statement not covered" >      return elmObj;</span>
+    }
+&nbsp;
+    /**
+     * Inserts an element before a ghost element and removes the ghost.
+     * @memberof tinysort
+     * @private
+     * @param {elementObject} elmObjGhost
+     * @param {HTMLElement} elm
+     */
+    function <span class="fstat-no" title="function not covered" >replaceGhost(elmObjGhost,elm){</span>
+      var ghost = <span class="cstat-no" title="statement not covered" >elmObjGhost.ghost</span>
+        ,ghostParent = <span class="cstat-no" title="statement not covered" >ghost.parentNode;</span>
+<span class="cstat-no" title="statement not covered" >      ghostParent.insertBefore(elm,ghost);</span>
+<span class="cstat-no" title="statement not covered" >      ghostParent.removeChild(ghost);</span>
+<span class="cstat-no" title="statement not covered" >      delete elmObjGhost.ghost;</span>
+    }
+&nbsp;
+    /**
+     * Get the string/number to be sorted by checking the elementObject with the criterium.
+     * @memberof tinysort
+     * @private
+     * @param {elementObject} elementObject
+     * @param {criterium} criterium
+     * @returns {String}
+     * @todo memoize
+     */
+    function <span class="fstat-no" title="function not covered" >getSortBy(elementObject,criterium){</span>
+      var sortBy
+        ,element = <span class="cstat-no" title="statement not covered" >elementObject.elm;</span>
+      // element
+<span class="cstat-no" title="statement not covered" >      if (criterium.selector) {</span>
+<span class="cstat-no" title="statement not covered" >        if (criterium.hasFilter) {</span>
+<span class="cstat-no" title="statement not covered" >          if (!element.matchesSelector(criterium.selector)) <span class="cstat-no" title="statement not covered" >e</span>lement = nll;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >          element = element.querySelector(criterium.selector);</span>
+        }
+      }
+      // value
+<span class="cstat-no" title="statement not covered" >      if (criterium.hasAttr) <span class="cstat-no" title="statement not covered" >sortBy = element.getAttribute(criterium.attr);</span></span>
+      else <span class="cstat-no" title="statement not covered" >if (criterium.useVal) <span class="cstat-no" title="statement not covered" >sortBy = element.value||element.getAttribute('value');</span></span>
+      else <span class="cstat-no" title="statement not covered" >if (criterium.hasData) <span class="cstat-no" title="statement not covered" >sortBy = element.getAttribute('data-'+criterium.data);</span></span>
+      else <span class="cstat-no" title="statement not covered" >if (element) <span class="cstat-no" title="statement not covered" >s</span>ortBy = element.textContent;</span>
+      // strings should be ordered in lowercase (unless specified)
+<span class="cstat-no" title="statement not covered" >      if (isString(sortBy)) {</span>
+<span class="cstat-no" title="statement not covered" >        if (!criterium.cases) <span class="cstat-no" title="statement not covered" >s</span>ortBy = sortBy.toLowerCase();</span>
+<span class="cstat-no" title="statement not covered" >        sortBy = sortBy.replace(/\s+/g,' '); // spaces/newlines</span>
+      }
+<span class="cstat-no" title="statement not covered" >      if (sortBy===null) <span class="cstat-no" title="statement not covered" >s</span>ortBy = largeChar;</span>
+<span class="cstat-no" title="statement not covered" >      return sortBy;</span>
+    }
+&nbsp;
+    /*function memoize(fnc) {
+      var oCache = {}
+        , sKeySuffix = 0;
+      return function () {
+        var sKey = sKeySuffix + JSON.stringify(arguments); // todo: circular dependency on Nodes
+        return (sKey in oCache)?oCache[sKey]:oCache[sKey] = fnc.apply(fnc,arguments);
+      };
+    }*/
+&nbsp;
+    /**
+     * Test if an object is a string
+     * @memberOf tinysort
+     * @method
+     * @private
+     * @param o
+     * @returns {boolean}
+     */
+    function <span class="fstat-no" title="function not covered" >isString(o){</span>
+<span class="cstat-no" title="statement not covered" >      return typeof o==='string';</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return elmObjsSorted.map(<span class="fstat-no" title="function not covered" >function(</span>o) {</span>
+<span class="cstat-no" title="statement not covered" >      return o.elm;</span>
+    });
+  }
+&nbsp;
+  /**
+   * Traverse an array, or array-like object
+   * @memberOf tinysort
+   * @method
+   * @private
+   * @param {Array} array The object or array
+   * @param {Function} func Callback function with the parameters value and key.
+   */
+  function <span class="fstat-no" title="function not covered" >loop(array,func){</span>
+    var l = <span class="cstat-no" title="statement not covered" >array.length</span>
+      ,i = <span class="cstat-no" title="statement not covered" >l</span>
+      ,j;
+<span class="cstat-no" title="statement not covered" >    while (i--) {</span>
+<span class="cstat-no" title="statement not covered" >      j = l-i-1;</span>
+<span class="cstat-no" title="statement not covered" >      func(array[j],j);</span>
+    }
+  }
+&nbsp;
+  /**
+   * Extend an object
+   * @memberOf tinysort
+   * @method
+   * @private
+   * @param {Object} obj Subject.
+   * @param {Object} fns Property object.
+   * @param {boolean} [overwrite=false]  Overwrite properties.
+   * @returns {Object} Subject.
+   */
+  function extend(obj,fns,overwrite){
+    for (var s in fns) {
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (overwrite||obj[s]===undef) {
+        obj[s] = fns[s];
+      }
+    }
+    return obj;
+  }
+&nbsp;
+  function <span class="fstat-no" title="function not covered" >plugin(prepare,sort,sortBy){</span>
+<span class="cstat-no" title="statement not covered" >    plugins.push({prepare:prepare,sort:sort,sortBy:sortBy});</span>
+  }
+&nbsp;
+  // matchesSelector shim
+  win.Element&amp;&amp;(<span class="fstat-no" title="function not covered" ><span class="branch-1 cbranch-no" title="branch not covered" >function(</span>ElementPrototype) {</span>
+<span class="cstat-no" title="statement not covered" >    ElementPrototype.matchesSelector = ElementPrototype.matchesSelector</span>
+    ||ElementPrototype.mozMatchesSelector
+    ||ElementPrototype.msMatchesSelector
+    ||ElementPrototype.oMatchesSelector
+    ||ElementPrototype.webkitMatchesSelector
+    ||<span class="fstat-no" title="function not covered" >function (</span>selector) {
+      var that = <span class="cstat-no" title="statement not covered" >this, nodes = <span class="cstat-no" title="statement not covered" >(that.parentNode || that.document).querySelectorAll(selector), i = <span class="cstat-no" title="statement not covered" >-1;</span></span></span>
+      //jscs:disable requireCurlyBraces
+<span class="cstat-no" title="statement not covered" >      while (nodes[++i] &amp;&amp; nodes[i] != that);</span>
+      //jscs:enable requireCurlyBraces
+<span class="cstat-no" title="statement not covered" >      return !!nodes[i];</span>
+    };
+  })(Element.prototype);
+&nbsp;
+  // extend the plugin to expose stuff
+  extend(plugin,{
+    loop: loop
+  });
+&nbsp;
+  return extend(tinysort,{
+    plugin: plugin
+    ,defaults: defaults
+  });
+})()));
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Oct 29 2017 11:30:24 GMT+0100 (CET)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

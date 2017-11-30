@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/0_model/Segment/convertPlaceholders.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">All files</a> / <a href="index.html">src/0_model/Segment</a> convertPlaceholders.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">77.42% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>48/62</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">68.63% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>35/51</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>4/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">77.42% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>48/62</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">29x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// Copyright © 2016 Eirik Birkeland. All rights reserved.
+/**
+ * Created by eb on 19.07.2016.
+ */
+'use strict'
+const _ = require('lodash')
+const $ = typeof window === 'undefined' ? require('cheerio') : <span class="branch-1 cbranch-no" title="branch not covered" >require('jquery')</span>
+const debug = require('cth-debug')(__filename.replace(/^src\//, ''))
+&nbsp;
+// TODO: See "TODO-contents-of-notranslate-should-not-be-included-in-qa.png". Perhaps add a flag to "convertPlaceholders" or similar, to allow omission of PH content.
+&nbsp;
+/**
+ *
+ * @param {Node} element - a node with class goog-gtc-unit
+ * @returns {String} - the cleaned up string
+ */
+export default function convertPlaceholders(element) {
+  let count = -1
+  const prevSeen = 0
+  let current = 0
+&nbsp;
+  const logObj = {}
+&nbsp;
+  element = $(element).children()[0] // EXAMPLE: span.goog-gtc-translatable.goog-gtc-from-human
+&nbsp;
+  return recurse(element)
+&nbsp;
+  /**
+     *
+     * @param string {string} - string to store
+     * @param encodeoriginal {string} - example: gtc:encodedoriginal="PGJkaSBjbGFzcz0nbm90cmFuc2xhdGUnPg=="
+     * @return {number}
+     */
+  function countEtc(string, encodeoriginal) {
+    // Check if PH content exists or not.
+    const toSave = string + '__' + encodeoriginal
+&nbsp;
+    if (logObj.hasOwnProperty(toSave)) {
+      return logObj[toSave]
+    }
+    count++
+    logObj[toSave] = count
+    return count
+  }
+&nbsp;
+  function recurse(elem) {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!elem) {
+<span class="cstat-no" title="statement not covered" >      return</span>
+    }
+    const childNodes = elem.childNodes
+    let newString = ''
+&nbsp;
+    _.forEach(childNodes, ele =&gt; {
+      if (ele.nodeType === 1) {
+        if (ele.tagName.match(/^a$/i) &amp;&amp; $(ele).hasClass('zippy')) {
+          const county = countEtc($(ele).html())
+&nbsp;
+          const countSaved = county
+          // This should be converted to the next tag
+          newString += `{${countSaved}}${recurse(ele)}{/${countSaved}}`
+        } else <span class="missing-if-branch" title="if path not taken" >I</span>if ($(ele).attr('gtc:attrs')) {
+          const county = <span class="cstat-no" title="statement not covered" >countEtc(null)</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >          current = parseInt($(ele).attr('gtc:attrs').replace(/[^0-9]+/g, ''), 10)</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >          if (prevSeen === 0 || current === prevSeen + 1) {</span>
+            const countSaved = <span class="cstat-no" title="statement not covered" >county</span>
+            // This should be converted to the next tag
+<span class="cstat-no" title="statement not covered" >            newString += `{${countSaved}}${recurse(ele)}{/${countSaved}}`</span>
+          }
+        } else if ($(ele).attr('gtc-suppressed-attr')) {
+          const county = countEtc($(ele).html())
+&nbsp;
+          const countSaved = county
+          // This should be converted to the next tag
+          newString += `{${countSaved}}${recurse(ele)}{/${countSaved}}`
+        } else if (ele.tagName.match(/^SPAN$/i)) {
+          <span class="missing-if-branch" title="if path not taken" >I</span>if ($(ele).attr('class') &amp;&amp;
+                        $(ele).attr('class').match('goog-gtc-glossary-highlight')) {
+<span class="cstat-no" title="statement not covered" >            newString += $(ele).text()</span>
+          }
+          // TODO: Change to "if has content" and thereby handle all tags in existence.
+&nbsp;
+          else <span class="missing-if-branch" title="if path not taken" >I</span>if ($(ele).attr('contenteditable') &amp;&amp;
+<span class="branch-1 cbranch-no" title="branch not covered" >                        $(ele).attr('contenteditable').match(/^false$/i)) {</span>
+            const county = <span class="cstat-no" title="statement not covered" >countEtc(null)</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            newString += `{${county}/}`</span>
+          } else <span class="missing-if-branch" title="if path not taken" >I</span>if ($(ele).hasClass('goog-gtc-inchars-space')) {
+<span class="cstat-no" title="statement not covered" >            newString += ' '</span>
+          } else <span class="missing-if-branch" title="if path not taken" >I</span>if ($(ele).hasClass('goog-gtc-inchars-nbsp')) {
+<span class="cstat-no" title="statement not covered" >            newString += ' '</span>
+          } else <span class="missing-if-branch" title="if path not taken" >I</span>if ($(ele).hasClass('goog-gtc-highlight')) {
+<span class="cstat-no" title="statement not covered" >            newString += $(ele).text()</span>
+          } else <span class="missing-if-branch" title="else path not taken" >E</span>if ($(ele).hasClass('notranslate') &amp;&amp; $(ele).hasClass('hidefromparserselfclosedtags')) {
+            const county = countEtc($(ele).html())
+&nbsp;
+            // This should be converted to the next tag
+            newString += `{${county}/}`
+          }
+        } else if (ele.tagName.match(/^(?:BDI)$/i) &amp;&amp;
+                    $(ele).attr('class') &amp;&amp;
+                    $(ele).attr('class').match('notranslate')) {
+          const county = countEtc(ele.firstChild.data, $(ele).attr('gtc:encodedoriginal') || 'none')
+&nbsp;
+          newString += `{${county}/}`
+        } else <span class="missing-if-branch" title="else path not taken" >E</span>if (ele.tagName.match(/^(?:B|STRONG|EM|I)$/i)) {
+          const county = countEtc(ele.tagName)
+&nbsp;
+          // Note: This caching (countSaved) is necessary since the template string below is evaluated bit by bit,
+          // so that by the time countSaved is read a second time, it has already changed.
+          const countSaved = county
+          newString += `{${countSaved}}${recurse(ele)}{/${countSaved}}`
+        } else {
+<span class="cstat-no" title="statement not covered" >          newString += $(ele)[0].innerHTML</span>
+        }
+      } else <span class="missing-if-branch" title="else path not taken" >E</span>if (ele.nodeType === 3) {
+        newString += $(ele).text()
+      } else {
+<span class="cstat-no" title="statement not covered" >        debug.log(ele.nodeType)</span>
+      }
+    })
+    return newString
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat Nov 18 2017 15:34:53 GMT+0100 (CET)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

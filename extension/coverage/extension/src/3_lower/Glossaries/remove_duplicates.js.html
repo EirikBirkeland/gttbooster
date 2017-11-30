@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for extension/src/3_lower/Glossaries/remove_duplicates.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">All files</a> / <a href="index.html">extension/src/3_lower/Glossaries</a> remove_duplicates.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">4.76% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>2/42</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/5</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">5% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>2/40</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// Copyright © 2016 Eirik Birkeland. All rights reserved.
+/**
+ * Created by eb on 23.06.2016.
+ */
+"use strict"
+const $ = require('jquery')
+const _ = require('lodash')
+&nbsp;
+import {
+    alphabetize,
+    sendToBackground
+} from './organize_glossaries'
+&nbsp;
+export {removeDuplicates}
+&nbsp;
+f</span>unction <span class="fstat-no" title="function not covered" >removeDuplicateGlossaries(glossaryList) {
+    l</span>et unique = <span class="cstat-no" title="statement not covered" >[]
+<span class="cstat-no" title="statement not covered" >    for (let i = 0; i &lt; glossaryList.length; i++) {</span>
+        l</span>et currentGlossItem = <span class="cstat-no" title="statement not covered" >glossaryList[i].innerHTML
+<span class="cstat-no" title="statement not covered" >        currentGlossItem = currentGlossItem.replace(/(gtc-gl-name-)[0-9]+/g, "$1number")</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (unique.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >            for (let j = 0, uniqueLength = unique.length; j &lt; uniqueLength; j++) {</span>
+<span class="cstat-no" title="statement not covered" >                if (unique[j] === currentGlossItem) {</span>
+<span class="cstat-no" title="statement not covered" >                    glossaryList[i].parentNode.removeChild(glossaryList[i])</span>
+                    //i=0
+<span class="cstat-no" title="statement not covered" >                    break</span>
+                }
+<span class="cstat-no" title="statement not covered" >                if (j === uniqueLength - 1) {</span>
+<span class="cstat-no" title="statement not covered" >                    unique.push(currentGlossItem)</span>
+<span class="cstat-no" title="statement not covered" >                    break</span>
+                }
+            }
+        } else {
+<span class="cstat-no" title="statement not covered" >            unique.push(currentGlossItem)</span>
+        }
+    }
+}
+&nbsp;
+f</span>unction <span class="fstat-no" title="function not covered" >removeDuplicates() {
+    /**
+     *
+     * @type {number}
+     */
+    c</span>onst DEBOUNCE_DELAY = <span class="cstat-no" title="statement not covered" >25
+&nbsp;
+    /**
+     *
+     * @type {*|jQuery|HTMLElement}
+     */
+    c</span>onst $glossAreaArray = <span class="cstat-no" title="statement not covered" >$('.gtc-tool-right-floating')
+&nbsp;
+    /**
+     *
+     * @type {MutationObserver}
+     */
+    c</span>onst obs1 = <span class="cstat-no" title="statement not covered" >new MutationObserver(_.debounce(automated, DEBOUNCE_DELAY))
+    /**
+     *
+     * @type {MutationObserver}
+     */
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (cth.option.removeDuplicates) {</span>
+<span class="cstat-no" title="statement not covered" >        removeDuplicateGlossaries($glossAreaArray[0].querySelectorAll('.gtc-glossary-terms'))</span>
+<span class="cstat-no" title="statement not covered" >        removeDuplicateGlossaries($glossAreaArray[1].querySelectorAll('.gtc-glossary-terms'))</span>
+    }
+    c</span>onst obs2 = <span class="cstat-no" title="statement not covered" >new MutationObserver(_.debounce(custom, DEBOUNCE_DELAY))
+    v</span>ar automatedTranslatedSearch = <span class="cstat-no" title="statement not covered" >$glossAreaArray[0]
+    v</span>ar customTranslationSearch = <span class="cstat-no" title="statement not covered" >$glossAreaArray[1]
+    v</span>ar config = <span class="cstat-no" title="statement not covered" >{childList: true, subtree: true}
+<span class="cstat-no" title="statement not covered" >    obs1.observe(automatedTranslatedSearch, config);</span>
+<span class="cstat-no" title="statement not covered" >    obs2.observe(customTranslationSearch, config);</span>
+&nbsp;
+    f</span>unction <span class="fstat-no" title="function not covered" >automated() {
+<span class="cstat-no" title="statement not covered" >        if ($glossAreaArray[0].length &lt;= 1) <span class="cstat-no" title="statement not covered" >r</span>eturn</span>
+        v</span>ar that = <span class="cstat-no" title="statement not covered" >this
+<span class="cstat-no" title="statement not covered" >        both(0, that)</span>
+    }
+&nbsp;
+    f</span>unction <span class="fstat-no" title="function not covered" >custom() {
+<span class="cstat-no" title="statement not covered" >        if ($glossAreaArray[1].length &lt;= 1) <span class="cstat-no" title="statement not covered" >r</span>eturn</span>
+        v</span>ar that = <span class="cstat-no" title="statement not covered" >this
+<span class="cstat-no" title="statement not covered" >        both(1, that)</span>
+    }
+&nbsp;
+    f</span>unction <span class="fstat-no" title="function not covered" >both(index, that) {
+<span class="cstat-no" title="statement not covered" >        that.disconnect()</span>
+        c</span>onst glossArea = <span class="cstat-no" title="statement not covered" >$('.gtc-tool-right-floating')[index]
+<span class="cstat-no" title="statement not covered" >        removeDuplicateGlossaries(glossArea.querySelectorAll('.gtc-glossary-terms'))</span>
+<span class="cstat-no" title="statement not covered" >        alphabetize(glossArea.querySelectorAll('li.gtc-glossary-match-holder'))</span>
+<span class="cstat-no" title="statement not covered" >        that.observe(glossArea, config)</span>
+<span class="cstat-no" title="statement not covered" >        if (cth.option.GLOSSARY_WINDOW_TOGGLE === true) {</span>
+<span class="cstat-no" title="statement not covered" >            sendToBackground()</span>
+        }
+    }
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Dec 01 2016 05:02:00 GMT+0100 (CET)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

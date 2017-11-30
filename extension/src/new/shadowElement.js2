@@ -1,0 +1,37 @@
+// Copyright © 2016 Eirik Birkeland. All rights reserved.
+/**
+ * Created by eb on 07.09.2016.
+ */
+'use strict'
+const $ = require('jquery')
+const _ = require('lodash')
+
+// 1. The brute force approach
+const stringToSearch = _.map(nodes, ele = > {
+return ele.nodeType === 3
+   ? ele.textContent
+   : ele.nodeType === 1 && ele.tagName === 'SPAN' && $(ele).hasClass('goog-gtc-inchars-highlight goog-gtc-inchars-space goog-gtc-highlight')
+      ? ' '
+      : ele.innerHTML
+}).
+join('')
+
+if (stringToSearch.match('while using')) {
+   // OK we have a match
+   // Now, need just walk through the original and look for
+   // "while", <space entity> "using".
+   // Any intermediate entity other than <space entity> should cancel matching.
+}
+
+// 2. The clever "shadow" approach where all entities have been converted
+
+// 2.1 Copy original segments
+// 2.2 Modify slightly and reinsert as copies
+// 2.3 Hide original segments while feature is active
+// 2.4 Then just match against the copy segment and highlight as much as I want ... good for QA also.
+
+// BIG PROBLEM: How should segment editing interaction be like? Maybe the user should be able to click his/her way into the segment .. and editing should always be for original segment.
+
+// TODO: SIMPLEST: Better yet:
+
+// While feature is active, replace all spaces with literal spaces and reassemble the textnodes. Then, operate on this copy. Revert to old version either by simply reinserting the special spaces, or restoring from a backup.

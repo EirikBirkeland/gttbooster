@@ -1,0 +1,5 @@
+Principles of organization
+--------------------------
+
+- Files that contain a single function are named according to the function name
+- Files that contain a single object with several methods, use pascalcase

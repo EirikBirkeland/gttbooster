@@ -1,0 +1,1907 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for vendor/tabletop/tabletop.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">vendor/tabletop</a> tabletop.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">59.78% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>162/271</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">41.45% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>63/152</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">66.67% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>22/33</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">59.63% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>161/270</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525
+526
+527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537
+538
+539
+540
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551
+552
+553
+554
+555
+556
+557
+558
+559
+560
+561
+562
+563
+564
+565
+566
+567
+568
+569
+570
+571
+572
+573
+574
+575
+576
+577
+578
+579
+580
+581
+582
+583
+584
+585
+586
+587
+588
+589
+590
+591
+592
+593
+594
+595
+596
+597
+598
+599
+600
+601
+602
+603
+604
+605
+606
+607
+608
+609
+610
+611
+612
+613
+614
+615</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">277x</span>
+<span class="cline-any cline-yes">277x</span>
+<span class="cline-any cline-yes">277x</span>
+<span class="cline-any cline-yes">3031x</span>
+<span class="cline-any cline-yes">3031x</span>
+<span class="cline-any cline-yes">3031x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3031x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">277x</span>
+<span class="cline-any cline-yes">277x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">277x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">277x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">277x</span>
+<span class="cline-any cline-yes">277x</span>
+<span class="cline-any cline-yes">3031x</span>
+<span class="cline-any cline-yes">3031x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">277x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">(function () {
+    'use strict';
+&nbsp;
+    var inNodeJS = typeof process !== 'undefined' &amp;&amp; !process.browser;
+&nbsp;
+    var request = function <span class="fstat-no" title="function not covered" >requestNotProvided() {</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error("The 'request' module is only available while running in Node.");</span>
+    };
+&nbsp;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if(inNodeJS) { // This will get stripped out by Uglify, and Webpack will not include it
+        request = require('request');
+    }
+&nbsp;
+    var supportsCORS = false;
+    var inLegacyIE = false;
+    try {
+        var testXHR = new XMLHttpRequest();
+<span class="cstat-no" title="statement not covered" >        if (typeof testXHR.withCredentials !== 'undefined') {</span>
+<span class="cstat-no" title="statement not covered" >            supportsCORS = true;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            if ('XDomainRequest' in window) {</span>
+<span class="cstat-no" title="statement not covered" >                supportsCORS = true;</span>
+<span class="cstat-no" title="statement not covered" >                inLegacyIE = true;</span>
+            }
+        }
+    } catch (e) {
+    }
+&nbsp;
+    // Create a simple indexOf function for support
+    // of older browsers.  Uses native indexOf if
+    // available.  Code similar to underscores.
+    // By making a separate function, instead of adding
+    // to the prototype, we will not break bad for loops
+    // in older browsers
+    var indexOfProto = Array.prototype.indexOf;
+    var ttIndexOf = function (array, item) {
+        var i = 0, l = array.length;
+&nbsp;
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (indexOfProto &amp;&amp; array.indexOf === indexOfProto) {
+            return array.indexOf(item);
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        for (; i &lt; l; i++) {</span>
+<span class="cstat-no" title="statement not covered" >            if (array[i] === item) {</span>
+<span class="cstat-no" title="statement not covered" >                return i;</span>
+            }
+        }
+<span class="cstat-no" title="statement not covered" >        return -1;</span>
+    };
+&nbsp;
+    /*
+     Initialize with Tabletop.init( { key: '0AjAPaAU9MeLFdHUxTlJiVVRYNGRJQnRmSnQwTlpoUXc' } )
+     OR!
+     Initialize with Tabletop.init( { key: 'https://docs.google.com/spreadsheet/pub?hl=en_US&amp;hl=en_US&amp;key=0AjAPaAU9MeLFdHUxTlJiVVRYNGRJQnRmSnQwTlpoUXc&amp;output=html&amp;widget=true' } )
+     OR!
+     Initialize with Tabletop.init('0AjAPaAU9MeLFdHUxTlJiVVRYNGRJQnRmSnQwTlpoUXc')
+     */
+&nbsp;
+    var Tabletop = function (options) {
+        // Make sure Tabletop is being used as a constructor no matter what.
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (!this || !(this instanceof Tabletop)) {
+<span class="cstat-no" title="statement not covered" >            return new Tabletop(options);</span>
+        }
+&nbsp;
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (typeof(options) === 'string') {
+<span class="cstat-no" title="statement not covered" >            options = {key: options};</span>
+        }
+&nbsp;
+        this.callback = options.callback;
+        this.wanted = options.wanted || [];
+        this.key = options.key;
+        this.simpleSheet = !!options.simpleSheet;
+        this.parseNumbers = !!options.parseNumbers;
+        this.wait = !!options.wait;
+        this.reverse = !!options.reverse;
+        this.postProcess = options.postProcess;
+        this.debug = !!options.debug;
+        this.query = options.query || '';
+        this.orderby = options.orderby;
+        this.endpoint = options.endpoint || 'https://spreadsheets.google.com';
+        this.singleton = !!options.singleton;
+        this.simpleUrl = !!(options.simpleUrl || options.simple_url); //jshint ignore:line
+        this.callbackContext = options.callbackContext;
+        // Default to on, unless there's a proxy, in which case it's default off
+        this.prettyColumnNames = typeof(options.prettyColumnNames) === 'undefined' ? !options.proxy : <span class="branch-1 cbranch-no" title="branch not covered" >options.prettyColumnNames;</span>
+&nbsp;
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (typeof(options.proxy) !== 'undefined') {
+            // Remove trailing slash, it will break the app
+<span class="cstat-no" title="statement not covered" >            this.endpoint = options.proxy.replace(/\/$/, '');</span>
+<span class="cstat-no" title="statement not covered" >            this.simpleUrl = true;</span>
+<span class="cstat-no" title="statement not covered" >            this.singleton = true;</span>
+            // Let's only use CORS (straight JSON request) when
+            // fetching straight from Google
+<span class="cstat-no" title="statement not covered" >            supportsCORS = false;</span>
+        }
+&nbsp;
+        this.parameterize = options.parameterize || false;
+&nbsp;
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (this.singleton) {
+<span class="cstat-no" title="statement not covered" >            if (typeof(Tabletop.singleton) !== 'undefined') {</span>
+<span class="cstat-no" title="statement not covered" >                this.log('WARNING! Tabletop singleton already defined');</span>
+            }
+<span class="cstat-no" title="statement not covered" >            Tabletop.singleton = this;</span>
+        }
+&nbsp;
+        /* Be friendly about what you accept */
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (/key=/.test(this.key)) {
+<span class="cstat-no" title="statement not covered" >            this.log('You passed an old Google Docs url as the key! Attempting to parse.');</span>
+<span class="cstat-no" title="statement not covered" >            this.key = this.key.match('key=(.*?)(&amp;|#|$)')[1];</span>
+        }
+&nbsp;
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (/pubhtml/.test(this.key)) {
+<span class="cstat-no" title="statement not covered" >            this.log('You passed a new Google Spreadsheets url as the key! Attempting to parse.');</span>
+<span class="cstat-no" title="statement not covered" >            this.key = this.key.match('d\\/(.*?)\\/pubhtml')[1];</span>
+        }
+&nbsp;
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (/spreadsheets\/d/.test(this.key)) {
+            this.log('You passed the most recent version of Google Spreadsheets url as the key! Attempting to parse.');
+            this.key = this.key.match('d\\/(.*?)\/')[1];
+        }
+&nbsp;
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (!this.key) {
+<span class="cstat-no" title="statement not covered" >            this.log('You need to pass Tabletop a key!');</span>
+<span class="cstat-no" title="statement not covered" >            return;</span>
+        }
+&nbsp;
+        this.log('Initializing with key ' + this.key);
+&nbsp;
+        this.models = {};
+        this.modelNames = [];
+        this.model_names = this.modelNames; //jshint ignore:line
+&nbsp;
+        this.baseJsonPath = '/feeds/worksheets/' + this.key + '/public/basic?alt=';
+&nbsp;
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (inNodeJS || <span class="branch-1 cbranch-no" title="branch not covered" >supportsCORS) {</span>
+            this.baseJsonPath += 'json';
+        } else {
+<span class="cstat-no" title="statement not covered" >            this.baseJsonPath += 'json-in-script';</span>
+        }
+&nbsp;
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (!this.wait) {
+            this.fetch();
+        }
+    };
+&nbsp;
+    // A global storage for callbacks.
+    Tabletop.callbacks = {};
+&nbsp;
+    // Backwards compatibility.
+    Tabletop.init = function (options) {
+        return new Tabletop(options);
+    };
+&nbsp;
+    Tabletop.sheets = <span class="fstat-no" title="function not covered" >function () </span>{
+<span class="cstat-no" title="statement not covered" >        this.log('Times have changed! You\'ll want to use var tabletop = Tabletop.init(...); tabletop.sheets(...); instead of Tabletop.sheets(...)');</span>
+    };
+&nbsp;
+    Tabletop.prototype = {
+&nbsp;
+        fetch: function (callback) {
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (typeof(callback) !== 'undefined') {
+<span class="cstat-no" title="statement not covered" >                this.callback = callback;</span>
+            }
+            this.requestData(this.baseJsonPath, this.loadSheets);
+        },
+&nbsp;
+        /*
+         This will call the environment appropriate request method.
+&nbsp;
+         In browser it will use JSON-P, in node it will use request()
+         */
+        requestData: function (path, callback) {
+            this.log('Requesting', path);
+&nbsp;
+            <span class="missing-if-branch" title="else path not taken" >E</span>if (inNodeJS) {
+                this.serverSideFetch(path, callback);
+            } else {
+                //CORS only works in IE8/9 across the same protocol
+                //You must have your server on HTTPS to talk to Google, or it'll fall back on injection
+                var protocol = <span class="cstat-no" title="statement not covered" >this.endpoint.split('//').shift() || 'http';</span>
+<span class="cstat-no" title="statement not covered" >                if (supportsCORS &amp;&amp; (!inLegacyIE || protocol === location.protocol)) {</span>
+<span class="cstat-no" title="statement not covered" >                    this.xhrFetch(path, callback);</span>
+                } else {
+<span class="cstat-no" title="statement not covered" >                    this.injectScript(path, callback);</span>
+                }
+            }
+        },
+&nbsp;
+        /*
+         Use Cross-Origin XMLHttpRequest to get the data in browsers that support it.
+         */
+        xhrFetch: <span class="fstat-no" title="function not covered" >function (</span>path, callback) {
+            //support IE8's separate cross-domain object
+            var xhr = <span class="cstat-no" title="statement not covered" >inLegacyIE ? new XDomainRequest() : new XMLHttpRequest();</span>
+<span class="cstat-no" title="statement not covered" >            xhr.open('GET', this.endpoint + path);</span>
+            var self = <span class="cstat-no" title="statement not covered" >this;</span>
+<span class="cstat-no" title="statement not covered" >            xhr.onload = <span class="fstat-no" title="function not covered" >function () </span>{</span>
+                /*
+                 Return early with Node-style err parameter in case of XHR error.
+                 */
+<span class="cstat-no" title="statement not covered" >                if (xhr.status &gt;= 400) {</span>
+<span class="cstat-no" title="statement not covered" >                    return self.callback.call(self, xhr.status)</span>
+                }
+&nbsp;
+                var json;
+<span class="cstat-no" title="statement not covered" >                try {</span>
+<span class="cstat-no" title="statement not covered" >                    json = JSON.parse(xhr.responseText);</span>
+                } catch (e) {
+<span class="cstat-no" title="statement not covered" >                    console.error(e);</span>
+                }
+<span class="cstat-no" title="statement not covered" >                callback.call(self, json);</span>
+            };
+<span class="cstat-no" title="statement not covered" >            xhr.send();</span>
+        },
+&nbsp;
+        /*
+         Insert the URL into the page as a script tag. Once it's loaded the spreadsheet data
+         it triggers the callback. This helps you avoid cross-domain errors
+         http://code.google.com/apis/gdata/samples/spreadsheet_sample.html
+&nbsp;
+         Let's be plain-Jane and not use jQuery or anything.
+         */
+        injectScript: <span class="fstat-no" title="function not covered" >function (</span>path, callback) {
+            var script = <span class="cstat-no" title="statement not covered" >document.createElement('script');</span>
+            var callbackName;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (this.singleton) {</span>
+<span class="cstat-no" title="statement not covered" >                if (callback === this.loadSheets) {</span>
+<span class="cstat-no" title="statement not covered" >                    callbackName = 'Tabletop.singleton.loadSheets';</span>
+                } else <span class="cstat-no" title="statement not covered" >if (callback === this.loadSheet) {</span>
+<span class="cstat-no" title="statement not covered" >                    callbackName = 'Tabletop.singleton.loadSheet';</span>
+                }
+            } else {
+                var self = <span class="cstat-no" title="statement not covered" >this;</span>
+<span class="cstat-no" title="statement not covered" >                callbackName = 'tt' + (+new Date()) + (Math.floor(Math.random() * 100000));</span>
+                // Create a temp callback which will get removed once it has executed,
+                // this allows multiple instances of Tabletop to coexist.
+<span class="cstat-no" title="statement not covered" >                Tabletop.callbacks[callbackName] = <span class="fstat-no" title="function not covered" >function () </span>{</span>
+                    var args = <span class="cstat-no" title="statement not covered" >Array.prototype.slice.call(arguments, 0);</span>
+<span class="cstat-no" title="statement not covered" >                    callback.apply(self, args);</span>
+<span class="cstat-no" title="statement not covered" >                    script.parentNode.removeChild(script);</span>
+<span class="cstat-no" title="statement not covered" >                    delete Tabletop.callbacks[callbackName];</span>
+                };
+<span class="cstat-no" title="statement not covered" >                callbackName = 'Tabletop.callbacks.' + callbackName;</span>
+            }
+&nbsp;
+            var url = <span class="cstat-no" title="statement not covered" >path + '&amp;callback=' + callbackName;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (this.simpleUrl) {</span>
+                // We've gone down a rabbit hole of passing injectScript the path, so let's
+                // just pull the sheet_id out of the path like the least efficient worker bees
+<span class="cstat-no" title="statement not covered" >                if (path.indexOf('/list/') !== -1) {</span>
+<span class="cstat-no" title="statement not covered" >                    script.src = this.endpoint + '/' + this.key + '-' + path.split('/')[4];</span>
+                } else {
+<span class="cstat-no" title="statement not covered" >                    script.src = this.endpoint + '/' + this.key;</span>
+                }
+            } else {
+<span class="cstat-no" title="statement not covered" >                script.src = this.endpoint + url;</span>
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (this.parameterize) {</span>
+<span class="cstat-no" title="statement not covered" >                script.src = this.parameterize + encodeURIComponent(script.src);</span>
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            this.log('Injecting', script.src);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            document.getElementsByTagName('script')[0].parentNode.appendChild(script);</span>
+        },
+&nbsp;
+        /*
+         This will only run if tabletop is being run in node.js
+         */
+        serverSideFetch: function (path, callback) {
+            var self = this;
+&nbsp;
+            this.log('Fetching', this.endpoint + path);
+            request({url: this.endpoint + path, json: true}, function (err, resp, body) {
+                <span class="missing-if-branch" title="if path not taken" >I</span>if (err) {
+<span class="cstat-no" title="statement not covered" >                    return console.error(err);</span>
+                }
+                callback.call(self, body);
+            });
+        },
+&nbsp;
+        /*
+         Is this a sheet you want to pull?
+         If { wanted: ["Sheet1"] } has been specified, only Sheet1 is imported
+         Pulls all sheets if none are specified
+         */
+        isWanted: function (sheetName) {
+            <span class="missing-if-branch" title="else path not taken" >E</span>if (this.wanted.length === 0) {
+                return true;
+            } else {
+<span class="cstat-no" title="statement not covered" >                return (ttIndexOf(this.wanted, sheetName) !== -1);</span>
+            }
+        },
+&nbsp;
+        /*
+         What gets send to the callback
+         if simpleSheet === true, then don't return an array of Tabletop.this.models,
+         only return the first one's elements
+         */
+        data: function () {
+            // If the instance is being queried before the data's been fetched
+            // then return undefined.
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (this.modelNames.length === 0) {
+<span class="cstat-no" title="statement not covered" >                return undefined;</span>
+            }
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (this.simpleSheet) {
+<span class="cstat-no" title="statement not covered" >                if (this.modelNames.length &gt; 1 &amp;&amp; this.debug) {</span>
+<span class="cstat-no" title="statement not covered" >                    this.log('WARNING You have more than one sheet but are using simple sheet mode! Don\'t blame me when something goes wrong.');</span>
+                }
+<span class="cstat-no" title="statement not covered" >                return this.models[this.modelNames[0]].all();</span>
+            } else {
+                return this.models;
+            }
+        },
+&nbsp;
+        /*
+         Add another sheet to the wanted list
+         */
+        addWanted: <span class="fstat-no" title="function not covered" >function (</span>sheet) {
+<span class="cstat-no" title="statement not covered" >            if (ttIndexOf(this.wanted, sheet) === -1) {</span>
+<span class="cstat-no" title="statement not covered" >                this.wanted.push(sheet);</span>
+            }
+        },
+&nbsp;
+        /*
+         Load all worksheets of the spreadsheet, turning each into a Tabletop Model.
+         Need to use injectScript because the worksheet view that you're working from
+         doesn't actually include the data. The list-based feed (/feeds/list/key..) does, though.
+         Calls back to loadSheet in order to get the real work done.
+&nbsp;
+         Used as a callback for the worksheet-based JSON
+         */
+        loadSheets: function (data) {
+            var i, ilen;
+            var toLoad = [];
+            this.googleSheetName = data.feed.title.$t;
+            this.foundSheetNames = [];
+&nbsp;
+            for (i = 0, ilen = data.feed.entry.length; i &lt; ilen; i++) {
+                this.foundSheetNames.push(data.feed.entry[i].title.$t);
+                // Only pull in desired sheets to reduce loading
+                <span class="missing-if-branch" title="else path not taken" >E</span>if (this.isWanted(data.feed.entry[i].content.$t)) {
+                    var linkIdx = data.feed.entry[i].link.length - 1;
+                    var sheetId = data.feed.entry[i].link[linkIdx].href.split('/').pop();
+                    var jsonPath = '/feeds/list/' + this.key + '/' + sheetId + '/public/values?alt=';
+                    <span class="missing-if-branch" title="else path not taken" >E</span>if (inNodeJS || <span class="branch-1 cbranch-no" title="branch not covered" >supportsCORS) {</span>
+                        jsonPath += 'json';
+                    } else {
+<span class="cstat-no" title="statement not covered" >                        jsonPath += 'json-in-script';</span>
+                    }
+                    <span class="missing-if-branch" title="if path not taken" >I</span>if (this.query) {
+                        // Query Language Reference (0.7)
+<span class="cstat-no" title="statement not covered" >                        jsonPath += '&amp;tq=' + this.query;</span>
+                    }
+                    <span class="missing-if-branch" title="if path not taken" >I</span>if (this.orderby) {
+<span class="cstat-no" title="statement not covered" >                        jsonPath += '&amp;orderby=column:' + this.orderby.toLowerCase();</span>
+                    }
+                    <span class="missing-if-branch" title="if path not taken" >I</span>if (this.reverse) {
+<span class="cstat-no" title="statement not covered" >                        jsonPath += '&amp;reverse=true';</span>
+                    }
+                    toLoad.push(jsonPath);
+                }
+            }
+&nbsp;
+            this.sheetsToLoad = toLoad.length;
+            for (i = 0, ilen = toLoad.length; i &lt; ilen; i++) {
+                this.requestData(toLoad[i], this.loadSheet);
+            }
+        },
+&nbsp;
+        /*
+         Access layer for the this.models
+         .sheets() gets you all of the sheets
+         .sheets('Sheet1') gets you the sheet named Sheet1
+         */
+        sheets: <span class="fstat-no" title="function not covered" >function (</span>sheetName) {
+<span class="cstat-no" title="statement not covered" >            if (typeof sheetName === 'undefined') {</span>
+<span class="cstat-no" title="statement not covered" >                return this.models;</span>
+            } else {
+<span class="cstat-no" title="statement not covered" >                if (typeof(this.models[sheetName]) === 'undefined') {</span>
+                    // alert( "Can't find " + sheetName );
+<span class="cstat-no" title="statement not covered" >                    return;</span>
+                } else {
+<span class="cstat-no" title="statement not covered" >                    return this.models[sheetName];</span>
+                }
+            }
+        },
+&nbsp;
+        sheetReady: function (model) {
+            this.models[model.name] = model;
+            <span class="missing-if-branch" title="else path not taken" >E</span>if (ttIndexOf(this.modelNames, model.name) === -1) {
+                this.modelNames.push(model.name);
+            }
+&nbsp;
+            this.sheetsToLoad--;
+            if (this.sheetsToLoad === 0) {
+                this.doCallback();
+            }
+        },
+&nbsp;
+        /*
+         Parse a single list-based worksheet, turning it into a Tabletop Model
+&nbsp;
+         Used as a callback for the list-based JSON
+         */
+        loadSheet: function (data) {
+            var that = this;
+            new Tabletop.Model({
+                data: data,
+                parseNumbers: this.parseNumbers,
+                postProcess: this.postProcess,
+                tabletop: this,
+                prettyColumnNames: this.prettyColumnNames,
+                onReady: function () {
+                    that.sheetReady(this);
+                }
+            });
+        },
+&nbsp;
+        /*
+         Execute the callback upon loading! Rely on this.data() because you might
+         only request certain pieces of data (i.e. simpleSheet mode)
+         Tests this.sheetsToLoad just in case a race condition happens to show up
+         */
+        doCallback: function () {
+            <span class="missing-if-branch" title="else path not taken" >E</span>if (this.sheetsToLoad === 0) {
+                this.callback.apply(this.callbackContext || this, [null, this.data(), this]);
+            }
+        },
+&nbsp;
+        log: function () {
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (this.debug) {
+<span class="cstat-no" title="statement not covered" >                if (typeof console !== 'undefined' &amp;&amp; typeof console.log !== 'undefined') {</span>
+<span class="cstat-no" title="statement not covered" >                    Function.prototype.apply.apply(console.log, [console, arguments]);</span>
+                }
+            }
+        }
+&nbsp;
+    };
+&nbsp;
+    /*
+     Tabletop.Model stores the attribute names and parses the worksheet data
+     to turn it into something worthwhile
+&nbsp;
+     Options should be in the format { data: XXX }, with XXX being the list-based worksheet
+     */
+    Tabletop.Model = function (options) {
+        var i, j, ilen, jlen;
+        this.columnNames = [];
+        this.column_names = this.columnNames; // jshint ignore:line
+        this.name = options.data.feed.title.$t;
+        this.tabletop = options.tabletop;
+        this.elements = [];
+        this.onReady = options.onReady;
+        this.raw = options.data; // A copy of the sheet's raw data, for accessing minutiae
+&nbsp;
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (typeof(options.data.feed.entry) === 'undefined') {
+<span class="cstat-no" title="statement not covered" >            options.tabletop.log('Missing data for ' + this.name + ', make sure you didn\'t forget column headers');</span>
+<span class="cstat-no" title="statement not covered" >            this.originalColumns = [];</span>
+<span class="cstat-no" title="statement not covered" >            this.elements = [];</span>
+<span class="cstat-no" title="statement not covered" >            this.onReady.call(this);</span>
+<span class="cstat-no" title="statement not covered" >            return;</span>
+        }
+&nbsp;
+        for (var key in options.data.feed.entry[0]) {
+            if (/^gsx/.test(key)) {
+                this.columnNames.push(key.replace('gsx$', ''));
+            }
+        }
+&nbsp;
+        this.originalColumns = this.columnNames;
+        this.original_columns = this.originalColumns; // jshint ignore:line
+&nbsp;
+        for (i = 0, ilen = options.data.feed.entry.length; i &lt; ilen; i++) {
+            var source = options.data.feed.entry[i];
+            var element = {};
+            for (j = 0, jlen = this.columnNames.length; j &lt; jlen; j++) {
+                var cell = source['gsx$' + this.columnNames[j]];
+                <span class="missing-if-branch" title="else path not taken" >E</span>if (typeof(cell) !== 'undefined') {
+                    <span class="missing-if-branch" title="if path not taken" >I</span>if (options.parseNumbers &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >cell.$t !== '' &amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >!isNaN(cell.$t)) {</span></span>
+<span class="cstat-no" title="statement not covered" >                        element[this.columnNames[j]] = +cell.$t;</span>
+                    } else {
+                        element[this.columnNames[j]] = cell.$t;
+                    }
+                } else {
+<span class="cstat-no" title="statement not covered" >                    element[this.columnNames[j]] = '';</span>
+                }
+            }
+            <span class="missing-if-branch" title="else path not taken" >E</span>if (element.rowNumber === undefined) {
+                element.rowNumber = i + 1;
+            }
+&nbsp;
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (options.postProcess) {
+<span class="cstat-no" title="statement not covered" >                options.postProcess(element);</span>
+            }
+&nbsp;
+            this.elements.push(element);
+        }
+&nbsp;
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (options.prettyColumnNames) {
+            this.fetchPrettyColumns();
+        } else {
+<span class="cstat-no" title="statement not covered" >            this.onReady.call(this);</span>
+        }
+    };
+&nbsp;
+    Tabletop.Model.prototype = {
+        /*
+         Returns all of the elements (rows) of the worksheet as objects
+         */
+        all: <span class="fstat-no" title="function not covered" >function () </span>{
+<span class="cstat-no" title="statement not covered" >            return this.elements;</span>
+        },
+&nbsp;
+        fetchPrettyColumns: function () {
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (!this.raw.feed.link[3]) {
+<span class="cstat-no" title="statement not covered" >                return this.ready();</span>
+            }
+&nbsp;
+            var cellurl = this.raw.feed.link[3].href.replace('/feeds/list/', '/feeds/cells/').replace('https://spreadsheets.google.com', '');
+            var that = this;
+            this.tabletop.requestData(cellurl, function (data) {
+                that.loadPrettyColumns(data);
+            });
+        },
+&nbsp;
+        ready: function () {
+            this.onReady.call(this);
+        },
+&nbsp;
+        /*
+         * Store column names as an object
+         * with keys of Google-formatted "columnName"
+         * and values of human-readable "Column name"
+         */
+        loadPrettyColumns: function (data) {
+            var prettyColumns = {};
+&nbsp;
+            var columnNames = this.columnNames;
+&nbsp;
+            var i = 0;
+            var l = columnNames.length;
+&nbsp;
+            for (; i &lt; l; i++) {
+                <span class="missing-if-branch" title="else path not taken" >E</span>if (typeof data.feed.entry[i].content.$t !== 'undefined') {
+                    prettyColumns[columnNames[i]] = data.feed.entry[i].content.$t;
+                } else {
+<span class="cstat-no" title="statement not covered" >                    prettyColumns[columnNames[i]] = columnNames[i];</span>
+                }
+            }
+&nbsp;
+            this.prettyColumns = prettyColumns;
+            this.pretty_columns = this.prettyColumns; // jshint ignore:line
+            this.prettifyElements();
+            this.ready();
+        },
+&nbsp;
+        /*
+         * Go through each row, substitutiting
+         * Google-formatted "columnName"
+         * with human-readable "Column name"
+         */
+        prettifyElements: function () {
+            var prettyElements = [],
+                orderedPrettyNames = [],
+                i, j, ilen, jlen;
+&nbsp;
+            for (j = 0, jlen = this.columnNames.length; j &lt; jlen; j++) {
+                orderedPrettyNames.push(this.prettyColumns[this.columnNames[j]]);
+            }
+&nbsp;
+            for (i = 0, ilen = this.elements.length; i &lt; ilen; i++) {
+                var newElement = {};
+                for (j = 0, jlen = this.columnNames.length; j &lt; jlen; j++) {
+                    var newColumnName = this.prettyColumns[this.columnNames[j]];
+                    newElement[newColumnName] = this.elements[i][this.columnNames[j]];
+                }
+                prettyElements.push(newElement);
+            }
+            this.elements = prettyElements;
+            this.columnNames = orderedPrettyNames;
+        },
+&nbsp;
+        /*
+         Return the elements as an array of arrays, instead of an array of objects
+         */
+        toArray: <span class="fstat-no" title="function not covered" >function () </span>{
+            var array = <span class="cstat-no" title="statement not covered" >[],</span>
+                i, j, ilen, jlen;
+<span class="cstat-no" title="statement not covered" >            for (i = 0, ilen = this.elements.length; i &lt; ilen; i++) {</span>
+                var row = <span class="cstat-no" title="statement not covered" >[];</span>
+<span class="cstat-no" title="statement not covered" >                for (j = 0, jlen = this.columnNames.length; j &lt; jlen; j++) {</span>
+<span class="cstat-no" title="statement not covered" >                    row.push(this.elements[i][this.columnNames[j]]);</span>
+                }
+<span class="cstat-no" title="statement not covered" >                array.push(row);</span>
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            return array;</span>
+        }
+    };
+&nbsp;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (typeof module !== 'undefined' &amp;&amp; module.exports) { //don't just use inNodeJS, we may be in Browserify
+        module.exports = Tabletop;
+    } else <span class="cstat-no" title="statement not covered" >if (typeof define === 'function' &amp;&amp; define.amd) {</span>
+<span class="cstat-no" title="statement not covered" >        define(<span class="fstat-no" title="function not covered" >function () </span>{</span>
+<span class="cstat-no" title="statement not covered" >            return Tabletop;</span>
+        });
+    } else {
+<span class="cstat-no" title="statement not covered" >        window.Tabletop = Tabletop;</span>
+    }
+&nbsp;
+})();</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat Nov 18 2017 15:34:53 GMT+0100 (CET)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
