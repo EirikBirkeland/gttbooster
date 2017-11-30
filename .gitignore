@@ -1,0 +1,5 @@
+node_modules
+/extension/dist
+.cache-loader
+.nyc_output
+coverage

@@ -1,0 +1,46 @@
+{
+  "name": "filehosting",
+  "version": "1.0.0",
+  "description": "Spellchecking REST service",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf node_modules",
+    "dockerize": "docker build -t foobar . --no-cache",
+    "start": "node index.js",
+    "test": "ava -c 8"
+  },
+  "author": "Eirik Birkeland",
+  "license": "GPL",
+  "dependencies": {
+    "@eirikbirkeland/ob-aspell-lang-codes": "0.0.2",
+    "blackbird": "^0.0.3",
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.15.0",
+    "chalk": "^2.3.0",
+    "colors": "^1.1.2",
+    "commander": "^2.13.0",
+    "express": "^4.16.2",
+    "express-cors": "0.0.3",
+    "express-limiter": "^1.6.0",
+    "express-rate-limit": "^2.8.0",
+    "limiter": "^1.1.0",
+    "lodash": "^4.17.4",
+    "lodash.includes": "^4.1.2",
+    "morgan": "^1.9.0",
+    "ndb": "^0.2.4",
+    "pmx": "^1.5.5",
+    "redis": "^2.7.1"
+  },
+  "devDependencies": {
+    "@eirikbirkeland/ob-config": "*",
+    "ava": "^0.24.0",
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.18.2",
+    "babel-eslint": "^8.0.3",
+    "babel-loader": "^7.1.2",
+    "babel-preset-flow": "^6.23.0",
+    "babel-register": "^6.18.0",
+    "eslint": "^4.13.0",
+    "superagent": "^3.8.2"
+  }
+}

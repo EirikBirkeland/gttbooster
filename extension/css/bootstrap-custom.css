@@ -1,0 +1,32 @@
+.tooltip-inner {
+    max-width: 600px !important;
+}
+
+.modal-dialog {
+    padding: 0px;
+}
+
+.modal-body {
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.progress-bar {
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none;
+}
+
+.btn-group > .btn + .btn {
+    /*
+     *  The below override the original margin-left: -1px, which was causing 'wobbliness' on the toolbar.
+     */
+    margin-left: 0px !important;
+}
+
+/**
+    NOTE: This .btn-group margin was added so that there would be a space between the separate button groups. In this case between the main toolbar and the segmeng filtering widget.
+ */
+.btn-group {
+    margin-right: 7px;
+}

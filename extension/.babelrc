@@ -1,0 +1,18 @@
+{
+  "presets": [
+    ["env", {
+      "targets": {
+        "chrome": "60"
+      }
+    }],
+    "react",
+    "flow"
+  ],
+  "plugins": [
+    "transform-react-jsx",
+    "transform-flow-comments",
+    "transform-class-properties",
+    "transform-function-bind",
+    "transform-object-rest-spread"
+  ]
+}

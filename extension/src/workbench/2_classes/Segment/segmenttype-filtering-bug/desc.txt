@@ -1,0 +1,5 @@
+Source (0024):
+https://translate.google.com/toolkit/workbench?did=00dm33g01opafv505rsw&hl=en
+
+Problem:
+If hiding an ICE item which is the child of a <ol> or <ul>, which has another child which is NOT an ICE, then all the items are hidden ... This is unintentional, as ICE should only be hidden without hiding the parent OL/UL when different LIs exist.

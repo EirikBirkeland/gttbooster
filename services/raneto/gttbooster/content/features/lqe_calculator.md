@@ -1,0 +1,1 @@
+When opening an LQE page, and if the project has failed, GTT Booster outputs an extra report indicating how many errors must be arbitrated to turn the project into a pass. This is of course merely for informational resources, and the feature ought not to be used for arbitrating selectively, as this may upset the client.

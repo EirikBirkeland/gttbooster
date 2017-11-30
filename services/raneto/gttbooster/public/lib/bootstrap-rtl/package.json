@@ -1,0 +1,115 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "bootstrap-rtl@^3.3.4",
+        "scope": null,
+        "escapedName": "bootstrap-rtl",
+        "name": "bootstrap-rtl",
+        "rawSpec": "^3.3.4",
+        "spec": ">=3.3.4 <4.0.0",
+        "type": "range"
+      },
+      "/home/eb/Share/00_obelisk/services/raneto"
+    ]
+  ],
+  "_from": "bootstrap-rtl@>=3.3.4 <4.0.0",
+  "_id": "bootstrap-rtl@3.3.4",
+  "_inCache": true,
+  "_location": "/bootstrap-rtl",
+  "_nodeVersion": "4.1.2",
+  "_npmOperationalInternal": {
+    "host": "packages-5-east.internal.npmjs.com",
+    "tmp": "tmp/bootstrap-rtl-3.3.4.tgz_1456134403261_0.5623185487929732"
+  },
+  "_npmUser": {
+    "name": "ansarinia",
+    "email": "ansarinia@me.com"
+  },
+  "_npmVersion": "2.14.6",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "bootstrap-rtl@^3.3.4",
+    "scope": null,
+    "escapedName": "bootstrap-rtl",
+    "name": "bootstrap-rtl",
+    "rawSpec": "^3.3.4",
+    "spec": ">=3.3.4 <4.0.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/bootstrap-rtl/-/bootstrap-rtl-3.3.4.tgz",
+  "_shasum": "4f813e6fce91aa9f47ad47f48172355af61c1b11",
+  "_shrinkwrap": null,
+  "_spec": "bootstrap-rtl@^3.3.4",
+  "_where": "/home/eb/Share/00_obelisk/services/raneto",
+  "author": {
+    "name": "Morteza Ansarinia",
+    "url": "http://github.com/morteza"
+  },
+  "bugs": {
+    "url": "https://github.com/morteza/bootstrap-rtl/issues"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.4"
+  },
+  "description": "Right-to-left (RTL) theme for Boostrap 3.x",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-banner": "~0.2.3",
+    "grunt-contrib-less": "~0.12.0"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "4f813e6fce91aa9f47ad47f48172355af61c1b11",
+    "tarball": "https://registry.npmjs.org/bootstrap-rtl/-/bootstrap-rtl-3.3.4.tgz"
+  },
+  "engines": {
+    "node": "~0.10.1"
+  },
+  "gitHead": "70216208f7f653e1acca6307f99b124a1f9d1e15",
+  "homepage": "http://github.com/morteza/bootstrap-rtl",
+  "keywords": [
+    "twitter",
+    "bootstrap",
+    "rtl",
+    "css",
+    "persian",
+    "farsi",
+    "arabic",
+    "hebrew",
+    "theme"
+  ],
+  "licenses": [
+    {
+      "type": "Unlicensed Public Domain"
+    }
+  ],
+  "maintainers": [
+    {
+      "name": "ansarinia",
+      "email": "ansarinia@me.com"
+    }
+  ],
+  "name": "bootstrap-rtl",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/morteza/bootstrap-rtl.git"
+  },
+  "scripts": {},
+  "style": "dist/css/bootstrap-rtl.css",
+  "version": "3.3.4",
+  "warnings": [
+    {
+      "code": "ENOTSUP",
+      "required": {
+        "node": "~0.10.1"
+      },
+      "pkgid": "bootstrap-rtl@3.3.4"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+.cth_redWiggle {
+    display: inline-block;
+    position: relative;
+    background: url(../img/wavy-underline.gif) bottom repeat-x;
+}
+
+#contextMenu {
+    position: absolute;
+    display: none;
+}
+
+.cth-hidden-source {
+    display: none;
+}
+
+.cth-hidden-target {
+    display: none;
+}
+
+.cth-meta-hidden {
+    display: none;
+}
+.cth-meta-hidden-br {
+    display: none;
+}
+.cth-meta-added-spacing {
+    margin-top: 10px;
+}
+
+.cth_insertedSourceTextBreak {
+}

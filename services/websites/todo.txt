@@ -1,0 +1,22 @@
+|individual|corporate|
+
+- Free 30 day trial
+- Limited features after trial
+- Connected to sesame account
+
+- Free version in webstore
+- Value for everyone
+- About 1/3 of features for free
+- File download features
+- Display disclaimer
+
+Corporate
+---------
+
+- Bulk discounts for x accounts
+- Support through 1 point of communication
+
+TODO
+----
+
+Add a once a month notice to my public extensions, advertising for GTT Booster free 30 day trial, etc.
