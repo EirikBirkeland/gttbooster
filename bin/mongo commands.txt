@@ -1,5 +1,0 @@
-CONSOLE COMMANDS:
-Reset trialStartDate for all:
-db.users.update({}, {$set: {accessStatus: {trialStartDate: new Date()}}}, {multi: true})
-
-db.users.update({}, {$set: {usage: {datesUsed: []}}}, {multi: true})

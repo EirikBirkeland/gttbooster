@@ -1,1 +1,0 @@
-"system-check error! It may be that one of the services are not running as expected. Check gtt-booster.com, base.gtt-booster.com and api.gtt-booster.com"
