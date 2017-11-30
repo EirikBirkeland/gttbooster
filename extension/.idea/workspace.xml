@@ -226,7 +226,7 @@
     <handled-path value="$PROJECT_DIR$/cth_modules/cth-getDate/node_modules" />
     <handled-path value="$PROJECT_DIR$/cth_modules/cth-prototype/node_modules" />
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="430" />
     <option name="y" value="411" />
     <option name="width" value="2110" />
@@ -562,8 +562,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="430" y="411" width="2110" height="590" extended-state="0" />
-    <editor active="true" />
+    <frame x="430" y="411" width="2110" height="590" extended-state="1" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28841493" sideWeight="0.497272" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0970266" sideWeight="0.4930716" order="8" side_tool="false" content_ui="tabs" />
@@ -947,7 +946,7 @@
         <state relative-caret-position="755">
           <caret line="31" column="18" lean-forward="false" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
           <folding>
-            <element signature="e#98#136#0" expanded="true" />
+            <element signature="e#98#136#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -965,7 +964,7 @@
         <state relative-caret-position="758">
           <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
           <folding>
-            <element signature="e#98#136#0" expanded="true" />
+            <element signature="e#98#136#0" expanded="false" />
           </folding>
         </state>
       </provider>

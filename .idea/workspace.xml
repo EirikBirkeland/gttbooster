@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b52f3449-4e87-4f6b-83e0-ef1bbbe37ff2" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf />
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>localStorage['cth-spr</find>
+      <find>updateStorage</find>
+      <find>are inconsistent</find>
+      <find>set(target</find>
+      <find>of TM matc</find>
+      <find>sendTmIndicationToTransEditor</find>
+      <find>CHAR LIMIT</find>
+      <find>scope of</find>
+      <find>db.j</find>
+      <find>Filter the valid</find>
+      <find>getAct</find>
+      <find>Change</find>
+      <find>checkCurrentSegment</find>
+      <find>updateCurrentSegments</find>
+      <find>react-bootstrap</find>
+      <find>(import .*? from 'react-bootstrap/lib.*)</find>
+      <find>lodash</find>
+      <find>widget</find>
+      <find>jquery-ui</find>
+      <find>jquery-ui-compact</find>
+      <find>jqu</find>
+      <find>jquery</find>
+      <find>mailAlert</find>
+      <find>featureVoting</find>
+      <find>pmOver</find>
+      <find>open glossaries in</find>
+      <find>new window</find>
+      <find>DEV</find>
+      <find>findOneAndUpdate</find>
+      <find>findOneAndU</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>debug</replace>
+      <replace>segmentLabels</replace>
+      <replace>// $1</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>Y:\00_obelisk\services\central</dir>
+      <dir>Y:\00_obelisk\extension\node_modules</dir>
+      <dir>Y:\00_obelisk\extension\FEEDBACK</dir>
+      <dir>Y:\00_obelisk\extension\src\2_body\unsorted</dir>
+      <dir>Y:\00_obelisk</dir>
+      <dir>Y:\00_obelisk\cyp</dir>
+      <dir>Y:\00_obelisk\extension\src\6_options\pages</dir>
+      <dir>Y:\00_obelisk\extension\src\6_options</dir>
+      <dir>Y:\00_obelisk\extension\src</dir>
+      <dir>Y:\00_obelisk\00_doc</dir>
+      <dir>Y:\00_obelisk\backup</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/cth_modules/cth-debug" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/extension/src/5_init/labels.js" />
+        <option value="$PROJECT_DIR$/extension/src/0_model/Segment.js" />
+        <option value="$PROJECT_DIR$/extension/src/1_upper/toolbar/Toolbar/Toolbar.js" />
+        <option value="$PROJECT_DIR$/extension/src/1_upper/toolbar/Toolbar/toggles.js" />
+        <option value="$PROJECT_DIR$/extension/src/1_upper/unsorted/addIcons.js" />
+        <option value="$PROJECT_DIR$/extension/src/1_upper/unsorted/runCompletionCheck/Completion.js" />
+        <option value="$PROJECT_DIR$/cth_modules/cth-debug/test/localStorageMock.js" />
+        <option value="$PROJECT_DIR$/cth_modules/cth-debug/test.js" />
+        <option value="$PROJECT_DIR$/cth_modules/cth-debug/package.json" />
+        <option value="$PROJECT_DIR$/cth_modules/cth-debug/README.md" />
+        <option value="$PROJECT_DIR$/cth_modules/cth-debug/index.js" />
+        <option value="$PROJECT_DIR$/extension/src/3_lower/sendTmIndicationToTransEditor.js" />
+        <option value="$PROJECT_DIR$/extension/src/3_lower/lowerEmitter.js" />
+        <option value="$PROJECT_DIR$/extension/src/3_lower/observers/observeForLowerChange.js" />
+        <option value="$PROJECT_DIR$/extension/src/4_other/downloadFile.js" />
+        <option value="$PROJECT_DIR$/extension/src/2_body/unsorted/qa/checks/charlimit-check.js" />
+        <option value="$PROJECT_DIR$/services/central/model/Payment/__tests__/didPaymentExpire-spec.js" />
+        <option value="$PROJECT_DIR$/services/central/model/Payment/__tests__/getActiveValidPayment-spec.js" />
+        <option value="$PROJECT_DIR$/extension/src/2_body/events/source-doc-changed.js" />
+        <option value="$PROJECT_DIR$/extension/src/2_body/events/user-types-in-trans-editor.js" />
+        <option value="$PROJECT_DIR$/extension/src/2_body/events/init.js" />
+        <option value="$PROJECT_DIR$/extension/src/2_body/events/user-types-in-transeditor.js" />
+        <option value="$PROJECT_DIR$/extension/src/2_body/body-index.js" />
+        <option value="$PROJECT_DIR$/extension/src/2_body/bodyEmitter.js" />
+        <option value="$PROJECT_DIR$/extension/src/2_body/events/move-trans-editor.js" />
+        <option value="$PROJECT_DIR$/extension/src/2_body/events/doc-status-changed.js" />
+        <option value="$PROJECT_DIR$/cth_modules/cth-debug/lib/localStorageMock.js" />
+        <option value="$PROJECT_DIR$/extension/html/options.html" />
+        <option value="$PROJECT_DIR$/extension/src/6_options/pages/Content/Autocomplete.js" />
+        <option value="$PROJECT_DIR$/extension/webpack/webpack.base.config.js" />
+        <option value="$PROJECT_DIR$/cth_modules/webpack-template/webpack/webpack.dev.config.js" />
+        <option value="$PROJECT_DIR$/cth_modules/webpack-template/webpack/webpack.prod.config.js" />
+        <option value="$PROJECT_DIR$/cth_modules/webpack-template/webpack/webpack.common.config.js" />
+        <option value="$PROJECT_DIR$/extension/src/6_options/components/ColorInput.js" />
+        <option value="$PROJECT_DIR$/extension/src/5_init/init/showLicense.js" />
+        <option value="$PROJECT_DIR$/integration-testing/bashtest.sh" />
+        <option value="$PROJECT_DIR$/integration-testing/test.js" />
+        <option value="$PROJECT_DIR$/services/central/routes/paypal/mailAlert.js" />
+        <option value="$PROJECT_DIR$/system-check/package.json" />
+        <option value="$PROJECT_DIR$/system-check/mailContent.txt" />
+        <option value="$PROJECT_DIR$/system-check/run.sh" />
+        <option value="$PROJECT_DIR$/system-check/test.js" />
+        <option value="$PROJECT_DIR$/system-operation-check/run.sh" />
+        <option value="$PROJECT_DIR$/system-operation-check/test.js" />
+        <option value="$PROJECT_DIR$/services/central/routes/__tests__/auth3-spec.js" />
+        <option value="$PROJECT_DIR$/services/central/model/User.js" />
+        <option value="$PROJECT_DIR$/services/central/routes/auth3/checkPayment.js" />
+        <option value="$PROJECT_DIR$/services/central/db.js" />
+        <option value="$PROJECT_DIR$/services/central/routes/paypal.js" />
+        <option value="$PROJECT_DIR$/services/central/routes/paypal/store.js" />
+        <option value="$PROJECT_DIR$/services/central/routes/auth3.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
+    <package-json value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path>$USER_HOME$/AppData/Roaming/npm/node_modules/flow-bin/flow-win64-v0.55.0/flow.exe</exe-path>
+    <annotation-enable>true</annotation-enable>
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/cth_modules/cth-debug/node_modules" />
+    <handled-path value="$PROJECT_DIR$/cth_modules/cth-getDate/node_modules" />
+    <handled-path value="$PROJECT_DIR$/cth_modules/cth-logger/node_modules" />
+    <handled-path value="$PROJECT_DIR$/cth_modules/cth-prototype/node_modules" />
+    <handled-path value="$PROJECT_DIR$/cth_modules/node_modules" />
+    <handled-path value="$PROJECT_DIR$/lib/node_modules" />
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+    <handled-path value="$PROJECT_DIR$/services/central/node_modules" />
+    <handled-path value="$PROJECT_DIR$/services/raneto/node_modules" />
+    <handled-path value="$PROJECT_DIR$/website/shop/node_modules" />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="737" />
+    <option name="width" value="1604" />
+    <option name="height" value="1448" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Assignment issuesJavaScript</id>
+          </State>
+          <State>
+            <id>CoffeeScript</id>
+          </State>
+          <State>
+            <id>Dockerfile issues</id>
+          </State>
+          <State>
+            <id>GeneralCoffeeScript</id>
+          </State>
+          <State>
+            <id>GeneralJavaScript</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+          <State>
+            <id>Potentially confusing code constructsJavaScript</id>
+          </State>
+          <State>
+            <id>Spelling</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Dockerfile issues</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="00_obelisk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="00_obelisk" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
+    <property name="JavaScriptPreferStrict" value="false" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+    <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
+    <property name="last_opened_file_path" value="X:/" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="SearchEverywhereHistoryKey" value="Qa&#9;null&#9;null&#10;runQa&#9;null&#9;null&#10;didpay&#9;FILE&#9;file://Y:/00_obelisk/services/central/model/Payment/__tests__/didPaymentExpire-spec.js&#10;db.js&#9;FILE&#9;file://Y:/00_obelisk/services/central/db.js&#10;charlimit&#9;FILE&#9;file://Y:/00_obelisk/extension/src/2_body/unsorted/qa/checks/charlimit-check.js&#10;completion&#9;null&#9;null&#10;notifier.js&#9;FILE&#9;file://Y:/00_obelisk/extension/src/4_other/notifier.js&#10;Toolbar.js&#9;FILE&#9;file://Y:/00_obelisk/extension/src/1_upper/toolbar/Toolbar/Toolbar.js&#10;labels.js&#9;FILE&#9;file://Y:/00_obelisk/extension/src/5_init/labels.js&#10;Segment&#9;FILE&#9;file://Y:/00_obelisk/extension/src/0_model/Segment.js&#10;getPersiste&#9;null&#9;null&#10;init.js&#9;FILE&#9;file://Y:/00_obelisk/extension/src/5_init/init.js&#10;TransEditor&#9;FILE&#9;file://Y:/00_obelisk/extension/src/2_body/unsorted/ui-elements/TransEditor.js&#10;Sandbox&#9;FILE&#9;file://Y:/00_obelisk/extension/src/5_init/sandbox.js&#10;Toolbar&#9;FILE&#9;file://Y:/00_obelisk/extension/src/1_upper/toolbar/Toolbar/Toolbar.js&#10;keyword&#9;FILE&#9;file://Y:/00_obelisk/extension/src/2_body/unsorted/view-changes/keyword-filtering.js&#10;qa-sheet&#9;FILE&#9;file://Y:/00_obelisk/extension/src/2_body/unsorted/qa/qa-sheet.js&#10;auth3.js&#9;FILE&#9;file://Y:/00_obelisk/services/central/routes/auth3.js&#10;background.js&#9;FILE&#9;file://Y:/00_obelisk/extension/dist/background.js&#10;auth&#9;FILE&#9;file://Y:/00_obelisk/extension/src/5_init/init/auth.js&#10;calculateType&#9;FILE&#9;file://Y:/00_obelisk/services/central/routes/auth3/__tests__/calculateType-spec.js&#10;calculateT&#9;FILE&#9;file://Y:/00_obelisk/services/central/routes/auth3/calculateType.js&#10;debug-spec.js&#9;FILE&#9;file://Y:/00_obelisk/services/central/routes/__tests__/debug-spec.js" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="Y:\00_obelisk\lib" />
+      <recent name="Y:\00_obelisk\services\central\routes\paypal" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="Y:\00_obelisk\services\central\routes\paypal" />
+      <recent name="Y:\00_obelisk\lib" />
+      <recent name="Y:\00_obelisk\assets" />
+      <recent name="Y:\00_obelisk\extension\src\2_body\lib" />
+      <recent name="Y:\00_obelisk\extension\src\5_init" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b52f3449-4e87-4f6b-83e0-ef1bbbe37ff2" name="Default" comment="" />
+      <created>1507349000270</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1507349000270</updated>
+      <workItem from="1507349030534" duration="5196000" />
+      <workItem from="1507355263496" duration="11737000" />
+      <workItem from="1507434698880" duration="386000" />
+      <workItem from="1507440448294" duration="3243000" />
+      <workItem from="1507528848030" duration="7390000" />
+      <workItem from="1507729570728" duration="51000" />
+      <workItem from="1507738131213" duration="17000" />
+      <workItem from="1507808291113" duration="4526000" />
+      <workItem from="1507813888948" duration="21756000" />
+      <workItem from="1508055409225" duration="7809000" />
+      <workItem from="1508161342343" duration="6483000" />
+      <workItem from="1508662328055" duration="2712000" />
+      <workItem from="1508691051434" duration="10624000" />
+      <workItem from="1509047779346" duration="2988000" />
+      <workItem from="1509274113723" duration="2556000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="87474000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="737" y="0" width="1604" height="1448" extended-state="0" />
+    <layout>
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30828518" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942098" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942098" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16488123" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="12" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/services/central/model/Payment/__tests__/getActiveValidPayment-spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="15" column="2" lean-forward="true" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/central/model/Payment/__tests__/didPaymentExpire-spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="14" column="9" lean-forward="false" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/central/model/Payment/statics.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/central/model/Payment/methods.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="950">
+          <caret line="38" column="36" lean-forward="false" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extension/src/2_body/events/init.js" />
+    <entry file="file://$PROJECT_DIR$/extension/src/2_body/observers/listenForUserInput.js" />
+    <entry file="file://$PROJECT_DIR$/extension/src/2_body/events/source-doc-changed.js" />
+    <entry file="file://$PROJECT_DIR$/extension/src/2_body/bodyEmitter.js" />
+    <entry file="file://$PROJECT_DIR$/extension/src/2_body/events/doc-status-changed.js" />
+    <entry file="file://$PROJECT_DIR$/extension/src/2_body/events/user-types-in-transeditor.js" />
+    <entry file="file://$PROJECT_DIR$/extension/src/2_body/events/move-trans-editor.js" />
+    <entry file="file://$PROJECT_DIR$/extension/src/2_body/body-index.js" />
+    <entry file="file://$PROJECT_DIR$/cth_modules/cth-debug/lib/localStorageMock.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="128" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cth_modules/cth-debug/test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="21" column="33" lean-forward="true" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cth_modules/cth-debug/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="624">
+          <caret line="39" column="5" lean-forward="true" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extension/html/options.html" />
+    <entry file="file://$PROJECT_DIR$/extension/webpack/webpack.base.config.js" />
+    <entry file="file://$PROJECT_DIR$/extension/src/6_options/pages/Content/Autocomplete.js" />
+    <entry file="file://$PROJECT_DIR$/cth_modules/webpack-template/webpack/webpack.base.config.js" />
+    <entry file="file://$PROJECT_DIR$/cth_modules/webpack-template/webpack/webpack.dev.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cth_modules/webpack-template/webpack/webpack.prod.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="825">
+          <caret line="33" column="74" lean-forward="false" selection-start-line="33" selection-start-column="74" selection-end-line="33" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cth_modules/webpack-template/webpack/webpack.common.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="860">
+          <caret line="88" column="43" lean-forward="true" selection-start-line="88" selection-start-column="43" selection-end-line="88" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extension/src/6_options/components/ColorInput.js" />
+    <entry file="file://$PROJECT_DIR$/extension/src/5_init/init/showLicense.js" />
+    <entry file="file://$PROJECT_DIR$/00_doc/todo important.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/00_doc/improvements made for launch.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="12" column="7" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/integration-testing/bashtest.sh" />
+    <entry file="file://$PROJECT_DIR$/integration-testing/test.js" />
+    <entry file="file://$PROJECT_DIR$/services/central/routes/paypal/mailAlert.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system-operation-check/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system-operation-check/mailContent.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="153" lean-forward="false" selection-start-line="0" selection-start-column="153" selection-end-line="0" selection-end-column="153" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/central/routes/paypal/mailAlert.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system-operation-check/run.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="49" lean-forward="false" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system-operation-check/test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1008">
+          <caret line="48" column="2" lean-forward="true" selection-start-line="48" selection-start-column="2" selection-end-line="48" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/central/model/Payment.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="775">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/central/routes/__tests__/auth3-spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="9" column="56" lean-forward="false" selection-start-line="9" selection-start-column="56" selection-end-line="9" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/central/db.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lab/buttons.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="48" column="42" lean-forward="false" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/central/routes/paypal-awslambda.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="24" column="33" lean-forward="true" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/central/routes/auth3/checkPayment.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-211">
+          <caret line="10" column="76" lean-forward="true" selection-start-line="10" selection-start-column="76" selection-end-line="10" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/central/routes/paypal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="7" lean-forward="false" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/central/routes/paypal/store.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/central/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/central/node_modules/ava/api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="47" column="32" lean-forward="true" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/central/model/User/methods.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="25" lean-forward="false" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/central/model/User/statics.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="42" column="16" lean-forward="false" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/central/model/User.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1031">
+          <caret line="50" column="41" lean-forward="true" selection-start-line="50" selection-start-column="41" selection-end-line="50" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/central/routes/auth3.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="22" column="17" lean-forward="true" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lab/1_mainClass.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-588">
+          <caret line="71" column="18" lean-forward="true" selection-start-line="71" selection-start-column="18" selection-end-line="71" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cypress-test/cypress.json" />
+    <entry file="file://$PROJECT_DIR$/cypress-test/package.json" />
+  </component>
+</project>
