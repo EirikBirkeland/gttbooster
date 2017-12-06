@@ -53,16 +53,13 @@ export function runChecksCollection(sourceSeg, targetSeg, checksCollection, opts
          return
 
       }
+
       if (!test.source_pattern && !test.target_pattern) {
-
          debug.warn(`Empty or incomplete test in spreadsheet, line ${i}`)
-
       }
 
       const messageBgColor = (() => {
-
          switch (test.priority) {
-
             case 'low':
                return `#${opts.lowSeverity}`
             case 'med':
@@ -73,13 +70,11 @@ export function runChecksCollection(sourceSeg, targetSeg, checksCollection, opts
                return `#${opts.highSeverity}`
 
          }
-
       })()
 
       const messageTextColor = `#${contrastColor(messageBgColor.replace(/#/, ''))}`
 
       const _pushResult = (str) => {
-
          const tmpObj = {
             "result": str,
             "priority": {
@@ -88,22 +83,17 @@ export function runChecksCollection(sourceSeg, targetSeg, checksCollection, opts
             }
          }
          result.push(tmpObj)
-
       }
 
       if (test.products) {
-
          const tcProducts = xRegExp.escape(test.products).replace(/\\\|/g, '|')
          if (opts.produktNavn && !new RegExp(tcProducts).test(opts.produktNavn)) {
-
             debug.debug.log(`Skipping a test, spreadsheet row ${i + 2}, as it is not applicable to this product.`)
             return
-
          }
-
       }
 
-      const settings = {
+      const config = {
          "invertSource": false,
          "invertTarget": false,
          "sourcePatternType": '',
@@ -114,26 +104,22 @@ export function runChecksCollection(sourceSeg, targetSeg, checksCollection, opts
          "result": []
       }
 
-      if (!settings.sourceMatchPattern && !settings.targetMatchPattern) {
-
+      if (!config.sourceMatchPattern && !config.targetMatchPattern) {
          debug.warn(`A test is invalid, as both the source and target patterns evaluate to false. Please double-check row #${i} in your spreadsheet.`)
          return
-
       }
 
-      _initVars(settings, 'invertSource', 'sourcePatternType', 'sourceMatchPattern', test)
-      _initVars(settings, 'invertTarget', 'targetPatternType', 'targetMatchPattern', test)
+      _initVars(config, 'invertSource', 'sourcePatternType', 'sourceMatchPattern', test)
+      _initVars(config, 'invertTarget', 'targetPatternType', 'targetMatchPattern', test)
 
-      const {invertSource, invertTarget, sourcePatternType, targetPatternType, correctionMatchPattern} = settings
+      const {invertSource, invertTarget, sourcePatternType, targetPatternType, correctionMatchPattern} = config
 
-      const smp = settings.sourceMatchPattern
-      const tmp = settings.targetMatchPattern
+      const smp = config.sourceMatchPattern
+      const tmp = config.targetMatchPattern
 
       // Return if the user has forgotten to input smp/tmp
       if (smp.source === '(?:)' && tmp.source === '(?:)') {
-
          return debug.warn(`Test on line ${i + 2} of your Spreadsheet is toggled ON but contains no match patterns! You may wish to investigate these lines to ensure the tests are correct.`)
-
       }
 
       // Untrans handling:
@@ -145,7 +131,6 @@ export function runChecksCollection(sourceSeg, targetSeg, checksCollection, opts
 
       // Everything else:
       if (!invertSource && !invertTarget) {
-
          /*
           * Handle tests where the user would like to count the number of occurrences and where order matters
           * TODO: Cleanup - perhaps get it out of the way (put code in separate file and import?)
@@ -202,7 +187,7 @@ export function runChecksCollection(sourceSeg, targetSeg, checksCollection, opts
                xRegExp.match(targetSeg, xRegExp(tmp), 'one')
             ) {
 
-               return _pushResult(test.correction.replace(/\${t1}/, xRegExp.match(targetSeg, xRegExp(tmp), 'one')))
+               return _pushResult(test.correction.replace(/\@{t1}/, xRegExp.match(targetSeg, xRegExp(tmp), 'one')))
 
             }
 

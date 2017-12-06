@@ -18,6 +18,7 @@ const TransEditor = {
 
       const gtcTransInlineText = Array.from($(cth.dom.targetDoc).find('.gtc-trans-inline-text'))
       const gtcRichInputArea = Array.from($(cth.dom.targetDoc).find('.gtc-trans-inline-cont'))
+      // const spaceToTheLeftOfTransEditor = gtcRichInputArea[0].getBoundingClientRect()
 
       // Defer in order to get the latest clientWidth; thus creating a box that matches the new window size after resizing
       _.defer(() => {

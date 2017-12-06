@@ -6,7 +6,8 @@ module.exports = {
       "commonjs": true,
       "es6": true
    },
-   "extends": "eslint:recommended",//"standard",
+   // Start with "recommended" and then disable/enable rules below.
+   "extends": "eslint:recommended",
    "parser": "babel-eslint",
    "parserOptions": {
       "ecmaFeatures": {

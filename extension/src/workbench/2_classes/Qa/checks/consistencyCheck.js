@@ -2,7 +2,6 @@
 /**
  * Created by eb on 2016/02/27.
  */
-// PURE
 
 import _ from 'lodash'
 
@@ -41,37 +40,24 @@ const consistencyCheck = (function () {
    }
 
    cs.getReport = function () {
-
       if (this.inconsistentIds.length === 1) {
-
          return `Segment ${this.inconsistentIds[0] + 1} is inconsistent with this segment (${this.indexToTest + 1}).`
-
       }
       if (this.inconsistentIds.length > 1) {
-
          return `Segment(s) ${this.inconsistentIds.map((ele) => ele + 1).join(', ')} are inconsistent with this segment (${this.indexToTest + 1}).`
-
       }
       return null // "No inconsistent ids found"
-
    }
 
    cs._checkNotEqual = function () {
-
       _.forEach(this.dupeSegIds, (ele) => {
-
          if (this.targetArr[this.indexToTest] !== this.targetArr[ele]) {
-
             debug.log('Pushing ID to inconsistentIds')
             this.inconsistentIds.push(ele)
-
          }
-
       })
-
    }
    cs._getDupes = function () {
-
       this.dupeSegIds = []
       _.forEach(this.sourceArr, (ele, i) => {
 
@@ -80,17 +66,12 @@ const consistencyCheck = (function () {
 
             debug.log('Adding a dupe to accumulator')
             this.dupeSegIds.push(i)
-
          }
-
       })
-
    }
    cs._hasDupes = function () {
-
       let hasDupe = false
       _.forEach(this.sourceArr, (ele, i) => {
-
          if (i !== this.indexToTest &&
             this.sourceArr[i] === this.sourceArr[this.indexToTest]) {
 
@@ -100,29 +81,18 @@ const consistencyCheck = (function () {
 
       })
       return hasDupe
-
    }
    cs._calcResults = function () {
-
       if (this._hasDupes()) {
-
          this._getDupes()
          if (this.dupeSegIds.length > 0) {
-
             this._checkNotEqual()
-
          } else {
-
             debug.log('No dupes')
-
          }
-
       }
-
    }
-
    return cs
-
 }())
 
 export default consistencyCheck

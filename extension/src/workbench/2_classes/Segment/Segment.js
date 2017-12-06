@@ -91,32 +91,25 @@ const Segment = {
    },
 
    get "index"() {
-
       if (this.cache.index) {
 
          return this.cache.index
 
       }
-
       const sourceId = Array.from($(cth.dom.sourceDocClone).find('.goog-gtc-unit')).indexOf(this.googGtcUnit)
       const targetId = Array.from(cth.dom.targetSegments).indexOf(this.googGtcUnit)
 
       const theIndex = sourceId !== -1 ? sourceId : targetId
       this.cache.index = theIndex
       return theIndex
-
    },
 
    get "inner"() {
-
       return $(this.translatable).html()
-
    },
 
    get "innerWithConvertedPlaceholders"() {
-
       return convertPlaceholders($(this.getSanitizedNodeCopy()))
-
    },
 
    getSanitizedNodeCopy() {
@@ -274,13 +267,13 @@ const Segment = {
 
    get "isUnitAttribute"() {
 
-      Boolean($(this.googGtcUnit).attr('id').match(/goog-gtc-unit-attr-[0-9]+/))
+      return Boolean($(this.googGtcUnit).attr('id').match(/goog-gtc-unit-attr-[0-9]+/))
 
    },
 
    get "isUrlEntity"() {
 
-      Boolean($(this.translatable).html().match(/^https?\/\/\S+$/))
+      return Boolean($(this.translatable).html().match(/^https?\/\/\S+$/))
 
    },
 

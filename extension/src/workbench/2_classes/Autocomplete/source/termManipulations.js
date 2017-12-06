@@ -3,6 +3,7 @@
 import _ from 'lodash'
 import {lowerCaseFilterAccordingToProp, upperCaseFilterAccordingToProp} from './util'
 import type {Term} from './Term-type'
+import {trimSymbols as newTrimSymbols} from '../../../../trimSymbols'
 
 const debug = require('cth-debug')(__filename.replace(/^src\//, ''))
 
@@ -33,19 +34,10 @@ export function trimSymbols(terms: Term[]): Term[] {
    const newObj = _.cloneDeep(terms)
    return newObj.map((x) => {
 
-      x.label = _trimSymbols(x.label)
+      x.label = newTrimSymbols(x.label)
       return x
 
    })
-
-   // TODO: Replace this with a standard NPM module
-   function _trimSymbols(str) {
-
-      const re = /^[`~!@#$%^&*()_|+\-=?;:'",.<>{}[]\\\/]+|[`~!@#$%^&*()_|+\-=?;:'",.<>{}[\]\\/]+$/gi
-      return str.replace(re, '')
-
-   }
-
 }
 
 /**

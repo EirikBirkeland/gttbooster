@@ -12,7 +12,7 @@ cd dist
 rm -Rf ./archive
 echo "Unzipping archive.zip to dist/archive"
 unzip -q archive.zip -d archive
-cowsay -f dragon-and-cow "All done. Cowabunga!" | lolcat --spread 0.4
+# cowsay -f dragon-and-cow "All done. Cowabunga!" | lolcat --spread 0.4
 philipsHue.sh --number 4 --color yellow
 
 npm run test # or any other command

@@ -73,7 +73,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/extension/src/5_init/labels.js" />
         <option value="$PROJECT_DIR$/extension/src/0_model/Segment.js" />
         <option value="$PROJECT_DIR$/extension/src/1_upper/toolbar/Toolbar/Toolbar.js" />
         <option value="$PROJECT_DIR$/extension/src/1_upper/toolbar/Toolbar/toggles.js" />
@@ -124,6 +123,7 @@
         <option value="$PROJECT_DIR$/services/central/routes/paypal.js" />
         <option value="$PROJECT_DIR$/services/central/routes/paypal/store.js" />
         <option value="$PROJECT_DIR$/services/central/routes/auth3.js" />
+        <option value="$PROJECT_DIR$/services/websites/shop/src/pages/License.js" />
       </list>
     </option>
   </component>
@@ -143,21 +143,26 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/bin/system-operation-check/node_modules" />
     <handled-path value="$PROJECT_DIR$/cth_modules/cth-debug/node_modules" />
     <handled-path value="$PROJECT_DIR$/cth_modules/cth-getDate/node_modules" />
     <handled-path value="$PROJECT_DIR$/cth_modules/cth-logger/node_modules" />
     <handled-path value="$PROJECT_DIR$/cth_modules/cth-prototype/node_modules" />
     <handled-path value="$PROJECT_DIR$/cth_modules/node_modules" />
+    <handled-path value="$PROJECT_DIR$/etc/future_stuff/autocomplete.js/node_modules" />
+    <handled-path value="$PROJECT_DIR$/etc/future_stuff/markov/node_modules" />
+    <handled-path value="$PROJECT_DIR$/etc/shell/node_modules" />
     <handled-path value="$PROJECT_DIR$/lib/node_modules" />
     <handled-path value="$PROJECT_DIR$/node_modules" />
     <handled-path value="$PROJECT_DIR$/services/central/node_modules" />
     <handled-path value="$PROJECT_DIR$/services/raneto/node_modules" />
-    <handled-path value="$PROJECT_DIR$/website/shop/node_modules" />
+    <handled-path value="$PROJECT_DIR$/services/websites/shop/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="737" />
-    <option name="width" value="1604" />
-    <option name="height" value="1448" />
+    <option name="x" value="-8" />
+    <option name="y" value="16" />
+    <option name="width" value="1378" />
+    <option name="height" value="1408" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -215,7 +220,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -227,7 +232,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -235,7 +240,7 @@
     <property name="JavaScriptPreferStrict" value="false" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
-    <property name="last_opened_file_path" value="X:/" />
+    <property name="last_opened_file_path" value="Z:/extension" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="SearchEverywhereHistoryKey" value="Qa&#9;null&#9;null&#10;runQa&#9;null&#9;null&#10;didpay&#9;FILE&#9;file://Y:/00_obelisk/services/central/model/Payment/__tests__/didPaymentExpire-spec.js&#10;db.js&#9;FILE&#9;file://Y:/00_obelisk/services/central/db.js&#10;charlimit&#9;FILE&#9;file://Y:/00_obelisk/extension/src/2_body/unsorted/qa/checks/charlimit-check.js&#10;completion&#9;null&#9;null&#10;notifier.js&#9;FILE&#9;file://Y:/00_obelisk/extension/src/4_other/notifier.js&#10;Toolbar.js&#9;FILE&#9;file://Y:/00_obelisk/extension/src/1_upper/toolbar/Toolbar/Toolbar.js&#10;labels.js&#9;FILE&#9;file://Y:/00_obelisk/extension/src/5_init/labels.js&#10;Segment&#9;FILE&#9;file://Y:/00_obelisk/extension/src/0_model/Segment.js&#10;getPersiste&#9;null&#9;null&#10;init.js&#9;FILE&#9;file://Y:/00_obelisk/extension/src/5_init/init.js&#10;TransEditor&#9;FILE&#9;file://Y:/00_obelisk/extension/src/2_body/unsorted/ui-elements/TransEditor.js&#10;Sandbox&#9;FILE&#9;file://Y:/00_obelisk/extension/src/5_init/sandbox.js&#10;Toolbar&#9;FILE&#9;file://Y:/00_obelisk/extension/src/1_upper/toolbar/Toolbar/Toolbar.js&#10;keyword&#9;FILE&#9;file://Y:/00_obelisk/extension/src/2_body/unsorted/view-changes/keyword-filtering.js&#10;qa-sheet&#9;FILE&#9;file://Y:/00_obelisk/extension/src/2_body/unsorted/qa/qa-sheet.js&#10;auth3.js&#9;FILE&#9;file://Y:/00_obelisk/services/central/routes/auth3.js&#10;background.js&#9;FILE&#9;file://Y:/00_obelisk/extension/dist/background.js&#10;auth&#9;FILE&#9;file://Y:/00_obelisk/extension/src/5_init/init/auth.js&#10;calculateType&#9;FILE&#9;file://Y:/00_obelisk/services/central/routes/auth3/__tests__/calculateType-spec.js&#10;calculateT&#9;FILE&#9;file://Y:/00_obelisk/services/central/routes/auth3/calculateType.js&#10;debug-spec.js&#9;FILE&#9;file://Y:/00_obelisk/services/central/routes/__tests__/debug-spec.js" />
@@ -300,9 +305,9 @@
     <option name="totallyTimeSpent" value="87474000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="737" y="0" width="1604" height="1448" extended-state="0" />
+    <frame x="-8" y="16" width="1378" height="1408" extended-state="0" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30828518" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3606311" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942098" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -353,27 +358,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/services/central/model/Payment/__tests__/getActiveValidPayment-spec.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="15" column="2" lean-forward="true" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/services/central/model/Payment/__tests__/didPaymentExpire-spec.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="14" column="9" lean-forward="false" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/services/central/model/Payment/statics.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/services/central/model/Payment/methods.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="950">
@@ -437,20 +421,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/extension/src/6_options/components/ColorInput.js" />
     <entry file="file://$PROJECT_DIR$/extension/src/5_init/init/showLicense.js" />
-    <entry file="file://$PROJECT_DIR$/00_doc/todo important.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/00_doc/improvements made for launch.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="12" column="7" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/00_doc/todo important.txt" />
+    <entry file="file://$PROJECT_DIR$/00_doc/improvements made for launch.txt" />
     <entry file="file://$PROJECT_DIR$/integration-testing/bashtest.sh" />
     <entry file="file://$PROJECT_DIR$/integration-testing/test.js" />
     <entry file="file://$PROJECT_DIR$/services/central/routes/paypal/mailAlert.js">
@@ -460,20 +432,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/system-operation-check/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/system-operation-check/mailContent.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="153" lean-forward="false" selection-start-line="0" selection-start-column="153" selection-end-line="0" selection-end-column="153" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/system-operation-check/package.json" />
+    <entry file="file://$PROJECT_DIR$/system-operation-check/mailContent.txt" />
     <entry file="file://$PROJECT_DIR$/services/central/routes/paypal/mailAlert.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -481,20 +441,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/system-operation-check/run.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="49" lean-forward="false" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/system-operation-check/test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1008">
-          <caret line="48" column="2" lean-forward="true" selection-start-line="48" selection-start-column="2" selection-end-line="48" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/system-operation-check/run.sh" />
+    <entry file="file://$PROJECT_DIR$/system-operation-check/test.js" />
     <entry file="file://$PROJECT_DIR$/services/central/model/Payment.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="775">
@@ -516,13 +464,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lab/buttons.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="48" column="42" lean-forward="false" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/lab/buttons.js" />
     <entry file="file://$PROJECT_DIR$/services/central/routes/paypal-awslambda.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="448">
@@ -593,14 +535,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lab/1_mainClass.js">
+    <entry file="file://$PROJECT_DIR$/lab/1_mainClass.js" />
+    <entry file="file://$PROJECT_DIR$/cypress-test/cypress.json" />
+    <entry file="file://$PROJECT_DIR$/cypress-test/package.json" />
+    <entry file="file://$PROJECT_DIR$/etc/lab/bookmarks.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-588">
-          <caret line="71" column="18" lean-forward="true" selection-start-line="71" selection-start-column="18" selection-end-line="71" selection-end-column="18" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cypress-test/cypress.json" />
-    <entry file="file://$PROJECT_DIR$/cypress-test/package.json" />
+    <entry file="file://$PROJECT_DIR$/etc/shell/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/websites/shop/src/pages/License.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="20" column="1" lean-forward="false" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
