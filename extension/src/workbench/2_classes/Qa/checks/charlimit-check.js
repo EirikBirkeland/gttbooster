@@ -42,15 +42,13 @@ export default function runCharLimitCheck($sourceSegment, $targetSegment, source
 
    const description = $(sourceDoc).find(`#${$targetSegment.attr('id')}`).closest('.goog-gtt-messageblock').find('.messageHeader')
 
-   if (!description.length ||
-      typeof description.html() !== 'string' ||
-      description.html().match(/\[CHAR LIMIT=NONE\]/)) {
-
+   if (!description.length
+      || typeof description.html() !== 'string'
+      || description.html().match(/\[CHAR LIMIT=NONE\]/)) {
       return null
-
    }
 
-   const charLimitRe = /CHAR[ _-]LIMIT.*?=([0-9]+).*?\]|[0-9]+ chars|([0-9]+) characters/
+   const charLimitRe = /CHAR[ _-]LIMIT.*?=([0-9]+).*?\]|([0-9]+) chars|([0-9]+) characters/
 
    // Fix me: This actually triggers when the segment itself contains text like "5 characters" !
 
