@@ -4,8 +4,6 @@ import XRegExp from 'xregexp'
 const debug = require('cth-debug')(__filename)
 
 export default function moveCaretToAfterInsertedWord(singleWordToAdd, originalCaretOffset) {
-
-
    /*
     *  ADJUST CARET POSITION AFTER INSERTION
     */
@@ -29,36 +27,25 @@ export default function moveCaretToAfterInsertedWord(singleWordToAdd, originalCa
 
    // First, move caret to where it used to be. IMPORTANT: This relies on having the original "originalCaretOffset" value.
    ;(function moveCaretToOriginalPosition() {
-
       if (newCaretOffset() <= originalCaretOffset) {
-
          const difference = originalCaretOffset - newCaretOffset()
          for (let i = 0; i <= difference; i++) {
-
             this.moveCaretForward()
-
          }
-
       }
-
    }.bind(this))()
-   ;(function moveCaretUntilEndOfInsertedTerm() {
 
-      const MAX_COUNT = reEscapedWordToAdd.length
+   ;(function moveCaretUntilEndOfInsertedTerm() {
+      debugger
+      const MAX_COUNT = (singleWordToAdd.length+50) || 100 // use 100 as max count if reEscapedWordToAdd.length is undefined. TODO: Find out why reEscapedWordToAdd.length is sometimes or always (!?) undefined !
       let count = 0
       while (!getPartOfWord.beforeCaret(this, lengthOfWordToAdd).match(reEscapedWordToAdd)) {
-
          ++count
          this.moveCaretForward()
-
-         if (count === MAX_COUNT) {
-
-            return debug.log(`MAX_COUNT OF ${MAX_COUNT} exceeded for moving caret`)
-
+         if (count >= MAX_COUNT) {
+            debug.log(`MAX_COUNT OF ${MAX_COUNT} exceeded for moving caret`)
+            break;
          }
-
       }
-
    }.bind(this))()
-
 }
