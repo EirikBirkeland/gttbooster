@@ -117,22 +117,18 @@ export function ctrlL() {
 */
 
 export function norwegianQuotes() {
-
    $(document).keypress(norwegianQuotes)
    $(dom.sourceDoc).keypress(norwegianQuotes)
    $(dom.targetDoc).keypress(norwegianQuotes)
 
    // Print endash at current caret position
    function norwegianQuotes(e) {
-
       // Defer; thereby giving the string a chance to update before running the code
       _.defer(() => {
-
          if (e.keyCode === 34) {
-
-            const sel = getCthSelection()
-            const textContent = sel.anchorNode.textContent
-            const offset = sel.anchorOffset
+            const selection = getCthSelection()
+            const textContent = selection.anchorNode.textContent
+            const offset = selection.anchorOffset
 
             const allTextBeforeCaret = textContent.substring(0, offset)
             const allTextAfterCaret = textContent.substring(offset)
@@ -143,23 +139,15 @@ export function norwegianQuotes() {
             const reMatchRightQuoteInsertCondition = /(?:\s|\()"$|^"$/
 
             if (allTextBeforeCaret.match(reMatchLeftQuoteInsertCondition)) {
-
-               sel.anchorNode.textContent = allTextBeforeCaret.replace(/([^\s(]|^)"$/, '$1»') + allTextAfterCaret
-               sel.moveCaretToOffset(offset)
-
+               selection.anchorNode.textContent = allTextBeforeCaret.replace(/([^\s(]|^)"$/, '$1»') + allTextAfterCaret
+               selection.moveCaretToOffset(offset)
             } else if (allTextBeforeCaret.match(reMatchRightQuoteInsertCondition)) {
-
-               sel.anchorNode.textContent = allTextBeforeCaret.replace(/(\s|\(|^)"$/, '$1«') + allTextAfterCaret
-               sel.moveCaretToOffset(offset)
-
+               selection.anchorNode.textContent = allTextBeforeCaret.replace(/(\s|\(|^)"$/, '$1«') + allTextAfterCaret
+               selection.moveCaretToOffset(offset)
             }
-
          }
-
       })
-
    }
-
 }
 
 export function ctrl(e) {
