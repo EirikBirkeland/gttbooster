@@ -6,4 +6,4 @@ jobs:
    #    - image: circleci/<language>:<version TAG>
      steps:
        - checkout
-       - run: echo $PWD
+       - run: bash circleci_run.sh
