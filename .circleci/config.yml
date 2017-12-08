@@ -1,9 +1,8 @@
 version: 2
 jobs:
    build:
-     machine: true
-   #  docker:
-   #    - image: circleci/<language>:<version TAG>
+     docker:
+       - image: circleci/node:latest
      steps:
        - checkout
        - run: bash circleci_run.sh
