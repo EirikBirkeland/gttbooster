@@ -8,9 +8,9 @@ module.exports = mergeDeep(base, {
   },
   plugins: [
     new WebpackShellPlugin({
-      onBuildStart: ['echo "Starting DEV"', 'philipsHue.sh --number 4 --color red'],
+      onBuildStart: ['echo "Starting DEV"', 'which philipsHue.sh && philipsHue.sh --number 4 --color red'],
       onBuildExit: ['bin/npm-start.sh']
-    })
+})
   ],
   watch: true,
   devtool: 'source-map'

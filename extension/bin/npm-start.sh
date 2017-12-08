@@ -7,13 +7,7 @@
 #
 
 function hue {
-   return 1 # tmp return
-   which philipsHue.sh
-   if [ $? -eq 0 ]; then
-     philipsHue.sh --number $1 --color $2
-   else
-     echo "PhilipsHue.sh not available."
-   fi
+   which philipsHue.sh && philipsHue.sh --number $1 --color $2 || echo "PhilipsHue.sh not available."
 }
 
 hue 4 red
