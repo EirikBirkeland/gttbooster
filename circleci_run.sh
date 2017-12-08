@@ -3,5 +3,5 @@
 echo $PWD
 node -v
 cd extension
-npm install --silent
+npm install --loglevel=info
 npm run circleci
