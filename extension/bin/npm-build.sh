@@ -1,6 +1,7 @@
 #!/bin/bash
 
 function hue {
+   return 1 # tmp return
    which philipsHue.sh
    if [ $? -eq 0 ]; then
      philipsHue.sh --number $1 --color $2
