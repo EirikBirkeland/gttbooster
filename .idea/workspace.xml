@@ -14,51 +14,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="spell2.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/services/central/routes/spell2.js">
+      <file leaf-file-name="click-report.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/services/central/routes/click-report.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="14" column="43" lean-forward="true" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
+            <state relative-caret-position="441">
+              <caret line="21" column="27" lean-forward="true" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/services/central/index.js">
+      <file leaf-file-name="_clickReport-spec.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/services/central/routes/__tests__/_clickReport-spec.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="27" column="37" lean-forward="true" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.yml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
-              <caret line="36" column="18" lean-forward="false" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="aspellLangCodes.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/aspellLangCodes.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="11" column="50" lean-forward="true" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="handleError.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/services/central/lib/handleError.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+            <state relative-caret-position="589">
+              <caret line="19" column="11" lean-forward="false" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -68,8 +38,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>scope of</find>
-      <find>db.j</find>
       <find>Filter the valid</find>
       <find>getAct</find>
       <find>Change</find>
@@ -96,8 +64,10 @@
       <find>cth-</find>
       <find>cth-prototype</find>
       <find>../../lib/spell</find>
-      <find>truthy</find>
       <find>lib/version</find>
+      <find>truthy</find>
+      <find>click-report.js</find>
+      <find>usage</find>
     </findStrings>
     <replaceStrings>
       <replace>debug</replace>
@@ -124,8 +94,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/extension/src/3_lower/observers/observeForLowerChange.js" />
-        <option value="$PROJECT_DIR$/extension/src/4_other/downloadFile.js" />
         <option value="$PROJECT_DIR$/extension/src/2_body/unsorted/qa/checks/charlimit-check.js" />
         <option value="$PROJECT_DIR$/services/central/model/Payment/__tests__/didPaymentExpire-spec.js" />
         <option value="$PROJECT_DIR$/services/central/model/Payment/__tests__/getActiveValidPayment-spec.js" />
@@ -175,6 +143,8 @@
         <option value="$PROJECT_DIR$/services/central/index.js" />
         <option value="$PROJECT_DIR$/circleci_run.sh" />
         <option value="$PROJECT_DIR$/.circleci/config.yml" />
+        <option value="$PROJECT_DIR$/services/central/routes/click-report.js" />
+        <option value="$PROJECT_DIR$/services/central/routes/__tests__/clickReport-spec.js" />
       </list>
     </option>
   </component>
@@ -210,8 +180,8 @@
     <handled-path value="$PROJECT_DIR$/services/websites/shop/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="851" />
-    <option name="width" value="1865" />
+    <option name="x" value="-8" />
+    <option name="width" value="1697" />
     <option name="height" value="1448" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -294,6 +264,27 @@
               <item name="00_obelisk" type="462c0819:PsiDirectoryNode" />
               <item name="services" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="00_obelisk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="00_obelisk" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="central" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="00_obelisk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="00_obelisk" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="central" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="00_obelisk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="00_obelisk" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="central" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="__tests__" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -308,7 +299,7 @@
     <property name="last_opened_file_path" value="Z:/extension" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="SearchEverywhereHistoryKey" value="aspellLangCo&#9;FILE&#9;file://Y:/00_obelisk/lib/aspellLangCodes.js&#10;auth3&#9;FILE&#9;file://Y:/00_obelisk/services/central/routes/auth3.js&#10;dailystats&#9;FILE&#9;file://Y:/00_obelisk/services/central/model/DailyStats.js&#10;Qa&#9;null&#9;null&#10;runQa&#9;null&#9;null&#10;didpay&#9;FILE&#9;file://Y:/00_obelisk/services/central/model/Payment/__tests__/didPaymentExpire-spec.js&#10;db.js&#9;FILE&#9;file://Y:/00_obelisk/services/central/db.js&#10;charlimit&#9;FILE&#9;file://Y:/00_obelisk/extension/src/2_body/unsorted/qa/checks/charlimit-check.js&#10;completion&#9;null&#9;null&#10;notifier.js&#9;FILE&#9;file://Y:/00_obelisk/extension/src/4_other/notifier.js&#10;Toolbar.js&#9;FILE&#9;file://Y:/00_obelisk/extension/src/1_upper/toolbar/Toolbar/Toolbar.js&#10;labels.js&#9;FILE&#9;file://Y:/00_obelisk/extension/src/5_init/labels.js&#10;Segment&#9;FILE&#9;file://Y:/00_obelisk/extension/src/0_model/Segment.js&#10;getPersiste&#9;null&#9;null&#10;init.js&#9;FILE&#9;file://Y:/00_obelisk/extension/src/5_init/init.js&#10;TransEditor&#9;FILE&#9;file://Y:/00_obelisk/extension/src/2_body/unsorted/ui-elements/TransEditor.js&#10;Sandbox&#9;FILE&#9;file://Y:/00_obelisk/extension/src/5_init/sandbox.js&#10;Toolbar&#9;FILE&#9;file://Y:/00_obelisk/extension/src/1_upper/toolbar/Toolbar/Toolbar.js&#10;keyword&#9;FILE&#9;file://Y:/00_obelisk/extension/src/2_body/unsorted/view-changes/keyword-filtering.js&#10;qa-sheet&#9;FILE&#9;file://Y:/00_obelisk/extension/src/2_body/unsorted/qa/qa-sheet.js&#10;auth3.js&#9;FILE&#9;file://Y:/00_obelisk/services/central/routes/auth3.js&#10;background.js&#9;FILE&#9;file://Y:/00_obelisk/extension/dist/background.js&#10;auth&#9;FILE&#9;file://Y:/00_obelisk/extension/src/5_init/init/auth.js&#10;calculateType&#9;FILE&#9;file://Y:/00_obelisk/services/central/routes/auth3/__tests__/calculateType-spec.js&#10;calculateT&#9;FILE&#9;file://Y:/00_obelisk/services/central/routes/auth3/calculateType.js&#10;debug-spec.js&#9;FILE&#9;file://Y:/00_obelisk/services/central/routes/__tests__/debug-spec.js" />
+    <property name="SearchEverywhereHistoryKey" value="click-report.js&#9;FILE&#9;file://Y:/00_obelisk/services/central/routes/click-report.js&#10;aspellLangCo&#9;FILE&#9;file://Y:/00_obelisk/lib/aspellLangCodes.js&#10;auth3&#9;FILE&#9;file://Y:/00_obelisk/services/central/routes/auth3.js&#10;dailystats&#9;FILE&#9;file://Y:/00_obelisk/services/central/model/DailyStats.js&#10;Qa&#9;null&#9;null&#10;runQa&#9;null&#9;null&#10;didpay&#9;FILE&#9;file://Y:/00_obelisk/services/central/model/Payment/__tests__/didPaymentExpire-spec.js&#10;db.js&#9;FILE&#9;file://Y:/00_obelisk/services/central/db.js&#10;charlimit&#9;FILE&#9;file://Y:/00_obelisk/extension/src/2_body/unsorted/qa/checks/charlimit-check.js&#10;completion&#9;null&#9;null&#10;notifier.js&#9;FILE&#9;file://Y:/00_obelisk/extension/src/4_other/notifier.js&#10;Toolbar.js&#9;FILE&#9;file://Y:/00_obelisk/extension/src/1_upper/toolbar/Toolbar/Toolbar.js&#10;labels.js&#9;FILE&#9;file://Y:/00_obelisk/extension/src/5_init/labels.js&#10;Segment&#9;FILE&#9;file://Y:/00_obelisk/extension/src/0_model/Segment.js&#10;getPersiste&#9;null&#9;null&#10;init.js&#9;FILE&#9;file://Y:/00_obelisk/extension/src/5_init/init.js&#10;TransEditor&#9;FILE&#9;file://Y:/00_obelisk/extension/src/2_body/unsorted/ui-elements/TransEditor.js&#10;Sandbox&#9;FILE&#9;file://Y:/00_obelisk/extension/src/5_init/sandbox.js&#10;Toolbar&#9;FILE&#9;file://Y:/00_obelisk/extension/src/1_upper/toolbar/Toolbar/Toolbar.js&#10;keyword&#9;FILE&#9;file://Y:/00_obelisk/extension/src/2_body/unsorted/view-changes/keyword-filtering.js&#10;qa-sheet&#9;FILE&#9;file://Y:/00_obelisk/extension/src/2_body/unsorted/qa/qa-sheet.js&#10;auth3.js&#9;FILE&#9;file://Y:/00_obelisk/services/central/routes/auth3.js&#10;background.js&#9;FILE&#9;file://Y:/00_obelisk/extension/dist/background.js&#10;auth&#9;FILE&#9;file://Y:/00_obelisk/extension/src/5_init/init/auth.js&#10;calculateType&#9;FILE&#9;file://Y:/00_obelisk/services/central/routes/auth3/__tests__/calculateType-spec.js&#10;calculateT&#9;FILE&#9;file://Y:/00_obelisk/services/central/routes/auth3/calculateType.js&#10;debug-spec.js&#9;FILE&#9;file://Y:/00_obelisk/services/central/routes/__tests__/debug-spec.js" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -371,10 +362,10 @@
     <option name="totallyTimeSpent" value="87474000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="851" y="0" width="1865" height="1448" extended-state="0" />
+    <frame x="-8" y="0" width="1697" height="1448" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2640264" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29090908" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942098" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -425,8 +416,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/00_doc/todo important.txt" />
-    <entry file="file://$PROJECT_DIR$/00_doc/improvements made for launch.txt" />
     <entry file="file://$PROJECT_DIR$/integration-testing/bashtest.sh" />
     <entry file="file://$PROJECT_DIR$/integration-testing/test.js" />
     <entry file="file://$PROJECT_DIR$/services/central/routes/paypal/mailAlert.js">
@@ -689,7 +678,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/aspellLangCodes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
+        <state relative-caret-position="567">
           <caret line="11" column="50" lean-forward="true" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
           <folding />
         </state>
@@ -697,7 +686,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/services/central/lib/handleError.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
+        <state relative-caret-position="168">
           <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
           <folding />
         </state>
@@ -729,8 +718,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="36" column="18" lean-forward="false" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
+        <state relative-caret-position="399">
+          <caret line="19" column="16" lean-forward="true" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/central/routes/click-report.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="21" column="27" lean-forward="true" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/central/routes/__tests__/_clickReport-spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="19" column="11" lean-forward="false" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
           <folding />
         </state>
       </provider>

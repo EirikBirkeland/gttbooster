@@ -19,6 +19,10 @@ router.post('/clickReport', (req, res) => {
 
     User.findById(user, (err, userContents) => {
 
+        if(!userContents) {
+           res.sendStatus(404)
+        }
+
         if (!userContents.usage.numClicks) {
             userContents.usage.numClicks = {}
         }
