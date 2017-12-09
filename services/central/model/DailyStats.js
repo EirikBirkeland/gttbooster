@@ -1,7 +1,14 @@
 'use strict'
 const mongoose = require('../db').db
 const log = console.log
-require('cth-prototype')
+
+Array.prototype.uniq = function () {
+   return this.filter((ele, i) => this.indexOf(ele) === i)
+}
+
+Array.prototype.truthy = function () {
+   return this.filter(ele => !!ele)
+}
 
 const statsSchema = new mongoose.Schema({
     _id: String,
