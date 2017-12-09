@@ -3,6 +3,7 @@ const webpack = require('webpack')
 const base = require('./webpack.common.config')
 const mergeDeep = require('merge-deep')
 const WebpackShellPlugin = require('webpack-shell-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 const uglifyConfig = { // Uglifyjs sometimes breaks UTF-8?
    sourceMap: false,

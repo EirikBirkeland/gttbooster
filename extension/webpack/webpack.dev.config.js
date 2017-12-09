@@ -1,6 +1,7 @@
 const base = require('./webpack.common.config.js')
 const mergeDeep = require('merge-deep')
 const WebpackShellPlugin = require('webpack-shell-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = mergeDeep(base, {
    output: {

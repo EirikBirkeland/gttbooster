@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b39e8842-0a73-4bc8-b2de-2608cea02641" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="X:/cth_modules/cth-debug/index.js" afterPath="X:/cth_modules/cth-debug/index.js" />
       <change type="MODIFICATION" beforePath="X:/cth_modules/cth-debug/test.js" afterPath="X:/cth_modules/cth-debug/test.js" />
       <change type="MODIFICATION" beforePath="X:/cth_modules/cth-debug/lib/localStorageMock.js" afterPath="X:/cth_modules/cth-debug/lib/localStorageMock.js" />
-      <change type="MODIFICATION" beforePath="X:/cth_modules/cth-debug/index.js" afterPath="X:/cth_modules/cth-debug/index.js" />
     </list>
     <ignored path="extension.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -22,7 +22,7 @@
     <favorites_list name="extension" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -181,11 +181,11 @@
         <option value="X:/src/workbench/2_classes/Hotkeys.js" />
         <option value="$PROJECT_DIR$/bin/npm-build.sh" />
         <option value="$PROJECT_DIR$/bin/npm-start.sh" />
+        <option value="$PROJECT_DIR$/webpack/webpack.circleci.config.js" />
+        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/webpack/webpack.common.config.js" />
         <option value="$PROJECT_DIR$/webpack/webpack.dev.config.js" />
         <option value="$PROJECT_DIR$/webpack/webpack.prod.config.js" />
-        <option value="$PROJECT_DIR$/webpack/webpack.circleci.config.js" />
-        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -213,9 +213,10 @@
     <handled-path value="$PROJECT_DIR$/cth_modules/cth-prototype/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="width" value="1378" />
-    <option name="height" value="1448" />
+    <option name="x" value="1150" />
+    <option name="y" value="144" />
+    <option name="width" value="1330" />
+    <option name="height" value="1424" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -285,7 +286,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -294,10 +294,16 @@
               <item name="X" type="b2602c69:ProjectViewProjectNode" />
               <item name="extension" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="X" type="b2602c69:ProjectViewProjectNode" />
+              <item name="extension" type="462c0819:PsiDirectoryNode" />
+              <item name="webpack" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -308,7 +314,7 @@
     <property name="nodejs.mocha.mocha_node_package_dir" value="Z:\00_obelisk\node_modules\mocha" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="Y:/00_obelisk" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="SearchEverywhereHistoryKey" value="Hotkeys&#9;FILE&#9;file://X:/src/workbench/2_classes/Hotkeys.js&#10;charlimit&#9;FILE&#9;file://X:/src/workbench/2_classes/Qa/checks/charlimit-check.js&#10;TransEditor&#9;FILE&#9;file://X:/src/workbench/2_classes/TransEditor/TransEditor.js&#10;consistency&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Qa/checks/consistencyCheck.js&#10;translat&#9;FILE&#9;file://Z:/extension/src/options/pages/Content/TranslationConsole.js&#10;Extra space&#9;null&#9;null&#10;store.js&#9;FILE&#9;file://Z:/extension/src/options/store.js&#10;settings-spell&#9;FILE&#9;file://Z:/extension/src/options/settings/settings-spellcheck.js&#10;hotkeys&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Hotkeys.js&#10;package.json&#9;FILE&#9;file://Z:/extension/package.json&#10;background.js&#9;FILE&#9;file://Z:/extension/src/background/background.js&#10;getColor&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/tm/getColor.js&#10;convertPlacehold&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Segment/convertPlaceholders-spec.js&#10;body-&#9;FILE&#9;file://Z:/extension/src/workbench/4_controller/events/body-user-types-in-transeditor.js&#10;sandbox&#9;FILE&#9;file://Z:/extension/src/workbench/5_init/sandbox.js&#10;index.js&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Qa/lqa-run-test-collection/index.js&#10;showonetimenotice&#9;FILE&#9;file://Z:/extension/src/workbench/5_init/showOneTimeNotice.js&#10;sandbox.js&#9;FILE&#9;file://Z:/extension/src/workbench/5_init/sandbox.js&#10;app.js&#9;FILE&#9;file://Z:/extension/src/app.js&#10;convertplace&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Segment/convertPlaceholders-spec.js&#10;segment.&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Segment/Segment-spec.js&#10;charlimit-sp&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Qa/checks/charlimit_check-spec.js&#10;doc-references&#9;FILE&#9;file://Z:/extension/src/workbench/5_init/init/doc-references.js&#10;onmessage&#9;FILE&#9;file://Z:/extension/src/workbench/5_init/init/onMessage.js&#10;analytics.js&#9;FILE&#9;file://Z:/extension/src/workbench/5_init/init/analytics.js&#10;addContext&#9;FILE&#9;file://Z:/extension/src/workbench/4_other/Spellcheck/addContextMenu.js&#10;hotkey.js&#9;FILE&#9;file://Z:/extension/src/workbench/4_other/Hotkeys.js&#10;upper-observefor&#9;FILE&#9;file://Z:/extension/src/workbench/4_controller/observers/upper-observeForUnexpectedIframe.js&#10;lower-index&#9;FILE&#9;file://Z:/extension/src/workbench/4_controller/lower-index.js&#10;body-index&#9;FILE&#9;file://Z:/extension/src/workbench/4_controller/body-index.js&#10;notifier.js&#9;FILE&#9;file://Z:/extension/src/workbench/4_other/notifier.js&#10;body-user-types&#9;FILE&#9;file://Z:/extension/src/workbench/4_controller/events/body-user-types-in-transeditor.js&#10;body-init.js&#9;FILE&#9;file://Z:/extension/src/workbench/4_controller/events/body-init.js&#10;lower-tm-changed&#9;FILE&#9;file://Z:/extension/src/workbench/4_controller/events/lower-tm-changed.js&#10;runCompletion&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/upper-lib/runCompletionCheck.js&#10;positionIsNotEnd&#9;null&#9;null&#10;sortItems&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/tm/sortItems.js&#10;keywordfilter&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/KeywordFiltering/KeywordFiltering.js&#10;hideOtherExtra&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/KeywordFiltering/hideOtherExtraneous.js&#10;hideUnhi&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/KeywordFiltering/hideUnhighlighted.js&#10;Ice.js&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Ice/Ice.js&#10;scrollTo&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/TransEditor/scrollTo.js&#10;Segment&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Segment/Segment.js&#10;Segment-spec.js&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Segment/Segment-spec.js&#10;convertPlace&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Segment/convertPlaceholders-spec.js&#10;qa-backup&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Qa/Qa-backup-mutationobserver.js&#10;index&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Qa/lqa-run-test-collection/index.js&#10;index-spec.js&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Qa/lqa-run-test-collection/index-spec.js&#10;index-spec&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Qa/lqa-run-test-collection/index-spec.js&#10;coreChecks&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Qa/checks/coreChecks.js" />
     <property name="settings.editor.splitter.proportion" value="0.20823437" />
@@ -524,17 +530,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="0" width="1378" height="1448" extended-state="0" />
-    <editor active="true" />
+    <frame x="1150" y="144" width="1330" height="1424" extended-state="0" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26296017" sideWeight="0.497272" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2720187" sideWeight="0.497272" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0970266" sideWeight="0.4930716" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21205008" sideWeight="0.5257329" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299532" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13895394" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299532" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20204262" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35335413" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35335413" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Flow" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27230048" sideWeight="0.46546227" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -583,7 +588,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://X:/src/options/settings/settings-spreadsheet.js" />
     <entry file="file://X:/src/options/pages/Content/Spreadsheet.js" />
     <entry file="file://X:/src/options/settings/settings-spellcheck.js" />
     <entry file="file://X:/src/app.js" />
@@ -813,32 +817,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webpack/webpack.prod.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1176">
-          <caret line="68" column="8" lean-forward="false" selection-start-line="68" selection-start-column="8" selection-end-line="68" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webpack/webpack.dev.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="924">
-          <caret line="43" column="8" lean-forward="false" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webpack/webpack.common.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-118">
-          <caret line="58" column="9" lean-forward="false" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/manifest.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -846,7 +828,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="960">
           <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -854,7 +835,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="434">
           <caret line="14" column="2" lean-forward="false" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -862,6 +842,37 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="433">
           <caret line="64" column="24" lean-forward="false" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/icons_credits.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack/webpack.dev.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack/webpack.common.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack/webpack.prod.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -1,7 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
 
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 
 module.exports = {

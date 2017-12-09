@@ -57,7 +57,7 @@ module.exports = function (username) {
 
         resolve(totalDaysLeft)
       } else {
-        console.warn(chalk.yellow(`${username} has 0 days left of paid time.`))
+        console.log(chalk.yellow(`${username} has 0 days left of paid time.`))
 
         resolve(0)
       }
