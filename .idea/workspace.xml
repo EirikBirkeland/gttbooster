@@ -13,7 +13,28 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="circleci_run.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/circleci_run.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="16" column="42" lean-forward="false" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -73,10 +94,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/extension/src/0_model/Segment.js" />
-        <option value="$PROJECT_DIR$/extension/src/1_upper/toolbar/Toolbar/Toolbar.js" />
-        <option value="$PROJECT_DIR$/extension/src/1_upper/toolbar/Toolbar/toggles.js" />
-        <option value="$PROJECT_DIR$/extension/src/1_upper/unsorted/addIcons.js" />
         <option value="$PROJECT_DIR$/extension/src/1_upper/unsorted/runCompletionCheck/Completion.js" />
         <option value="$PROJECT_DIR$/cth_modules/cth-debug/test/localStorageMock.js" />
         <option value="$PROJECT_DIR$/cth_modules/cth-debug/test.js" />
@@ -124,6 +141,10 @@
         <option value="$PROJECT_DIR$/services/central/routes/paypal/store.js" />
         <option value="$PROJECT_DIR$/services/central/routes/auth3.js" />
         <option value="$PROJECT_DIR$/services/websites/shop/src/pages/License.js" />
+        <option value="$PROJECT_DIR$/.circleci/circleci_run.sh" />
+        <option value="$PROJECT_DIR$/.editorconfig" />
+        <option value="$PROJECT_DIR$/circleci_run.sh" />
+        <option value="$PROJECT_DIR$/.circleci/config.yml" />
       </list>
     </option>
   </component>
@@ -159,10 +180,9 @@
     <handled-path value="$PROJECT_DIR$/services/websites/shop/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="16" />
-    <option name="width" value="1378" />
-    <option name="height" value="1408" />
+    <option name="x" value="760" />
+    <option name="width" value="2375" />
+    <option name="height" value="1448" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -175,13 +195,7 @@
             <id>Assignment issuesJavaScript</id>
           </State>
           <State>
-            <id>CoffeeScript</id>
-          </State>
-          <State>
-            <id>Dockerfile issues</id>
-          </State>
-          <State>
-            <id>GeneralCoffeeScript</id>
+            <id>Code style issuesJavaScript</id>
           </State>
           <State>
             <id>GeneralJavaScript</id>
@@ -198,7 +212,7 @@
         </expanded-state>
         <selected-state>
           <State>
-            <id>Dockerfile issues</id>
+            <id>BashSupport</id>
           </State>
         </selected-state>
       </profile-state>
@@ -220,6 +234,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -228,15 +243,19 @@
               <item name="00_obelisk" type="b2602c69:ProjectViewProjectNode" />
               <item name="00_obelisk" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="00_obelisk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="00_obelisk" type="462c0819:PsiDirectoryNode" />
+              <item name=".circleci" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
     <property name="JavaScriptPreferStrict" value="false" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
@@ -246,16 +265,17 @@
     <property name="SearchEverywhereHistoryKey" value="Qa&#9;null&#9;null&#10;runQa&#9;null&#9;null&#10;didpay&#9;FILE&#9;file://Y:/00_obelisk/services/central/model/Payment/__tests__/didPaymentExpire-spec.js&#10;db.js&#9;FILE&#9;file://Y:/00_obelisk/services/central/db.js&#10;charlimit&#9;FILE&#9;file://Y:/00_obelisk/extension/src/2_body/unsorted/qa/checks/charlimit-check.js&#10;completion&#9;null&#9;null&#10;notifier.js&#9;FILE&#9;file://Y:/00_obelisk/extension/src/4_other/notifier.js&#10;Toolbar.js&#9;FILE&#9;file://Y:/00_obelisk/extension/src/1_upper/toolbar/Toolbar/Toolbar.js&#10;labels.js&#9;FILE&#9;file://Y:/00_obelisk/extension/src/5_init/labels.js&#10;Segment&#9;FILE&#9;file://Y:/00_obelisk/extension/src/0_model/Segment.js&#10;getPersiste&#9;null&#9;null&#10;init.js&#9;FILE&#9;file://Y:/00_obelisk/extension/src/5_init/init.js&#10;TransEditor&#9;FILE&#9;file://Y:/00_obelisk/extension/src/2_body/unsorted/ui-elements/TransEditor.js&#10;Sandbox&#9;FILE&#9;file://Y:/00_obelisk/extension/src/5_init/sandbox.js&#10;Toolbar&#9;FILE&#9;file://Y:/00_obelisk/extension/src/1_upper/toolbar/Toolbar/Toolbar.js&#10;keyword&#9;FILE&#9;file://Y:/00_obelisk/extension/src/2_body/unsorted/view-changes/keyword-filtering.js&#10;qa-sheet&#9;FILE&#9;file://Y:/00_obelisk/extension/src/2_body/unsorted/qa/qa-sheet.js&#10;auth3.js&#9;FILE&#9;file://Y:/00_obelisk/services/central/routes/auth3.js&#10;background.js&#9;FILE&#9;file://Y:/00_obelisk/extension/dist/background.js&#10;auth&#9;FILE&#9;file://Y:/00_obelisk/extension/src/5_init/init/auth.js&#10;calculateType&#9;FILE&#9;file://Y:/00_obelisk/services/central/routes/auth3/__tests__/calculateType-spec.js&#10;calculateT&#9;FILE&#9;file://Y:/00_obelisk/services/central/routes/auth3/calculateType.js&#10;debug-spec.js&#9;FILE&#9;file://Y:/00_obelisk/services/central/routes/__tests__/debug-spec.js" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="Y:\00_obelisk\lib" />
-      <recent name="Y:\00_obelisk\services\central\routes\paypal" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="Y:\00_obelisk" />
+      <recent name="Y:\00_obelisk\.circleci" />
       <recent name="Y:\00_obelisk\services\central\routes\paypal" />
       <recent name="Y:\00_obelisk\lib" />
       <recent name="Y:\00_obelisk\assets" />
-      <recent name="Y:\00_obelisk\extension\src\2_body\lib" />
-      <recent name="Y:\00_obelisk\extension\src\5_init" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="Y:\00_obelisk" />
+      <recent name="Y:\00_obelisk\lib" />
+      <recent name="Y:\00_obelisk\services\central\routes\paypal" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -305,9 +325,10 @@
     <option name="totallyTimeSpent" value="87474000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="16" width="1378" height="1408" extended-state="0" />
+    <frame x="760" y="0" width="2375" height="1448" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3606311" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20618556" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942098" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -358,19 +379,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/services/central/model/Payment/methods.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="950">
-          <caret line="38" column="36" lean-forward="false" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/extension/src/2_body/events/init.js" />
-    <entry file="file://$PROJECT_DIR$/extension/src/2_body/observers/listenForUserInput.js" />
-    <entry file="file://$PROJECT_DIR$/extension/src/2_body/events/source-doc-changed.js" />
-    <entry file="file://$PROJECT_DIR$/extension/src/2_body/bodyEmitter.js" />
-    <entry file="file://$PROJECT_DIR$/extension/src/2_body/events/doc-status-changed.js" />
-    <entry file="file://$PROJECT_DIR$/extension/src/2_body/events/user-types-in-transeditor.js" />
     <entry file="file://$PROJECT_DIR$/extension/src/2_body/events/move-trans-editor.js" />
     <entry file="file://$PROJECT_DIR$/extension/src/2_body/body-index.js" />
     <entry file="file://$PROJECT_DIR$/cth_modules/cth-debug/lib/localStorageMock.js">
@@ -556,6 +564,61 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="20" column="1" lean-forward="false" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.editorconfig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extension/.editorconfig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/cli.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extension/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1744">
+          <caret line="12" column="74" lean-forward="true" selection-start-line="12" selection-start-column="74" selection-end-line="13" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/circleci_run.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="16" column="42" lean-forward="false" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
           <folding />
         </state>
       </provider>
