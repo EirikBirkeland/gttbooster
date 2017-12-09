@@ -1,4 +1,4 @@
-const Aspell = require('../../../../lib/aspellLangCodes')
+const Aspell = require('@eirikbirkeland/ob-aspell-lang-codes')
 
 /**
  *

@@ -2,7 +2,7 @@
 const express = require('express')
 const router = module.exports = express.Router()
 const User = require('../model/User.js')
-const Aspell = require('../../../lib/aspellLangCodes')
+const Aspell = require('@eirikbirkeland/ob-aspell-lang-codes')
 const runSpellcheck = require('../lib/spellcheck')
 const getFinalSpellcheckLanguage = require('./spell2/getFinalSpellcheckLanguage')
 const stripPunctuation = require('./spell2/stripPunctuation')

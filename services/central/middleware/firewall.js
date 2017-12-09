@@ -1,6 +1,6 @@
 /* eslint-env es7*/
-const LOCAL_EXTENSION_URL = require('../../../cth_modules/cth-config').LOCAL_EXTENSION_URL
-const REST_SERVER_HOST_NAME = require('../../../cth_modules/cth-config').REST_SERVER_HOST_NAME
+const LOCAL_EXTENSION_URL = require('@eirikbirkeland/cth-config').LOCAL_EXTENSION_URL
+const REST_SERVER_HOST_NAME = require('@eirikbirkeland/cth-config').REST_SERVER_HOST_NAME
 const Promise = require('bluebird')
 const dns = require('dns')
 const dnsReverse = Promise.promisify(dns.reverse)

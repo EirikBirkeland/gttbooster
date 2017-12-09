@@ -26,12 +26,21 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
-      - run: cd extension && npm install --loglevel=warn
-      - run: cd extension && npm run circleci
-      - run: cd extension && npm run test
+      - run:
+          name: Build and test the extension
+          command: |
+           cd extension && npm install --loglevel=warn
+           npm run circleci
+           npm run test
 
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-      - run: bash circleci_run.sh
+
+      - run:
+          name: Build and test the back-end
+          command: |
+            cd services/central && npm install --loglevel=warn
+            npm start > /dev/null &
+            sleep 5 && npm run test
