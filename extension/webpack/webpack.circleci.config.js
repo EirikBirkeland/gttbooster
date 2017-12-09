@@ -11,7 +11,5 @@ module.exports = mergeDeep(base, {
          onBuildStart: ['echo "Starting CircleCi build"'],
          onBuildExit: ['echo "done"', "npm run test"]
       })
-   ],
-   watch: true,
-   devtool: 'source-map'
+   ]
 })

@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b39e8842-0a73-4bc8-b2de-2608cea02641" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="X:/cth_modules/cth-debug/test.js" afterPath="X:/cth_modules/cth-debug/test.js" />
       <change type="MODIFICATION" beforePath="X:/cth_modules/cth-debug/index.js" afterPath="X:/cth_modules/cth-debug/index.js" />
+      <change type="MODIFICATION" beforePath="X:/cth_modules/cth-debug/test.js" afterPath="X:/cth_modules/cth-debug/test.js" />
       <change type="MODIFICATION" beforePath="X:/cth_modules/cth-debug/lib/localStorageMock.js" afterPath="X:/cth_modules/cth-debug/lib/localStorageMock.js" />
     </list>
     <ignored path="extension.iws" />
@@ -22,7 +22,48 @@
     <favorites_list name="extension" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-556">
+              <caret line="4" column="27" lean-forward="false" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="manifest.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/manifest.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="webpack.circleci.config.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webpack/webpack.circleci.config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="12" column="8" lean-forward="true" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="npm-start.sh" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bin/npm-start.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1155">
+              <caret line="21" column="12" lean-forward="true" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -33,6 +74,12 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
+      <find>TransEditor.reset</find>
+      <find>clipboard</find>
+      <find>reset</find>
+      <find>isOpen</find>
+      <find>expand</find>
+      <find>TransEditor</find>
       <find>cleanup</find>
       <find>resetState</find>
       <find>Mt.content</find>
@@ -56,13 +103,7 @@
       <find>data-toggle=&quot;tab&quot;</find>
       <find>currentTargetSegment</find>
       <find>updateCurrentSegments</find>
-      <find>goog-gtc-unit-attr</find>
-      <find>is inconsistent with</find>
-      <find>cth.model.targetSegments</find>
-      <find>consistencyChec</find>
-      <find>consistencyCheck</find>
-      <find>@</find>
-      <find>debugger</find>
+      <find>to the right</find>
     </findStrings>
     <replaceStrings>
       <replace>targetSegments</replace>
@@ -135,9 +176,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="X:/src/workbench/2_classes/upper-lib/addIcons.js" />
-        <option value="X:/src/workbench/2_classes/toolbar/Toolbar/toggles/toggleMeta.js" />
-        <option value="X:/src/workbench/2_classes/Panes/MergePanes.js" />
         <option value="X:/src/workbench/5_init/sandbox.js" />
         <option value="X:/src/workbench/4_controller/events/body-move-trans-editor.js" />
         <option value="X:/src/workbench/2_classes/click-logging.js" />
@@ -151,7 +189,6 @@
         <option value="X:/src/background/background.js" />
         <option value="X:/src/background/contextMenu/index.js" />
         <option value="X:/src/workbench/5_init/init/onMessage.js" />
-        <option value="X:/src/workbench/2_classes/Hotkeys.js" />
         <option value="X:/src/options/settings/tc.js" />
         <option value="X:/src/options/settings/settings-autocomplete.js" />
         <option value="X:/src/options/settings/settings-qa.js" />
@@ -180,12 +217,16 @@
         <option value="X:/webpack/webpack.common.config.js" />
         <option value="X:/src/workbench/2_classes/TransEditor/TransEditor.js" />
         <option value="X:/src/background/handleTcRequest.js" />
-        <option value="$PROJECT_DIR$/src/workbench/2_classes/Autocomplete/source/termManipulations.js" />
-        <option value="$PROJECT_DIR$/src/trimSymbols.js" />
-        <option value="$PROJECT_DIR$/src/workbench/2_classes/Qa/checks/consistencyCheck.js" />
-        <option value="$PROJECT_DIR$/src/workbench/2_classes/Segment/Segment.js" />
-        <option value="$PROJECT_DIR$/src/workbench/2_classes/Qa/lqa-run-test-collection/index.js" />
-        <option value="$PROJECT_DIR$/src/workbench/2_classes/Qa/runChecks.js" />
+        <option value="X:/src/workbench/2_classes/Qa/checks/charlimit-check.js" />
+        <option value="X:/src/workbench/2_classes/Autocomplete/AutocompleteSelection/moveCaretToAfterInsertedWord.js" />
+        <option value="X:/src/workbench/2_classes/Hotkeys.js" />
+        <option value="$PROJECT_DIR$/bin/npm-build.sh" />
+        <option value="$PROJECT_DIR$/bin/npm-start.sh" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/webpack/webpack.common.config.js" />
+        <option value="$PROJECT_DIR$/webpack/webpack.dev.config.js" />
+        <option value="$PROJECT_DIR$/webpack/webpack.prod.config.js" />
+        <option value="$PROJECT_DIR$/webpack/webpack.circleci.config.js" />
       </list>
     </option>
   </component>
@@ -213,10 +254,9 @@
     <handled-path value="$PROJECT_DIR$/cth_modules/cth-prototype/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1158" />
-    <option name="y" value="671" />
-    <option name="width" value="1873" />
-    <option name="height" value="777" />
+    <option name="x" value="1317" />
+    <option name="width" value="851" />
+    <option name="height" value="1448" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -286,6 +326,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -296,43 +337,17 @@
             <path>
               <item name="X" type="b2602c69:ProjectViewProjectNode" />
               <item name="extension" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="bin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="X" type="b2602c69:ProjectViewProjectNode" />
               <item name="extension" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="workbench" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="X" type="b2602c69:ProjectViewProjectNode" />
-              <item name="extension" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="workbench" type="462c0819:PsiDirectoryNode" />
-              <item name="2_classes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="X" type="b2602c69:ProjectViewProjectNode" />
-              <item name="extension" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="workbench" type="462c0819:PsiDirectoryNode" />
-              <item name="2_classes" type="462c0819:PsiDirectoryNode" />
-              <item name="Qa" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="X" type="b2602c69:ProjectViewProjectNode" />
-              <item name="extension" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="workbench" type="462c0819:PsiDirectoryNode" />
-              <item name="2_classes" type="462c0819:PsiDirectoryNode" />
-              <item name="Qa" type="462c0819:PsiDirectoryNode" />
-              <item name="lqa-run-test-collection" type="462c0819:PsiDirectoryNode" />
+              <item name="webpack" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -346,7 +361,7 @@
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="SearchEverywhereHistoryKey" value="run&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Qa/lqa-run-test-collection/run-test-collection-spec.j1&#10;Segment&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Segment/Segment.js&#10;trimsymb&#9;null&#9;null&#10;TransEditor&#9;FILE&#9;file://X:/src/workbench/2_classes/TransEditor/TransEditor.js&#10;consistency&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Qa/checks/consistencyCheck.js&#10;translat&#9;FILE&#9;file://Z:/extension/src/options/pages/Content/TranslationConsole.js&#10;Extra space&#9;null&#9;null&#10;store.js&#9;FILE&#9;file://Z:/extension/src/options/store.js&#10;settings-spell&#9;FILE&#9;file://Z:/extension/src/options/settings/settings-spellcheck.js&#10;hotkeys&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Hotkeys.js&#10;package.json&#9;FILE&#9;file://Z:/extension/package.json&#10;background.js&#9;FILE&#9;file://Z:/extension/src/background/background.js&#10;getColor&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/tm/getColor.js&#10;convertPlacehold&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Segment/convertPlaceholders-spec.js&#10;body-&#9;FILE&#9;file://Z:/extension/src/workbench/4_controller/events/body-user-types-in-transeditor.js&#10;sandbox&#9;FILE&#9;file://Z:/extension/src/workbench/5_init/sandbox.js&#10;index.js&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Qa/lqa-run-test-collection/index.js&#10;showonetimenotice&#9;FILE&#9;file://Z:/extension/src/workbench/5_init/showOneTimeNotice.js&#10;sandbox.js&#9;FILE&#9;file://Z:/extension/src/workbench/5_init/sandbox.js&#10;app.js&#9;FILE&#9;file://Z:/extension/src/app.js&#10;convertplace&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Segment/convertPlaceholders-spec.js&#10;segment.&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Segment/Segment-spec.js&#10;charlimit-sp&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Qa/checks/charlimit_check-spec.js&#10;doc-references&#9;FILE&#9;file://Z:/extension/src/workbench/5_init/init/doc-references.js&#10;onmessage&#9;FILE&#9;file://Z:/extension/src/workbench/5_init/init/onMessage.js&#10;analytics.js&#9;FILE&#9;file://Z:/extension/src/workbench/5_init/init/analytics.js&#10;addContext&#9;FILE&#9;file://Z:/extension/src/workbench/4_other/Spellcheck/addContextMenu.js&#10;hotkey.js&#9;FILE&#9;file://Z:/extension/src/workbench/4_other/Hotkeys.js&#10;upper-observefor&#9;FILE&#9;file://Z:/extension/src/workbench/4_controller/observers/upper-observeForUnexpectedIframe.js&#10;lower-index&#9;FILE&#9;file://Z:/extension/src/workbench/4_controller/lower-index.js&#10;body-index&#9;FILE&#9;file://Z:/extension/src/workbench/4_controller/body-index.js&#10;notifier.js&#9;FILE&#9;file://Z:/extension/src/workbench/4_other/notifier.js&#10;body-user-types&#9;FILE&#9;file://Z:/extension/src/workbench/4_controller/events/body-user-types-in-transeditor.js&#10;body-init.js&#9;FILE&#9;file://Z:/extension/src/workbench/4_controller/events/body-init.js&#10;lower-tm-changed&#9;FILE&#9;file://Z:/extension/src/workbench/4_controller/events/lower-tm-changed.js&#10;runCompletion&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/upper-lib/runCompletionCheck.js&#10;positionIsNotEnd&#9;null&#9;null&#10;sortItems&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/tm/sortItems.js&#10;keywordfilter&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/KeywordFiltering/KeywordFiltering.js&#10;hideOtherExtra&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/KeywordFiltering/hideOtherExtraneous.js&#10;hideUnhi&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/KeywordFiltering/hideUnhighlighted.js&#10;Ice.js&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Ice/Ice.js&#10;scrollTo&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/TransEditor/scrollTo.js&#10;Segment-spec.js&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Segment/Segment-spec.js&#10;convertPlace&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Segment/convertPlaceholders-spec.js&#10;qa-backup&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Qa/Qa-backup-mutationobserver.js&#10;index&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Qa/lqa-run-test-collection/index.js&#10;index-spec.js&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Qa/lqa-run-test-collection/index-spec.js&#10;index-spec&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Qa/lqa-run-test-collection/index-spec.js&#10;coreChecks&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Qa/checks/coreChecks.js" />
+    <property name="SearchEverywhereHistoryKey" value="Hotkeys&#9;FILE&#9;file://X:/src/workbench/2_classes/Hotkeys.js&#10;charlimit&#9;FILE&#9;file://X:/src/workbench/2_classes/Qa/checks/charlimit-check.js&#10;TransEditor&#9;FILE&#9;file://X:/src/workbench/2_classes/TransEditor/TransEditor.js&#10;consistency&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Qa/checks/consistencyCheck.js&#10;translat&#9;FILE&#9;file://Z:/extension/src/options/pages/Content/TranslationConsole.js&#10;Extra space&#9;null&#9;null&#10;store.js&#9;FILE&#9;file://Z:/extension/src/options/store.js&#10;settings-spell&#9;FILE&#9;file://Z:/extension/src/options/settings/settings-spellcheck.js&#10;hotkeys&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Hotkeys.js&#10;package.json&#9;FILE&#9;file://Z:/extension/package.json&#10;background.js&#9;FILE&#9;file://Z:/extension/src/background/background.js&#10;getColor&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/tm/getColor.js&#10;convertPlacehold&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Segment/convertPlaceholders-spec.js&#10;body-&#9;FILE&#9;file://Z:/extension/src/workbench/4_controller/events/body-user-types-in-transeditor.js&#10;sandbox&#9;FILE&#9;file://Z:/extension/src/workbench/5_init/sandbox.js&#10;index.js&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Qa/lqa-run-test-collection/index.js&#10;showonetimenotice&#9;FILE&#9;file://Z:/extension/src/workbench/5_init/showOneTimeNotice.js&#10;sandbox.js&#9;FILE&#9;file://Z:/extension/src/workbench/5_init/sandbox.js&#10;app.js&#9;FILE&#9;file://Z:/extension/src/app.js&#10;convertplace&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Segment/convertPlaceholders-spec.js&#10;segment.&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Segment/Segment-spec.js&#10;charlimit-sp&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Qa/checks/charlimit_check-spec.js&#10;doc-references&#9;FILE&#9;file://Z:/extension/src/workbench/5_init/init/doc-references.js&#10;onmessage&#9;FILE&#9;file://Z:/extension/src/workbench/5_init/init/onMessage.js&#10;analytics.js&#9;FILE&#9;file://Z:/extension/src/workbench/5_init/init/analytics.js&#10;addContext&#9;FILE&#9;file://Z:/extension/src/workbench/4_other/Spellcheck/addContextMenu.js&#10;hotkey.js&#9;FILE&#9;file://Z:/extension/src/workbench/4_other/Hotkeys.js&#10;upper-observefor&#9;FILE&#9;file://Z:/extension/src/workbench/4_controller/observers/upper-observeForUnexpectedIframe.js&#10;lower-index&#9;FILE&#9;file://Z:/extension/src/workbench/4_controller/lower-index.js&#10;body-index&#9;FILE&#9;file://Z:/extension/src/workbench/4_controller/body-index.js&#10;notifier.js&#9;FILE&#9;file://Z:/extension/src/workbench/4_other/notifier.js&#10;body-user-types&#9;FILE&#9;file://Z:/extension/src/workbench/4_controller/events/body-user-types-in-transeditor.js&#10;body-init.js&#9;FILE&#9;file://Z:/extension/src/workbench/4_controller/events/body-init.js&#10;lower-tm-changed&#9;FILE&#9;file://Z:/extension/src/workbench/4_controller/events/lower-tm-changed.js&#10;runCompletion&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/upper-lib/runCompletionCheck.js&#10;positionIsNotEnd&#9;null&#9;null&#10;sortItems&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/tm/sortItems.js&#10;keywordfilter&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/KeywordFiltering/KeywordFiltering.js&#10;hideOtherExtra&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/KeywordFiltering/hideOtherExtraneous.js&#10;hideUnhi&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/KeywordFiltering/hideUnhighlighted.js&#10;Ice.js&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Ice/Ice.js&#10;scrollTo&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/TransEditor/scrollTo.js&#10;Segment&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Segment/Segment.js&#10;Segment-spec.js&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Segment/Segment-spec.js&#10;convertPlace&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Segment/convertPlaceholders-spec.js&#10;qa-backup&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Qa/Qa-backup-mutationobserver.js&#10;index&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Qa/lqa-run-test-collection/index.js&#10;index-spec.js&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Qa/lqa-run-test-collection/index-spec.js&#10;index-spec&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Qa/lqa-run-test-collection/index-spec.js&#10;coreChecks&#9;FILE&#9;file://Z:/extension/src/workbench/2_classes/Qa/checks/coreChecks.js" />
     <property name="settings.editor.splitter.proportion" value="0.20823437" />
     <property name="editorconfig.notification" value="spaces" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="" />
@@ -366,19 +381,19 @@
     <property name="javascript.nodejs.core.library.configured.version" value="8.6.0" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="Z:\extension\webpack" />
+      <recent name="Z:\extension\src\options\pages\Content" />
+      <recent name="Z:\extension\src\background\contextMenu" />
+      <recent name="Z:\extension\src\workbench\2_classes\Segment" />
+      <recent name="Z:\extension\src\domMappings" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="Z:\extension\todo" />
       <recent name="Z:\extension\src\workbench\2_classes\__tests__" />
       <recent name="Z:\extension\src\workbench\2_classes" />
       <recent name="Z:\extension\src\workbench\2_classes\Segment" />
       <recent name="Z:\extension\src\workbench\2_classes\Qa\checks" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="Z:\extension\src\options\pages\Content" />
-      <recent name="Z:\extension\src\background\contextMenu" />
-      <recent name="Z:\extension\src\workbench\2_classes\Segment" />
-      <recent name="Z:\extension\src\domMappings" />
-      <recent name="Z:\extension\src\6_options" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -560,13 +575,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1158" y="671" width="1873" height="777" extended-state="0" />
+    <frame x="1317" y="0" width="851" height="1448" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2683461" sideWeight="0.497272" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4353234" sideWeight="0.497272" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0970266" sideWeight="0.4930716" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21205008" sideWeight="0.5257329" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2112676" sideWeight="0.4742671" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.7561779" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13895394" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299532" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20204262" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -587,6 +602,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.10093897" sideWeight="0.48845264" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21778941" sideWeight="0.502728" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="CSS Styles" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2112676" sideWeight="0.4742671" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -618,19 +634,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://X:/src/workbench/2_classes/Segment/convertPlaceholders-spec.js" />
-    <entry file="file://X:/src/workbench/2_classes/Segment/convertPlaceholders.js" />
-    <entry file="file://X:/src/workbench/2_classes/tm/getColor.js" />
-    <entry file="file://X:/src/background/background/putGlossariesInWindow/removeAndUpdateDatastore.js" />
-    <entry file="file://X:/src/background/background.js" />
-    <entry file="file://X:/src/background/contextMenu/index.js" />
-    <entry file="file://X:/src/workbench/2_classes/Hotkeys.js" />
-    <entry file="file://X:/src/options/settings/settings-qa.js" />
-    <entry file="file://X:/src/options/components/Select.js" />
-    <entry file="file://X:/src/options/settings/settings-autocomplete.js" />
-    <entry file="file://X:/src/options/settings.js" />
-    <entry file="file://X:/src/options/options-index.js" />
-    <entry file="file://X:/src/options/pages/Content/Spellcheck.js" />
     <entry file="file://X:/src/options/settings/settings-spreadsheet.js" />
     <entry file="file://X:/src/options/pages/Content/Spreadsheet.js" />
     <entry file="file://X:/src/options/settings/settings-spellcheck.js" />
@@ -683,11 +686,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="8" column="15" lean-forward="false" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
-          <folding>
-            <marker date="1512205491897" expanded="true" signature="1086:1093" ph="{&quot;analyzerMode&quot;: 'server'...}" />
-            <marker date="1512205491897" expanded="true" signature="1086:1098" ph="[...]" />
-            <marker date="1512205491897" expanded="true" signature="1086:1125" ph="{&quot;devtool&quot;: 'source-map'...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -702,9 +700,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2478">
           <caret line="119" column="9" lean-forward="false" selection-start-line="119" selection-start-column="9" selection-end-line="119" selection-end-column="9" />
-          <folding>
-            <marker date="1512232487315" expanded="true" signature="5009:5024" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -726,9 +721,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="348">
           <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -736,9 +728,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="245">
           <caret line="133" column="37" lean-forward="true" selection-start-line="133" selection-start-column="37" selection-end-line="133" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#22#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -753,9 +742,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#99#140#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -763,76 +749,105 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#22#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://X:/src/workbench/5_init/init/onMessage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="19" column="15" lean-forward="false" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/workbench/2_classes/Autocomplete/source/termManipulations.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding>
-            <element signature="e#33#55#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://X:/src/background/handleTcRequest.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#30#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="1050">
+          <caret line="19" column="1" lean-forward="false" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/trimSymbols.js">
+    <entry file="file://X:/src/workbench/5_init/init/onMessage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="10" column="110" lean-forward="false" selection-start-line="10" selection-start-column="110" selection-end-line="10" selection-end-column="110" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="0" column="34" lean-forward="false" selection-start-line="0" selection-start-column="34" selection-end-line="0" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/workbench/2_classes/Qa/checks/consistency-spec.js">
+    <entry file="file://X:/src/workbench/2_classes/Qa/checks/charlimit-check.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="4" column="7" lean-forward="false" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
-          <folding />
+        <state relative-caret-position="695">
+          <caret line="53" column="0" lean-forward="true" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/workbench/2_classes/Segment/Segment.js">
+    <entry file="file://X:/src/workbench/2_classes/Autocomplete/getPartOfWord.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="92" column="18" lean-forward="true" selection-start-line="92" selection-start-column="18" selection-end-line="92" selection-end-column="18" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://X:/src/workbench/2_classes/Autocomplete/moveCursorForPlaceholders.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://X:/src/workbench/2_classes/Autocomplete/AutocompleteSelection/insertTheWord.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="24" column="1" lean-forward="false" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://X:/src/workbench/2_classes/Autocomplete/select.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1012">
+          <caret line="42" column="41" lean-forward="false" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://X:/src/workbench/2_classes/Autocomplete/AutocompleteSelection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="10" column="47" lean-forward="false" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://X:/src/workbench/2_classes/Autocomplete/select-helpers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="800">
+          <caret line="32" column="23" lean-forward="false" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://X:/src/workbench/2_classes/Autocomplete/AutocompleteSelection/moveCaretToAfterInsertedWord.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="764">
+          <caret line="39" column="49" lean-forward="false" selection-start-line="39" selection-start-column="49" selection-end-line="39" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://X:/src/workbench/2_classes/Autocomplete/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://X:/src/workbench/2_classes/Hotkeys.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="120" column="45" lean-forward="false" selection-start-line="120" selection-start-column="45" selection-end-line="120" selection-end-column="45" />
           <folding>
             <element signature="n#!!doc" expanded="false" />
-            <element signature="e#17#39#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/workbench/2_classes/Qa/checks/consistencyCheck.js">
+    <entry file="file://$PROJECT_DIR$/.eslintrc.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="21" column="6" lean-forward="true" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
+        <state relative-caret-position="-400">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/workbench/2_classes/Qa/lqa-run-test-collection/run-test-collection-spec.j1">
+    <entry file="file://$PROJECT_DIR$/src/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -840,26 +855,75 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/workbench/2_classes/Qa/runChecks.js">
+    <entry file="file://$PROJECT_DIR$/shrinkwrap.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="85" column="77" lean-forward="false" selection-start-line="85" selection-start-column="77" selection-end-line="85" selection-end-column="77" />
-          <folding>
-            <element signature="e#62#84#0" expanded="false" />
-            <marker date="1512588563181" expanded="true" signature="5050:5119" ph="..." />
-            <marker date="1512588563181" expanded="true" signature="8377:8446" ph="..." />
-            <marker date="1512588563181" expanded="true" signature="9042:9080" ph="..." />
-          </folding>
+        <state relative-caret-position="-399">
+          <caret line="29" column="16" lean-forward="true" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/workbench/2_classes/Qa/lqa-run-test-collection/index.js">
+    <entry file="file://$PROJECT_DIR$/bin/npm-build.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="188" column="0" lean-forward="true" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#22#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="70">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack/webpack.prod.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1176">
+          <caret line="68" column="8" lean-forward="false" selection-start-line="68" selection-start-column="8" selection-end-line="68" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack/webpack.dev.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="924">
+          <caret line="43" column="8" lean-forward="false" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack/webpack.common.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-118">
+          <caret line="58" column="9" lean-forward="false" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack/webpack.circleci.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="12" column="8" lean-forward="true" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manifest.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-556">
+          <caret line="4" column="27" lean-forward="false" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/npm-start.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1155">
+          <caret line="21" column="12" lean-forward="true" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
