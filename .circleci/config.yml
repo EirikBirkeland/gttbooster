@@ -34,6 +34,4 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-      - run: cd services/central && npm install --loglevel=warn
-      - run: cd services/central && npm start &
-      - run: cd services/central && sleep 5 && npm run test
+      - run: bash circleci_run.sh
