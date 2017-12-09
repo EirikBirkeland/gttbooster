@@ -35,4 +35,4 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
       - run: cd services/central && npm install --loglevel=warn
-      - run: cd services/central && ava --verbose
+      - run: cd services/central && npm run test
