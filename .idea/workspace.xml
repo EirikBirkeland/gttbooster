@@ -37,12 +37,12 @@
       <file leaf-file-name="config.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="777">
-              <caret line="37" column="70" lean-forward="false" selection-start-line="37" selection-start-column="70" selection-end-line="37" selection-end-column="70" />
+            <state relative-caret-position="798">
+              <caret line="38" column="36" lean-forward="false" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
               <folding>
-                <marker date="1512823508633" expanded="true" signature="141:1103" ph="jobs: &lt;1 key&gt;" />
-                <marker date="1512823508633" expanded="true" signature="149:1103" ph="build: &lt;3 keys&gt;" />
-                <marker date="1512823508633" expanded="true" signature="502:1103" ph="steps: &lt;8 items&gt;" />
+                <marker date="1512823683574" expanded="true" signature="141:1150" ph="jobs: &lt;1 key&gt;" />
+                <marker date="1512823683574" expanded="true" signature="149:1150" ph="build: &lt;3 keys&gt;" />
+                <marker date="1512823683574" expanded="true" signature="502:1150" ph="steps: &lt;8 items&gt;" />
               </folding>
             </state>
           </provider>
@@ -733,12 +733,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="777">
-          <caret line="37" column="70" lean-forward="false" selection-start-line="37" selection-start-column="70" selection-end-line="37" selection-end-column="70" />
+        <state relative-caret-position="798">
+          <caret line="38" column="36" lean-forward="false" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
           <folding>
-            <marker date="1512823508633" expanded="true" signature="141:1103" ph="jobs: &lt;1 key&gt;" />
-            <marker date="1512823508633" expanded="true" signature="149:1103" ph="build: &lt;3 keys&gt;" />
-            <marker date="1512823508633" expanded="true" signature="502:1103" ph="steps: &lt;8 items&gt;" />
+            <marker date="1512823683574" expanded="true" signature="141:1150" ph="jobs: &lt;1 key&gt;" />
+            <marker date="1512823683574" expanded="true" signature="149:1150" ph="build: &lt;3 keys&gt;" />
+            <marker date="1512823683574" expanded="true" signature="502:1150" ph="steps: &lt;8 items&gt;" />
           </folding>
         </state>
       </provider>
