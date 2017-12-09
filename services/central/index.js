@@ -32,7 +32,7 @@ loadDb((db) => {
     log('Models loaded available: ' + Object.keys(db.models).join(', '))
 })
 
-require('../lib/version_check')()
+require('./lib/version_check')()
 
 const PORT = program.port || require('./config').port
 
