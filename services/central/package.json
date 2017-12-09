@@ -4,7 +4,7 @@
   "description": "Just a test for hosting files with Access-Control-Allow-Origin",
   "main": "index.js",
   "scripts": {
-    "test": "ava -c 4",
+    "test": "ava -c 8",
     "start": "node index.js"
   },
   "author": "",
