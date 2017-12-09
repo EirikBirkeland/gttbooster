@@ -8,8 +8,8 @@ module.exports = mergeDeep(base, {
    },
    plugins: [
       new WebpackShellPlugin({
-         onBuildStart: ['echo "Starting CircleCi build"'],
-         onBuildExit: ['echo "done"', "npm run test"]
+         onBuildStart: ['echo "Starting CircleCI build"'],
+         onBuildExit: ['echo "Finished CircleCI build"']
       })
    ]
 })
