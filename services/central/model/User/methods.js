@@ -48,7 +48,7 @@ function logAuth() {
  *
  * @type {number} - Unique days allowed for any trial. This number can be increased to quickly give every user X extra days, then later it can be returned to a lower number (though that may disturb a few users here and there, but who cares.)
  */
-const UNIQUE_DAYS_ALLOWED = require('@eirikbirkeland/cth-config').UNIQUE_DAYS_ALLOWED
+const UNIQUE_DAYS_ALLOWED = require('@eirikbirkeland/ob-config').UNIQUE_DAYS_ALLOWED
 
 /**
  * @return {boolean}

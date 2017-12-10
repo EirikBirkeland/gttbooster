@@ -14,11 +14,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="config.yml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="config.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state relative-caret-position="670">
+              <caret line="29" column="30" lean-forward="false" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cth_modules/ob-aspell-lang-codes/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="firewall.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/services/central/middleware/firewall.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="15" column="41" lean-forward="true" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -38,7 +58,6 @@
       <find>findOneAndUpdate</find>
       <find>findOneAndU</find>
       <find>cth-pro</find>
-      <find>cth-config</find>
       <find>cth-</find>
       <find>../../lib/spell</find>
       <find>lib/version</find>
@@ -58,12 +77,14 @@
       <find>cth</find>
       <find>morgan</find>
       <find>getDate</find>
+      <find>cth-config</find>
     </findStrings>
     <replaceStrings>
       <replace>debug</replace>
       <replace>segmentLabels</replace>
       <replace>// $1</replace>
       <replace>@eirikbirkeland/cth-aspell-lang-codes</replace>
+      <replace>ob-config</replace>
     </replaceStrings>
     <dirStrings>
       <dir>Y:\00_obelisk\extension\node_modules</dir>
@@ -86,7 +107,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/extension/src/2_body/events/user-types-in-trans-editor.js" />
         <option value="$PROJECT_DIR$/extension/src/2_body/events/init.js" />
         <option value="$PROJECT_DIR$/extension/src/2_body/events/user-types-in-transeditor.js" />
         <option value="$PROJECT_DIR$/extension/src/2_body/body-index.js" />
@@ -129,7 +149,6 @@
         <option value="$PROJECT_DIR$/circleci_run.sh" />
         <option value="$PROJECT_DIR$/services/central/routes/auth3/checkPayment.js" />
         <option value="$PROJECT_DIR$/services/central/model/User/methods.js" />
-        <option value="$PROJECT_DIR$/services/central/middleware/firewall.js" />
         <option value="$PROJECT_DIR$/bin/cli.js" />
         <option value="$PROJECT_DIR$/cli.sh" />
         <option value="$PROJECT_DIR$/bin/cli/index.js" />
@@ -137,6 +156,8 @@
         <option value="$PROJECT_DIR$/services/central/routes/spell2.js" />
         <option value="$PROJECT_DIR$/services/central/index.js" />
         <option value="$PROJECT_DIR$/.circleci/config.yml" />
+        <option value="$PROJECT_DIR$/cth_modules/ob-aspell-lang-codes/aspellLangCodes.js" />
+        <option value="$PROJECT_DIR$/services/central/middleware/firewall.js" />
       </list>
     </option>
   </component>
@@ -156,12 +177,9 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/bin/cli/node_modules" />
     <handled-path value="$PROJECT_DIR$/bin/system-operation-check/node_modules" />
-    <handled-path value="$PROJECT_DIR$/cth_modules/cth-aspell-lang-codes/node_modules" />
     <handled-path value="$PROJECT_DIR$/cth_modules/cth-debug/node_modules" />
-    <handled-path value="$PROJECT_DIR$/cth_modules/cth-getDate/node_modules" />
     <handled-path value="$PROJECT_DIR$/cth_modules/cth-logger/node_modules" />
     <handled-path value="$PROJECT_DIR$/cth_modules/cth-prototype/node_modules" />
-    <handled-path value="$PROJECT_DIR$/cth_modules/node_modules" />
     <handled-path value="$PROJECT_DIR$/etc/future_stuff/autocomplete.js/node_modules" />
     <handled-path value="$PROJECT_DIR$/etc/future_stuff/markov/node_modules" />
     <handled-path value="$PROJECT_DIR$/etc/shell/node_modules" />
@@ -169,9 +187,9 @@
     <handled-path value="$PROJECT_DIR$/services/raneto/node_modules" />
     <handled-path value="$PROJECT_DIR$/services/websites/shop/node_modules" />
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="1132" />
-    <option name="width" value="1156" />
+    <option name="width" value="1969" />
     <option name="height" value="1448" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -238,6 +256,17 @@
               <item name="00_obelisk" type="462c0819:PsiDirectoryNode" />
               <item name=".circleci" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="00_obelisk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="00_obelisk" type="462c0819:PsiDirectoryNode" />
+              <item name="cth_modules" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="00_obelisk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="00_obelisk" type="462c0819:PsiDirectoryNode" />
+              <item name="cth_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="ob-aspell-lang-codes" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -245,7 +274,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
     <property name="JavaScriptPreferStrict" value="false" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
@@ -315,13 +344,13 @@
     <option name="totallyTimeSpent" value="87474000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1132" y="0" width="1156" height="1448" extended-state="0" />
+    <frame x="1132" y="0" width="1969" height="1448" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21009919" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23933403" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942098" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296355" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942098" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -369,15 +398,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/services/central/routes/paypal/mailAlert.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/system-operation-check/run.sh" />
-    <entry file="file://$PROJECT_DIR$/system-operation-check/test.js" />
     <entry file="file://$PROJECT_DIR$/services/central/model/Payment.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="775">
@@ -602,14 +622,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/services/central/middleware/firewall.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="3" column="35" lean-forward="false" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cli.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -692,10 +704,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/cth_modules/cth-aspell-lang-codes/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cth_modules/ob-aspell-lang-codes/aspellLangCodes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2165">
+          <caret line="185" column="0" lean-forward="true" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="670">
+          <caret line="29" column="30" lean-forward="false" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cth_modules/ob-aspell-lang-codes/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/central/middleware/firewall.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" column="41" lean-forward="true" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
           <folding />
         </state>
       </provider>
