@@ -14,31 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="config.yml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="config.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="670">
-              <caret line="29" column="30" lean-forward="false" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cth_modules/ob-aspell-lang-codes/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="firewall.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/services/central/middleware/firewall.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="15" column="41" lean-forward="true" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
+            <state relative-caret-position="795">
+              <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -187,7 +167,7 @@
     <handled-path value="$PROJECT_DIR$/services/raneto/node_modules" />
     <handled-path value="$PROJECT_DIR$/services/websites/shop/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="1132" />
     <option name="width" value="1969" />
     <option name="height" value="1448" />
@@ -278,7 +258,7 @@
     <property name="JavaScriptPreferStrict" value="false" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="W:/" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="SearchEverywhereHistoryKey" value="spel2&#9;FILE&#9;file://Y:/00_obelisk/services/central/routes/spell2.js&#10;spell2&#9;FILE&#9;file://Y:/00_obelisk/services/central/routes/__tests__/spell2-spec.js&#10;click-report.js&#9;FILE&#9;file://Y:/00_obelisk/services/central/routes/click-report.js&#10;aspellLangCo&#9;FILE&#9;file://Y:/00_obelisk/lib/aspellLangCodes.js&#10;auth3&#9;FILE&#9;file://Y:/00_obelisk/services/central/routes/auth3.js&#10;dailystats&#9;FILE&#9;file://Y:/00_obelisk/services/central/model/DailyStats.js&#10;Qa&#9;null&#9;null&#10;runQa&#9;null&#9;null&#10;didpay&#9;FILE&#9;file://Y:/00_obelisk/services/central/model/Payment/__tests__/didPaymentExpire-spec.js&#10;db.js&#9;FILE&#9;file://Y:/00_obelisk/services/central/db.js&#10;charlimit&#9;FILE&#9;file://Y:/00_obelisk/extension/src/2_body/unsorted/qa/checks/charlimit-check.js&#10;completion&#9;null&#9;null&#10;notifier.js&#9;FILE&#9;file://Y:/00_obelisk/extension/src/4_other/notifier.js&#10;Toolbar.js&#9;FILE&#9;file://Y:/00_obelisk/extension/src/1_upper/toolbar/Toolbar/Toolbar.js&#10;labels.js&#9;FILE&#9;file://Y:/00_obelisk/extension/src/5_init/labels.js&#10;Segment&#9;FILE&#9;file://Y:/00_obelisk/extension/src/0_model/Segment.js&#10;getPersiste&#9;null&#9;null&#10;init.js&#9;FILE&#9;file://Y:/00_obelisk/extension/src/5_init/init.js&#10;TransEditor&#9;FILE&#9;file://Y:/00_obelisk/extension/src/2_body/unsorted/ui-elements/TransEditor.js&#10;Sandbox&#9;FILE&#9;file://Y:/00_obelisk/extension/src/5_init/sandbox.js&#10;Toolbar&#9;FILE&#9;file://Y:/00_obelisk/extension/src/1_upper/toolbar/Toolbar/Toolbar.js&#10;keyword&#9;FILE&#9;file://Y:/00_obelisk/extension/src/2_body/unsorted/view-changes/keyword-filtering.js&#10;qa-sheet&#9;FILE&#9;file://Y:/00_obelisk/extension/src/2_body/unsorted/qa/qa-sheet.js&#10;auth3.js&#9;FILE&#9;file://Y:/00_obelisk/services/central/routes/auth3.js&#10;background.js&#9;FILE&#9;file://Y:/00_obelisk/extension/dist/background.js&#10;auth&#9;FILE&#9;file://Y:/00_obelisk/extension/src/5_init/init/auth.js&#10;calculateType&#9;FILE&#9;file://Y:/00_obelisk/services/central/routes/auth3/__tests__/calculateType-spec.js&#10;calculateT&#9;FILE&#9;file://Y:/00_obelisk/services/central/routes/auth3/calculateType.js&#10;debug-spec.js&#9;FILE&#9;file://Y:/00_obelisk/services/central/routes/__tests__/debug-spec.js" />
@@ -344,7 +324,7 @@
     <option name="totallyTimeSpent" value="87474000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1132" y="0" width="1969" height="1448" extended-state="1" />
+    <frame x="1132" y="0" width="1969" height="1448" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23933403" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -720,10 +700,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
+    <entry file="file://$PROJECT_DIR$/services/central/middleware/firewall.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="670">
-          <caret line="29" column="30" lean-forward="false" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
+        <state relative-caret-position="0">
+          <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -731,15 +711,15 @@
     <entry file="file://$PROJECT_DIR$/cth_modules/ob-aspell-lang-codes/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/services/central/middleware/firewall.js">
+    <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="41" lean-forward="true" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
+        <state relative-caret-position="795">
+          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding />
         </state>
       </provider>
