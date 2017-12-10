@@ -22,7 +22,85 @@
     <favorites_list name="extension" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="Spreadsheet.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/options/pages/Content/Spreadsheet.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="294">
+              <caret line="14" column="8" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Aspell.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/Aspell.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="84">
+              <caret line="4" column="22" lean-forward="false" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="auth.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/workbench/5_init/init/auth.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="203">
+              <caret line="12" column="64" lean-forward="false" selection-start-line="12" selection-start-column="64" selection-end-line="12" selection-end-column="64" />
+              <folding>
+                <marker date="1512863806185" expanded="true" signature="945:1090" ph="..." />
+                <marker date="1512863806185" expanded="true" signature="1011:1071" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Toolbar.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/workbench/2_classes/toolbar/Toolbar/Toolbar.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="441">
+              <caret line="21" column="10" lean-forward="false" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="click-logging.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/workbench/2_classes/click-logging.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="475">
+              <caret line="17" column="3" lean-forward="true" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="version-check.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/workbench/5_init/init/version-check.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="368">
+              <caret line="17" column="22" lean-forward="true" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+              <folding>
+                <marker date="1512863747641" expanded="true" signature="1469:1681" ph="..." />
+                <marker date="1512863747641" expanded="false" signature="1500:1523" ph="..." />
+                <marker date="1512863747641" expanded="true" signature="1596:1658" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="background.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/background/background.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="40" column="2" lean-forward="true" selection-start-line="40" selection-start-column="2" selection-end-line="40" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -33,10 +111,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>clipboard</find>
-      <find>reset</find>
-      <find>isOpen</find>
-      <find>expand</find>
       <find>TransEditor</find>
       <find>cleanup</find>
       <find>resetState</find>
@@ -63,6 +137,10 @@
       <find>updateCurrentSegments</find>
       <find>to the right</find>
       <find>chalk</find>
+      <find>cth-prototype</find>
+      <find>cth_modules/cth-prototype</find>
+      <find>cth-config</find>
+      <find>getDate</find>
     </findStrings>
     <replaceStrings>
       <replace>targetSegments</replace>
@@ -135,13 +213,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="X:/src/workbench/4_controller/events/body-move-trans-editor.js" />
-        <option value="X:/src/workbench/2_classes/click-logging.js" />
-        <option value="X:/src/workbench/2_classes/mt/clean-up-mt.js" />
-        <option value="X:/src/workbench/2_classes/tm/sendTmIndicationToTransEditor.js" />
-        <option value="X:/src/workbench/2_classes/tm/addRating.js" />
-        <option value="X:/src/workbench/2_classes/Qa/checkCurrentSegment.js" />
-        <option value="X:/src/workbench/2_classes/Qa/runChecks.js" />
         <option value="X:/src/workbench/2_classes/Segment/convertPlaceholders.js" />
         <option value="X:/src/workbench/2_classes/tm/getColor.js" />
         <option value="X:/src/background/background.js" />
@@ -186,6 +257,13 @@
         <option value="$PROJECT_DIR$/webpack/webpack.dev.config.js" />
         <option value="$PROJECT_DIR$/webpack/webpack.prod.config.js" />
         <option value="$PROJECT_DIR$/cth_modules/cth-config/package.json" />
+        <option value="$PROJECT_DIR$/src/options/pages/Content/Spreadsheet.js" />
+        <option value="$PROJECT_DIR$/src/model/Aspell.js" />
+        <option value="$PROJECT_DIR$/src/workbench/5_init/init/version-check.js" />
+        <option value="$PROJECT_DIR$/src/background/background.js" />
+        <option value="$PROJECT_DIR$/src/workbench/5_init/init/auth.js" />
+        <option value="$PROJECT_DIR$/src/workbench/2_classes/toolbar/Toolbar/Toolbar.js" />
+        <option value="$PROJECT_DIR$/src/workbench/2_classes/click-logging.js" />
       </list>
     </option>
   </component>
@@ -208,10 +286,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="664" />
-    <option name="width" value="1378" />
-    <option name="height" value="784" />
+    <option name="x" value="1132" />
+    <option name="width" value="1642" />
+    <option name="height" value="1448" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -520,12 +597,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="664" width="1378" height="784" extended-state="0" />
+    <frame x="1132" y="0" width="1642" height="1448" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25694966" sideWeight="0.497272" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21442007" sideWeight="0.497272" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0970266" sideWeight="0.4930716" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21205008" sideWeight="0.5257329" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2112676" sideWeight="0.4742671" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13895394" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299532" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20204262" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -547,7 +625,6 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.10093897" sideWeight="0.48845264" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21778941" sideWeight="0.502728" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="CSS Styles" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2112676" sideWeight="0.4742671" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -579,19 +656,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://X:/src/app.js" />
-    <entry file="file://X:/src/options/store.js" />
-    <entry file="file://X:/src/options/pages/Header.js" />
-    <entry file="file://X:/src/options/pages/Body.js" />
-    <entry file="file://X:/src/options/pages/Content.js" />
-    <entry file="file://X:/IMPORTANT_EMAILS_CLIENTS_BBC.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="10" column="8" lean-forward="false" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://X:/src/options/settings/settings-translationConsole.js" />
     <entry file="file://X:/todo/some-lilt-issue.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -879,6 +943,69 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-155">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/options/pages/Content/Spreadsheet.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="8" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Aspell.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="22" lean-forward="false" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/workbench/5_init/init/version-check.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="17" column="22" lean-forward="true" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+          <folding>
+            <marker date="1512863747641" expanded="true" signature="1469:1681" ph="..." />
+            <marker date="1512863747641" expanded="false" signature="1500:1523" ph="..." />
+            <marker date="1512863747641" expanded="true" signature="1596:1658" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/background/background.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="40" column="2" lean-forward="true" selection-start-line="40" selection-start-column="2" selection-end-line="40" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/workbench/5_init/init/auth.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="12" column="64" lean-forward="false" selection-start-line="12" selection-start-column="64" selection-end-line="12" selection-end-column="64" />
+          <folding>
+            <marker date="1512863806185" expanded="true" signature="945:1090" ph="..." />
+            <marker date="1512863806185" expanded="true" signature="1011:1071" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/workbench/2_classes/toolbar/Toolbar/Toolbar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="21" column="10" lean-forward="false" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/workbench/2_classes/click-logging.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="17" column="3" lean-forward="true" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
           <folding />
         </state>
       </provider>

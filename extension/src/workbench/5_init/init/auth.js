@@ -6,11 +6,11 @@ import $ from 'jquery'
 import _ from 'lodash'
 import millisecond from 'millisecond'
 
-require('../../../../cth_modules/cth-prototype/index')
+require('cth-prototype')
 
 const debug = require('cth-debug')(__filename)
 
-const GTT_BOOSTER_STORE_URL = require('../../../../cth_modules/cth-config').GTT_BOOSTER_STORE_URL
+const GTT_BOOSTER_STORE_URL = require('@eirikbirkeland/ob-config').GTT_BOOSTER_STORE_URL
 
 /**
  * TODO: Add fancy popups in most places in UI, including auth.

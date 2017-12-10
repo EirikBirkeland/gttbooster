@@ -12,7 +12,7 @@ import Grid from 'react-bootstrap/lib/Grid'
 import Row from 'react-bootstrap/lib/Row'
 import Col from 'react-bootstrap/lib/Col'
 import Alert from 'react-bootstrap/lib/Alert'
-import '../../../../cth_modules/cth-prototype'
+import 'cth-prototype'
 
 import _ from 'lodash'
 

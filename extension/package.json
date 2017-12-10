@@ -87,12 +87,14 @@
     "webpack-shell-plugin": "^0.5.0"
   },
   "dependencies": {
+    "@eirikbirkeland/ob-config": "0.0.1",
     "bluebird": "^3.5.1",
     "bootstrap": "~3.3.7",
     "bootstrap-validator": "~0.11.5",
     "chrome-mock": "0.0.9",
     "cth-debug": "^1.0.16",
     "cth-mutant": "0.0.9",
+    "cth-prototype": "0.0.1",
     "date-format": "^1.2.0",
     "deepmerge": "^1.5.2",
     "diff-match-patch": "~1.0.0",

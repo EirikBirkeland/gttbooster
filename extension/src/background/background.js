@@ -40,7 +40,7 @@ chrome.runtime.onUpdateAvailable.addListener(() => {
 
 })
 
-const API_DOMAIN = require('../../cth_modules/cth-config/index').API_URL
+const API_DOMAIN = require('@eirikbirkeland/ob-config').API_URL
 
 const LATEST_VERSION_FILE = 'latest.json'
 

@@ -7,7 +7,7 @@ const debug = require('cth-debug')(__filename)
 
 const downloadURL = 'https://chrome.google.com/webstore/detail/gtt-enhancements-1568/pjankaakojbendjaejlcnpgeldmfpjed'
 const userVersion = ChromeProxy.runtime.getManifest().version
-require('../../../../cth_modules/cth-prototype')
+require('cth-prototype')
 
 const versionCheck = function (opts) {
 
@@ -15,30 +15,22 @@ const versionCheck = function (opts) {
    let needUpdate
 
    chrome.runtime.sendMessage({"header": 'latest version'}, (response) => {
-
       if (!response) {
-
          return
-
       }
 
       debug.log(response.version)
       debug.log(userVersion)
 
       if (response.version > userVersion) {
-
          needUpdate = true
 
          if (popup) {
-
             popupAlert(response)
-
          }
-
       }
 
       if (indicator) {
-
          addIndicator(response, needUpdate)
 
       }

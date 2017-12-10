@@ -1,7 +1,14 @@
 /* eslint-env browser, webextensions */
 const debug = require('cth-debug')(__filename)
 const Storage = require('../../model/GeneralStorage')
-const getDate = require('../../../cth_modules/cth-getDate/index')
+const dateFormat = require('date-format')
+
+/**
+ *  @returns {string}
+ */
+function getDate () {
+   return dateFormat.asString('DD/MM/YYYY', new Date())
+}
 
 // Attach additional listeners for reporting statistics. Optimally, the API would handle both Google Analytics and my own server. Oh and might wish to try Google's Firebase!!! So, the API should be sufficiently generic so that it can changed later without changing much in the actual implementation.
 
