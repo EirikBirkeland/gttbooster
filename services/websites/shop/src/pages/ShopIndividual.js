@@ -14,10 +14,6 @@ export default function () {
             <Grid>
                 <Row>
                     <Col xs={12} md={12}>
-                        <Item header="Monthly subscription"
-                              footer={<PaypalWidget type="subscribe" code={codes.monthlySubscription}/>}>
-                            <b>{priceSubscriptionMonthly}</b> per month<br/>
-                        </Item>
                         <Item header="Twelve months package"
                               footer={<PaypalWidget type="subscribe" code={codes.twelveMonths}/>}>
                             <b>€99</b> for 12 months – effectively <b>{priceTwelveMonthsMonthly}</b> per month!<br/>

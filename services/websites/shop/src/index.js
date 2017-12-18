@@ -1,4 +1,4 @@
-const shopModeSetting = require('ob-config').SHOP_MODE
+const shopModeSetting = require('@eirikbirkeland/ob-config').SHOP_MODE
 
 window.mode = shopModeSetting || 'PRODUCTION'
 
