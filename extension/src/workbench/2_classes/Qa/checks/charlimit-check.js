@@ -3,6 +3,8 @@
  * Created by eb on 2016/03/02.
  */
 
+import _ from 'lodash'
+
 import * as eastAsianWidth from 'east-asian-width'
 
 const $ = typeof window !== 'undefined' ? require('jquery') : require('cheerio')
@@ -23,9 +25,7 @@ const debug = require('cth-debug')(__filename.replace(/^src\//, ''))
 export default function runCharLimitCheck($sourceSegment, $targetSegment, sourceDoc) {
 
    if (!$(sourceDoc).find('.goog-gtt-messageblock .messageHeader').length) {
-
       return null
-
    }
 
    /*
@@ -54,7 +54,7 @@ export default function runCharLimitCheck($sourceSegment, $targetSegment, source
 
    const charLimit =
       description.html().match(charLimitRe)
-         ? description.html().match(charLimitRe)[1]
+         ? _.compact(description.html().match(charLimitRe))[1] // compact is a hack because sometimes multiple undefineds are included before the actual match at [3].
          : null
 
    debug.log('**********')
@@ -66,7 +66,7 @@ export default function runCharLimitCheck($sourceSegment, $targetSegment, source
 
    const adjustedWidth = eastAsianWidth.str_width(strippedTarget)
 
-   debug.log(`charlimit: ${charLimit}`)
+   debug.log(`charLimit: ${charLimit}`)
    debug.log(`adjustedWidth: ${adjustedWidth}`)
 
    debug.log('Standard length: ', strippedTarget.length)
@@ -76,7 +76,6 @@ export default function runCharLimitCheck($sourceSegment, $targetSegment, source
 
    const gtcTextNode = $targetSegment.find('.gtc-text').html()
    if (gtcTextNode) {
-
       const gtcTextLength = parseInt(gtcTextNode.replace(/.*?(\d+).*/, '$1'))
       if (gtcTextLength !== adjustedWidth) {
 
@@ -87,9 +86,7 @@ export default function runCharLimitCheck($sourceSegment, $targetSegment, source
          debug.log(`gtcText: ${gtcTextLength}`)
          debug.log(`adjustedWidth: ${adjustedWidth}`)
          debug.log(strippedTarget)
-
       }
-
    }
 
    if (charLimit &&
@@ -97,13 +94,8 @@ export default function runCharLimitCheck($sourceSegment, $targetSegment, source
       charLimit > 0) {
 
       if (adjustedWidth > charLimit) {
-
          returnMsg += `Character limit exceeded by ${adjustedWidth - charLimit}<br>Source string length is ${strippedSource.length}`
-
       }
-
    }
-
    return returnMsg
-
 }
