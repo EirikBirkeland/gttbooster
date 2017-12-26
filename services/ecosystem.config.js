@@ -19,8 +19,7 @@ module.exports = {
             instances: 1,
             watch: true,
             args: ["--color"],
-            node_args: ["--harmony", "--inspect=10.0.0.4:9229"],
-//            exec_interpreter: "babel-node"
+            node_args: ["--harmony"],
         },
 
         // Second application

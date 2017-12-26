@@ -1,4 +1,5 @@
-FROM node:8.9.3
+#FROM node:8.9.3
+FROM mhart/alpine-node:8
 
 WORKDIR /central
 

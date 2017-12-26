@@ -5,7 +5,7 @@ mongoose.Promise = global.Promise
 
 function loadDb(cb) {
     if (typeof window === 'undefined') {
-        mongoose.connect('mongodb://localhost/gttbooster')
+        mongoose.connect('mongodb://database/gttbooster')
     }
 
     const db = mongoose.connection
