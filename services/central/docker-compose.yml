@@ -1,0 +1,18 @@
+version: '2'
+
+# Define the services/containers to be run
+services:
+  central: #name of your service
+    build: ./ # specify the directory of the Dockerfile
+    ports:
+      - "3334:3333" #specify ports forwarding
+    links:
+      - database # link this service to the database service
+    depends_on:
+      - database
+  database: # name of the service
+    image: mongo # specify image to build container from
+    ports:
+      - "27016:27017"
+    volumes:
+      - ./mongo:/data/db

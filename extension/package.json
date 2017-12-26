@@ -36,7 +36,7 @@
       "**/node_modules/**",
       "**/coverage/**",
       "**/__tests_/**",
-      "**/*.-spec.js"
+      "**/*.-spec.js"  
     ],
     "all": false
   },
