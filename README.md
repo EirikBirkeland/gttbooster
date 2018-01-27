@@ -20,7 +20,7 @@ leverages MT, TM and glossary matches
 ### Customizable QA-checking, with all the standard checks built-in
 [...]
 
-### Configure everything
+### Configure everything!
 ![](img/options_screen.gif)
 
 ### State of the repository
