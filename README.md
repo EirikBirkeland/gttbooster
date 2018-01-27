@@ -10,6 +10,10 @@ Please file an issue on Github, or e-mail me at [gttbooster@gmail.com](gttbooste
 
 ### Attractive features
 
+#### Typing autocompletion
+Leverages MT, TM and glossary matches
+![abc](img/typing_autocompletion.gif)
+
 ### State of the repository
 
 The repository was closed source from its conception in 2014 until February 2018. The code is currently [on hold] being migrated to a cleaner version where principal UI elements have been wrapped in convenience classes that expose convenient public methods to simplify development.
