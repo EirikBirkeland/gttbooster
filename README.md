@@ -10,7 +10,7 @@ Please file an issue on Github, or e-mail me at [gttbooster@gmail.com](gttbooste
 
 ### Top features
 
-#### Typing autocompletion
+#### Typing autocompletion :fast_forward:
 leverages MT, TM and glossary matches
 ![abc](img/typing_autocompletion.gif)
 
