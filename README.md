@@ -44,7 +44,7 @@ leverages MT, TM and glossary matches
 #### Customizable QA-checking, with all the standard checks built-in
 #### Resize document fonts easily
 #### More below!
-![](img/features.jpg)
+![](img/features.png)
 
 
 
