@@ -15,7 +15,7 @@ leverages MT, TM and glossary matches
 ![](img/typing_autocompletion.gif)
 
 #### Merged view
-[...]
+![](img/merged_view.gif)
 
 #### Customizable QA-checking, with all the standard checks built-in
 [...]
