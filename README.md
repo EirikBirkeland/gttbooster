@@ -11,7 +11,7 @@ Please file an issue on Github, or e-mail me at [gttbooster@gmail.com](gttbooste
 ### Attractive features
 
 #### Typing autocompletion
-Leverages MT, TM and glossary matches
+leverages MT, TM and glossary matches
 ![abc](img/typing_autocompletion.gif)
 
 ### State of the repository
