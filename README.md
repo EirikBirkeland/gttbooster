@@ -21,7 +21,7 @@ leverages MT, TM and glossary matches
 
 
 
-#### Merged view
+#### Merged view :page_with_curl:
 ![](img/merged_view.gif)
 
 
