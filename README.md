@@ -14,13 +14,13 @@ Please file an issue on Github, or e-mail me at [gttbooster@gmail.com](gttbooste
 leverages MT, TM and glossary matches
 ![](img/typing_autocompletion.gif)
 
-### Merged view
+#### Merged view
 [...]
 
-### Customizable QA-checking, with all the standard checks built-in
+#### Customizable QA-checking, with all the standard checks built-in
 [...]
 
-### Configure everything!
+#### Configure everything!
 ![](img/options_screen.gif)
 
 ### State of the repository
