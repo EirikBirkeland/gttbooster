@@ -31,7 +31,7 @@ leverages MT, TM and glossary matches
 
 
 
-#### Configure everything!
+#### Configure everything! :surfer:
 ![](img/options_screen.gif)
 
 
