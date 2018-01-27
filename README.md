@@ -12,7 +12,7 @@ Please file an issue on Github, or e-mail me at [gttbooster@gmail.com](gttbooste
 
 #### Typing autocompletion :fast_forward:
 leverages MT, TM and glossary matches
-![](img/typing_autocompletion.gif)
+![typing autocompletion gif animation](img/typing_autocompletion.gif)
 
 
 
@@ -22,7 +22,7 @@ leverages MT, TM and glossary matches
 
 
 #### Merged view :page_with_curl:
-![](img/merged_view.gif)
+![merged view gif animation](img/merged_view.gif)
 
 
 
@@ -32,7 +32,7 @@ leverages MT, TM and glossary matches
 
 
 #### Configure everything! :surfer:
-![](img/options_screen.gif)
+![options screen gif animation](img/options_screen.gif)
 
 
 
@@ -44,7 +44,7 @@ leverages MT, TM and glossary matches
 #### Customizable QA-checking, with all the standard checks built-in
 #### Resize document fonts easily
 #### More below!
-![](img/features.png)
+![features](img/features.png)
 
 
 
