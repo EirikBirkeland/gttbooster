@@ -12,7 +12,16 @@ Please file an issue on Github, or e-mail me at [gttbooster@gmail.com](gttbooste
 
 #### Typing autocompletion :fast_forward:
 leverages MT, TM and glossary matches
-![abc](img/typing_autocompletion.gif)
+![](img/typing_autocompletion.gif)
+
+#### Merged view
+[...]
+
+#### Customizable QA-checking, with all the standard checks built-in
+[...]
+
+#### Configure everything!
+![](img/options_screen.gif)
 
 ### State of the repository
 
