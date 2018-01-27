@@ -8,7 +8,7 @@ GTT Booster is freely available under the GPL 3.0 or later. You may [download an
 
 Please file an issue on Github, or e-mail me at [gttbooster@gmail.com](gttbooster@gmail.com)
 
-### Attractive features
+### Top features
 
 #### Typing autocompletion
 leverages MT, TM and glossary matches
