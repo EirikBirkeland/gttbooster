@@ -1,8 +1,8 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import rgbHex from 'rgb-hex'
-import {defer} from 'lodash'
+import { defer } from 'lodash'
 import PropTypes from 'prop-types'
-import {store} from '../options-index'
+import { store } from '../options-index'
 
 const debug = require('cth-debug')(__filename)
 
@@ -20,7 +20,7 @@ export default class ColorInput extends Component {
 
    constructor (props) {
       super(props)
-      this.state = {"model": props.model || store}
+      this.state = { "model": props.model || store }
    }
 
    componentDidMount () {
@@ -36,9 +36,9 @@ export default class ColorInput extends Component {
    render () {
       const optionName = this.props.optionName
       const option = this.state.model.settings[optionName]
-      const {tooltip} = this.state.model.all[optionName]
+      const { tooltip } = this.state.model.all[optionName]
 
-      const inputStyle = {"backgroundColor": option}
+      const inputStyle = { "backgroundColor": option }
 
       return <input
          onChange={this.handleChange}

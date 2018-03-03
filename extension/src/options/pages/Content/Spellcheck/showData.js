@@ -1,7 +1,7 @@
 // @flow
 import $ from 'jquery'
 import _ from 'lodash'
-import {Storage} from '../../../../model/GeneralStorage'
+import { Storage } from '../../../../model/GeneralStorage'
 
 const debug = require('cth-debug')(__filename)
 
@@ -18,7 +18,7 @@ const showData = (() => {
 
       $('#message').hide()
 
-      Storage.keys({storeName}, (res) => {
+      Storage.keys({ storeName }, (res) => {
          window.currentStoreName = storeName
          dataSet = res.map((ele) => [ele])
 
@@ -58,19 +58,19 @@ const showData = (() => {
             $('#cth-delete-button').click(() => {
                const activeTableRows = table.rows('.active')
                _.forEach(activeTableRows.data(), (ele) => {
-                  Storage.remove({"storeName": window.currentStoreName}, ele, debug.log)
+                  Storage.remove({ "storeName": window.currentStoreName }, ele, debug.log)
                })
                activeTableRows.remove().draw(false)
-            }).css({"display": ''})
+            }).css({ "display": '' })
             $('#cth-delete-all-button').click(() => {
                if (confirm('Are you sure you wish to close all exceptions?')) {
                   const activeTableRows = table.rows()
                   _.forEach(activeTableRows.data(), (ele) => {
-                     Storage.remove({"storeName": window.currentStoreName}, ele, debug.log)
+                     Storage.remove({ "storeName": window.currentStoreName }, ele, debug.log)
                   })
                   activeTableRows.remove().draw(false)
                }
-            }).css({"display": ''})
+            }).css({ "display": '' })
             // Remove class input-sm to fix font for "Show entries" selector
             $('select.form-control.input-sm').removeClass('input-sm')
          } else {

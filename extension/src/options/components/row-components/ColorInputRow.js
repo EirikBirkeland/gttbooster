@@ -1,13 +1,13 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import Col from 'react-bootstrap/lib/Col'
 import Row from 'react-bootstrap/lib/Row'
 import ColorInput from '../ColorInput'
-import {store} from '../../options-index'
+import { store } from '../../options-index'
 
 export default class OptionWithInputRow extends Component {
    constructor (props) {
       super(props)
-      this.state = {"model": props.model || store}
+      this.state = { "model": props.model || store }
    }
 
    render () {

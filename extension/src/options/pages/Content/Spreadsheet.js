@@ -2,7 +2,7 @@
 /**
  * Created by eb on 20.03.2017.
  */
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 
 import qaSheetFetch from './Spreadsheet/fetchQaSheet'
 import CleverInput from '../../components/CleverInput.js'
@@ -23,7 +23,7 @@ export default class Spreadsheet extends Component {
       this.state = {
          "bsStyle": 'success',
          "visible": 'none',
-         "content": {"__html": ''}
+         "content": { "__html": '' }
       }
    }
 
@@ -74,7 +74,7 @@ export default class Spreadsheet extends Component {
                   <Col md={8} lg={12}>
                      <Alert
                         bsStyle={this.state.bsStyle}
-                        style={{"display": this.state.visible}}
+                        style={{ "display": this.state.visible }}
                      >
                         <div dangerouslySetInnerHTML={this.state.content}/>
                      </Alert>

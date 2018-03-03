@@ -1,7 +1,7 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import handleError from '../model/handleError'
 import PropTypes from 'prop-types'
-import {store} from '../options-index'
+import { store } from '../options-index'
 import Toggle from 'react-toggle'
 
 const debug = require('cth-debug')(__filename)
@@ -31,7 +31,7 @@ export default class CheckboxAndLabel extends Component {
 
    constructor (props) {
       super(props)
-      this.state = {"model": store}
+      this.state = { "model": store }
    }
 
    render () {
@@ -42,7 +42,7 @@ export default class CheckboxAndLabel extends Component {
          handleError('optionName')
       }
 
-      const {tooltip, description} = this.state.model.all[optionName]
+      const { tooltip, description } = this.state.model.all[optionName]
       const model = this.state.model
       const optionToggle = model.settings[optionName].length
          ? model.settings[optionName][0]
@@ -56,7 +56,7 @@ export default class CheckboxAndLabel extends Component {
                id={optionName}
                onChange={this.handleChange}
                defaultChecked={optionToggle}
-               style={{"display": 'none'}}
+               style={{ "display": 'none' }}
             />
             {` ${description}`}
          </label>

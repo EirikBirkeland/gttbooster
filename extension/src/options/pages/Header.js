@@ -2,7 +2,7 @@
 /**
  * Created by eb on 18.03.2017.
  */
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 // TODO: Change back from my fork to react-confirm-bootstrap in December if the author has decided to merge.
 import Confirm from 'react-confirm-bootstrap'
 import Button from 'react-bootstrap/lib/Button'
@@ -10,7 +10,7 @@ import Nav from 'react-bootstrap/lib/Nav'
 import NavItem from 'react-bootstrap/lib/NavItem'
 import $ from 'jquery'
 import _ from 'lodash'
-import {store} from '../options-index'
+import { store } from '../options-index'
 
 
 export default class Header extends Component {

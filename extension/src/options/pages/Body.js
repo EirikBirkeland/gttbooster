@@ -1,11 +1,11 @@
 import _ from 'lodash'
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 
 import Content from './Content.js'
 import Header from './Header.js'
 
-import {resetToDefaults, save} from '../../model/SettingsStorage'
-import {store} from '../options-index'
+import { resetToDefaults, save } from '../../model/SettingsStorage'
+import { store } from '../options-index'
 
 const debug = require('cth-debug')(__filename)
 

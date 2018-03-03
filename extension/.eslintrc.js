@@ -44,6 +44,7 @@ module.exports = {
       "quotes": 0,
       "no-useless-escape": 0,
       "strict": 1,
+      "object-curly-spacing": ["error", "always"]
    },
    "overrides": [
       {

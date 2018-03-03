@@ -1,6 +1,6 @@
 import _ from 'lodash'
-import {Storage} from '../../../../model/GeneralStorage'
-import {store} from '../../../options-index'
+import { Storage } from '../../../../model/GeneralStorage'
+import { store } from '../../../options-index'
 import postMessage from '../../../helpers/postMessage'
 import showData from './showData'
 
@@ -38,7 +38,7 @@ export default function uploadFile (e) {
          debug.log(words)
 
          // Init notifier here, because DOM may not be ready if doing a standard import
-         const {notifier} = require('../../../../workbench/2_classes/notifier')
+         const { notifier } = require('../../../../workbench/2_classes/notifier')
 
          if (words.length < 100000) {
             if (/\.dic$/.test(file.name)) {
@@ -48,7 +48,7 @@ export default function uploadFile (e) {
             notifier.info(msg)
             postMessage('info', msg)
             if (confirm('Words will be added to your currently selected spellcheck override (see "Always run spellcheck using this language")')) {
-               Storage.set({"storeName": store.settings.spellcheckOverride[1]}, words, 1, debug.log)
+               Storage.set({ "storeName": store.settings.spellcheckOverride[1] }, words, 1, debug.log)
             } else {
                const msg = 'Cancelled. No items were saved.'
                postMessage('info', msg)

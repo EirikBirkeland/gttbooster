@@ -1,8 +1,8 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import 'bootstrap-validator'
 import PropTypes from 'prop-types'
 import $ from 'jquery'
-import {store} from '../options-index'
+import { store } from '../options-index'
 
 export default class Input extends Component {
    static propType = {
@@ -16,7 +16,7 @@ export default class Input extends Component {
 
    constructor (props) {
       super(props)
-      this.state = {"model": props.model || store}
+      this.state = { "model": props.model || store }
    }
 
    componentDidMount () {
@@ -37,7 +37,7 @@ export default class Input extends Component {
                 className="glyphicon glyphicon-question-sign"
                 data-toggle="tooltip"
                 title={tooltip}
-                style={{"display": props.tooltip ? '' : 'none'}}
+                style={{ "display": props.tooltip ? '' : 'none' }}
              />}
               </span>
                <input

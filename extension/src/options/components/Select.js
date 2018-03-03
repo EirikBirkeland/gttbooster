@@ -2,9 +2,9 @@
 /**
  * Created by eb on 21.03.2017.
  */
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import {store} from '../options-index'
+import { store } from '../options-index'
 
 const FORCE_UPDATE_DELAY = 1000
 

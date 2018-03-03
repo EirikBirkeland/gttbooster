@@ -2,10 +2,10 @@
 /**
  * Created by eb on 20.03.2017.
  */
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import 'bootstrap-validator'
 import PropTypes from 'prop-types'
-import {store} from '../options-index'
+import { store } from '../options-index'
 
 export default class CleverInput extends Component {
    static propType = {
@@ -22,13 +22,13 @@ export default class CleverInput extends Component {
 
    constructor (props) {
       super(props)
-      this.state = {"model": store}
+      this.state = { "model": store }
    }
 
    render () {
       const optionName = this.props.optionName
       const option = this.state.model.settings[optionName]
-      const {tooltip, description, defaultInputText, type, imageUrl, popoverHeader} = this.state.model.all[optionName]
+      const { tooltip, description, defaultInputText, type, imageUrl, popoverHeader } = this.state.model.all[optionName]
 
       return (
          <form ref="form" className={this.props.className} data-toggle="validator" role="form">
@@ -44,7 +44,7 @@ export default class CleverInput extends Component {
                   onKeyUp={this.handleChange}
                   placeholder={defaultInputText}
                   required
-                  style={{"backgroundColor": `#${option}`}}
+                  style={{ "backgroundColor": `#${option}` }}
                   title={tooltip || ''}
                   type={type}
                   value={option}
@@ -58,7 +58,7 @@ export default class CleverInput extends Component {
                   data-toggle="popover"
                   data-placement="right"
                   data-content={`<img src='${imageUrl}'></img>`}
-                  style={{"display": imageUrl ? '' : 'none'}}
+                  style={{ "display": imageUrl ? '' : 'none' }}
                >
                 <span
                    className="glyphicon glyphicon-question-sign"
