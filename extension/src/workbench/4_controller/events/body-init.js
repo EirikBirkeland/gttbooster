@@ -23,10 +23,12 @@ bodyEmitter.on('init', (res) => {
       highlightTextItems()
    }
 
-   _.delay(Hotkeys.insertEndash, 2000)
+   debugger
+
+   _.delay(Hotkeys.insertEndash, 10000)
 
    if (localStorage['cth-dev-mode']) {
-      _.delay(Hotkeys.norwegianQuotes, 2000)
+      _.delay(Hotkeys.norwegianQuotes, 10000)
    }
 
    Dev(convertAZippyToDiv)
