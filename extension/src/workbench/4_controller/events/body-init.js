@@ -25,11 +25,12 @@ bodyEmitter.on('init', (res) => {
 
    debugger
 
-   _.delay(Hotkeys.insertEndash, 10000)
-
-   if (localStorage['cth-dev-mode']) {
-      _.delay(Hotkeys.norwegianQuotes, 10000)
-   }
+   document.addEventListener("DOMContentLoaded", function(event) {
+      _.delay(function() {
+         Hotkeys.insertEndash()
+         Dev(Hotkeys.norwegianQuotes)
+      }, 5000)
+   })
 
    Dev(convertAZippyToDiv)
    Dev(updateTheTransEditor)
