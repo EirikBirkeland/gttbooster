@@ -4,8 +4,6 @@ const appRoot = path.join(__dirname, '/../src/');
 
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 
-console.log("DIRNAME:")
-console.log(__dirname)
 module.exports = {
   // Replace entry file as needed
   context: appRoot,
