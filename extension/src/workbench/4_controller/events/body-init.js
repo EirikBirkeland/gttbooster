@@ -25,12 +25,10 @@ bodyEmitter.on('init', (res) => {
 
    debugger
 
-   document.addEventListener("DOMContentLoaded", function(event) {
-      _.delay(function() {
-         Hotkeys.insertEndash()
-         Dev(Hotkeys.norwegianQuotes)
-      }, 5000)
-   })
+   _.delay(function() {
+      Hotkeys.insertEndash()
+      Dev(Hotkeys.norwegianQuotes)
+   }, 5000)
 
    Dev(convertAZippyToDiv)
    Dev(updateTheTransEditor)
