@@ -11,25 +11,35 @@ import {handleTcRequest} from './handleTcRequest'
 const debug = require('cth-debug')(__filename.replace(/^src\//, ''))
 window.Storage = require('../model/GeneralStorage').Storage
 
+loadAnalytics()
+
 // Update extension when update is available, by calling for the background page to reload
 chrome.runtime.onUpdateAvailable.addListener(() => {
    chrome.runtime.reload()
 })
 
-const API_DOMAIN = require('@eirikbirkeland/ob-config').API_URL
+const API_DOMAIN = require('../../cth_modules/cth-config/index').API_URL
 
 const LATEST_VERSION_FILE = 'latest.json'
 
 chrome.runtime.onMessage.addListener((req, sender, sendResponse) => {
+
    debug.log('Req with content', req, ' received from content page')
 
    const common = {
-      "extensionVersion": getExtensionVersion(),
-      "chromeVersion": getChromeVersion(),
       "user": req.user
    }
 
    switch (req.header) {
+      case 'click':
+         debug.log('Sending GA ...')
+         _gaq.push([
+            '_trackEvent',
+            req.obj.eventCategory,
+            req.obj.eventAction
+         ])
+         return true
+
       case 'glossaries':
          debug.log('Putting glossaries in window ...')
          putGlossariesInWindow(req.body)
@@ -78,8 +88,9 @@ chrome.runtime.onMessage.addListener((req, sender, sendResponse) => {
                Storage.remove({"storeName": req.name}, req.key, sendResponse)
          }
          return true
-
       case 'tcLookup':
          handleTcRequest()
+
    }
+
 })
