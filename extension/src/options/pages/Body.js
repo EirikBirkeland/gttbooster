@@ -34,12 +34,12 @@ class Body extends Component {
    render () {
       const headerStyle = {
          "position": 'absolute',
-         "height": '150px',
+         "height": '170px',
          "overflow": 'hidden'
       }
       const tabContentStyle = {
          "position": 'absolute',
-         "top": '150px',
+         "top": '170px',
          "bottom": '0px',
          "overflowY": 'auto',
          "overflowX": 'visible'
