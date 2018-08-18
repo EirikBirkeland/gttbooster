@@ -186,14 +186,14 @@ class Toolbar extends React.Component {
                 chrome.runtime.sendMessage({"header": 'openOptionsPage'})
              }}
           />
-          <Button
+         {/*// TODO(eirik): migrate the Knowledge Base to be included with the extension*/}
+         {/*<Button
              id="cth_helpButton"
              title="Open the knowledge base"
              iconName="question"
              onClick={function () {
                 window.open(config.BASE_URL)
-             }}
-          />
+             }}*/}
           <Button
              id="cth_focusbutton"
              title="SmartFocus: (1) go to first untranslated segment from the top, or (2) bring any active segment into view."

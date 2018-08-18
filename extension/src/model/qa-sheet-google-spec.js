@@ -55,7 +55,7 @@ const TabletopStub = function (mockData) {
 
 test.cb('should fetch a valid Google spreadsheet', (t) => {
    const options = {
-      "url": 'https://docs.google.com/spreadsheets/d/1Z73M7OnJ8a9Lta01-9q_nO84PyfHEIWkwHWcQtNri5s/edit?ts=595f7956#gid=0',
+      "url": 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSyz9Z_-ObuE4A-oszCPuxPInGQkkJzZDqqXldikgnNdabjrTs6Dp5m8iTJLCl6dkzVCDe_JB7VpuNe/pubhtml',
       "sheetname": 'Main',
       onValidationError (msg) {
          debug(msg)

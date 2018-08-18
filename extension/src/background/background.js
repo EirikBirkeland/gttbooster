@@ -7,6 +7,7 @@ import './contextMenu'
 import checkIfGlossaryWindowIsOpen from './background/putGlossariesInWindow/checkIfGlossaryWindowIsOpen'
 // TODO: Implement for some statistics purpose ...
 import {handleTcRequest} from './handleTcRequest'
+import './hot-reload'
 
 const debug = require('cth-debug')(__filename.replace(/^src\//, ''))
 window.Storage = require('../model/GeneralStorage').Storage
@@ -18,12 +19,9 @@ chrome.runtime.onUpdateAvailable.addListener(() => {
    chrome.runtime.reload()
 })
 
-const API_DOMAIN = require('../../cth_modules/cth-config/index').API_URL
-
 const LATEST_VERSION_FILE = 'latest.json'
 
 chrome.runtime.onMessage.addListener((req, sender, sendResponse) => {
-
    debug.log('Req with content', req, ' received from content page')
 
    const common = {
@@ -48,19 +46,6 @@ chrome.runtime.onMessage.addListener((req, sender, sendResponse) => {
       case 'glossaryWindowExists':
          debug.log('Checking for existence of glossaries window')
          sendResponse(Boolean(checkIfGlossaryWindowIsOpen()))
-         return true
-
-      case 'spellcheck':
-         debug.log('spellcheck')
-         $.ajax({
-            "url": `${API_DOMAIN}/spell2`,
-            "type": 'POST',
-            "dataType": 'json',
-            "data": Object.assign(common, {
-               "text": req.text,
-               "language": req.language
-            })
-         }).done((res) => doneHandler(res, sendResponse)).fail(() => errorHandler(sendResponse))
          return true
 
       case 'openOptionsPage':
@@ -90,7 +75,5 @@ chrome.runtime.onMessage.addListener((req, sender, sendResponse) => {
          return true
       case 'tcLookup':
          handleTcRequest()
-
    }
-
 })
