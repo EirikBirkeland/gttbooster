@@ -28,10 +28,10 @@ const uglifyConfig = { // Uglifyjs sometimes breaks UTF-8?
 
 module.exports = mergeDeep(base, {
    plugins: [
-      new WebpackShellPlugin({
+      /* new WebpackShellPlugin({
          onBuildStart: ['echo Starting BUILD'],
          onBuildEnd: ['bin/npm-build.sh && echo "Executed npm-build.sh"']
-      }),
+      }), */
       new webpack.optimize.AggressiveMergingPlugin(),
       new webpack.optimize.UglifyJsPlugin(uglifyConfig),
       new webpack.DefinePlugin({
