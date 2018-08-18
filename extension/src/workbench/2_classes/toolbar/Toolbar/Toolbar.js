@@ -186,14 +186,6 @@ class Toolbar extends React.Component {
                 chrome.runtime.sendMessage({"header": 'openOptionsPage'})
              }}
           />
-            <Button
-               id="cth_storeButton"
-               title="The store - purchase access before your trial expires!"
-               iconName="shoppingBasketUrgent"
-               onClick={function () {
-                  window.open(config.GTT_BOOSTER_STORE_URL)
-               }}
-            />
           <Button
              id="cth_helpButton"
              title="Open the knowledge base"
