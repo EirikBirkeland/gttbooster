@@ -40,7 +40,7 @@
     "bootstrap-rtl": "^3.3.4",
     "commander": "2.9.0",
     "cookie-parser": "1.4.1",
-    "debug": "2.2.0",
+    "debug": "3.1.0",
     "express": "4.13.4",
     "express-session": "1.13.0",
     "extend": "3.0.0",
