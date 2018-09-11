@@ -10,11 +10,11 @@ function initListModules () {
 }
 
 function replaceTitleInbox () {
-   const nameRepresentation = $('.gb_P.gb_R')[0]
-   const accountEmail = $('.gb_xb')[0]
+   const nameRepresentation = $('.gb_Cb.gb_Db')[0].innerHTML.replace(/\s*\.$/, "")
+   const accountEmail = $('.gb_Eb')[0].innerHTML
 
    if (document.title.match('Google Translator Toolkit')) {
-      let extract = (nameRepresentation || accountEmail).innerHTML
+      let extract = nameRepresentation || accountEmail
 
       extract = extract.replace(/(.*?)@.*/, '$1')
       document.title = extract
