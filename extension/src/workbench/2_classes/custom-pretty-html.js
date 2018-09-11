@@ -3,7 +3,6 @@
  * Created by eb on 26.12.2016.
  */
 
-
 function customPrettyHtml (diffs) {
    const DIFF_DELETE = -1
    const DIFF_INSERT = 1
@@ -19,10 +18,10 @@ function customPrettyHtml (diffs) {
       const text = data.replace(patternAmp, '&amp;').replace(patternLt, '&lt;').replace(patternGt, '&gt;').replace(patternPara, '&para;<br>')
       switch (op) {
          case DIFF_INSERT:
-            html[i] = `<ins style="background:#ccffcc;">${text}</ins>`
+            html[i] = `<ins class="diffInserted">${text}</ins>`
             break
          case DIFF_DELETE:
-            html[i] = `<del style="background:#ffcccc;">${text}</del>`
+            html[i] = `<del class="diffDeleted">${text}</del>`
             break
          case DIFF_EQUAL:
             html[i] = `<span>${text}</span>`

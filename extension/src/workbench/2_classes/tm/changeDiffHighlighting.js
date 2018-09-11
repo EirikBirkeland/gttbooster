@@ -22,7 +22,7 @@ export default function changeDiffHighlighting (sourceString) {
    _.forEach($suggestions, (ele) => {
       const $parentContainer = $(ele).parent()
 
-      // Return early if the operations have already been carried out (indicated by the present of the cth-fuzzy button.
+      // Return early if the operations have already been carried out (indicated by the presence of the cth-fuzzy button.
       if ($parentContainer.find(`.${$cthTSwitchButtonClassname}`).length) {
          return debug.log('Returning early because the current TM suggestion already has highlighting + button')
       }

@@ -92,5 +92,19 @@ del {
 
 /*Override default*/
 .gtc-tm-suggestion-hilite {
-    background-color: #ccffcc !important
+    background-color: #ccffcc !important;
+}
+
+.diffInserted {
+    background-color: #ccffcc;
+}
+
+.diffDeleted:not(:hover){
+    background-color: #ffcccc;
+    text-decoration: line-through !important;
+}
+
+.diffDeleted:hover {
+    background-color: #ffcccc;
+    text-decoration: none;
 }
