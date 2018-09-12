@@ -10,8 +10,8 @@ const debug = require('cth-debug')(__filename)
  */
 
 // Create one test item for each context type.
-const contexts = ["selection"]
 const title = "Look up phrase in Translation Console"
+const contexts = ["selection"]
 
 chrome.contextMenus.create({
    title,

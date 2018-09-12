@@ -1,6 +1,6 @@
-import goat from 'escape-goat'
+import encodeurl from 'encodeurl'
 import {ChromeProxy} from '../model/ChromeProxy'
-import {trimSymbols} from '../trimSymbols'
+import {trimSymbols} from '../tools/trimSymbols'
 
 const debug = require('cth-debug')(__filename)
 
@@ -10,10 +10,12 @@ export function handleTcRequest (info, tab) {
    debug.log(`tab: ${JSON.stringify(tab, 0, 3)}`)
 
    ChromeProxy.tabs.sendMessage(tab.id, "tcLookup", (res) => {
-      const phraseToSearch = trimSymbols(res.payload) // TODO: Add support for different quote types
+      const phraseToSearch = trimSymbols(res.payload)
+
+      const adjustedPhraseToSearch = encodeurl(phraseToSearch.replace(/&/g, "%26"))
 
       debug.warn(res)
-      const abc = `https://www.google.com/transconsole/externaltc/btviewer/searchresult?SearchText=${goat.escape(phraseToSearch)}&SearchField=search_field_src&SearchType=search_type_exact&ProductSelect=&LanguagesSelected=${res.language}&TranslationFilterStatus=translated&TranslationFilterAnyOrAll=any&TranslationFilterStage=LEVERAGED&ShowTranslationStage=showTranslationStage&CreatedAfter=&CreatedBefore=&ResourcesFilter=&IncludeObsolete=obsolete`
-      window.open(abc)
+      const url = `https://www.google.com/transconsole/externaltc/btviewer/searchresult?SearchText=${adjustedPhraseToSearch}&SearchField=search_field_src&SearchType=search_type_exact&ProductSelect=&LanguagesSelected=${res.language}&TranslationFilterStatus=translated&TranslationFilterAnyOrAll=any&TranslationFilterStage=LEVERAGED&ShowTranslationStage=showTranslationStage&CreatedAfter=&CreatedBefore=&ResourcesFilter=&IncludeObsolete=obsolete`
+      window.open(url)
    })
 }
