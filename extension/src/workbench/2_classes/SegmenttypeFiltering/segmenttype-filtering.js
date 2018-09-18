@@ -1,24 +1,14 @@
 // Copyright © 2016 Eirik Birkeland. All rights reserved.
-
 import $ from 'jquery'
 
 const _ = require('lodash')
 const debug = require('cth-debug')(__filename.replace(/^src\//, ''))
 
 /**
- * How the feature should work:
+ * How the feature should be working:
  * 1. DEFAULT: When hiding a segment type, target segments should be entirely hidden, but source segments should be colored grey. This provides for more reading context.
  * 2. When hiding a segment type, target AND source segments should be filtered from view visibly, resulting in a compressed view.
  */
-// TOOL: Very, very useful tool for checking whether a element is effectively hidden due to any parents that are hidden (like display none). I should use this for at least checking for any unintentionally hidden elements during development.
-
-// FIXME: After combining segments, cannot hide messageBlocks.
-
-// FIXME: 2017 July - https://translate.google.com/toolkit/workbench?did=00dm33g01opafv505rsw&hl=en
-
-// TODO: A fast and cheap alternative would be to disable the feature for documents that contain bullets ;-) The user would most likely respect this, and feel that we care about their 'well-being'.
-
-// TODO: Convert this all to a React component to allow for reactive updates without having to do a lot of stuff to achieve updates.
 
 /**
  *
@@ -140,7 +130,9 @@ export default function addFilteringButtonRow () {
       state[className] = false
 
       return function () {
-         if (!state[className]) {
+         if (!state[
+            
+            sName]) {
             _toggleClass(className, 'none')
             button.style.borderColor = 'red'
             state[className] = true
@@ -254,7 +246,7 @@ export default function addFilteringButtonRow () {
                      const child = sibling.firstChild
                      if (child) {
                         if (child.classList &&
-                           !_.every(child.classList, (clas) => className.indexOf(clas)) &&
+                           !_.every(child.classList, (class) => className.indexOf(class)) &&
                            child.style.display !== 'none') {
                            bad = true
                         } else if (
