@@ -246,7 +246,7 @@ export default function addFilteringButtonRow () {
                      const child = sibling.firstChild
                      if (child) {
                         if (child.classList &&
-                           !_.every(child.classList, (class) => className.indexOf(class)) &&
+                           !_.every(child.classList, (clas) => className.indexOf(clas)) &&
                            child.style.display !== 'none') {
                            bad = true
                         } else if (
