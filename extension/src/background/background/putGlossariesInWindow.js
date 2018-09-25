@@ -15,48 +15,49 @@
 
 import $ from 'jquery'
 import persistFontSize from './putGlossariesInWindow/persistFontSize'
-import {getBody, getHead} from './putGlossariesInWindow/htmlHeadBody'
+import { getBody, getHead } from './putGlossariesInWindow/htmlHeadBody'
 import hideDefinitionsStuff from './putGlossariesInWindow/hideDefinitionsStuff'
 import removeAndUpdateDatastore from './putGlossariesInWindow/removeAndUpdateDatastore'
 
 const debug = require('cth-debug')(__filename)
 
-function putGlossariesInWindow (content) {
-   // Notez: might not work well on small viewports due to screen.height - 840
-   if (!window.wind) {
-      if (!content) {
-         window.wind = window.open('', 'Title', `toolbar=no, location=no, directories=no, status=yes, menubar=1, scrollbars=yes, resizable=yes, width=780, height=1000, top=${screen.height - 400}, left=${screen.width - 840}`)
-         window.wind.document.head.innerHTML = getHead()
-         window.wind.document.body.innerHTML = 'No glossary matches available.'
-      } else if (content) {
-         window.wind = window.open('', 'Title', `toolbar=no, location=no, directories=no, status=yes, menubar=1, scrollbars=yes, resizable=yes, width=780, height=1000, top=${screen.height - 400}, left=${screen.width - 840}`)
-         window.wind.document.head.innerHTML = getHead()
-      }
-   }
+function putGlossariesInWindow(content) {
+    let wind
+    
+    if (!wind) {
+        if (!content) {
+            wind = window.open('', 'Title', `toolbar=no, location=no, directories=no, status=yes, menubar=1, scrollbars=yes, resizable=yes, width=780, height=1000, top=${screen.height - 400}, left=${screen.width - 840}`)
+            wind.document.head.innerHTML = getHead()
+            wind.document.body.innerHTML = 'No glossary matches available.'
+        } else if (content) {
+            wind = window.open('', 'Title', `toolbar=no, location=no, directories=no, status=yes, menubar=1, scrollbars=yes, resizable=yes, width=780, height=1000, top=${screen.height - 400}, left=${screen.width - 840}`)
+            wind.document.head.innerHTML = getHead()
+        }
+    }
 
-   $(window.wind).on('beforeunload', () => {
-      window.wind = undefined
-   })
+    $(wind).on('beforeunload', () => {
+        wind = undefined
+    })
 
-   if (content) {
-      try {
-         window.wind.document.body.innerHTML = getBody(content)
-      } catch (e) {
-         debug.warn(e)
-      }
-   }
+    if (content) {
+        try {
+            wind.document.body.innerHTML = getBody(content)
+        } catch (e) {
+            debug.warn(e)
+        }
+    }
 
-   try {
-      $(window.wind.document.body).find('.cth-NEW').click(removeAndUpdateDatastore)
-      $(window.wind.document.body).find('.cth-CHANGE').click(removeAndUpdateDatastore)
+    try {
+        $(wind.document.body).find('.cth-NEW').click(removeAndUpdateDatastore)
+        $(wind.document.body).find('.cth-CHANGE').click(removeAndUpdateDatastore)
 
-      hideDefinitionsStuff(window.wind.document)
-      persistFontSize(window.wind.document)
-   } catch (e) {
-      debug.warn(e)
-   }
+        hideDefinitionsStuff(wind.document)
+        persistFontSize(wind.document)
+    } catch (err) {
+        debug.warn(err)
+    }
 
-   window.wind.blur()
+    wind.blur()
 }
 
 export default putGlossariesInWindow
