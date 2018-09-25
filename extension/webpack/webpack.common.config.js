@@ -4,15 +4,14 @@ const appRoot = path.join(__dirname, '/../src/');
 
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 
-console.log("DIRNAME:")
-console.log(__dirname)
 module.exports = {
   // Replace entry file as needed
   context: appRoot,
   entry: {
     bundle: path.join(appRoot + '/app.js'),
     options: path.join(appRoot + '/options/options-index.js'),
-    background: path.join(appRoot + '/background/background.js')
+    background: path.join(appRoot + '/background/background.js'),
+    popup: path.join(appRoot + '../html/popup.js'),
   },
   node: {
     __filename: true,
@@ -27,13 +26,11 @@ module.exports = {
     //  on the global var jQuery
     jquery: 'jQuery',
     lodash: '_',
-    react: 'React',
-    'react-dom': 'ReactDOM',
     // Make sure to exclude cheerio from extension bundle:
     cheerio: 'cheerio',
     chalk: 'chalk',
     // To prevent Tabletop from pulling `request`
-      request: 'request'
+    request: 'request'
   },
   plugins: [
     new ProgressBarPlugin(),
@@ -42,12 +39,13 @@ module.exports = {
       filename: 'commons.js',
       minChunks: 2,
     }),
+
   ],
   module: {
     rules: [
       {
         test: /\.js$/,
-        exclude: [/node_modules\/localforage/, /__tests__/],
+        exclude: [/node_modules/, /__tests__/],
         use: ['cache-loader',
           {
             loader: 'babel-loader?cacheDirectory=true',
@@ -67,28 +65,28 @@ module.exports = {
       {
         test: /\.css$/,
         use: [{
-            loader: 'style-loader'
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              minimize: true
-            }
+          loader: 'style-loader'
+        },
+        {
+          loader: 'css-loader',
+          options: {
+            minimize: true
           }
+        }
         ]
       },
       {
         test: /\.less$/,
         exclude: [/node_modules/, /__tests__/],
         use: [{
-            loader: 'style-loader'
-          },
-          {
-            loader: 'css-loader'
-          },
-          {
-            loader: 'less-loader'
-          }
+          loader: 'style-loader'
+        },
+        {
+          loader: 'css-loader'
+        },
+        {
+          loader: 'less-loader'
+        }
         ]
       },
       {
