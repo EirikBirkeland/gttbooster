@@ -1,6 +1,6 @@
 {
     "browser_action": {
-        "default_icon": "icons/settings32.png",
+        "default_icon": "icons/rocket-stars.png",
         "default_popup": "html/popup.html",
         "default_title": "QA"
     },
@@ -49,7 +49,7 @@
         "contextMenus"
     ],
     "update_url": "https://clients2.google.com/service/update2/crx",
-    "version": "6.892",
+    "version": "6.967",
     "web_accessible_resources": [
         "css/*.css",
         "dist/*.map",
