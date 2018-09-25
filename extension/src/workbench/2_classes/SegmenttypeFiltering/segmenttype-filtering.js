@@ -130,9 +130,7 @@ export default function addFilteringButtonRow () {
       state[className] = false
 
       return function () {
-         if (!state[
-            
-            sName]) {
+         if (!state[className]) {
             _toggleClass(className, 'none')
             button.style.borderColor = 'red'
             state[className] = true

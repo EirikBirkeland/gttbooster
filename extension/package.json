@@ -43,6 +43,7 @@
     "all": false
   },
   "devDependencies": {
+    "@types/jquery": "^3.3.10",
     "ava": "^0.25.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.1",
@@ -78,7 +79,7 @@
     "optimize-css-assets-webpack-plugin": "^3.2.0",
     "progress-bar-webpack-plugin": "^1.10.0",
     "react-devtools": "^3.0.0",
-    "react-dom": "^15.6.2",
+    "react-dom": "^16.5.2",
     "sinon": "^4.2.2",
     "standard": "^10.0.3",
     "style-loader": "^0.20.1",
@@ -89,6 +90,7 @@
   },
   "dependencies": {
     "@eirikbirkeland/ob-config": "0.0.3",
+    "@material-ui/core": "^3.1.1",
     "bootstrap": "~3.3.7",
     "bootstrap-validator": "~0.11.5",
     "chrome-mock": "0.0.9",
@@ -113,7 +115,7 @@
     "pify": "^3.0.0",
     "prop-types": "^15.6.0",
     "raven": "^2.4.0",
-    "react": "^15.6.2",
+    "react": "^16.5.2",
     "react-bootstrap": "^0.32.1",
     "react-confirm-bootstrap": "^5.1.1",
     "react-toggle": "^4.0.2",
