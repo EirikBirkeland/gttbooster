@@ -21,60 +21,57 @@ export const getHead = function () {
 
     <style>
         body {
-            font-size: 14px
+            font-size: 14px;
         }
 
         .cth-spacious {
-            margin: 5px
+            margin: 5px;
         }
 
         .gtc-glossary-pos {
-            font-family: monospace
+            font-family: monospace;
         }
 
         .gtc-glossary-sourceterm {
-            display: inline-block
-            *zoom: 1
-            *display: inline
-            width: 20%
-            vertical-align: top
-            color: red
+            display: inline-block;
+            *zoom: 1;
+            *display: inline;
+            width: 20%;
+            vertical-align: top;
+            color: red;
         }
 
         .gtc-glossary-source {
-            color: #666
-            vertical-align: top
+            color: #666;
+            vertical-align: top;
         }
 
         .gtc-glossary-terms {
-            clear: both
-            display: block
-            padding-bottom: 0.5em
-        }
-
-        .gtc-glossary-translation, .gtc-glossary-pos {
-            font-family: monospace
+            clear: both;
+            display: block;
+            padding-bottom: 0.5em;
         }
 
         .gtc-glossary-translation {
-            font-size: larger
-            display: inline-block
-            vertical-align: top
-            font-weight: bold
+            font-family: monospace;
+            font-size: larger;
+            display: inline-block;
+            vertical-align: top;
+            font-weight: bold;
         }
 
         .gtc-glossary-pos, .gtc-glossary-language {
-            font-style: italic
-            display: inline-block
-            vertical-align: top
-            font-size: smaller
-            color: #666
+            font-style: italic;
+            display: inline-block;
+            vertical-align: top;
+            font-size: smaller;
+            color: #666;
         }
 
         .gtc-glossary-description {
-            vertical-align: top
-            clear: both
-            display: block
+            vertical-align: top;
+            clear: both;
+            display: block;
         }
     </style>
 </head>`
