@@ -14,8 +14,6 @@ const Stylez = {
    // "ansi": {code: (str) => chalk.bold(str)}
 }
 
-// WARN: Should return classes like .cth-low-priority or .cth-med-priority rather than (OR IN ADDITION TO!) hardcoded colors! This makes recoloring waaaaay easier.
-
 /**
  *
  * @param {string} sourceSeg
@@ -25,8 +23,8 @@ const Stylez = {
  * @returns {Array}
  */
 export function runChecksCollection (sourceSeg, targetSeg, checksCollection, opts) {
-   if (_.isPlainObject(checksCollection)) {
-      return debug.warn('testCollection is not an object!')
+   if (!Array.isArray(checksCollection)) {
+      throw new Error('checksCollection is not an array!')
    }
 
    opts = Object.assign({
@@ -124,22 +122,18 @@ export function runChecksCollection (sourceSeg, targetSeg, checksCollection, opt
 
       // Everything else:
       if (!invertSource && !invertTarget) {
-         /*
-          * Handle tests where the user would like to count the number of occurrences and where order matters
-          * TODO: Cleanup - perhaps get it out of the way (put code in separate file and import?)
-          */
          const exp = /\[.*\]|\|/
 
          if (exp.test(smp) && exp.test(tmp)) {
             let allFound = false
 
-            // This one should be counted and order checked
             const srcArr = xRegExp.match(sourceSeg, xRegExp(smp), 'all')
             const trgArr = xRegExp.match(targetSeg, xRegExp(tmp), 'all')
 
             if (srcArr.length === 0 && trgArr.length === 0) {
                return
             }
+
             if (srcArr.length > 0 && trgArr.length > 0) {
                allFound = srcArr.slice().sort().join('') === trgArr.slice().sort().join('')
             }
@@ -202,10 +196,10 @@ export function runChecksCollection (sourceSeg, targetSeg, checksCollection, opt
 
    return result.filter((ele) => ele.result !== '')
 
-   function capturify (thing) {
-      return thing instanceof RegExp
-         ? new RegExp(`(${thing.source})`, thing.flags)
-         : new RegExp(`(${thing})`)
+   function capturify (re) {
+      return re instanceof RegExp
+         ? new RegExp(`(${re.source})`, re.flags)
+         : new RegExp(`(${re})`)
    }
 
    function _initVars (obj, invert, patternType, matchPattern, ss) {

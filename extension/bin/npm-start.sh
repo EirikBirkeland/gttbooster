@@ -21,8 +21,8 @@ unzip -q archive.zip -d archive
 
 #hue 4 yellow
 
-npm run test # or any other command
-npm run lint
+yarn run test # or any other command
+yarn run lint
 #if [ $? -eq 0 ]; then
     # green light if the command returned exit status 0
   #  hue 4 green
