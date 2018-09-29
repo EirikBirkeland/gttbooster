@@ -15,7 +15,7 @@ const debug = require('cth-debug')(__filename)
 
 class Qa {
    constructor () {
-      this.dataElements = window.cth.dataJSON
+      this.dataElements = window.cth.dataJSON[window.cth.option.sheetName].elements.filter(x=>x.toggle === 'on')
       this.qaObserveAll = null
       this.targetSegments = (() => {
          const visibleUnits = $(window.cth.dom.targetDoc).find('.goog-gtc-unit:visible')
@@ -45,6 +45,7 @@ class Qa {
          "$targetNode": $(window.cth.dom.wbmenu)
       })
 
+      
       runChecks({
          "sourceSegments": this.sourceSegments,
          "targetSegments": this.targetSegments,

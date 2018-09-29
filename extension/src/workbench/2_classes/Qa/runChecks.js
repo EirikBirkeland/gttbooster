@@ -35,8 +35,6 @@ const debug = require('cth-debug')(__filename.replace(/^src\//, ''))
 export default function runChecks (opts, finalCallback) {
    let {sourceSegments, targetSegments, dataElements, iterationCallback} = opts
 
-   dataElements = dataElements || window.cth.dataJSON
-
    // Wrap the segment reference in an array if single node reference and no length prop:
    if (!sourceSegments.length) {
       sourceSegments = [sourceSegments]
@@ -184,7 +182,7 @@ export default function runChecks (opts, finalCallback) {
          }
 
          output.nuclearPoweredFilter(runURLTest, sourceStripped, targetStripped)
-
+         
          if (!Array.isArray(dataElements) || !dataElements.length) {
             debug.log('dataElements is not an array or has a length of 0!')
          } else {
