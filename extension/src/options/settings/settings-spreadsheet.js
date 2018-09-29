@@ -2,7 +2,7 @@ import {ChromeProxy} from '../../model/ChromeProxy'
 
 export const spreadsheetSettings = {
    "spreadsheetURL": {
-      "default": 'https://docs.google.com/spreadsheets/d/1Pmuwz6fOpomoRUpFZvLJL3Dz403fD2HcVqQW8cOYs4A/edit#gid=0',
+      "default": 'https://docs.google.com/spreadsheets/d/1ejopeR9b0sxK73-R0vK6DWx2rLsUscuhkfz--FGNr3I/edit?usp=sharing',
       "description": 'URL or key name for Google Spreadsheet workbook',
       "tooltip": 'Add a spreadsheet URL if you wish to include your very own custom language checks.',
       "defaultInputText": 'Please input the full public URL, or just the key itself.',
