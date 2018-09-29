@@ -94,7 +94,7 @@ class Toolbar extends React.Component {
          >
           <Input
              id="cth_searchSourceField"
-             title="Input source phrase to highlight and click enter..."
+             title="Input source phrase to filter and click enter..."
              value="Source"
              className="unselectable"
           />
@@ -130,7 +130,7 @@ class Toolbar extends React.Component {
           />
           <Input
              id="cth_searchTargetField"
-             title="Input target phrase to highlight and click enter..."
+             title="Input target phrase to filter and click enter..."
              value="Target"
              className="unselectable"
           />
