@@ -91,7 +91,7 @@ export function runChecksCollection (sourceSeg, targetSeg, checksCollection, opt
          "targetPatternType": '',
          "sourceMatchPattern": test.source_pattern,
          "targetMatchPattern": test.target_pattern,
-         "correctionMatchPattern": test.message,
+         "correctionMatchPattern": test.correction || test.message,
          "result": []
       }
 
@@ -119,6 +119,8 @@ export function runChecksCollection (sourceSeg, targetSeg, checksCollection, opt
             return _pushResult(`The untranslatable ${smp} is missing!`)
          }
       }
+
+      const testCorrection = test.correction || test.message; // support for legacy spreadsheets...
 
       // Everything else:
       if (!invertSource && !invertTarget) {
@@ -153,23 +155,24 @@ export function runChecksCollection (sourceSeg, targetSeg, checksCollection, opt
             }
             return _pushResult(msg)
          }
+
          if (xRegExp.test(sourceSeg, xRegExp(smp), 'one') &&
             xRegExp.test(targetSeg, xRegExp(tmp), 'one')) {
             // Note: New test syntax for moving matches to the 'correction'
             if (
-               test.correction.match(/\@{t1}/) &&
+               testCorrection.match(/\@{t1}/) &&
                xRegExp.match(targetSeg, xRegExp(tmp), 'one')
             ) {
-               return _pushResult(test.correction.replace(/\@{t1}/, xRegExp.match(targetSeg, xRegExp(tmp), 'one')))
+               return _pushResult(testCorrection.replace(/\@{t1}/, xRegExp.match(targetSeg, xRegExp(tmp), 'one')))
             }
 
-            return _pushResult(test.correction ||
+            return _pushResult(testCorrection ||
                `${Style.code(tmp.source || tmp)} is a mistranslation of ${Style.code(smp.source || smp || '<no entry>')}.`)
          }
       } else if (invertSource && !invertTarget) {
          if (!xRegExp.test(sourceSeg, xRegExp(smp), 'one') &&
             xRegExp.test(targetSeg, xRegExp(tmp), 'one')) {
-            return _pushResult(test.correction ||
+            return _pushResult(testCorrection ||
                `${Style.code(smp.source || smp)} incorrectly translated as ${Style.code(tmp.source || tmp)}.`)
          }
       } else if (!invertSource && invertTarget) {
@@ -182,13 +185,13 @@ export function runChecksCollection (sourceSeg, targetSeg, checksCollection, opt
                return `"${Style.code(smp.source || smp)}" found in source, but "${Style.code(tmp.source || tmp)}" not found in translation.`
             })()
 
-            return _pushResult(test.correction || standardMessage)
+            return _pushResult(testCorrection || standardMessage)
          }
          // NOTE: The following is an unlikely usage scenario, but who knows.
       } else if (invertSource && invertTarget) {
          if (!xRegExp.test(sourceSeg, xRegExp(smp), 'one') &&
             !xRegExp.test(targetSeg, xRegExp(tmp), 'one')) {
-            return _pushResult(test.correction ||
+            return _pushResult(testCorrection ||
                `Source doesn't contain ${Style.code(smp.source || smp)}, and translation doesn't contain ${Style.code(tmp.source || tmp)}!`)
          }
       }
