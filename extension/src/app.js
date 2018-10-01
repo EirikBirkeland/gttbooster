@@ -9,8 +9,8 @@ const pathname = window.location.pathname.toLowerCase()
 const fullHref = window.location.href
 
 const pathnames = {
-   "workbench": '/toolkit/workbench',
-   "list": '/toolkit/list',
+   "workbench": /toolkit\/(.*?\/)?workbench/,
+   "list": /toolkit\/(.*?\/)?list/,
    "lqe": 'gloc-lqe-tool.appspot.com',
    "tc": 'google.com/transconsole'
 }
