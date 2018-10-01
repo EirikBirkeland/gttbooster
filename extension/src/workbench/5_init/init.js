@@ -57,7 +57,7 @@ window.cth = window.cth || {
 
    Storage,
 
-   "exceptionHandler": function (e) {
+   "exceptionHandler" (e) {
       debug.log(e.stack)
    }
 }
