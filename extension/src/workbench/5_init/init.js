@@ -59,13 +59,6 @@ window.cth = window.cth || {
 
    "exceptionHandler": function (e) {
       debug.log(e.stack)
-   } || function (e) {
-      chrome.runtime.sendMessage({
-         "header": 'debug',
-         "user": window.cth.docInfo.brukerNavn.toLowerCase(),
-         "message": e.stack || e
-      }, (res) => {
-      })
    }
 }
 
