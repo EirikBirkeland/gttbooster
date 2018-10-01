@@ -2,8 +2,6 @@ import $ from 'jquery'
 import _ from 'lodash'
 import localforage from 'localforage'
 
-import {notifier} from '../2_classes/notifier'
-
 import {addButtonListeners, loadAnalytics} from './init/analytics'
 import {Storage} from '../../model/GeneralStorage'
 
@@ -80,7 +78,7 @@ function initWorkbench () {
       window.cth.model = getModel()
       window.cth.segmentLabels = require('./labels').default
 
-      // Add the labels according to data in window.cth.label
+      // Add any stored labels
       Object.keys(window.cth.segmentLabels).forEach((labelKey) => {
          const seg = Segment.create($(cth.dom.targetDoc).find(`#${cth.segmentLabels[labelKey].segmentId}`))
          seg.toggleLabel(cth.segmentLabels[labelKey])
