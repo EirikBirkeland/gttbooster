@@ -1,6 +1,4 @@
 // Copyright © 2016 Eirik Birkeland. All rights reserved.
-
-
 import $ from 'jquery'
 
 const debug = require('cth-debug')(__dirname)
