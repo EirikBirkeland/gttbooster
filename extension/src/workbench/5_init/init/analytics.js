@@ -2,7 +2,7 @@ const debug = require('cth-debug')(__filename.replace(/^src\//, ''))
 
 /* global _gaq ga */
 
-function loadAnalytics () {
+function load () {
    debug.log('Running loadAnalytics()')
 
    window._gaq = window._gaq || []
@@ -21,7 +21,7 @@ function loadAnalytics () {
    }())
 }
 
-function loadAnalyticsNew () {
+function loadNew () {
    debug.log('Running loadAnalyticsNew()')
    /* eslint-disable */
    ;(function (i, s, o, g, r, a, m) {
@@ -80,4 +80,4 @@ function addButtonListeners () {
    }
 }
 
-export {loadAnalytics, loadAnalyticsNew, addButtonListeners}
+export {load, loadNew, addButtonListeners}

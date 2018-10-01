@@ -2,7 +2,7 @@ import $ from 'jquery'
 import _ from 'lodash'
 import localforage from 'localforage'
 
-import {addButtonListeners, loadAnalytics} from './init/analytics'
+import * as Analytics from './init/analytics'
 import {Storage} from '../../model/GeneralStorage'
 
 import {Segment} from '../2_classes/Segment/Segment'
@@ -28,13 +28,13 @@ require('../../../css/localize-bootstrap.less')
 
 window.XRegExp = require('xregexp')
 
-loadAnalytics()
+Analytics.load()
 
 /**
  * This is loaded synchronously after being injected into the webpage perhaps? Which could cause issues, so I decided to defer the loading.
  */
 setTimeout(() => {
-   addButtonListeners()
+    Analytics.addButtonListeners()
 }, 10000)
 
 window.cth = window.cth || {

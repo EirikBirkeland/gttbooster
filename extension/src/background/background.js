@@ -2,7 +2,7 @@
 import $ from 'jquery'
 import {doneHandler, errorHandler, getChromeVersion, getExtensionVersion} from './background/helpers'
 import putGlossariesInWindow from './background/putGlossariesInWindow'
-import {loadAnalytics} from '../workbench/5_init/init/analytics'
+import * as Analytics from '../workbench/5_init/init/analytics'
 import './contextMenu'
 import checkIfGlossaryWindowIsOpen from './background/putGlossariesInWindow/checkIfGlossaryWindowIsOpen'
 // TODO: Implement for some statistics purpose ...
@@ -12,7 +12,7 @@ import './hot-reload'
 const debug = require('cth-debug')(__filename.replace(/^src\//, ''))
 window.Storage = require('../model/GeneralStorage').Storage
 
-loadAnalytics()
+Analytics.load()
 
 // Update extension when update is available, by calling for the background page to reload
 chrome.runtime.onUpdateAvailable.addListener(() => {
