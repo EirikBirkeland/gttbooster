@@ -83,11 +83,9 @@ function _activate() {
     })
 }
 
-class Autocomplete {
-    constructor() { }
-
-    init(tmOpts) {
-        this.minLength = window.cth.option.autocompleteMinLength.length
+const Autocomplete = {
+    init: (tmOpts) => {
+        const minLength = window.cth.option.autocompleteMinLength.length
             ? window.cth.option.autocompleteMinLength[1]
             : 2
 
@@ -97,15 +95,14 @@ class Autocomplete {
         const delay = 5000
 
         if (DOM.$TARGET_NODE.length) {
-            this._activateAutocomplete()
+            _activate()
             initCustomPlaceholderInsertion()
         } else {
             debug.log(`The translation editor was not available. Trying again in ${delay / 1000} seconds`)
             setTimeout(this.init, delay)
         }
-    }
-
-    destroy() {
+    },
+    destroy: () => {
         const $node = DOM.$TARGET_NODE;
 
         $node.autocomplete(); // prevents unnecessary error msg: "cannot call methods on autocomplete prior to initialization; attempted to call method 'destroy'"
@@ -113,4 +110,4 @@ class Autocomplete {
     }
 }
 
-export default new Autocomplete()
+export default Autocomplete
