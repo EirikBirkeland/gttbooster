@@ -53,9 +53,9 @@ function _configure() {
     })
 }
 
-function _activate() {
+function _activate(minLength) {
     DOM.$TARGET_NODE.autocomplete({
-        minLength: this.minLength,
+        minLength: minLength,
         multiple: true,
         autoFocus: true,
         delay: 50,
@@ -95,7 +95,7 @@ const Autocomplete = {
         const delay = 5000
 
         if (DOM.$TARGET_NODE.length) {
-            _activate()
+            _activate(minLength)
             initCustomPlaceholderInsertion()
         } else {
             debug.log(`The translation editor was not available. Trying again in ${delay / 1000} seconds`)
