@@ -49,7 +49,7 @@
         "contextMenus"
     ],
     "update_url": "https://clients2.google.com/service/update2/crx",
-    "version": "7.141",
+    "version": "7.144",
     "web_accessible_resources": [
         "css/*.css",
         "dist/*.map",

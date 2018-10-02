@@ -6,14 +6,6 @@ const debug = require('cth-debug')(__filename)
 
 function updateTrados (transEditor, segmentArea) {
    const tempTradosText = $(window.cth.dom.targetDoc).find('#cth_tempTradosText')[0]
-   const gtcTranslatableColor = $(transEditor).closest('.goog-gtc-unit').children().first().css('color')
-
-   $(transEditor).css({
-      "border": 'ridge',
-      "borderColor": gtcTranslatableColor,
-      "borderWidth": '2px',
-      "borderRadius": '5px'
-   })
 
    const $sourceSegmentText = segmentArea
       ? $(window.cth.dom.sourceDoc).find(`#${segmentArea.id}`).children().clone()
