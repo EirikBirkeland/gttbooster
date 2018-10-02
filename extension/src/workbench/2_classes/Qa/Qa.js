@@ -17,7 +17,8 @@ const SPELLCHECK_OVERRIDE_TOGGLE = false;
 
 class Qa {
    constructor () {
-      this.dataElements = window.cth.dataJSON[window.cth.option.sheetName].elements.filter(x=>x.toggle === 'on')
+      this.sheet = window.cth.dataJSON[window.cth.option.sheetName]
+      this.dataElements = this.sheet ? this.sheet.elements.filter(x=>x.toggle === 'on') : null
       this.qaObserveAll = null
       this.targetSegments = (() => {
          const visibleUnits = $(window.cth.dom.targetDoc).find('.goog-gtc-unit:visible')
@@ -41,18 +42,20 @@ class Qa {
       if (this.targetSegments.length <= 0) {
          return debug.warn("Refusing to run QA because no targetSegments have been provided")
       }
+      if (!this.dataElements) {
+          return debug.warn("Refusing to run QA because dataElements is falsy")
+      }
 
       ProgressBar.add({
          "targetSegments": this.targetSegments,
          "$targetNode": $(window.cth.dom.wbmenu)
       })
 
-      
       runChecks({
          "sourceSegments": this.sourceSegments,
          "targetSegments": this.targetSegments,
          "iterationCallback": ProgressBar.increment,
-         "dataElements": this.dataElements || window.cth.dataJSON
+         "dataElements": this.dataElements
       }, () => {
          if (SPELLCHECK_OVERRIDE_TOGGLE && window.cth.option.spellcheckEnabled) {
             const translatableSegments = $(this.targetSegments).find('.goog-gtc-translatable')
