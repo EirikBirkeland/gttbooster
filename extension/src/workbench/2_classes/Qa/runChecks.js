@@ -127,6 +127,22 @@ export default function runChecks (opts, finalCallback) {
             }
          }
 
+         if (!Array.isArray(dataElements) || !dataElements.length) {
+            debug.log('dataElements is not an array or has a length of 0!')
+         } else {
+            const localize = runChecksCollection(sourceStripped, targetStripped, dataElements, window.cth.option)
+            if (localize) {
+               _.forEach(localize, (ele) => {
+                  const string = `<span style="font-weight:normal;color:${ele.priority.textColor};background-color: ${ele.priority.bgColor}">${ele.result}</span>`
+                  // FIXME: Sometimes multiple words is duplicated ... so this is a temporary way of avoiding that:
+                  if (!output.includes(string)) {
+                     output.push(string)
+                  }
+               })
+            }
+         }
+
+
          if (window.cth.option.lengthValidation[0]) {
             output.nuclearPoweredFilter(compareLengths, sourceStripped, targetStripped, {"lengthPercent": window.cth.option.lengthValidation[1]})
          }
@@ -182,21 +198,6 @@ export default function runChecks (opts, finalCallback) {
          }
 
          output.nuclearPoweredFilter(runURLTest, sourceStripped, targetStripped)
-         
-         if (!Array.isArray(dataElements) || !dataElements.length) {
-            debug.log('dataElements is not an array or has a length of 0!')
-         } else {
-            const localize = runChecksCollection(sourceStripped, targetStripped, dataElements, window.cth.option)
-            if (localize) {
-               _.forEach(localize, (ele) => {
-                  const string = `<span style="font-weight:normal;color:${ele.priority.textColor};background-color: ${ele.priority.bgColor}">${ele.result}</span>`
-                  // FIXME: Sometimes multiple words is duplicated ... so this is a temporary way of avoiding that:
-                  if (!output.includes(string)) {
-                     output.push(string)
-                  }
-               })
-            }
-         }
       }
 
       if (userHasTurnedOffQa()) {

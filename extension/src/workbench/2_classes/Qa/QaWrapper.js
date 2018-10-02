@@ -42,9 +42,6 @@ class Qa {
       if (this.targetSegments.length <= 0) {
          return debug.warn("Refusing to run QA because no targetSegments have been provided")
       }
-      if (!this.dataElements) {
-          return debug.warn("Refusing to run QA because dataElements is falsy")
-      }
 
       ProgressBar.add({
          "targetSegments": this.targetSegments,
