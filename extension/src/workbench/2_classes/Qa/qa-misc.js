@@ -11,7 +11,8 @@ const debug = require('cth-debug')(__filename)
  * @returns {string|null}
  */
 function targetEqualsSource (source, target) {
-   if (target.segmentType.match('goog-gtc-from-source') &&
+   // segmentType on Segment instance is not guaranteed to be defined, so I added a pre-check
+   if (target.segmentType && target.segmentType.match('goog-gtc-from-source') &&
       source.inner === target.inner &&
       !source.isUnitAttribute) {
       return 'Target equals source'
