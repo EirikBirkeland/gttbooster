@@ -24,7 +24,6 @@ jobs:
       - run:
           name: Install dependencies
           command: |
-           echo $CLIENT_SECRET
            sudo apt-get update
            sudo apt-get -y install curl jq 
       - run:
@@ -38,10 +37,3 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "extension/package.json" }}
-
-      - run:
-          name: Build and test the back-end
-          command: |
-            cd services/spellcheck && npm install --loglevel=warn
-            npm start > /dev/null &
-            # sleep 5 && npm run test
