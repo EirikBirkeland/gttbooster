@@ -2,9 +2,7 @@ import $ from 'jquery'
 import _ from 'lodash'
 import localforage from 'localforage'
 
-import {notifier} from '../2_classes/notifier'
-
-import {addButtonListeners, loadAnalytics} from './init/analytics'
+import * as Analytics from './init/analytics'
 import {Storage} from '../../model/GeneralStorage'
 
 import {Segment} from '../2_classes/Segment/Segment'
@@ -30,13 +28,13 @@ require('../../../css/localize-bootstrap.less')
 
 window.XRegExp = require('xregexp')
 
-loadAnalytics()
+Analytics.load()
 
 /**
  * This is loaded synchronously after being injected into the webpage perhaps? Which could cause issues, so I decided to defer the loading.
  */
 setTimeout(() => {
-   addButtonListeners()
+    Analytics.addButtonListeners()
 }, 10000)
 
 window.cth = window.cth || {
@@ -57,15 +55,8 @@ window.cth = window.cth || {
 
    Storage,
 
-   "exceptionHandler": function (e) {
+   "exceptionHandler" (e) {
       debug.log(e.stack)
-   } || function (e) {
-      chrome.runtime.sendMessage({
-         "header": 'debug',
-         "user": window.cth.docInfo.brukerNavn.toLowerCase(),
-         "message": e.stack || e
-      }, (res) => {
-      })
    }
 }
 
@@ -87,7 +78,7 @@ function initWorkbench () {
       window.cth.model = getModel()
       window.cth.segmentLabels = require('./labels').default
 
-      // Add the labels according to data in window.cth.label
+      // Add any stored labels
       Object.keys(window.cth.segmentLabels).forEach((labelKey) => {
          const seg = Segment.create($(cth.dom.targetDoc).find(`#${cth.segmentLabels[labelKey].segmentId}`))
          seg.toggleLabel(cth.segmentLabels[labelKey])

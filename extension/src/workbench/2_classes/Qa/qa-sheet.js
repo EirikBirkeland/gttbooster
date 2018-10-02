@@ -69,7 +69,7 @@ export function qaSheet (finalCb) {
 
    qaSheet.fetch(function (err, res) {
       if (err) {
-         debug.error(this.httpErrors[err])
+         debug.error(qaSheet.httpErrors[err])
       }
 
       if (res) {

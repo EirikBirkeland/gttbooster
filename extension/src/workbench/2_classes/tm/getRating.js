@@ -9,7 +9,6 @@ import levenshteinWeighted from 'fast-levenshtein'
 export default function getRating (tmString, sourceString) {
    let percent = Math.abs(_fuzzy(tmString, sourceString))
    percent = Math.round(percent)
-   percent += '%'
    return percent
 
    function _fuzzy (str1, str2) {

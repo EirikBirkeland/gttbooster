@@ -5,7 +5,7 @@ import getPartOfWord from './getPartOfWord'
 
 const debug = require('cth-debug')(__filename.replace(/^src\//, ''))
 
-const dom = require('../../5_init/init/doc-references').getDomRefs()
+const dom = require('../../../5_init/init/doc-references').getDomRefs()
 
 /**
  * Tricky: When a placeholder is inserted, the active selection changes to the new placeholder node. This makes it tricky to ensure the caret is reinsertd at the intended place.

@@ -7,8 +7,6 @@ require('../../xreg')()
 
 const debug = require('cth-debug')(__filename)
 
-// Const chalk = require('chalk')
-
 const Stylez = {
    "html": {"code": (str) => `<strong><code>${str}</code></strong>`}
    // "ansi": {code: (str) => chalk.bold(str)}
@@ -103,10 +101,10 @@ export function runChecksCollection (sourceSeg, targetSeg, checksCollection, opt
       _initVars(config, 'invertSource', 'sourcePatternType', 'sourceMatchPattern', test)
       _initVars(config, 'invertTarget', 'targetPatternType', 'targetMatchPattern', test)
 
-      const {invertSource, invertTarget, sourcePatternType, targetPatternType, correctionMatchPattern} = config
+      const {invertSource, invertTarget, sourceMatchPattern, targetMatchPattern, correctionMatchPattern} = config
 
-      const smp = config.sourceMatchPattern
-      const tmp = config.targetMatchPattern
+      const smp = sourceMatchPattern
+      const tmp = targetMatchPattern
 
       // Return if the user has forgotten to input smp/tmp
       if (smp.source === '(?:)' && tmp.source === '(?:)') {
