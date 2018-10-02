@@ -49,7 +49,7 @@
         "contextMenus"
     ],
     "update_url": "https://clients2.google.com/service/update2/crx",
-    "version": "7.001",
+    "version": "7.002",
     "web_accessible_resources": [
         "css/*.css",
         "dist/*.map",
@@ -61,7 +61,7 @@
         "vendor/*.css",
         "vendor/*.js"
     ],
-    "minimum_chrome_version": "60",
+    "minimum_chrome_version": "69",
     "manifest_version": 2,
     "content_security_policy": "script-src 'self' https://ssl.google-analytics.com https://www.google-analytics.com; object-src 'self'"
 }
