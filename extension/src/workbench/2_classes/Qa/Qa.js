@@ -17,7 +17,7 @@ const SPELLCHECK_OVERRIDE_TOGGLE = false;
 
 class Qa {
    constructor () {
-      this.sheet = window.cth.dataJSON[window.cth.option.sheetName]
+      this.sheet = window.cth.dataJSON ? window.cth.dataJSON[window.cth.option.sheetName] : null;
       this.dataElements = this.sheet ? this.sheet.elements.filter(x=>x.toggle === 'on') : null
       this.qaObserveAll = null
       this.targetSegments = (() => {
