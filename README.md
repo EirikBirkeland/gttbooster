@@ -1,6 +1,9 @@
 ### GTT Booster
 
-GTT Booster is an Open Source Chrome Extension for Google Translator Toolkit. It was developed with space-based languages in mind, but you may have some luck using it for scriptio continua languages like Chinese or Hindi.
+GTT Booster is an Open Source Chrome Extension for Google Translator Toolkit.
+Its intended user is a professional translator working for Google. This tool is NOT intended for a general audience.
+
+Core functionality may be lacking if you are using this on a non-Google account!
 
 GTT Booster is freely available under the GPL 3.0 or later. You may [download and use the extension from the Chrome web store](https://chrome.google.com/webstore/detail/google-translator-toolkit/pjankaakojbendjaejlcnpgeldmfpjed) for any private or commercial purpose.
 
