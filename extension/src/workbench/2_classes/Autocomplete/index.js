@@ -99,7 +99,7 @@ const Autocomplete = {
             initCustomPlaceholderInsertion()
         } else {
             debug.log(`The translation editor was not available. Trying again in ${delay / 1000} seconds`)
-            setTimeout(this.init, delay)
+            setTimeout(Autocomplete.init, delay)
         }
     },
     destroy: () => {

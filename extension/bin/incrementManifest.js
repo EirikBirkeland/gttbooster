@@ -8,7 +8,7 @@ const fs = require('fs')
  * @param opts.type {type}
  */
 function incrementManifest(opts) {
-  const {type} = opts
+  const { type } = opts
 
   try {
     var content = fs.readFileSync('manifest.json', 'utf8')
@@ -23,13 +23,7 @@ function incrementManifest(opts) {
 
   parsedContent.version *= 1000
 
-  if (type === 'dev') {
-    parsedContent.version += 1
-  } else if (type === 'build') {
-    parsedContent.version += 1
-  } else {
-    return console.warn('oh no, variable `type` has an invalid value: ', type)
-  }
+  parsedContent.version += 1
 
   parsedContent.version /= 1000
 

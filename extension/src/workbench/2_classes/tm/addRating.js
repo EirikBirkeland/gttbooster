@@ -17,7 +17,7 @@ export default function addRating (sourceString) {
 
       const $bootWrapper = $('<span/>').addClass('bootstrap-wrapper cth-spacious')
 
-      const color = getColor(percent.replace(/%$/, ""))
+      const color = getColor(percent)
       const label = (() => {
          switch (color) {
             case 'red':
