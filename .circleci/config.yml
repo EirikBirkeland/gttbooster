@@ -8,9 +8,9 @@ jobs:
     docker:
       # specify the version you desire here
       - image: circleci/node:8.0.0
-
+    environment:
+      - APP_ID: pjankaakojbendjaejlcnpgeldmfpjed
     working_directory: ~/repo
-
     steps:
       - checkout
 
@@ -22,20 +22,27 @@ jobs:
           - v1-dependencies-
 
       - run:
+          name: Install dependencies
+          command: |
+           sudo apt-get update
+           sudo apt-get -y install curl jq 
+
+      - run:
           name: Build and test the extension
           command: |
-           cd extension && npm install --loglevel=warn
-           npm run circleci
-           npm run test
+           cd extension && yarn install --loglevel=warn
+           yarn run circleci
+           yarn run test
+      - run:
+          name: "Upload & Publish Extension to the Google Chrome Store"
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              ACCESS_TOKEN=$(curl "https://accounts.google.com/o/oauth2/token" -d "client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&refresh_token=${REFRESH_TOKEN}&grant_type=refresh_token&redirect_uri=urn:ietf:wg:oauth:2.0:oob" | jq -r .access_token)
+              curl -H "Authorization: Bearer ${ACCESS_TOKEN}" -H "x-goog-api-version: 2" -X PUT -T extension/dist/archive.zip -v "https://www.googleapis.com/upload/chromewebstore/v1.1/items/${APP_ID}"
+              curl -H "Authorization: Bearer ${ACCESS_TOKEN}" -H "x-goog-api-version: 2" -H "Content-Length: 0" -X POST -v "https://www.googleapis.com/chromewebstore/v1.1/items/${APP_ID}/publish"
+            fi
 
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "extension/package.json" }}
-
-      - run:
-          name: Build and test the back-end
-          command: |
-            cd services/spellcheck && npm install --loglevel=warn
-            npm start > /dev/null &
-            # sleep 5 && npm run test
