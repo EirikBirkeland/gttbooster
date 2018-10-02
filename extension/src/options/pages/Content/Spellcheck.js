@@ -6,11 +6,10 @@ import React, {Component} from 'react'
 import Grid from 'react-bootstrap/lib/Grid'
 import Row from 'react-bootstrap/lib/Row'
 import Col from 'react-bootstrap/lib/Col'
-import uploadFile from './Spellcheck/uploadFile'
 import showData from './Spellcheck/showData'
 import Checkbox from '../../components/CheckboxAndLabel.js'
 import Select from '../../components/Select.js'
-import {store} from '../../options-index'
+import { store } from '../../options-index'
 
 const debug = require('cth-debug')(__filename)
 

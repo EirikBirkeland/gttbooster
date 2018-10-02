@@ -1,7 +1,7 @@
 import $ from 'jquery'
 import {Spellcheck} from '../Spellcheck/Spellcheck'
 
-export default function _toggleSpellcheckLanguageIndication () {
+export default function toggleSpellcheckLanguageIndication () {
    const a = '#cth-spellcheck-language-indication'
    if (!$(a).length) {
       const $div = $('<div/>').html(`<br>Current spellcheck language: <b>${Spellcheck.getLanguageToUse()}</b>. <a href="#">Change</a>`).attr('id', 'cth-spellcheck-language-indication').click(() => {

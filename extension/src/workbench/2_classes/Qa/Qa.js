@@ -13,6 +13,8 @@ import {ProgressBar} from './ProgressBar'
 
 const debug = require('cth-debug')(__filename)
 
+const SPELLCHECK_OVERRIDE_TOGGLE = false;
+
 class Qa {
    constructor () {
       this.dataElements = window.cth.dataJSON[window.cth.option.sheetName].elements.filter(x=>x.toggle === 'on')
@@ -52,13 +54,13 @@ class Qa {
          "iterationCallback": ProgressBar.increment,
          "dataElements": this.dataElements || window.cth.dataJSON
       }, () => {
-         if (window.cth.option.spellcheckEnabled) {
+         if (SPELLCHECK_OVERRIDE_TOGGLE && window.cth.option.spellcheckEnabled) {
             const translatableSegments = $(this.targetSegments).find('.goog-gtc-translatable')
             Spellcheck.run(translatableSegments)
          }
       })
 
-      if (window.cth.option.spellcheckEnabled) {
+      if (SPELLCHECK_OVERRIDE_TOGGLE && window.cth.option.spellcheckEnabled) {
          _.defer(toggleSpellcheckLanguageIndication, 100)
       }
    }
@@ -68,7 +70,7 @@ class Qa {
 
       removeAllQaLabels()
 
-      if (window.cth.option.spellcheckEnabled) {
+      if (SPELLCHECK_OVERRIDE_TOGGLE && window.cth.option.spellcheckEnabled) {
          Spellcheck.removeWiggles(this.targetSegments)
          toggleSpellcheckLanguageIndication()
       }

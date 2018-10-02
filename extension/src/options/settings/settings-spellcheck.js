@@ -1,6 +1,6 @@
 export const spellcheckSettings = {
    "spellcheckEnabled": {
-      "default": true,
+      "default": false,
       "description": 'Enable/disable spellchecking'
    },
 

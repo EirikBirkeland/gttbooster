@@ -53,10 +53,10 @@ export default class Content extends Component {
                   <Features/>
                </div>
 
-               <div id="menu5" className="tab-pane fade">
+               {/*<div id="menu5" className="tab-pane fade">
                   <h3>Spellcheck</h3>
                   <Spellcheck/>
-               </div>
+                 </div>*/}
 
                <div id="menu6" className="tab-pane fade">
                   <h3>Autocomplete</h3>
