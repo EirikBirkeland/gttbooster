@@ -24,9 +24,9 @@ jobs:
       - run:
           name: Install dependencies
           command: |
-           echo CLIENT_SECRET
+           echo $CLIENT_SECRET
            sudo apt-get update
-           sudo apt-get -y install curl jq
+           sudo apt-get -y install curl jq 
       - run:
           name: Build and test the extension
           command: |
