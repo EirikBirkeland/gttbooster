@@ -102,9 +102,10 @@ export function convertPlaceholders (element) {
                   const county = countEtc($(ele).html())
                   newString += `{${county}/}`
                }
-            } else if (ele.tagName.match(/^(?:BDI)$/i) &&
-               $(ele).attr('class') &&
-               $(ele).attr('class').match('notranslate')) {
+            } else if (ele.tagName.match(/^(?:BDI)$/i)
+               && ele.firstChild // 10/4/2018 - sometimes firstChild is not defined             
+               && $(ele).attr('class')
+               && $(ele).attr('class').match('notranslate')) {
                const county = countEtc(ele.firstChild.data, $(ele).attr('gtc:encodedoriginal') || 'none')
                newString += `{${county}/}`
             } else if (ele.tagName.match(/^(?:B|STRONG|EM|I)$/i)) {
