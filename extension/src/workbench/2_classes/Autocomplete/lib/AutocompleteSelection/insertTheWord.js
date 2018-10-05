@@ -19,7 +19,7 @@ export default function insertTheWord (singleWordToAdd, originalCaretOffset) {
 
    debug.log('matchingPart: ', matchingPart)
 
-   this.baseNode.textContent = allTextBeforeCaret.replace(new RegExp(`${XRegExp.escape(matchingPart)}$`, 'i'), singleWordToAdd.replace(/\(.*/, "")) + allTextAfterCaret
+   this.baseNode.textContent = allTextBeforeCaret.replace(new RegExp(`${XRegExp.escape(matchingPart)}$`, 'i'), singleWordToAdd.replace(/\s*\(.*/, "")) + allTextAfterCaret
 }
 
 function getLastWordInString (str) {
