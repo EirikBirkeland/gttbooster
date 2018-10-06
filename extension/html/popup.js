@@ -46,7 +46,7 @@ class Page extends React.Component {
           setTimeout(() => chrome.tabs.create({ url: 'https://linkedin.com/in/eirikbirkeland/' }), OPEN_DELAY);
         }}>
           <Icon>contact_mail</Icon>
-          <ListItemText classes={{ primary: classes.primary }} inset primary="Hire me!" />
+          <ListItemText classes={{ primary: classes.primary }} inset primary="Get in touch ☺" />
         </MenuItem>
       </MenuList>
     )
