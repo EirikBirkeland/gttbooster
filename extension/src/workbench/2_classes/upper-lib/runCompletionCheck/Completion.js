@@ -9,38 +9,6 @@ import changeTitleIcon from './Completion/changeTitleIcon'
 
 const debug = require('cth-debug')(__filename.replace(/^src\//, ''))
 
-// "Schema" for completionCheck
-/*
- * Const schema = {
- * 1234567: {
- * fileName1: {
- * status: String,
- * filename: String,
- * lastUpdate: String
- * },
- * fileName2: {
- * status: String,
- * filename: String,
- * lastUpdate: String
- * },
- * fileName3: {
- * status: String,
- * filename: String,
- * lastUpdate: String
- * }
- * }
- * }
- *
- * const schema2 = {
- * type: 'object',
- * properties: {
- * a: {
- * type: 'string'
- * }
- * }
- * }
- */
-
 export default class CompletionCheck {
    constructor () {
       this.storeName = 'completionCheck'
@@ -144,7 +112,6 @@ export default class CompletionCheck {
    }
 
    // TODO: I should somehow merge the below with the separate bodyEmitter ... elegantly
-
    /**
     *
     * @param {Function} [cb]

@@ -20,7 +20,7 @@ import {scrollTo} from '../2_classes/TransEditor/scrollTo'
 import {TransEditor} from '../2_classes/TransEditor/TransEditor'
 import {SourceDocument, TargetDocument} from '../2_classes/Document/Document'
 import {customPrettyHtml} from '../2_classes/custom-pretty-html'
-import {ChangeReport} from '../2_classes/ChangeReport'
+import {ChangeReport} from '../2_classes/ChangeReport/ChangeReport'
 
 export {
    Calculate,

@@ -14,33 +14,43 @@ require('./events/body-move-trans-editor')
 require('./events/body-user-types-in-transeditor')
 
 bodyEmitter.initListeners = function () {
-   // Debouncing observeForTransEditor because transEditor was inserted twice into the DOM, resulting in twice the amount of work.
-   let thing = _.debounce((insertedNode, segmentArea) => {
-      bodyEmitter.emit('move-trans-editor', insertedNode, segmentArea)
-   }, 50, {
-      "leading": true,
-      "trailing": false
-   })
+    // Debouncing observeForTransEditor because transEditor was inserted twice into the DOM, resulting in twice the amount of work.
+    let thing = _.debounce((insertedNode, segmentArea) => {
+        bodyEmitter.emit('move-trans-editor', insertedNode, segmentArea)
+    }, 50, {
+            "leading": true,
+            "trailing": false
+        })
 
-   observeForTransEditor(thing)
+    observeForTransEditor(thing)
 
-   observeForDocStatusChange((res) => {
-      bodyEmitter.emit('doc-status-changed', res)
-   })
+    observeForDocStatusChange((string) => {
+        switch (string) {
+            case "OK":
+                bodyEmitter.emit('doc-status-changed', string)
+                bodyEmitter.emit('doc-status-copyedit', string)
+                break;
+            default:
+                bodyEmitter.emit('doc-status-changed', string)
+                console.warn(string);
+                break;
+        }
 
-   thing = _.debounce((event) => {
-      bodyEmitter.emit('user-types-in-transeditor', event)
-   }, 500, {
-      "leading": false,
-      "trailing": true
-   })
+    })
 
-   listenForUserInput(thing)
+    thing = _.debounce((event) => {
+        bodyEmitter.emit('user-types-in-transeditor', event)
+    }, 500, {
+            "leading": false,
+            "trailing": true
+        })
+
+    listenForUserInput(thing)
 }
 
-function init () {
-   bodyEmitter.emit('init')
-   bodyEmitter.initListeners()
+function init() {
+    bodyEmitter.emit('init')
+    bodyEmitter.initListeners()
 }
 
-export {init, bodyEmitter}
+export { init, bodyEmitter }
