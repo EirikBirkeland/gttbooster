@@ -222,7 +222,7 @@ class Toolbar extends React.Component {
                >
                   <MenuItem onClick={replaceMtWithSource} eventKey="1">Copy source to MT</MenuItem>
                   <MenuItem onClick={replaceFuzzyWithSource} eventKey="2">Copy source to fuzzies</MenuItem>
-                  <MenuItem onClick={changeReport.deleteNodesAndRestoreOriginal} eventKey="3">Toggle ChangeReport</MenuItem>
+                  <MenuItem onClick={changeReport.toggle.bind(changeReport)} eventKey="3">Toggle ChangeReport</MenuItem>
                </DropdownButton>
                : ''}
         </span>
