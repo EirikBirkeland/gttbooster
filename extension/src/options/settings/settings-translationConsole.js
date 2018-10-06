@@ -5,4 +5,4 @@ export const translationConsoleSettings = {
       description: "Search type: ",
       title: "This setting determines which search type setting to use for TC when right-clicking a string and using the context menu to open TC."
    }
-}
+};

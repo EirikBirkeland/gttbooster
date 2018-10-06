@@ -1,79 +1,79 @@
 /* global _gaq chrome */
-import $ from 'jquery'
-import {doneHandler, errorHandler, getChromeVersion, getExtensionVersion} from './background/helpers'
-import putGlossariesInWindow from './background/putGlossariesInWindow'
-import * as Analytics from '../workbench/5_init/init/analytics'
-import './contextMenu'
-import checkIfGlossaryWindowIsOpen from './background/putGlossariesInWindow/checkIfGlossaryWindowIsOpen'
+import $ from 'jquery';
+import {doneHandler, errorHandler, getChromeVersion, getExtensionVersion} from './background/helpers';
+import putGlossariesInWindow from './background/putGlossariesInWindow';
+import * as Analytics from '../workbench/5_init/init/analytics';
+import './contextMenu';
+import checkIfGlossaryWindowIsOpen from './background/putGlossariesInWindow/checkIfGlossaryWindowIsOpen';
 // TODO: Implement for some statistics purpose ...
-import {handleTcRequest} from './handleTcRequest'
-import './hot-reload'
+import {handleTcRequest} from './handleTcRequest';
+import './hot-reload';
 
-const debug = require('cth-debug')(__filename.replace(/^src\//, ''))
-window.Storage = require('../model/GeneralStorage').Storage
+const debug = require('cth-debug')(__filename.replace(/^src\//, ''));
+window.Storage = require('../model/GeneralStorage').Storage;
 
-Analytics.load()
+Analytics.load();
 
 // Update extension when update is available, by calling for the background page to reload
 chrome.runtime.onUpdateAvailable.addListener(() => {
-   chrome.runtime.reload()
-})
+   chrome.runtime.reload();
+});
 
-const LATEST_VERSION_FILE = 'latest.json'
+const LATEST_VERSION_FILE = 'latest.json';
 
 chrome.runtime.onMessage.addListener((req, sender, sendResponse) => {
-   debug.log('Req with content', req, ' received from content page')
+   debug.log('Req with content', req, ' received from content page');
 
    const common = {
       "user": req.user
-   }
+   };
 
    switch (req.header) {
       case 'click':
-         debug.log('Sending GA ...')
+         debug.log('Sending GA ...');
          _gaq.push([
             '_trackEvent',
             req.obj.eventCategory,
             req.obj.eventAction
-         ])
-         return true
+         ]);
+         return true;
 
       case 'glossaries':
-         debug.log('Putting glossaries in window ...')
-         putGlossariesInWindow(req.body)
-         return true
+         debug.log('Putting glossaries in window ...');
+         putGlossariesInWindow(req.body);
+         return true;
 
       case 'glossaryWindowExists':
-         debug.log('Checking for existence of glossaries window')
-         sendResponse(Boolean(checkIfGlossaryWindowIsOpen()))
-         return true
+         debug.log('Checking for existence of glossaries window');
+         sendResponse(Boolean(checkIfGlossaryWindowIsOpen()));
+         return true;
 
       case 'openOptionsPage':
-         debug.log('openOptionsPage')
+         debug.log('openOptionsPage');
          if (req.suffix) {
-            chrome.tabs.create({"url": chrome.runtime.getURL(`html/options.html${req.suffix}`)})
+            chrome.tabs.create({"url": chrome.runtime.getURL(`html/options.html${req.suffix}`)});
          } else { // Canonical way
-            chrome.runtime.openOptionsPage()
+            chrome.runtime.openOptionsPage();
          }
-         return true
+         return true;
 
       case 'storage':
-         debug.log('storage')
+         debug.log('storage');
          switch (req.type) {
             case 'get':
-               Storage.get({"storeName": req.name}, req.key, sendResponse)
-               return true
+               Storage.get({"storeName": req.name}, req.key, sendResponse);
+               return true;
             case 'set':
-               Storage.set({"storeName": req.name}, req.key, req.value, sendResponse)
-               return true
+               Storage.set({"storeName": req.name}, req.key, req.value, sendResponse);
+               return true;
             case 'keys':
-               Storage.keys({"storeName": req.name}, sendResponse)
-               return true
+               Storage.keys({"storeName": req.name}, sendResponse);
+               return true;
             case 'remove':
-               Storage.remove({"storeName": req.name}, req.key, sendResponse)
+               Storage.remove({"storeName": req.name}, req.key, sendResponse);
          }
-         return true
+         return true;
       case 'tcLookup':
-         handleTcRequest()
+         handleTcRequest();
    }
-})
+});

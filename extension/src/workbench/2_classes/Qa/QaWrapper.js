@@ -4,49 +4,48 @@
  */
 /* eslint-env browser, webextensions */
 
-import $ from 'jquery'
-import _ from 'lodash'
-import runChecks from './runChecks'
-import {Spellcheck} from '../Spellcheck/Spellcheck'
-import toggleSpellcheckLanguageIndication from './toggleSpellcheckLanguageIndication'
-import {ProgressBar} from './ProgressBar'
+import $ from 'jquery';
+import _ from 'lodash';
+import runChecks from './runChecks';
+import {Spellcheck} from '../Spellcheck/Spellcheck';
+import toggleSpellcheckLanguageIndication from './toggleSpellcheckLanguageIndication';
+import {ProgressBar} from './ProgressBar';
 
-const debug = require('cth-debug')(__filename)
+const debug = require('cth-debug')(__filename);
 
 const SPELLCHECK_OVERRIDE_TOGGLE = false;
-
 class Qa {
    constructor () {
       this.sheet = window.cth.dataJSON ? window.cth.dataJSON[window.cth.option.sheetName] : null;
-      this.dataElements = this.sheet ? this.sheet.elements.filter(x=>x.toggle === 'on') : null
-      this.qaObserveAll = null
+this.dataElements = this.sheet ? this.sheet.elements.filter(x=>x.toggle === 'on') : null;
+      this.qaObserveAll = null;
       this.targetSegments = (() => {
-         const visibleUnits = $(window.cth.dom.targetDoc).find('.goog-gtc-unit:visible')
+         const visibleUnits = $(window.cth.dom.targetDoc).find('.goog-gtc-unit:visible');
 
          if (window.cth.option.disableIceQa) {
             return _.filter(
                visibleUnits,
                (ele) => !$(ele)[0].firstChild.classList.contains('goog-gtc-from-tm-score-100-ice')
-            )
+            );
          }
-         return visibleUnits
-      })()
+         return visibleUnits;
+      })();
 
       /**
        *  Only filtered target segments are returned. Nice! :-)
        */
-      this.sourceSegments = _.map(this.targetSegments, (ele) => $(window.cth.dom.sourceDocClone).find(`#${ele.id}`)[0])
+      this.sourceSegments = _.map(this.targetSegments, (ele) => $(window.cth.dom.sourceDocClone).find(`#${ele.id}`)[0]);
    }
 
    start () {
       if (this.targetSegments.length <= 0) {
-         return debug.warn("Refusing to run QA because no targetSegments have been provided")
+         return debug.warn("Refusing to run QA because no targetSegments have been provided");
       }
 
       ProgressBar.add({
          "targetSegments": this.targetSegments,
          "$targetNode": $(window.cth.dom.wbmenu)
-      })
+      });
 
       runChecks({
          "sourceSegments": this.sourceSegments,
@@ -55,33 +54,33 @@ class Qa {
          "dataElements": this.dataElements
       }, () => {
          if (SPELLCHECK_OVERRIDE_TOGGLE && window.cth.option.spellcheckEnabled) {
-            const translatableSegments = $(this.targetSegments).find('.goog-gtc-translatable')
-            Spellcheck.run(translatableSegments)
+            const translatableSegments = $(this.targetSegments).find('.goog-gtc-translatable');
+            Spellcheck.run(translatableSegments);
          }
-      })
+      });
 
       if (SPELLCHECK_OVERRIDE_TOGGLE && window.cth.option.spellcheckEnabled) {
-         _.defer(toggleSpellcheckLanguageIndication, 100)
+         _.defer(toggleSpellcheckLanguageIndication, 100);
       }
    }
 
    stop () {
-      ProgressBar.remove()
+      ProgressBar.remove();
 
-      removeAllQaLabels()
+      removeAllQaLabels();
 
       if (SPELLCHECK_OVERRIDE_TOGGLE && window.cth.option.spellcheckEnabled) {
-         Spellcheck.removeWiggles(this.targetSegments)
-         toggleSpellcheckLanguageIndication()
+         Spellcheck.removeWiggles(this.targetSegments);
+         toggleSpellcheckLanguageIndication();
       }
 
       function removeAllQaLabels () {
-         $(window.cth.dom.sourceDoc).find('.cth-message').contents().unwrap()
-         $(window.cth.dom.targetDoc).find('.cth-message').remove()
+         $(window.cth.dom.sourceDoc).find('.cth-message').contents().unwrap();
+         $(window.cth.dom.targetDoc).find('.cth-message').remove();
       }
    }
 }
 
 export {
    Qa
-}
+};

@@ -2,20 +2,20 @@
 /**
  * Created by eb on 20.03.2017.
  */
-import React, {Component} from 'react'
+import React, {Component} from 'react';
 
-import TranslationConsole from './Content/TranslationConsole'
-import QaChecksContent from './Content/QaChecksContent.js'
-import QaChecksContent2 from './Content/QaChecksContent2.js'
-import Features from './Content/Features.js'
-import Autocomplete from './Content/Autocomplete.js'
-import Spreadsheet from './Content/Spreadsheet.js'
-import Spellcheck from './Content/Spellcheck.js'
+import TranslationConsole from './Content/TranslationConsole';
+import QaChecksContent from './Content/QaChecksContent.js';
+import QaChecksContent2 from './Content/QaChecksContent2.js';
+import Features from './Content/Features.js';
+import Autocomplete from './Content/Autocomplete.js';
+import Spreadsheet from './Content/Spreadsheet.js';
+import Spellcheck from './Content/Spellcheck.js';
 
 export default class Content extends Component {
    constructor (props) {
-      super(props)
-      this.handleSave = this.props.handleSave
+      super(props);
+      this.handleSave = this.props.handleSave;
    }
 
    render () {
@@ -69,6 +69,6 @@ export default class Content extends Component {
                </div>
             </div>
          </div>
-      )
+      );
    }
 }

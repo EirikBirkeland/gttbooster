@@ -2,10 +2,10 @@
 /**
  * Created by eb on 20.03.2017.
  */
-import React, {Component} from 'react'
-import 'bootstrap-validator'
-import PropTypes from 'prop-types'
-import {store} from '../options-index'
+import React, {Component} from 'react';
+import 'bootstrap-validator';
+import PropTypes from 'prop-types';
+import {store} from '../options-index';
 
 export default class CleverInput extends Component {
    static propType = {
@@ -13,22 +13,22 @@ export default class CleverInput extends Component {
       "model": PropTypes.object
    }
    handleChange = (e) => {
-      this.state.model.settings[this.props.optionName] = e.target.value
+      this.state.model.settings[this.props.optionName] = e.target.value;
       if (this.props.fn) {
-         this::this.props.fn()
+         this::this.props.fn();
       }
-      this.forceUpdate()
+      this.forceUpdate();
    }
 
    constructor (props) {
-      super(props)
-      this.state = {"model": store}
+      super(props);
+      this.state = {"model": store};
    }
 
    render () {
-      const optionName = this.props.optionName
-      const option = this.state.model.settings[optionName]
-      const {tooltip, description, defaultInputText, type, imageUrl, popoverHeader} = this.state.model.all[optionName]
+      const optionName = this.props.optionName;
+      const option = this.state.model.settings[optionName];
+      const {tooltip, description, defaultInputText, type, imageUrl, popoverHeader} = this.state.model.all[optionName];
 
       return (
          <form ref="form" className={this.props.className} data-toggle="validator" role="form">
@@ -69,6 +69,6 @@ export default class CleverInput extends Component {
 
             </div>
          </form>
-      )
+      );
    }
 }

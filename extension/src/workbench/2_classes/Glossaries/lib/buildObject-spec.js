@@ -4,23 +4,23 @@
  */
 
 
-import cheerio from 'cheerio'
-import {buildObject} from "./buildObject"
-import test from 'ava'
+import cheerio from 'cheerio';
+import {buildObject} from "./buildObject";
+import test from 'ava';
 
-const $ = cheerio.load(glossariesArea())
+const $ = cheerio.load(glossariesArea());
 
 test('should output a reasonably valid, parsed glossary object', (t) => {
-   const res = buildObject($)
-   t.is('object', typeof res)
-   t.is('string', typeof res[0].$sourceTerm.html())
-   t.is('string', typeof res[0].targetTerms[0].$targetTerm.html())
-   t.is('string', typeof res[0].targetTerms[0].$partOfSpeech.html())
-   t.is('string', typeof res[0].targetTerms[0].$description.html())
-})
+   const res = buildObject($);
+   t.is('object', typeof res);
+   t.is('string', typeof res[0].$sourceTerm.html());
+   t.is('string', typeof res[0].targetTerms[0].$targetTerm.html());
+   t.is('string', typeof res[0].targetTerms[0].$partOfSpeech.html());
+   t.is('string', typeof res[0].targetTerms[0].$description.html());
+});
 
 function glossariesArea () {
-   const origin = 'https://translate.google.com/toolkit/workbench?did=00d8x4100vlhrdsrbytc' // Added 24.07.2016
+   const origin = 'https://translate.google.com/toolkit/workbench?did=00d8x4100vlhrdsrbytc'; // Added 24.07.2016
 
    return `<div class="gtc-tools-autosearch"><div class="gtc-tool-right-floating" style="cursor: default;"><div class="gtc-tool-title gtc-tool-mt" style="cursor: default; display: none;">Computer Translation</div><div class="gtc-tool-content " style="cursor: default;"><div class="gtc-mt-suggestion-holder" style="cursor: default; display: none;"><span class="gtc-mt-suggestion" style="cursor: default;">Slette et opptak slettes ikke teksten i notatet.</span>
 <span class="gtc-mt-use-suggestion" style="cursor: default;"><div id="gtc-mtusesugg-button" style="cursor: default;"><div role="button" class="goog-inline-block jfk-button jfk-button-standard" tabindex="0" style="-webkit-user-select: none; cursor: default;">Use suggestion</div></div></span></div></div><div class="gtc-tool-title gtc-tool-glossary" style="cursor: default;">Glossary (6)</div><div class="gtc-tool-content " style="cursor: default;"><div class="gtc-glossary-content-holder" style="cursor: default;"><ol style="cursor: default;"><li class="gtc-glossary-match-holder" style="cursor: default;"><span class="gtc-glossary-sourceterm" style="cursor: default;">note</span>
@@ -57,5 +57,5 @@ function glossariesArea () {
     <span class="gtc-glossary-pos" style="cursor: default;">verb</span>
     <span class="gtc-glossary-language" style="cursor: default;"></span>
     <span id="gtc-gl-name-14" class="gtc-glossary-source" style="cursor: default;">Source: General</span>
-<span class="gtc-glossary-description" style="cursor: default;">To remove or erase data. For example, to delete a file, message, etc.</span></span>  </li></ol></div></div></div></div>`
+<span class="gtc-glossary-description" style="cursor: default;">To remove or erase data. For example, to delete a file, message, etc.</span></span>  </li></ol></div></div></div></div>`;
 }

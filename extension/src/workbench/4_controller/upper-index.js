@@ -2,36 +2,36 @@
 /**
  * Created by eb on 23.06.2016.
  */
-import {addNewDocname} from '../2_classes/upper-lib/addNewDocName'
-import {replaceTitle} from '../2_classes/upper-lib/replaceTitle'
-import {runCompletionCheck} from '../2_classes/upper-lib/runCompletionCheck'
-import {filesync} from '../2_classes/upper-lib/filesync'
-import initToolbar from '../2_classes/toolbar/toolbar-index'
-import {addQMLink, addSgLink, addTCLink} from '../2_classes/upper-lib/addIcons'
-import upperEmitter from './upperEmitter'
+import {addNewDocname} from '../2_classes/upper-lib/addNewDocName';
+import {replaceTitle} from '../2_classes/upper-lib/replaceTitle';
+import {runCompletionCheck} from '../2_classes/upper-lib/runCompletionCheck';
+import {filesync} from '../2_classes/upper-lib/filesync';
+import initToolbar from '../2_classes/toolbar/toolbar-index';
+import {addQMLink, addSgLink, addTCLink} from '../2_classes/upper-lib/addIcons';
+import upperEmitter from './upperEmitter';
 
 function init (options) {
-   initToolbar()
+   initToolbar();
 
-   addNewDocname(options.addNewDocname)
+   addNewDocname(options.addNewDocname);
 
-   replaceTitle()
+   replaceTitle();
 
-   runCompletionCheck()
+   runCompletionCheck();
 
-   addSgLink()
-   addQMLink()
-   addTCLink()
+   addSgLink();
+   addQMLink();
+   addTCLink();
 
    if (localStorage['cth-dev-mode'] === 'true') {
-      filesync(window)
+      filesync(window);
    }
 
    if (options.replaceTitle) {
-      replaceTitle()
+      replaceTitle();
    }
 
-   upperEmitter.initListeners()
+   upperEmitter.initListeners();
 }
 
-export default {init}
+export default {init};

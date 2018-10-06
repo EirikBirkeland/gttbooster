@@ -1,8 +1,8 @@
-const dom = require('../../5_init/init/doc-references').getDomRefs()
+const dom = require('../../5_init/init/doc-references').getDomRefs();
 
 // TWEAK: Allow customization by user ... settings screen tab
 export function highlightTextItems () {
-   const description = dom.targetDoc.getElementsByClassName('messageHeader')
+   const description = dom.targetDoc.getElementsByClassName('messageHeader');
    const myArray = [
       '[0-9]+ characters',
       '[0-9]+ chars',
@@ -12,12 +12,12 @@ export function highlightTextItems () {
       'leave in English',
       'third party',
       'CHAR[-_ ]LIMIT=[0-9]+'
-   ]
+   ];
    for (let i = 0; i < description.length; i++) {
       for (let j = 0; j < myArray.length; j++) {
-         let regexified = `(${myArray[j]})`
-         regexified = new RegExp(regexified, 'i')
-         description[i].innerHTML = description[i].innerHTML.replace(regexified, `<span style='color:#${window.cth.option.descHighlight}'><b><u>$1</u></b></span>`)
+         let regexified = `(${myArray[j]})`;
+         regexified = new RegExp(regexified, 'i');
+         description[i].innerHTML = description[i].innerHTML.replace(regexified, `<span style='color:#${window.cth.option.descHighlight}'><b><u>$1</u></b></span>`);
       }
    }
 }

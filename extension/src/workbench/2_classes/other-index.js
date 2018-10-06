@@ -3,15 +3,15 @@
  * Created by eb on 15.07.2017.
  */
 
-import addExtraXRegExp from './xreg'
-import * as Hotkeys from './Hotkeys'
+import addExtraXRegExp from './xreg';
+import * as Hotkeys from './Hotkeys';
 
 function init (options) {
-   addExtraXRegExp()
+   addExtraXRegExp();
 
    if (options.addShortcutCtrlB) {
-      Hotkeys.hideTopMenus()
+      Hotkeys.hideTopMenus();
    }
 }
 
-export {init}
+export {init};

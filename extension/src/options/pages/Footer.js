@@ -2,12 +2,12 @@
 /**
  * Created by eb on 20.03.2017.
  */
-import React, {Component} from 'react'
+import React, {Component} from 'react';
 
 class Footer extends Component {
    constructor (props) {
-      super(props)
-      this.state = {}
+      super(props);
+      this.state = {};
    }
 
    render () {
@@ -15,8 +15,8 @@ class Footer extends Component {
          <div>
             abcabc
          </div>
-      )
+      );
    }
 }
 
-export default Footer
+export default Footer;

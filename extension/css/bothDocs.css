@@ -29,3 +29,20 @@
 
 .cth_insertedSourceTextBreak {
 }
+
+.diffInserted {
+    color: purple;
+    background-color: #ccffcc;
+}
+
+.diffDeleted:not(:hover){
+    color: red;
+    background-color: #ffcccc;
+    text-decoration: line-through !important;
+}
+
+.diffDeleted:hover {
+    color: red;
+    background-color: #ffcccc;
+    text-decoration: none;
+}

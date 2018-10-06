@@ -1,4 +1,4 @@
-import $ from 'jquery'
+import $ from 'jquery';
 
 /**
  *
@@ -8,32 +8,32 @@ import $ from 'jquery'
  *
  */
 function add (opts) {
-   const {targetSegments, $targetNode} = opts
+   const {targetSegments, $targetNode} = opts;
 
-   const $bootstrap = $('<div/>').attr({"class": 'bootstrap-wrapper'})
+   const $bootstrap = $('<div/>').attr({"class": 'bootstrap-wrapper'});
 
    const bootstrapContents = `
                     <span class="progress">
                         <div class="progress-bar active" style="white-space: nowrap;" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="${targetSegments.length}">
                         </div>
-                    </span>`
+                    </span>`;
 
-   $bootstrap.html(bootstrapContents)
+   $bootstrap.html(bootstrapContents);
 
-   $bootstrap.attr({"id": 'cth-progress-container'})
-   const br = $('<br/>')[0]
-   $bootstrap.append(br)
+   $bootstrap.attr({"id": 'cth-progress-container'});
+   const br = $('<br/>')[0];
+   $bootstrap.append(br);
 
-   $targetNode.append($bootstrap)
+   $targetNode.append($bootstrap);
 }
 
 /**
  *
  */
 function remove () {
-   const $prog = $('#cth-progress-container')
+   const $prog = $('#cth-progress-container');
    if ($prog) {
-      $prog.remove()
+      $prog.remove();
    }
 }
 
@@ -43,14 +43,14 @@ function remove () {
  * @param targetSegments {NodeList|Array} - a list of target segments
  */
 function increment (i, targetSegments) {
-   const width = (i + 1) / targetSegments.length * 100
-   const widthRounded = Math.round(width * 10) / 10
+   const width = (i + 1) / targetSegments.length * 100;
+   const widthRounded = Math.round(width * 10) / 10;
 
-   $('#cth-progress-container').find('.progress-bar').attr({'aria-valuenow': i + 1}).css({"width": `${widthRounded}%`}).html(`${widthRounded} %`)
+   $('#cth-progress-container').find('.progress-bar').attr({'aria-valuenow': i + 1}).css({"width": `${widthRounded}%`}).html(`${widthRounded} %`);
 }
 
 export const ProgressBar = {
    add,
    remove,
    increment
-}
+};

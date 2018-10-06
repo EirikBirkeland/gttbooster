@@ -1,30 +1,30 @@
 // @flow
-import $ from 'jquery'
-import _ from 'lodash'
-import {Segment} from '../Segment/Segment'
-import runChecks from './runChecks'
-import {Spellcheck} from '../Spellcheck/Spellcheck'
+import $ from 'jquery';
+import _ from 'lodash';
+import {Segment} from '../Segment/Segment';
+import runChecks from './runChecks';
+import {Spellcheck} from '../Spellcheck/Spellcheck';
 
-const debug = require('cth-debug')(__filename)
+const debug = require('cth-debug')(__filename);
 // TODO: Well this should be moved to somewhere else, for sure! I.e. an event "user-keyboard-input" in the bodyEmitter.
 
 export default function checkCurrentSegment (): void {
-   const cachedSourceId = window.cth.dom.currentSourceSegment.id
-   const cachedTargetId = window.cth.dom.currentTargetSegment.id
-   debug.log('Keyup events registered')
-   debug.log('Running single qa')
-   const source = [$(window.cth.dom.sourceDocClone).find(`#${cachedSourceId}`)[0]]
-   const target = [$(window.cth.dom.targetDoc).find(`#${cachedTargetId}`)[0]]
+   const cachedSourceId = window.cth.dom.currentSourceSegment.id;
+   const cachedTargetId = window.cth.dom.currentTargetSegment.id;
+   debug.log('Keyup events registered');
+   debug.log('Running single qa');
+   const source = [$(window.cth.dom.sourceDocClone).find(`#${cachedSourceId}`)[0]];
+   const target = [$(window.cth.dom.targetDoc).find(`#${cachedTargetId}`)[0]];
 
-   const src = Segment.create(source[0])
+   const src = Segment.create(source[0]);
 
    if (src.hasDuplicates) { // Integrate this with Segment if possible
-      const indices = src._duplicateIndices
+      const indices = src._duplicateIndices;
       _.forEach(indices, (ele) => {
          // Maybe: revert to sourceDocClone? I may have to fix some stuff.
-         source.push($(window.cth.dom.sourceDocClone).find(`#goog-gtc-unit-${ele + 1}`)[0])
-         target.push($(window.cth.dom.targetDoc).find(`#goog-gtc-unit-${ele + 1}`)[0])
-      })
+         source.push($(window.cth.dom.sourceDocClone).find(`#goog-gtc-unit-${ele + 1}`)[0]);
+         target.push($(window.cth.dom.targetDoc).find(`#goog-gtc-unit-${ele + 1}`)[0]);
+      });
    }
 
    /**
@@ -37,13 +37,13 @@ export default function checkCurrentSegment (): void {
    runChecks({
       "sourceSegments": source,
       "targetSegments": target
-   })
+   });
 
    _.delay(() => {
       runChecks({
          "sourceSegments": source,
          "targetSegments": target
-      })
+      });
 
       _.delay(() => {
          runChecks({
@@ -51,9 +51,9 @@ export default function checkCurrentSegment (): void {
             "targetSegments": target
          }, () => {
             if (window.cth.option.spellcheckEnabled) {
-               Spellcheck.run(target)
+               Spellcheck.run(target);
             }
-         })
-      }, 500)
-   }, 500)
+         });
+      }, 500);
+   }, 500);
 }

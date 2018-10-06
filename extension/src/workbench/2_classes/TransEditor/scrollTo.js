@@ -2,9 +2,9 @@
 /**
  * Created by eb on 23.06.2016.
  */
-import $ from 'jquery'
+import $ from 'jquery';
 
-const debug = require('cth-debug')(__filename)
+const debug = require('cth-debug')(__filename);
 
 export function scrollTo (opts) {
    opts = Object.assign({
@@ -12,22 +12,22 @@ export function scrollTo (opts) {
       "node": '#transEditor',
       "delay": 'fast',
       "offset": parseInt($('iframe')[1].style.height) / 3
-   }, opts)
+   }, opts);
 
-   const {targetDoc, node, offset} = opts
+   const {targetDoc, node, offset} = opts;
 
-   const transEditorNode = $(targetDoc).find(node)
-   const firstUntranslatedSegment = $(targetDoc).find('.goog-gtc-from-mt, .goog-gtc-ph-missing, .goog-gtc-from-tm-score-90, .goog-gtc-from-source').first()
+   const transEditorNode = $(targetDoc).find(node);
+   const firstUntranslatedSegment = $(targetDoc).find('.goog-gtc-from-mt, .goog-gtc-ph-missing, .goog-gtc-from-tm-score-90, .goog-gtc-from-source').first();
 
    if (transEditorNode.length) {
-      debug.log('Scrolling to the transEditor')
-      scroll(transEditorNode, offset)
+      debug.log('Scrolling to the transEditor');
+      scroll(transEditorNode, offset);
    } else if (firstUntranslatedSegment.length) {
-      scroll(firstUntranslatedSegment, offset)
+      scroll(firstUntranslatedSegment, offset);
 
       setTimeout(() => {
-         firstUntranslatedSegment.click()
-      }, 100)
+         firstUntranslatedSegment.click();
+      }, 100);
    }
 
    /**
@@ -37,10 +37,10 @@ export function scrollTo (opts) {
     * @private
     */
    function scroll ($a, offset) {
-      const theOffset = $a.offset().top - offset
+      const theOffset = $a.offset().top - offset;
       if (typeof theOffset !== 'number') {
-         debug.warn({theOffset})
+         debug.warn({theOffset});
       }
-      $(targetDoc).scrollTop(theOffset)
+      $(targetDoc).scrollTop(theOffset);
    }
 }

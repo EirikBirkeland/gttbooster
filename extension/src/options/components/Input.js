@@ -1,8 +1,8 @@
-import React, {Component} from 'react'
-import 'bootstrap-validator'
-import PropTypes from 'prop-types'
-import $ from 'jquery'
-import {store} from '../options-index'
+import React, {Component} from 'react';
+import 'bootstrap-validator';
+import PropTypes from 'prop-types';
+import $ from 'jquery';
+import {store} from '../options-index';
 
 export default class Input extends Component {
    static propType = {
@@ -10,25 +10,25 @@ export default class Input extends Component {
       "model": PropTypes.object
    }
    handleChange = (e) => {
-      this.state.model.settings[this.props.optionName][1] = e.target.value
-      this.forceUpdate()
+      this.state.model.settings[this.props.optionName][1] = e.target.value;
+      this.forceUpdate();
    }
 
    constructor (props) {
-      super(props)
-      this.state = {"model": props.model || store}
+      super(props);
+      this.state = {"model": props.model || store};
    }
 
    componentDidMount () {
-      $(this.refs.form).validator()
+      $(this.refs.form).validator();
    }
 
    render () {
-      const props = this.props
-      const optionName = props.optionName
-      const option = this.state.model.settings[optionName]
-      const unit = this.state.model.all[optionName].suffix || props.unit
-      const tooltip = typeof props.tooltip === 'function' ? props.tooltip() : props.tooltip
+      const props = this.props;
+      const optionName = props.optionName;
+      const option = this.state.model.settings[optionName];
+      const unit = this.state.model.all[optionName].suffix || props.unit;
+      const tooltip = typeof props.tooltip === 'function' ? props.tooltip() : props.tooltip;
 
       return <form ref="form" data-toggle="validator" role="form">
          <div className="form-group has-feedback">
@@ -58,6 +58,6 @@ export default class Input extends Component {
             <span className="glyphicon form-control-feedback" aria-hidden="true"/>
             <div className="help-block with-errors"/>
          </div>
-      </form>
+      </form>;
    }
 }

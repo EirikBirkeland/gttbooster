@@ -1,17 +1,17 @@
 /**
  * Created by Eirik on 14.07.2017.
  */
-import $ from 'jquery'
+import $ from 'jquery';
 
-const debug = require('cth-debug')(__filename.replace(/^src\//, ''))
+const debug = require('cth-debug')(__filename.replace(/^src\//, ''));
 
 $.fn.visible = function () {
-   return this.css('visibility', 'visible')
-}
+   return this.css('visibility', 'visible');
+};
 
 $.fn.invisible = function () {
-   return this.css('visibility', 'hidden')
-}
+   return this.css('visibility', 'hidden');
+};
 
 /*
  * TODO: The button should not move the entire line when the area is hovered
@@ -23,59 +23,59 @@ $.fn.invisible = function () {
  * @param option {boolean}
  */
 export function addNewDocname (option) {
-   debug.log('a')
+   debug.log('a');
    // Avoid duplicates by checking for existing ID
    if ($('#cth_clonedDocName').length === 0) {
-      const $docnameOld = $(window.cth.docInfo.dokNavn)
+      const $docnameOld = $(window.cth.docInfo.dokNavn);
 
-      const $docnameContainer = $('<span/>').addClass('bootstrap-wrapper')
+      const $docnameContainer = $('<span/>').addClass('bootstrap-wrapper');
 
       const $settingIcon = $('<button/>').html('⇄').invisible().css({"opacity": 0.5}).addClass('label label-info').attr('title', 'Click to switch between new and old title display style').on('click', () => {
-         debug.log('settingIcon clicked')
-         toggleTitleStyle()
+         debug.log('settingIcon clicked');
+         toggleTitleStyle();
 
          function toggleTitleStyle () {
-            const $docnameNew = $('#cth_clonedDocName')
+            const $docnameNew = $('#cth_clonedDocName');
 
             if ($docnameNew.html().match(/&nbsp;&nbsp;/)) {
-               $docnameNew.html($docnameNew.html().replace(/&nbsp;&nbsp;/g, '_'))
+               $docnameNew.html($docnameNew.html().replace(/&nbsp;&nbsp;/g, '_'));
                //  SaveSecretly({addNewDocName: false})
             } else {
-               $docnameNew.html($docnameNew.html().replace(/_/g, '&nbsp;&nbsp;'))
+               $docnameNew.html($docnameNew.html().replace(/_/g, '&nbsp;&nbsp;'));
                //  SaveSecretly({addNewDocName: true})
             }
          }
-      })
+      });
 
-      const $docnameNew = $docnameOld.clone()
+      const $docnameNew = $docnameOld.clone();
 
-      $docnameNew.removeClass('goog-inline-block').attr({"id": 'cth_clonedDocName'})
+      $docnameNew.removeClass('goog-inline-block').attr({"id": 'cth_clonedDocName'});
 
       // TODO: Finish implementing this option
       if (option && option === true) {
-         $docnameNew.html($docnameNew.html().replace(/_/g, '  '))
+         $docnameNew.html($docnameNew.html().replace(/_/g, '  '));
       }
 
       $docnameContainer.append(
          $settingIcon,
          $docnameNew
-      )
+      );
 
-      $docnameContainer.insertAfter($docnameOld)
+      $docnameContainer.insertAfter($docnameOld);
 
-      $docnameOld.hide()
+      $docnameOld.hide();
 
       $docnameContainer.on({
          mouseenter () {
             // Show setting icon in front of title
-            const $settingIcon = $('#cth_clonedDocName').prev()
-            $settingIcon.visible()
+            const $settingIcon = $('#cth_clonedDocName').prev();
+            $settingIcon.visible();
          },
          mouseleave () {
             // Hide setting icon
-            const $settingIcon = $('#cth_clonedDocName').prev()
-            $settingIcon.invisible()
+            const $settingIcon = $('#cth_clonedDocName').prev();
+            $settingIcon.invisible();
          }
-      })
+      });
    }
 }

@@ -13,21 +13,21 @@ const ParensCheck = (() => {
          "sourceArray": [],
          "harmonizedArray": [],
          "targetArray": []
-      }
-      const brackets = /[{\[()\]}]/g
+      };
+      const brackets = /[{\[()\]}]/g;
 
-      const srcArr = srcStr.match(brackets)
-      const trgArr = trgStr.match(brackets)
+      const srcArr = srcStr.match(brackets);
+      const trgArr = trgStr.match(brackets);
 
       if (srcArr && trgArr && srcArr.length > 0 && trgArr.length > 0) {
-         results.allFound = srcArr.slice().sort().join('') === trgArr.slice().sort().join('')
+         results.allFound = srcArr.slice().sort().join('') === trgArr.slice().sort().join('');
       }
-      results.orderValid = srcArr.join('') === trgArr.join('')
+      results.orderValid = srcArr.join('') === trgArr.join('');
 
-      return results
+      return results;
    }
 
-   return {compare}
-})()
+   return {compare};
+})();
 
-export default ParensCheck
+export default ParensCheck;
