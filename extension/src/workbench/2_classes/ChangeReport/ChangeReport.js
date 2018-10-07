@@ -9,9 +9,9 @@ import { customPrettyHtml } from '../custom-pretty-html';
  * For reference:
  * cth.docInfo.docStatusOnLoad
  */
-// TODO maybe: Add support for diffing two saved documents, e.g. "In copy edit" and "Pending"
-const ChangeReport = {
-
+// TODO: Auto-select contrasting color?
+// TODO: Add ChangeReport modal with button to leave mode
+ const ChangeReport = {
     init(documentStrings, cache) {
         this.documentStrings = documentStrings;
         this.cache = cache || {};
@@ -53,7 +53,7 @@ const ChangeReport = {
         if (this.togg) {
             this.copyNodesAndHideOriginal();
         } else {
-            this.deleteNodesAndRestoreOriginal();
+            this.deleteNodesAndShowOriginal();
         }
         this.togg = !this.togg;
     },
@@ -68,16 +68,15 @@ const ChangeReport = {
             $(unit).prepend(copy);
             $original.hide();
         });
-        // add mode warning (with option to leave mode)
+        // add sth like a modal warning (with option to leave ChangeReport mode)
     },
 
-    deleteNodesAndRestoreOriginal() {
+    deleteNodesAndShowOriginal() {
         Array.from(cth.dom.targetSegments).forEach((unit, i) => {
             $(unit).find('.diffCopy').remove();
             $(unit.firstChild).show();
         });
     }
-
 };
 
 export default ChangeReport;
