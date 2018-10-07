@@ -13,7 +13,7 @@ import getTextNodesShallowIn from './getTextNodesShallowIn';
 import asyncForEach from './asyncForEach';
 import addContextMenu from './addContextMenu';
 import stripSymbolsUnicode from 'strip-symbols-unicode';
-import {Storage} from '../../../model/GeneralStorage';
+import { Storage } from '../../../model/GeneralStorage';
 import getLanguageToUse from './getLanguageToUse';
 
 const debug = require('cth-debug')(__filename.replace(/^src\//, ''));
@@ -40,7 +40,7 @@ function _performSpellcheck (nodes) {
       return window.cth.postMessage('warning', 'Can\'t detect a valid language code. Please head over to options screen > spellcheck tab and manually specify a spellcheck database you would like to use.', true);
    }
 
-   Storage.keys({"storeName": languageToUse}).then((res) => {
+   Storage.keys({ "storeName": languageToUse }).then((res) => {
       const exceptions = res;
       debug.log(`exceptions: ${exceptions}`);
       const filteredText = exceptions.length
@@ -53,9 +53,9 @@ function _performSpellcheck (nodes) {
             const wordsArray = processString(res.text);
             if (window.cth.option.WHOLE_DOC_QA_TOGGLE) {
                if (nodes.length > 1) {
-                  addHighlight(wordsArray, nodes, {"async": true});
+                  addHighlight(wordsArray, nodes, { "async": true });
                } else {
-                  addHighlight(wordsArray, nodes, {"async": false});
+                  addHighlight(wordsArray, nodes, { "async": false });
                }
             }
          } else {
@@ -153,4 +153,4 @@ const Spellcheck = {
    removeWiggles
 };
 
-export {Spellcheck};
+export { Spellcheck };

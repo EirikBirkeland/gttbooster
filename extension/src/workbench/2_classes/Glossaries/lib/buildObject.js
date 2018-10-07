@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import {hashCode} from './getHashCode';
+import { hashCode } from './getHashCode';
 
 let $ = typeof window !== 'undefined' ? require('jquery') : require('cheerio');
 

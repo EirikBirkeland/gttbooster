@@ -1,4 +1,4 @@
-import {icons} from '../../../icons';
+import { icons } from '../../../icons';
 import $ from 'jquery';
 
 const debug = require('cth-debug')(__filename.replace(/^src\//, ''));

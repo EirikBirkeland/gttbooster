@@ -72,4 +72,4 @@ const sendToBackground = (() => {
    };
 })();
 
-export {alphabetizeAndHighlight, sendToBackground};
+export { alphabetizeAndHighlight, sendToBackground };

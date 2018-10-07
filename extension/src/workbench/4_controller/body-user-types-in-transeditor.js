@@ -1,9 +1,9 @@
 import _ from 'lodash';
 import $ from 'jquery';
 import bodyEmitter from '../bodyEmitter';
-import {Dev} from '../../2_classes/Dev';
+import { Dev } from '../../2_classes/Dev';
 import _checkCurrentSegment from '../../2_classes/Qa/checkCurrentSegment';
-import {updateTheTransEditor} from '../../2_classes/TransEditor/updateTheTransEditor';
+import { updateTheTransEditor } from '../../2_classes/TransEditor/updateTheTransEditor';
 
 const debug = require('cth-debug')(__filename.replace(/^src\//, ''));
 

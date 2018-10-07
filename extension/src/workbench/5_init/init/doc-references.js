@@ -6,9 +6,9 @@
 
 import $ from 'jquery';
 import _ from 'lodash';
-import {SourceDocument, TargetDocument} from '../../2_classes/Document/Document';
-import {Segment} from '../../2_classes/Segment/Segment';
-import {_retrieveStatusFromDoc} from '../../2_classes/upper-lib/runCompletionCheck/Completion';
+import { SourceDocument, TargetDocument } from '../../2_classes/Document/Document';
+import { Segment } from '../../2_classes/Segment/Segment';
+import { _retrieveStatusFromDoc } from '../../2_classes/upper-lib/runCompletionCheck/Completion';
 
 // TODO: Convert as many doc references as possible to getters to avoid the possibility of undefined references
 

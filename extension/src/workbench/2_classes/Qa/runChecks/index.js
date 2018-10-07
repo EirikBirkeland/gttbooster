@@ -10,4 +10,4 @@ function removeTargetLabels ($targetLabels) {
    }
 }
 
-export {removeSourceLabels, removeTargetLabels};
+export { removeSourceLabels, removeTargetLabels };

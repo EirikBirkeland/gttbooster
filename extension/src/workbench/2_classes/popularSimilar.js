@@ -35,4 +35,4 @@ function c () {
 function d () {
 }
 
-export {init, checkAndReplace};
+export { init, checkAndReplace };

@@ -4,8 +4,8 @@
  */
 
 import _ from 'lodash';
-import {parseStringifiedValue} from '../workbench/2_classes/tool';
-import {ChromeProxy} from './ChromeProxy';
+import { parseStringifiedValue } from '../workbench/2_classes/tool';
+import { ChromeProxy } from './ChromeProxy';
 
 const debug = require('cth-debug')(__filename.replace(/^src\//, ''));
 
@@ -87,4 +87,4 @@ function resetToDefaults (settings, defaults) {
    save(settings, location::location.reload);
 }
 
-export {load, save, resetToDefaults};
+export { load, save, resetToDefaults };

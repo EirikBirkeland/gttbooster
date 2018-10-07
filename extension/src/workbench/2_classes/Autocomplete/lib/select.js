@@ -1,5 +1,5 @@
 import getPartOfWord from './getPartOfWord';
-import {RE_FOR_PARTS_TO_IGNORE} from './regex-patterns';
+import { RE_FOR_PARTS_TO_IGNORE } from './regex-patterns';
 import AutocompleteSelection from './AutocompleteSelection';
 
 const debug = require('cth-debug')(__filename.replace(/^src\//, ''));

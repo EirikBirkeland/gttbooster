@@ -3,9 +3,9 @@
  * Created by eb on 20.03.2017.
  */
 
-import {Sheet} from '../../../../model/qa-sheet-google';
+import { Sheet } from '../../../../model/qa-sheet-google';
 import indicateError from '../Spreadsheet/indicateError';
-import {store} from '../../../options-index';
+import { store } from '../../../options-index';
 
 const debug = require('cth-debug')(__filename);
 

@@ -1,7 +1,7 @@
 /* eslint-env browser, webextensions */
 import $ from 'jquery';
 import sweetalert from 'sweetalert';
-import {ChromeProxy} from '../../../model/ChromeProxy';
+import { ChromeProxy } from '../../../model/ChromeProxy';
 
 const debug = require('cth-debug')(__filename);
 
@@ -10,10 +10,10 @@ const userVersion = ChromeProxy.runtime.getManifest().version;
 require('cth-prototype');
 
 const versionCheck = function (opts) {
-   const {popup, indicator} = opts;
+   const { popup, indicator } = opts;
    let needUpdate;
 
-   chrome.runtime.sendMessage({"header": 'latest version'}, (response) => {
+   chrome.runtime.sendMessage({ "header": 'latest version' }, (response) => {
       if (!response) {
          return;
       }
@@ -45,7 +45,7 @@ function addIndicator (response, needUpdate) {
       ? `Your version is ${userVersion}, and the latest is ${response.version}`
       : 'Your version is up to date';
 
-   const $versionIndicator = $('<div/>').attr({"id": 'cth-corner-indicator'}).css({
+   const $versionIndicator = $('<div/>').attr({ "id": 'cth-corner-indicator' }).css({
       "top": '0',
       "right": '0',
       "position": 'absolute',

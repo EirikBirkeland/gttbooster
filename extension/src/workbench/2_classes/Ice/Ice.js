@@ -35,4 +35,4 @@ class Ice {
    }
 }
 
-export {Ice};
+export { Ice };

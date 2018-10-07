@@ -1,7 +1,7 @@
 /* global cth */
 import $ from 'jquery';
 import _ from 'lodash';
-import {scrollTo} from './scrollTo';
+import { scrollTo } from './scrollTo';
 import isScrolledIntoView from './isScrolledIntoView';
 
 const debug = require('cth-debug')(__filename);
@@ -27,8 +27,8 @@ const TransEditor = {
             minWidth = maxWidth;
          }
 
-         $(gtcTransInlineText).css({'min-width': `${minWidth - 10}px`});
-         $(gtcRichInputArea).css({'min-width': `${minWidth}px`});
+         $(gtcTransInlineText).css({ 'min-width': `${minWidth - 10}px` });
+         $(gtcRichInputArea).css({ 'min-width': `${minWidth}px` });
       });
    },
 
@@ -42,12 +42,12 @@ const TransEditor = {
    },
 
    moveToLastActiveSegmentAndFocus () {
-      scrollTo({"node": cth.dom.currentTargetSegment});
+      scrollTo({ "node": cth.dom.currentTargetSegment });
       $(cth.dom.currentTargetSegment).children().first().click();
    },
 
    moveToX (node) {
-      scrollTo({node});
+      scrollTo({ node });
       $(node).children().first().click();
    },
 

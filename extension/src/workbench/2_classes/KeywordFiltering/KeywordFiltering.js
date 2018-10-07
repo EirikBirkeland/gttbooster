@@ -6,9 +6,9 @@
 import $ from 'jquery';
 import _ from 'lodash';
 import XRegExp from 'xregexp';
-import {TransEditor} from '../TransEditor/TransEditor';
+import { TransEditor } from '../TransEditor/TransEditor';
 import hideUnhighlighted from './hideUnhighlighted';
-import {Diacritics} from '../../../../lib/Diacritics';
+import { Diacritics } from '../../../../lib/Diacritics';
 
 const debug = require('cth-debug')(__filename.replace(/^src\//, ''));
 const cthGoogGtcTranslatableMirroredClass = 'cth-goog-gtc-translatable-mirrored';
@@ -235,4 +235,4 @@ function run () {
    target.initListeners();
 }
 
-export const KeywordFiltering = {run};
+export const KeywordFiltering = { run };

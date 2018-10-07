@@ -1,10 +1,10 @@
 import $ from 'jquery';
-import {icons} from '../../../icons';
+import { icons } from '../../../icons';
 
 const debug = require('cth-debug')(__filename);
 
 export default function toggleItem (opts) {
-   const {optionName, cthBtnId, insertedElementId, icon, onFunc, offFunc} = opts;
+   const { optionName, cthBtnId, insertedElementId, icon, onFunc, offFunc } = opts;
    const opt = window.cth.option; // Short alias
    if (opt[optionName] === false) {
       debug.log(`Now turning on ${optionName}`);

@@ -2,7 +2,7 @@
 /* global chrome */
 // Copyright © 2016 Eirik Birkeland. All rights reserved.
 import $ from 'jquery';
-import {icons} from '../icons';
+import { icons } from '../icons';
 
 // FEATURE: Add more icons if any are useful ... e.g. GTT inbox
 function addSgLink () {
@@ -49,7 +49,7 @@ function addTCLink () {
    });
 }
 
-function _addIcon ({iconName, hrefContent, onHoverDesc, optionalDestination}) {
+function _addIcon ({ iconName, hrefContent, onHoverDesc, optionalDestination }) {
    const targetNode = optionalDestination || window.cth.dom.docTitleBar;
    const img = $('<img/>')[0];
    img.src = icons[iconName];
@@ -62,4 +62,4 @@ function _addIcon ({iconName, hrefContent, onHoverDesc, optionalDestination}) {
    return a;
 }
 
-export {addSgLink, addQMLink, addTCLink};
+export { addSgLink, addQMLink, addTCLink };

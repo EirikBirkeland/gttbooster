@@ -4,7 +4,7 @@ import _ from 'lodash';
 
 import deepmerge from 'deepmerge';
 
-import {Storage} from '../../../../model/GeneralStorage';
+import { Storage } from '../../../../model/GeneralStorage';
 import changeTitleIcon from './Completion/changeTitleIcon';
 
 const debug = require('cth-debug')(__filename.replace(/^src\//, ''));
@@ -58,7 +58,7 @@ export default class CompletionCheck {
       chrome.storage.local.get(this.projectNumber, (res) => {
          debug.log('Retrieved project status');
          debug.log('res: ', res);
-         const mergedObjToSave = deepmerge(res, {[this.projectNumber]: {[this.docName]: this.projectStatus}});
+         const mergedObjToSave = deepmerge(res, { [this.projectNumber]: { [this.docName]: this.projectStatus } });
          debug.log('mergedObjToSave: ', mergedObjToSave);
 
          debug.log('Saving as: ', mergedObjToSave);
@@ -150,7 +150,7 @@ export default class CompletionCheck {
 
    removeOld () {
       // Untested after reverting to chrome.storage from Storage:
-      chrome.storage.local.keys({"storeName": this.storeName}, (all) => {
+      chrome.storage.local.keys({ "storeName": this.storeName }, (all) => {
          _.forOwn(all, (val, key) => {
             if (Date.now() - all[key].timestamp >= 604800000) {
                Storage.remove(this.storeName, key, () => {

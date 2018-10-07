@@ -63,7 +63,7 @@ export const notifier = (function () {
       },
 
       /* Notification title text styles */
-      "title_styles": {"fontWeight": '700'},
+      "title_styles": { "fontWeight": '700' },
 
       /* Notification body text styles */
       "text_styles": {

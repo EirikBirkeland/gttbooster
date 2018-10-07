@@ -18,4 +18,4 @@ function injectCssSourceTargetDoc (cssFiles) {
    });
 }
 
-export {injectCssSourceTargetDoc};
+export { injectCssSourceTargetDoc };

@@ -8,7 +8,7 @@ import Toggles from './toggles';
 const debug = require('cth-debug')(__filename.replace(/^src\//, ''));
 
 export default function () {
-   chrome.runtime.sendMessage({"header": 'glossaryWindowExists'}, (res) => {
+   chrome.runtime.sendMessage({ "header": 'glossaryWindowExists' }, (res) => {
       if (res === true) {
          Toggles.sendGlossariesToBackground();
       } else if (res === false) {

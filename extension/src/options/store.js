@@ -1,4 +1,4 @@
-import {Storage} from '../model/GeneralStorage';
+import { Storage } from '../model/GeneralStorage';
 import Aspell from '../model/Aspell';
 
 const debug = require('cth-debug')(__filename);
@@ -17,7 +17,7 @@ export const store = {
 
 // Additional operation for Options screen
 Aspell.aspellLangCodes.forEach((ele) => {
-   Storage.keys({"storeName": ele}).then((res) => {
+   Storage.keys({ "storeName": ele }).then((res) => {
       if (res && res.length) {
          // Logger.warn('res', res)
          store.all.spellcheckStoreSelector.values.push(ele);

@@ -14,5 +14,5 @@ export default function observeForInsertedIframe (cb) {
       });
    });
 
-   obs.observe($('.gtc-translation')[0], {"childList": true});
+   obs.observe($('.gtc-translation')[0], { "childList": true });
 }

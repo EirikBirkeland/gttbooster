@@ -19,7 +19,7 @@ export default function persistFontSize (doc) {
 
    const storedSize = get();
    if (storedSize) {
-      $body.css({'font-size': `${storedSize}px`});
+      $body.css({ 'font-size': `${storedSize}px` });
    }
 
    $incr.click(() => _change('incr'));
@@ -41,7 +41,7 @@ export default function persistFontSize (doc) {
          count++;
       }
 
-      $body.css({'font-size': `${fontSize}px`});
+      $body.css({ 'font-size': `${fontSize}px` });
       put(fontSize);
    }
 }

@@ -9,4 +9,4 @@ function checkForRepeatedSegmentsButtonAndHighlightIt () {
    }
 }
 
-export {checkForRepeatedSegmentsButtonAndHighlightIt};
+export { checkForRepeatedSegmentsButtonAndHighlightIt };

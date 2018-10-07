@@ -54,4 +54,4 @@ function getSelectedDocumentUrls () {
    return urls;
 }
 
-export {initListModules};
+export { initListModules };

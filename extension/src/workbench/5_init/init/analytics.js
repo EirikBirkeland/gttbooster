@@ -80,4 +80,4 @@ function addButtonListeners () {
    }
 }
 
-export {load, loadNew, addButtonListeners};
+export { load, loadNew, addButtonListeners };

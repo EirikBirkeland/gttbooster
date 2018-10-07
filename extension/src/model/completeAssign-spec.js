@@ -1,5 +1,5 @@
 import test from 'ava';
-import {completeAssign} from './completeAssign';
+import { completeAssign } from './completeAssign';
 
 test('should return a merged object with expected special properties like getters/setters', (t) => {
    const expected = {
@@ -13,5 +13,5 @@ test('should return a merged object with expected special properties like getter
       get "apple" () {
          "cat";
       }
-   }, {"dog": "cat"}));
+   }, { "dog": "cat" }));
 });

@@ -15,7 +15,7 @@ export const bottom = {
                   return {
                      get "tmItemsContainer" () {
                         const itself = $(left).find('.gtc-tool-content');
-                        return {itself};
+                        return { itself };
                      }
                   };
                }

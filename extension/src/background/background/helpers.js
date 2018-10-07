@@ -24,4 +24,4 @@ function errorHandler (error, sendResponse) {
    sendResponse(null);
 }
 
-export {getChromeVersion, getExtensionVersion, errorHandler, doneHandler};
+export { getChromeVersion, getExtensionVersion, errorHandler, doneHandler };

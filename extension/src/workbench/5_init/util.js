@@ -1,6 +1,6 @@
 import $ from 'jquery';
-import {replaceSegmentTypeWithSource} from '../2_classes/upper-lib/replaceSegmentTypeWithSource';
-import {notifier} from '../2_classes/notifier';
+import { replaceSegmentTypeWithSource } from '../2_classes/upper-lib/replaceSegmentTypeWithSource';
+import { notifier } from '../2_classes/notifier';
 
 const replaceMtWithSource = function () {
    replaceSegmentTypeWithSource('goog-gtc-from-mt', cth.dom.sourceDoc, cth.dom.targetSegments);
@@ -11,4 +11,4 @@ const replaceFuzzyWithSource = function () {
    notifier.info(`Replacing ${$(cth.dom.targetDoc).find('.goog-gtc-from-tm-score-90').length} fuzzy segments with source`);
 };
 
-export {replaceMtWithSource, replaceFuzzyWithSource, replaceSegmentTypeWithSource};
+export { replaceMtWithSource, replaceFuzzyWithSource, replaceSegmentTypeWithSource };

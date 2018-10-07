@@ -1,8 +1,8 @@
 /* global cth */
 
 import _ from 'lodash';
-import {Segment} from '../Segment/Segment';
-import {completeAssign} from '../../../model/completeAssign';
+import { Segment } from '../Segment/Segment';
+import { completeAssign } from '../../../model/completeAssign';
 
 const debug = require('cth-debug')(__filename);
 
@@ -53,4 +53,4 @@ TargetDocument.hasIceSegments = function hasIceSegments () {
    return Boolean($(this.node).find('.goog-gtc-from-tm-score-100-ice').length);
 };
 
-export {SourceDocument, TargetDocument};
+export { SourceDocument, TargetDocument };

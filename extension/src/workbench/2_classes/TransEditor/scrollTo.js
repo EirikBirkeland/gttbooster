@@ -14,7 +14,7 @@ export function scrollTo (opts) {
       "offset": parseInt($('iframe')[1].style.height) / 3
    }, opts);
 
-   const {targetDoc, node, offset} = opts;
+   const { targetDoc, node, offset } = opts;
 
    const transEditorNode = $(targetDoc).find(node);
    const firstUntranslatedSegment = $(targetDoc).find('.goog-gtc-from-mt, .goog-gtc-ph-missing, .goog-gtc-from-tm-score-90, .goog-gtc-from-source').first();
@@ -39,7 +39,7 @@ export function scrollTo (opts) {
    function scroll ($a, offset) {
       const theOffset = $a.offset().top - offset;
       if (typeof theOffset !== 'number') {
-         debug.warn({theOffset});
+         debug.warn({ theOffset });
       }
       $(targetDoc).scrollTop(theOffset);
    }

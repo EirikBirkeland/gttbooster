@@ -1,6 +1,6 @@
 import test from 'ava';
 import sinon from 'sinon';
-import {Sheet} from './qa-sheet-google';
+import { Sheet } from './qa-sheet-google';
 
 const debug = require('debug')(__filename);
 
@@ -23,7 +23,7 @@ const validMockData = {
          }
       ]
    },
-   "sheet2": {"elements": []}
+   "sheet2": { "elements": [] }
 };
 const invalidMockData = {
    "Main": {
@@ -42,12 +42,12 @@ const invalidMockData = {
          }
       ]
    },
-   "sheet2": {"elements": []}
+   "sheet2": { "elements": [] }
 };
 
 const TabletopStub = function (mockData) {
    return {
-      init ({key, sheetId, callback, simpleSheet, debug}) {
+      init ({ key, sheetId, callback, simpleSheet, debug }) {
          setTimeout(() => callback(null, mockData), 0);
       }
    };

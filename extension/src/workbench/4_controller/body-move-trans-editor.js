@@ -3,16 +3,16 @@ import bodyEmitter from '../bodyEmitter';
 import $ from 'jquery';
 import _ from 'lodash';
 
-import {updateTheTransEditor} from '../../2_classes/TransEditor/updateTheTransEditor';
+import { updateTheTransEditor } from '../../2_classes/TransEditor/updateTheTransEditor';
 import Autocomplete from '../../2_classes/Autocomplete/index.js';
-import {TransEditor} from '../../2_classes/TransEditor/TransEditor';
+import { TransEditor } from '../../2_classes/TransEditor/TransEditor';
 import runChecks from '../../2_classes/Qa/runChecks';
 import updateCurrentSegments from '../../2_classes/Segment/updateCurrentSegments';
-import {checkForRepeatedSegmentsButtonAndHighlightIt} from '../../2_classes/TransEditor/checkForRepeatedSegmentsButtonAndHighlightIt';
-import {Ice} from '../../2_classes/Ice/Ice';
-import {trados} from '../../2_classes/TradosMode/TradosMode';
-import {checkWhetherNew} from '../../2_classes/Glossaries/lib/checkWhetherNew';
-import {Dev} from '../../2_classes/Dev';
+import { checkForRepeatedSegmentsButtonAndHighlightIt } from '../../2_classes/TransEditor/checkForRepeatedSegmentsButtonAndHighlightIt';
+import { Ice } from '../../2_classes/Ice/Ice';
+import { trados } from '../../2_classes/TradosMode/TradosMode';
+import { checkWhetherNew } from '../../2_classes/Glossaries/lib/checkWhetherNew';
+import { Dev } from '../../2_classes/Dev';
 import * as Hotkeys from '../../2_classes/Hotkeys';
 
 const debug = require('cth-debug')(__filename.replace(/^src\//, ''));

@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import {icons} from '../icons';
+import { icons } from '../icons';
 
 const debug = require('cth-debug')(__filename.replace(/^src\//, ''));
 
@@ -32,12 +32,12 @@ export default class IceSegmentsCollection {
    }
 
    disableMouseEvents () {
-      $(this.nodelist).css({'pointer-events': 'none'});
+      $(this.nodelist).css({ 'pointer-events': 'none' });
       return this;
    }
 
    enableMouseEvents () {
-      $(this.nodelist).css({'pointer-events': ''});
+      $(this.nodelist).css({ 'pointer-events': '' });
       return this;
    }
 }

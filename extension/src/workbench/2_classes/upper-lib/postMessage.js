@@ -7,7 +7,7 @@ import $ from 'jquery';
 import _ from 'lodash';
 
 export default function displayAlert (opts) {
-   const {type, msg, removeToggle, fnToExecute} = opts;
+   const { type, msg, removeToggle, fnToExecute } = opts;
 
    const $message = (function () {
       const $cthMessage = $('#cth-message');

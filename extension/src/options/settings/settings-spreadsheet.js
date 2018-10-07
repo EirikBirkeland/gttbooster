@@ -1,4 +1,4 @@
-import {ChromeProxy} from '../../model/ChromeProxy';
+import { ChromeProxy } from '../../model/ChromeProxy';
 
 export const spreadsheetSettings = {
    "spreadsheetURL": {

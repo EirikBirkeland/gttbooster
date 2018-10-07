@@ -1,8 +1,8 @@
 /* eslint-env browser, webextensions */
 
-import {Sheet} from '../../../model/qa-sheet-google';
-import {notifier} from '../notifier';
-import {icons} from '../icons';
+import { Sheet } from '../../../model/qa-sheet-google';
+import { notifier } from '../notifier';
+import { icons } from '../icons';
 import $ from 'jquery';
 
 const debug = require('cth-debug')(__filename);

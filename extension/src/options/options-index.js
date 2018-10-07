@@ -2,8 +2,8 @@ import $ from 'jquery';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Body from './pages/Body';
-import {load} from '../model/SettingsStorage';
-import {store} from './store';
+import { load } from '../model/SettingsStorage';
+import { store } from './store';
 
 const debug = require('cth-debug')(__filename);
 
@@ -41,4 +41,4 @@ $(document).ready(() => {
    });
 });
 
-export {store};
+export { store };

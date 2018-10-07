@@ -12,13 +12,13 @@ import { customPrettyHtml } from '../custom-pretty-html';
 // TODO: Auto-select contrasting color?
 // TODO: Add ChangeReport modal with button to leave mode
  const ChangeReport = {
-    init(documentStrings, cache) {
+    init (documentStrings, cache) {
         this.documentStrings = documentStrings;
         this.cache = cache || {};
         this.togg = false;
     },
 
-    addDocumentSnapshot(storeDocState, content) {
+    addDocumentSnapshot (storeDocState, content) {
         this.cache[storeDocState] = {
             content,
             "addedDate": Date.now()
@@ -29,7 +29,7 @@ import { customPrettyHtml } from '../custom-pretty-html';
      *
      * @param {string} storeDocState - In translation | Completed | Translation complete | In review | In copy edit | Pending
      */
-    getDiffedStrings(storeDocState) {
+    getDiffedStrings (storeDocState) {
         if (!this.cache[storeDocState]) {
             throw new ReferenceError('Invalid cache key.');
         }
@@ -39,7 +39,7 @@ import { customPrettyHtml } from '../custom-pretty-html';
         // Return a map for debug output for now
         return _.map(this.documentStrings, (targetSeg, index) => createDiffString(docStrings[index], targetSeg));
 
-        function createDiffString(str1, str2) {
+        function createDiffString (str1, str2) {
             const dmp = new GoogleDiff();
 
             const diffWords = dmp.diff_main(str1, str2);
@@ -49,7 +49,7 @@ import { customPrettyHtml } from '../custom-pretty-html';
         }
     },
 
-    toggle() {
+    toggle () {
         if (this.togg) {
             this.copyNodesAndHideOriginal();
         } else {
@@ -58,7 +58,7 @@ import { customPrettyHtml } from '../custom-pretty-html';
         this.togg = !this.togg;
     },
 
-    copyNodesAndHideOriginal() {
+    copyNodesAndHideOriginal () {
         const diffedStrings = this.getDiffedStrings('Translation');
         Array.from(cth.dom.targetSegments).forEach((unit, i) => {
             const $original = $(unit.firstChild);
@@ -71,7 +71,7 @@ import { customPrettyHtml } from '../custom-pretty-html';
         // add sth like a modal warning (with option to leave ChangeReport mode)
     },
 
-    deleteNodesAndShowOriginal() {
+    deleteNodesAndShowOriginal () {
         Array.from(cth.dom.targetSegments).forEach((unit, i) => {
             $(unit).find('.diffCopy').remove();
             $(unit.firstChild).show();

@@ -21,4 +21,4 @@ tmChangeObserver.init = function (finalCb) {
    });
 };
 
-export {tmChangeObserver};
+export { tmChangeObserver };

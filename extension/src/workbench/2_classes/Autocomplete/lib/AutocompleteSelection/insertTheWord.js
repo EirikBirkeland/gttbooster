@@ -1,5 +1,5 @@
-import {returnMatchingPortion} from '../select-helpers';
-import {RE_FOR_GETTING_WORD_BEFORE_CARET, RE_FOR_PARTS_TO_IGNORE} from '../regex-patterns';
+import { returnMatchingPortion } from '../select-helpers';
+import { RE_FOR_GETTING_WORD_BEFORE_CARET, RE_FOR_PARTS_TO_IGNORE } from '../regex-patterns';
 import XRegExp from 'xregexp';
 
 const debug = require('cth-debug')(__filename);

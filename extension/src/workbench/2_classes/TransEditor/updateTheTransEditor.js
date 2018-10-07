@@ -1,6 +1,6 @@
 import _ from 'lodash';
-import {TransEditor} from './TransEditor';
-import {Segment} from '../Segment/Segment';
+import { TransEditor } from './TransEditor';
+import { Segment } from '../Segment/Segment';
 import _checkCurrentSegment from '../Qa/checkCurrentSegment';
 
 /**

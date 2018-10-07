@@ -3,10 +3,10 @@ import XRegExp from 'xregexp';
 
 import getPartOfWord from './getPartOfWord';
 
-import {removePlaceholderGarbage, stripCurrentInputWord, trimSymbols} from './source/termManipulations';
-import {createTermsObject} from './source/createTermsObject';
+import { removePlaceholderGarbage, stripCurrentInputWord, trimSymbols } from './source/termManipulations';
+import { createTermsObject } from './source/createTermsObject';
 
-import {RE_FOR_PARTS_TO_IGNORE} from './regex-patterns';
+import { RE_FOR_PARTS_TO_IGNORE } from './regex-patterns';
 
 const debug = require('cth-debug')(__filename.replace(/^src\//, ''));
 

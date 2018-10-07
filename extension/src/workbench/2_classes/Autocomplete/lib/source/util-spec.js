@@ -1,6 +1,6 @@
 import test from 'ava';
-import {lowerCaseFilterAccordingToProp, uniqFilterAccordingToProp, upperCaseFilterAccordingToProp} from './util';
-import type {Term} from './Term-type';
+import { lowerCaseFilterAccordingToProp, uniqFilterAccordingToProp, upperCaseFilterAccordingToProp } from './util';
+import type { Term } from './Term-type';
 
 const terms: Term = [
    {

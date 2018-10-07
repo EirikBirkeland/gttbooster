@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import _ from 'lodash';
-import {Storage} from '../../../model/GeneralStorage';
+import { Storage } from '../../../model/GeneralStorage';
 import getLanguageToUse from './getLanguageToUse';
 
 const debug = require('cth-debug')(__filename);
@@ -36,7 +36,7 @@ export default function addContextMenu () {
          const rightclickedWord = e.currentTarget.innerText;
 
          // TODO: The StorageOld api should be changed to {storeName: abc, key: abc, value: abc, cb: abc)
-         Storage.set({"storeName": getLanguageToUse()}, rightclickedWord, 1, debug.log);
+         Storage.set({ "storeName": getLanguageToUse() }, rightclickedWord, 1, debug.log);
 
          const redWiggles = $(window.cth.dom.targetDoc).find('.cth_redWiggle');
          _.forEach(redWiggles, (ele) => {

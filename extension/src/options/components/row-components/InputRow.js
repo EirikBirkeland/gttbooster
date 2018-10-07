@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
 import createTooltip from './InputRow/createTooltip';
 import CheckboxAndLabel from '../CheckboxAndLabel.js';
 import Input from '../Input.js';
-import {store} from '../../options-index';
+import { store } from '../../options-index';
 
 export default class InputRow extends Component {
    handleClick = (e) => {
@@ -24,7 +24,7 @@ export default class InputRow extends Component {
       const MD = this.props.md || 4;
       const props = this.props;
       const optionName = props.optionName;
-      const {maxlength, name, pattern, unit} = props;
+      const { maxlength, name, pattern, unit } = props;
 
       return (
          <Row>

@@ -1,9 +1,9 @@
 // @flow
 import $ from 'jquery';
 import _ from 'lodash';
-import {Segment} from '../Segment/Segment';
+import { Segment } from '../Segment/Segment';
 import runChecks from './runChecks';
-import {Spellcheck} from '../Spellcheck/Spellcheck';
+import { Spellcheck } from '../Spellcheck/Spellcheck';
 
 const debug = require('cth-debug')(__filename);
 // TODO: Well this should be moved to somewhere else, for sure! I.e. an event "user-keyboard-input" in the bodyEmitter.

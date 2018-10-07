@@ -3,7 +3,7 @@
  * Created by eb on 23.07.2016.
  */
 
-import {stripPlaceholders} from '../../tool';
+import { stripPlaceholders } from '../../tool';
 import XRegExp from 'xregexp';
 
 const debug = require('cth-debug')(__filename);
@@ -68,7 +68,7 @@ const NumberCheck = (() => {
          "spacesInLongNumber": /* Should I add another \\b? at the front */ '[0-9]{1,3}[ ](?:[0-9]{3}(?:[ ][0-9]{3}|\\b)+)+'
       };
 
-      const shared = {"integer": /^[0-9]+$/};
+      const shared = { "integer": /^[0-9]+$/ };
 
       return {
          "source": {
@@ -99,7 +99,7 @@ const NumberCheck = (() => {
                                   |
                             \\b${target.spacesInLongNumber}\\b`, 'igx')
          },
-         "shared": {"isIpAddress": /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/}
+         "shared": { "isIpAddress": /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/ }
       };
    }
 

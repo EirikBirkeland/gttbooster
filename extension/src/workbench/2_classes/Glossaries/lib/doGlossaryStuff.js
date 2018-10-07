@@ -1,4 +1,4 @@
-import {Glossaries} from '../Glossaries';
+import { Glossaries } from '../Glossaries';
 
 const debug = require('cth-debug')(__filename);
 

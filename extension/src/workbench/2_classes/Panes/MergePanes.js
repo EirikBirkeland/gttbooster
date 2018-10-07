@@ -7,11 +7,11 @@
 /* global MutationObserver */
 
 import * as Panes from './Panes';
-import {TransEditor} from '../TransEditor/TransEditor';
+import { TransEditor } from '../TransEditor/TransEditor';
 import $ from 'jquery';
 import _ from 'lodash';
-import {notifier} from '../notifier';
-import {Cursor} from '../Cursor';
+import { notifier } from '../notifier';
+import { Cursor } from '../Cursor';
 
 const debug = require('cth-debug')(__filename.replace(/^src\//, ''));
 
@@ -87,7 +87,7 @@ function insertSourceSingle (sourceSegment) {
 }
 
 function insertAll (opts = {}) {
-   const {disableNotification} = opts;
+   const { disableNotification } = opts;
 
    autoUpdateSourceChange('start');
 
@@ -108,7 +108,7 @@ function insertAll (opts = {}) {
    function insertSourceSegments () {
       _.forEach(cth.dom.sourceSegments, insertSegmentForEach);
 
-      verticalBarObserver.observe(verticalBar, {"attributes": true});
+      verticalBarObserver.observe(verticalBar, { "attributes": true });
 
       const $title = $('.gtc-trans-title');
       $title.html($title.html().replace(/Translation:/, 'Combined:'));
@@ -182,4 +182,4 @@ const MergePanes = {
    removeAll
 };
 
-export {MergePanes};
+export { MergePanes };

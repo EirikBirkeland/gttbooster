@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import {convertPlaceholders} from '../Segment/convertPlaceholders';
+import { convertPlaceholders } from '../Segment/convertPlaceholders';
 import removeExactMessage from './removeExactMessage';
 import addRating from './addRating';
 import changeDiffHighlighting from './changeDiffHighlighting';
