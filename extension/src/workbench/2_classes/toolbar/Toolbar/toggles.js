@@ -11,14 +11,13 @@ import { startTrados } from '../../TradosMode/TradosMode';
 import { MergePanes } from '../../Panes/MergePanes';
 import { Qa } from '../../Qa/QaWrapper';
 import { Ice } from '../../Ice/Ice';
-import { TransEditor } from '../../TransEditor/TransEditor';
+import TransEditor from '../../TransEditor';
 import toggleMeta from './toggles/toggleMeta';
 import toggleItem from './toggles/toggleItem';
 
 let qa = null;
 
 console.warn(Autocomplete);
-
 
 const Toggles = {
    trados () {

@@ -1,4 +1,4 @@
-import bodyEmitter from '../bodyEmitter';
+import bodyEmitter from './emitters/bodyEmitter';
 import { notifier } from '../2_classes/notifier';
 import changeReport from '../2_classes/ChangeReport/ChangeReport';
 import { Storage } from '../../model/GeneralStorage';

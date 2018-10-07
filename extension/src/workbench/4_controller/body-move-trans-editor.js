@@ -1,19 +1,21 @@
 /* globals cth */
-import bodyEmitter from '../bodyEmitter';
 import $ from 'jquery';
 import _ from 'lodash';
 
-import { updateTheTransEditor } from '../../2_classes/TransEditor/updateTheTransEditor';
-import Autocomplete from '../../2_classes/Autocomplete/index.js';
-import { TransEditor } from '../../2_classes/TransEditor/TransEditor';
-import runChecks from '../../2_classes/Qa/runChecks';
-import updateCurrentSegments from '../../2_classes/Segment/updateCurrentSegments';
-import { checkForRepeatedSegmentsButtonAndHighlightIt } from '../../2_classes/TransEditor/checkForRepeatedSegmentsButtonAndHighlightIt';
-import { Ice } from '../../2_classes/Ice/Ice';
-import { trados } from '../../2_classes/TradosMode/TradosMode';
-import { checkWhetherNew } from '../../2_classes/Glossaries/lib/checkWhetherNew';
-import { Dev } from '../../2_classes/Dev';
-import * as Hotkeys from '../../2_classes/Hotkeys';
+import bodyEmitter from './emitters/bodyEmitter';
+
+import TransEditor from '../2_classes/TransEditor';
+import { checkForRepeatedSegmentsButtonAndHighlightIt } from '../2_classes/TransEditor/lib/checkForRepeatedSegmentsButtonAndHighlightIt';
+
+import Autocomplete from '../2_classes/Autocomplete/index.js';
+
+import runChecks from '../2_classes/Qa/runChecks';
+import updateCurrentSegments from '../2_classes/Segment/updateCurrentSegments';
+import { Ice } from '../2_classes/Ice/Ice';
+import { trados } from '../2_classes/TradosMode/TradosMode';
+import { checkWhetherNew } from '../2_classes/Glossaries/lib/checkWhetherNew';
+import { Dev } from '../2_classes/Dev';
+import * as Hotkeys from '../2_classes/Hotkeys';
 
 const debug = require('cth-debug')(__filename.replace(/^src\//, ''));
 
@@ -43,14 +45,14 @@ bodyEmitter.on('move-trans-editor', (insertedNode, segmentArea) => {
    _.delay(() => {
       if (!TransEditor.isScrolledIntoView(cth.dom.targetDoc, $(cth.dom.targetDoc).find('#transEditor'))) {
          debug.log(`transEditor is not scrolled into view. Scrolling in ${TIME} ms`);
-         scrollTo();
+         TransEditor.scrollIntoView();
       }
    }, TIME);
 
    _.delay(() => {
       if (!TransEditor.isScrolledIntoView(cth.dom.targetDoc, $(cth.dom.targetDoc).find('#transEditor'))) {
          debug.log(`transEditor is not scrolled into view. Scrolling in ${TIME} ms`);
-         scrollTo();
+         TransEditor.scrollIntoView();
       }
    }, 500);
 
@@ -101,5 +103,5 @@ bodyEmitter.on('move-trans-editor', (insertedNode, segmentArea) => {
       }
    });
 
-   Dev(updateTheTransEditor);
+   Dev(TransEditor.update.bind(TransEditor));
 });

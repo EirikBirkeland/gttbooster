@@ -1,8 +1,9 @@
 /* global cth */
 import $ from 'jquery';
 import _ from 'lodash';
-import { scrollTo } from './scrollTo';
-import isScrolledIntoView from './isScrolledIntoView';
+import scrollIntoView from './lib/scrollIntoView';
+import isScrolledIntoView from './lib/isScrolledIntoView';
+import update from  './lib/update';
 
 const debug = require('cth-debug')(__filename);
 
@@ -13,7 +14,6 @@ const TransEditor = {
     * @param [maxWidth]
     */
    expand (width, maxWidth) {
-      const debug = require('cth-debug')(__filename);
 
       const gtcTransInlineText = Array.from($(cth.dom.targetDoc).find('.gtc-trans-inline-text'));
       const gtcRichInputArea = Array.from($(cth.dom.targetDoc).find('.gtc-trans-inline-cont'));
@@ -33,7 +33,7 @@ const TransEditor = {
    },
 
    focus () {
-      scrollTo();
+      this.scrollIntoView();
    },
 
    reset () {
@@ -42,12 +42,12 @@ const TransEditor = {
    },
 
    moveToLastActiveSegmentAndFocus () {
-      scrollTo({ "node": cth.dom.currentTargetSegment });
+      this.scrollIntoView({ "node": cth.dom.currentTargetSegment });
       $(cth.dom.currentTargetSegment).children().first().click();
    },
 
    moveToX (node) {
-      scrollTo({ node });
+      this.scrollIntoView({ node });
       $(node).children().first().click();
    },
 
@@ -99,15 +99,14 @@ const TransEditor = {
       $(this.buttonsList).remove();
    },
 
+   update: update,
+
+   scrollIntoView: scrollIntoView,
+
+   isScrolledIntoView: isScrolledIntoView
+
 };
 
-/**
- * Static properties must be defined outside (or implemented using getters/setters)
- * @type {isScrolledIntoView}
- */
-TransEditor.isScrolledIntoView = isScrolledIntoView;
 TransEditor.buttonsList = [];
 
-export {
-   TransEditor
-};
+export default TransEditor;

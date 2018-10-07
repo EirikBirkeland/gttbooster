@@ -6,7 +6,7 @@ import $ from 'jquery';
 
 const debug = require('cth-debug')(__filename);
 
-export function scrollTo (opts) {
+export default function scrollIntoView (opts) {
    opts = Object.assign({
       "targetDoc": window.cth.dom.targetDoc,
       "node": '#transEditor',

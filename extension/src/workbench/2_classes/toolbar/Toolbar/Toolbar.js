@@ -14,7 +14,7 @@ import { TargetDocument } from '../../Document/Document';
 import { timer as initTimer } from '../../upper-lib/timer';
 import listenForClick from '../../click-logging';
 import { KeywordFiltering } from '../../KeywordFiltering/KeywordFiltering';
-import { scrollTo } from '../../TransEditor/scrollTo';
+import TransEditor from '../../TransEditor';
 import { Font } from '../../Font/Font';
 import { Cursor } from '../../Cursor';
 import { qaSheet } from '../../Qa/qa-sheet';
@@ -199,7 +199,7 @@ class Toolbar extends React.Component {
              id="cth_focusbutton"
              title="SmartFocus: (1) go to first untranslated segment from the top, or (2) bring any active segment into view."
              iconName="arrowIn"
-             onClick={scrollTo}
+             onClick={TransEditor.scrollTo}
              style={{ "borderColor": 'green' }}
           />
           <Button

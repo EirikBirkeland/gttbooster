@@ -2,7 +2,7 @@
 import { EventEmitter } from 'events';
 import $ from 'jquery';
 import _ from 'lodash';
-import scrollTo from '../../2_classes/TransEditor/scrollTo';
+import TransEditor from '../../2_classes/TransEditor';
 
 import observeForFindButtonClick from '../observers/upper-observeForFindButtonClick';
 import observeForUnexpectedIframe from '../observers/upper-observeForUnexpectedIframe';
@@ -15,7 +15,7 @@ upperEmitter.on('click-find-button', () => {
    debug.log('click-find-button event triggered');
    if (cth.option.SOURCE_TOGGLE === true) {
       const DELAY_TO_RACE_WITH_GTT = 400;
-      _.delay(() => scrollTo({ "node": '.goog-gtc-fnr-highlight' }), DELAY_TO_RACE_WITH_GTT);
+      _.delay(() => TransEditor.scrollTo({ "node": '.goog-gtc-fnr-highlight' }), DELAY_TO_RACE_WITH_GTT);
    }
 });
 

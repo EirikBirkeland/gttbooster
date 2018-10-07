@@ -3,7 +3,6 @@ import $ from 'jquery';
 import _ from 'lodash';
 import { _retrieveStatusFromDoc } from '../../2_classes/upper-lib/runCompletionCheck/Completion';
 const debug = require('cth-debug')(__filename.replace(/^src\//, ''));
-const log = alert;
 
 export default function observeForStatusChange (cb) {
     $(document).on("click", ".goog-menuitem-content", function (event) {

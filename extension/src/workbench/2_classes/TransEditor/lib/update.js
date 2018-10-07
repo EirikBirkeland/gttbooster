@@ -1,7 +1,6 @@
 import _ from 'lodash';
-import { TransEditor } from './TransEditor';
-import { Segment } from '../Segment/Segment';
-import _checkCurrentSegment from '../Qa/checkCurrentSegment';
+import { Segment } from '../../Segment/Segment';
+import _checkCurrentSegment from '../../Qa/checkCurrentSegment';
 
 /**
  * Function to execute when the user types, as detected by listening for keyboard input
@@ -12,13 +11,13 @@ const checkCurrentSegment = _.debounce(_checkCurrentSegment, 500, {
    "trailing": true
 });
 
-export function updateTheTransEditor () {
-   TransEditor.removeButtons();
+export default function updateTheTransEditor () {
+   this.removeButtons();
 
    const currentSeg = Segment.create(cth.dom.currentTargetSegment);
 
    if (currentSeg.hasInconsistencies) {
-      TransEditor.addButtonsToBar([
+    this.addButtonsToBar([
          {
             "value": currentSeg.inconsistentSegmentIds.length,
             "title": `This segment is inconsistent with ${currentSeg.inconsistentSegmentIds.length} other segments.`,
@@ -33,7 +32,7 @@ export function updateTheTransEditor () {
          }
       ]);
    } else if (currentSeg.hasDuplicates) {
-      TransEditor.addButtonsToBar([
+    this.addButtonsToBar([
          {
             "value": currentSeg.numDuplicates,
             "title": `This segment has ${currentSeg.numDuplicates} duplicates (source).`,
@@ -44,7 +43,7 @@ export function updateTheTransEditor () {
       ]);
    }
 
-   TransEditor.addButtonsToBar([
+   this.addButtonsToBar([
       {
          "value": '',
          "title": 'Click to add this handy label. Use it to leave yourself hints.',

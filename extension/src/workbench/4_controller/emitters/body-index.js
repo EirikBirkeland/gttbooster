@@ -8,10 +8,10 @@ import observeForTransEditor from '../observers/body-observeForTransEditor';
 import observeForDocStatusChange from '../observers/body-observeForDocStatusChange';
 import listenForUserInput from '../observers/body-listenForUserInput';
 
-require('../events/body-init');
+require('../body-init');
 require('../body-doc-status-changed');
-require('../events/body-move-trans-editor');
-require('../events/body-user-types-in-transeditor');
+require('../body-move-trans-editor');
+require('../body-user-types-in-transeditor');
 
 bodyEmitter.initListeners = function () {
     // Debouncing observeForTransEditor because transEditor was inserted twice into the DOM, resulting in twice the amount of work.

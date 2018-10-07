@@ -1,11 +1,11 @@
-import lowerEmitter from '../lowerEmitter';
+import lowerEmitter from './emitters/lowerEmitter';
 import _ from 'lodash';
 
-import { indicateNumOfTmMatches as _indicateNumOfTmMatches } from '../../2_classes/tm/sendTmIndicationToTransEditor';
-import { updateTmView } from '../../2_classes/tm/updateTmView';
+import { indicateNumOfTmMatches as _indicateNumOfTmMatches } from '../2_classes/tm/sendTmIndicationToTransEditor';
+import { updateTmView } from '../2_classes/tm/updateTmView';
 
-import { tmChangeObserver } from '../observers/lower-tmChangeObserver';
-import { Dev } from '../../2_classes/Dev';
+import { tmChangeObserver } from './observers/lower-tmChangeObserver';
+import { Dev } from '../2_classes/Dev';
 
 const debug = require('cth-debug')(__filename);
 

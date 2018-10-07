@@ -10,9 +10,9 @@ import lowerEmitter from './lowerEmitter';
 
 const debug = require('cth-debug')(__filename);
 
-require('../events/lower-init');
-require('../events/lower-glossary-changed');
-require('../events/lower-tm-changed');
+require('../lower-init');
+require('../lower-glossary-changed');
+require('../lower-tm-changed');
 
 lowerEmitter.initListeners = function () {
    tmChangeObserver.init(() => {

@@ -7,7 +7,7 @@
 /* global MutationObserver */
 
 import * as Panes from './Panes';
-import { TransEditor } from '../TransEditor/TransEditor';
+import TransEditor from '../TransEditor';
 import $ from 'jquery';
 import _ from 'lodash';
 import { notifier } from '../notifier';
