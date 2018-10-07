@@ -32,6 +32,7 @@ module.exports = {
       "no-debugger": "warn",
       "no-unused-vars": "off",
       "indent": ["off", 3, {SwitchCase: 1}],
+      "object-curly-spacing": ["warn", "always"],
       "semi": ["warn", "always"],
       "semi-style": ["warn", "last"],
       "no-extra-semi": ["off"],
