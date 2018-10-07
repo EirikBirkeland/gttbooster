@@ -21,6 +21,12 @@ const debug = require('cth-debug')(__filename.replace(/^src\//, ''));
 
 const checkWhetherNewDebounce = _.debounce(checkWhetherNew, 300);
 
+const delays = function (fn, ...args)  {
+   args.forEach((delay)=>{
+      setTimeout(fn, delay)
+   })
+}
+
 bodyEmitter.on('move-trans-editor', (insertedNode, segmentArea) => {
    debug.log('event move-trans-editor triggered');
 
@@ -38,23 +44,14 @@ bodyEmitter.on('move-trans-editor', (insertedNode, segmentArea) => {
    }
 
    TransEditor.removeButtons();
+
    _.defer(() => TransEditor.expand(null, 1000));
 
-   const TIME = 300; // 200 or lower seems to cause race condition (at least on some computers)
-
-   _.delay(() => {
+   delays(() => {
       if (!TransEditor.isScrolledIntoView(cth.dom.targetDoc, $(cth.dom.targetDoc).find('#transEditor'))) {
-         debug.log(`transEditor is not scrolled into view. Scrolling in ${TIME} ms`);
          TransEditor.scrollIntoView();
       }
-   }, TIME);
-
-   _.delay(() => {
-      if (!TransEditor.isScrolledIntoView(cth.dom.targetDoc, $(cth.dom.targetDoc).find('#transEditor'))) {
-         debug.log(`transEditor is not scrolled into view. Scrolling in ${TIME} ms`);
-         TransEditor.scrollIntoView();
-      }
-   }, 500);
+   }, 400, 500);
 
    /**
     *  Should run a last check on the previous segment, to avoid leaving any messages
