@@ -92,7 +92,7 @@ export function getDocInfo () {
       "dokNavn": docName,
       "produktNavn": docName.innerHTML.replace(/\w{2}_([^_]+).*/, '$1'),
       "dokumentSprak": docName.innerHTML.replace(/(^.*?)_.*/, '$1'),
-      "prosjektNummer": docName.innerHTML.replace(/^.*?_.*?_(\d{6}).*/, '$1'),
+      "prosjektNummer": docName.innerHTML.replace(/^.*?_.*?_(\d{6,}).*/, '$1'),
       "antallOrd": parseInt($('.gtc-workbench-words')[0].textContent, 10),
       "fullforingsGrad": $('.gtc-workbench-percent')[0].innerHTML,
       "docStatusOnLoad": _retrieveStatusFromDoc(),
