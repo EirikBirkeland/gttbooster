@@ -1,5 +1,7 @@
 /* global cth */
 import { EventEmitter } from 'events';
+const upperEmitter = new EventEmitter();
+
 import $ from 'jquery';
 import _ from 'lodash';
 import TransEditor from '../../2_classes/TransEditor';
@@ -8,8 +10,6 @@ import observeForFindButtonClick from '../observers/upper-observeForFindButtonCl
 import observeForUnexpectedIframe from '../observers/upper-observeForUnexpectedIframe';
 
 const debug = require('cth-debug')(__filename.replace(/^src\//, ''));
-
-const upperEmitter = new EventEmitter();
 
 upperEmitter.on('click-find-button', () => {
    debug.log('click-find-button event triggered');

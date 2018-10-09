@@ -2,6 +2,9 @@
 /**
  * Created by eb on 15.07.2017.
  */
+import { EventEmitter } from 'events';
+const bodyEmitter = new EventEmitter();
+
 import bodyEmitter from './bodyEmitter';
 import _ from 'lodash';
 import observeForTransEditor from '../observers/body-observeForTransEditor';

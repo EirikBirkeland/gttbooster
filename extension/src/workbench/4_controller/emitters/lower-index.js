@@ -4,6 +4,9 @@
 /**
  *  This file should concern itself ONLY with the lower part of the page.
  */
+import { EventEmitter } from 'events';
+const lowerEmitter = new EventEmitter();
+
 import { tmChangeObserver } from '../observers/lower-tmChangeObserver';
 import { glossaryChangeObserver } from '../observers/lower-glossaryChangeObserver';
 import lowerEmitter from './lowerEmitter';
