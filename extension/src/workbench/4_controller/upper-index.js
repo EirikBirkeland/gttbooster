@@ -9,6 +9,7 @@ import {filesync} from '../2_classes/upper-lib/filesync'
 import initToolbar from '../2_classes/toolbar/toolbar-index'
 import {addQMLink, addSgLink, addTCLink} from '../2_classes/upper-lib/addIcons'
 import upperEmitter from './upperEmitter'
+import {Dev} from '../2_classes/Dev'
 
 function init (options) {
    initToolbar()
@@ -23,13 +24,7 @@ function init (options) {
    addQMLink()
    addTCLink()
 
-   if (localStorage['cth-dev-mode'] === 'true') {
-      filesync(window)
-   }
-
-   if (options.replaceTitle) {
-      replaceTitle()
-   }
+   Dev(()=>filesync(window))
 
    upperEmitter.initListeners()
 }
