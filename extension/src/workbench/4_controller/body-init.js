@@ -28,8 +28,8 @@ bodyEmitter.on('init', (res) => {
         highlightTextItems();
     }
 
-    _.delay(Hotkeys.insertEndash, 2000);
-    _.delay(() => Dev(Hotkeys.norwegianQuotes), 2000);
+    _.delay(Hotkeys.insertEndash, 5000);
+    _.delay(() => Dev(Hotkeys.norwegianQuotes), 5000);
 
     Dev(convertAZippyToDiv);
     Dev(TransEditor.update.bind(TransEditor));
