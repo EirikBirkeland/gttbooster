@@ -2,20 +2,20 @@
 import $ from 'jquery';
 import _ from 'lodash';
 
-import bodyEmitter from './emitters/bodyEmitter';
+import bodyEmitter from '../bodyEmitter';
 
-import TransEditor from '../2_classes/TransEditor';
-import { checkForRepeatedSegmentsButtonAndHighlightIt } from '../2_classes/TransEditor/lib/checkForRepeatedSegmentsButtonAndHighlightIt';
+import TransEditor from '../../2_classes/TransEditor';
+import { checkForRepeatedSegmentsButtonAndHighlightIt } from '../../2_classes/TransEditor/lib/checkForRepeatedSegmentsButtonAndHighlightIt';
 
-import Autocomplete from '../2_classes/Autocomplete/index.js';
+import Autocomplete from '../../2_classes/Autocomplete';
 
-import runChecks from '../2_classes/Qa/runChecks';
-import updateCurrentSegments from '../2_classes/Segment/updateCurrentSegments';
-import { Ice } from '../2_classes/Ice/Ice';
-import { trados } from '../2_classes/TradosMode/TradosMode';
-import { checkWhetherNew } from '../2_classes/Glossaries/lib/checkWhetherNew';
-import { Dev } from '../2_classes/Dev';
-import * as Hotkeys from '../2_classes/Hotkeys';
+import runChecks from '../../2_classes/Qa/runChecks';
+import updateCurrentSegments from '../../2_classes/Segment/updateCurrentSegments';
+import { Ice } from '../../2_classes/Ice/Ice';
+import { trados } from '../../2_classes/TradosMode/TradosMode';
+import { checkWhetherNew } from '../../2_classes/Glossaries/lib/checkWhetherNew';
+import { Dev } from '../../2_classes/Dev';
+import * as Hotkeys from '../../2_classes/Hotkeys';
 
 const debug = require('cth-debug')(__filename.replace(/^src\//, ''));
 
@@ -23,9 +23,9 @@ const checkWhetherNewDebounce = _.debounce(checkWhetherNew, 300);
 
 const delays = function (fn, ...args)  {
    args.forEach((delay)=>{
-      setTimeout(fn, delay)
-   })
-}
+      setTimeout(fn, delay);
+   });
+};
 
 bodyEmitter.on('move-trans-editor', (insertedNode, segmentArea) => {
    debug.log('event move-trans-editor triggered');

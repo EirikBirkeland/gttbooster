@@ -2,14 +2,12 @@
 /**
  * Created by eb on 15.07.2017.
  */
-import { EventEmitter } from 'events';
-const bodyEmitter = new EventEmitter();
 
 import bodyEmitter from './bodyEmitter';
 import _ from 'lodash';
-import observeForTransEditor from '../observers/body-observeForTransEditor';
-import observeForDocStatusChange from '../observers/body-observeForDocStatusChange';
-import listenForUserInput from '../observers/body-listenForUserInput';
+import observeForTransEditor from './observers/body-observeForTransEditor';
+import observeForDocStatusChange from './observers/body-observeForDocStatusChange';
+import listenForUserInput from './observers/body-listenForUserInput';
 
 require('../body-init');
 require('../body-doc-status-changed');

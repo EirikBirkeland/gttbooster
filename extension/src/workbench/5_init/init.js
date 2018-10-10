@@ -7,9 +7,9 @@ import { Storage } from '../../model/GeneralStorage';
 
 import { Segment } from '../2_classes/Segment/Segment';
 
-import upper from '../4_controller/emitters/upper-index';
-import * as body from '../4_controller/emitters/body-index';
-import * as lower from '../4_controller/emitters/lower-index';
+import upper from '../4_controller/upper-index';
+import * as body from '../4_controller/body-index';
+import * as lower from '../4_controller/lower-index';
 import * as other from '../4_controller/emitters/other-index';
 
 import { getOptions } from './init/config';

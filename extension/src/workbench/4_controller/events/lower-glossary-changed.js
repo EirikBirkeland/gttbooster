@@ -1,11 +1,11 @@
-import lowerEmitter from './emitters/lowerEmitter';
+import lowerEmitter from '../lowerEmitter';
 import _ from 'lodash';
 
-import { checkWhetherNew } from '../2_classes/Glossaries/lib/checkWhetherNew';
-import { glossaryChangeObserver } from './observers/lower-glossaryChangeObserver';
-import { doGlossaryStuff } from '../2_classes/Glossaries/lib/doGlossaryStuff';
-import { cleanupMt } from '../2_classes/mt/clean-up-mt';
-import { removeMt } from '../2_classes/Glossaries/lib/removeMt';
+import { checkWhetherNew } from '../../2_classes/Glossaries/lib/checkWhetherNew';
+import { glossaryChangeObserver } from '../observers/lower-glossaryChangeObserver';
+import { doGlossaryStuff } from '../../2_classes/Glossaries/lib/doGlossaryStuff';
+import { cleanupMt } from '../../2_classes/mt/clean-up-mt';
+import { removeMt } from '../../2_classes/Glossaries/lib/removeMt';
 
 const debug = require('cth-debug')(__filename);
 

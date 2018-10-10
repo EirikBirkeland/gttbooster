@@ -14,7 +14,6 @@ const TransEditor = {
     * @param [maxWidth]
     */
    expand (width, maxWidth) {
-
       const gtcTransInlineText = Array.from($(cth.dom.targetDoc).find('.gtc-trans-inline-text'));
       const gtcRichInputArea = Array.from($(cth.dom.targetDoc).find('.gtc-trans-inline-cont'));
       // const spaceToTheLeftOfTransEditor = gtcRichInputArea[0].getBoundingClientRect()
