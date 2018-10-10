@@ -38,11 +38,17 @@ bodyEmitter.on('init', (res) => {
 
     Storage.get({ storeName: 'translatedDocuments' }, cth.docInfo.prosjektNummer).then((retrievedDocument) => {
         if (!retrievedDocument) {
-            debug.info("No stored document found");
+            debug.log("No stored document found");
             return;
         }
 
-        if (['In copy edit'].includes(cth.docInfo.docStatusOnLoad)) {
+        // Check that user who last edited document is not yourself
+        if (cth.docInfo.brukerNavn.replace(/(.*)@.*/, "$1") === cth.docInfo.userLastEdited) {
+            debug.log("The last user who edited was yourself; so not showing any diff");
+            return;
+        }
+
+        if (!['In translation'].includes(cth.docInfo.docStatusOnLoad)) {
             changeReport.init(cth.model.targetSegments.map(x => x.innerWithConvertedPlaceholders), retrievedDocument);
 
             changeReport.copyNodesAndHideOriginal();

@@ -62,7 +62,6 @@ export function getDocInfo () {
 
    const userName = (() => {
       const email = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}/i;
-
       const $emailAccount = $('.gbps2');
       const $gbgs4 = $('#gbgs4');
 
@@ -87,8 +86,11 @@ export function getDocInfo () {
       /* eslint-enable */
    };
 
+   const userLastEdited = $('#lastmodified')[0].innerHTML || '';
+
    const obj = {
       "brukerNavn": userName,
+      "userLastEdited": userLastEdited.replace(/.*by ([0-9]+-.*)/, "$1"),
       "dokNavn": docName,
       "produktNavn": docName.innerHTML.replace(/\w{2}_([^_]+).*/, '$1'),
       "dokumentSprak": docName.innerHTML.replace(/(^.*?)_.*/, '$1'),
