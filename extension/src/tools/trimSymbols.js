@@ -1,4 +1,4 @@
-import XRegExp from 'xregexp';
+import XRegExp from 'xregexp'
 
 /**
  *
@@ -8,7 +8,7 @@ import XRegExp from 'xregexp';
  * @returns {void|string|_.LoDashExplicitWrapper<string>|XML|*}
  */
 export function trimSymbols (str, opts) {
-   const symbols = `\\p{Punctuation}` || `,.;:!?"`;
-   const re = XRegExp(`^[${symbols}]|[${symbols}]$`);
-   return XRegExp.replace(str, re, '', 'all');
+   const symbols = `\\p{Punctuation}` || `,.;:!?"`
+   const re = XRegExp(`^[${symbols}]|[${symbols}]$`)
+   return XRegExp.replace(str, re, '', 'all')
 }

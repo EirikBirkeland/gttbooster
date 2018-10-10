@@ -2,13 +2,13 @@
  * Created by Eirik on 08.09.2017.
  */
 
-import _ from 'lodash';
+import _ from 'lodash'
 
-let $ = require('jquery');
+let $ = require('jquery')
 
 export function highlightRelevant (productName, document) {
    if (document) {
-      $ = document;
+      $ = document
    }
 
    const relevant = [
@@ -32,14 +32,14 @@ export function highlightRelevant (productName, document) {
          "toReplace": 'Legal',
          "color": 'blue'
       }
-   ];
+   ]
 
-   const $target = $('.gtc-tools-autosearch').find('.gtc-glossary-source-name');
+   const $target = $('.gtc-tools-autosearch').find('.gtc-glossary-source-name')
    _.forEach($target, (ele) => {
       _.forEach(relevant, ($_) => {
          if ($(ele).html().match(new RegExp($_.toFind))) {
-            $(ele).html($(ele).html().replace(new RegExp(`(${$_.toReplace})`), `<span style="color:${$_.color}"><b>$1</b></span>`));
+            $(ele).html($(ele).html().replace(new RegExp(`(${$_.toReplace})`), `<span style="color:${$_.color}"><b>$1</b></span>`))
          }
-      });
-   });
+      })
+   })
 }

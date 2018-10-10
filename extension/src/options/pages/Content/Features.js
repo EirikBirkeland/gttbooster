@@ -1,19 +1,19 @@
-import CheckboxAndLabel from '../../components/CheckboxAndLabel.js';
-import React, { Component } from 'react';
-import Grid from 'react-bootstrap/lib/Grid';
-import Row from 'react-bootstrap/lib/Row';
-import Col from 'react-bootstrap/lib/Col';
-import InputRow from '../../components/row-components/InputRow';
+import CheckboxAndLabel from '../../components/CheckboxAndLabel.js'
+import React, {Component} from 'react'
+import Grid from 'react-bootstrap/lib/Grid'
+import Row from 'react-bootstrap/lib/Row'
+import Col from 'react-bootstrap/lib/Col'
+import InputRow from '../../components/row-components/InputRow'
 
 export default class Features extends Component {
    constructor (props) {
-      super(props);
-      this.state = {};
+      super(props)
+      this.state = {}
    }
 
    render () {
-      const SM = this.props.sm || 6;
-      const MD = this.props.md || 4;
+      const SM = this.props.sm || 6
+      const MD = this.props.md || 4
 
       return (
          <div ref="local" className="cth-content-container col-md-8 col-sm-12">
@@ -76,6 +76,6 @@ export default class Features extends Component {
                />
             </Grid>
          </div>
-      );
+      )
    }
 }

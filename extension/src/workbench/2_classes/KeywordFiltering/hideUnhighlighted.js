@@ -2,35 +2,35 @@
  * Created by Eirik on 11.08.2017.
  */
 
-import $ from 'jquery';
-import _ from 'lodash';
-import hideOtherExtraneous from './hideOtherExtraneous';
+import $ from 'jquery'
+import _ from 'lodash'
+import hideOtherExtraneous from './hideOtherExtraneous'
 
-const debug = require('cth-debug')(__filename.replace(/^src\//, ''));
+const debug = require('cth-debug')(__filename.replace(/^src\//, ''))
 
 export default function hideUnhighlighted (nodeListMain, docName) {
-   const notHighlighted = _.filter(nodeListMain, (ele) => $(ele).find(`.cth-searchHighlight-container-${docName}`).length === 0);
-   const notHighlightedIds = notHighlighted.map((ele) => ele.id);
+   const notHighlighted = _.filter(nodeListMain, (ele) => $(ele).find(`.cth-searchHighlight-container-${docName}`).length === 0)
+   const notHighlightedIds = notHighlighted.map((ele) => ele.id)
 
-   debug.log('notHighlightedIds', notHighlightedIds);
+   debug.log('notHighlightedIds', notHighlightedIds)
 
    notHighlightedIds.forEachAsync((ele) => {
       if (!window.cth.shouldBeRunning) {
-         return;
+         return
       }
-      const theId = ele;
-      debug.log('theId', theId);
+      const theId = ele
+      debug.log('theId', theId)
 
-      debug.log('$(window.cth.dom.sourceDoc).find("#" + theId) ', $(window.cth.dom.sourceDoc).find(`#${theId}`));
-      debug.log('$(window.cth.dom.sourceDoc).find("." + theId) ', $(window.cth.dom.sourceDoc).find(`.${theId}`));
+      debug.log('$(window.cth.dom.sourceDoc).find("#" + theId) ', $(window.cth.dom.sourceDoc).find(`#${theId}`))
+      debug.log('$(window.cth.dom.sourceDoc).find("." + theId) ', $(window.cth.dom.sourceDoc).find(`.${theId}`))
 
-      debug.log('$(window.cth.dom.targetDoc).find("#" + theId) ', $(window.cth.dom.targetDoc).find(`#${theId}`));
-      debug.log('$(window.cth.dom.targetDoc).find("." + theId) ', $(window.cth.dom.targetDoc).find(`.${theId}`));
+      debug.log('$(window.cth.dom.targetDoc).find("#" + theId) ', $(window.cth.dom.targetDoc).find(`#${theId}`))
+      debug.log('$(window.cth.dom.targetDoc).find("." + theId) ', $(window.cth.dom.targetDoc).find(`.${theId}`))
 
-      $(window.cth.dom.sourceDoc).find(`#${theId}`).addClass(`cth-hidden-${docName}`);
-      $(window.cth.dom.sourceDoc).find(`.${theId}`).addClass(`cth-hidden-${docName}`);
-      $(window.cth.dom.targetDoc).find(`#${theId}`).addClass(`cth-hidden-${docName}`);
-      $(window.cth.dom.targetDoc).find(`.${theId}`).addClass(`cth-hidden-${docName}`);
+      $(window.cth.dom.sourceDoc).find(`#${theId}`).addClass(`cth-hidden-${docName}`)
+      $(window.cth.dom.sourceDoc).find(`.${theId}`).addClass(`cth-hidden-${docName}`)
+      $(window.cth.dom.targetDoc).find(`#${theId}`).addClass(`cth-hidden-${docName}`)
+      $(window.cth.dom.targetDoc).find(`.${theId}`).addClass(`cth-hidden-${docName}`)
 
       // Some of the below seem to bungle up certain things. So, I should implement these very carefully with lots of testing.
 
@@ -46,6 +46,6 @@ export default function hideUnhighlighted (nodeListMain, docName) {
        */
 
       // Disabled due to being extremely slow:
-      hideOtherExtraneous(theId, docName);
-   }, 1);
+      hideOtherExtraneous(theId, docName)
+   }, 1)
 }

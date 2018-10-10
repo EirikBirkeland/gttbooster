@@ -3,11 +3,11 @@
  * Copyright © 2016 Eirik Birkeland. All rights reserved.
  */
 
-import escapeHtml from 'escape-html';
+import escapeHtml from 'escape-html'
 
-const _ = require('lodash');
-const Tabletop = require('../../vendor/tabletop/tabletop.js');
-const debug = require('cth-debug')(__filename.replace(/^src\//, ''));
+const _ = require('lodash')
+const Tabletop = require('../../vendor/tabletop/tabletop.js')
+const debug = require('cth-debug')(__filename.replace(/^src\//, ''))
 
 export class Sheet {
     url: string
@@ -50,16 +50,16 @@ export class Sheet {
      * @param {Function} opts.TabletopReplacement
      */
     constructor (opts: Object) {
-        const { url, sheetname, onValidationError, onError, debug, tabletopMock } = opts;
+        const {url, sheetname, onValidationError, onError, debug, tabletopMock} = opts
 
-        this.url = url;
-        this.sheetnameToFetch = sheetname;
-        this.onValidationError = onValidationError;
-        this.onError = onError;
-        this.debug = debug || false;
-        this.Tabletop = tabletopMock || Tabletop;
+        this.url = url
+        this.sheetnameToFetch = sheetname
+        this.onValidationError = onValidationError
+        this.onError = onError
+        this.debug = debug || false
+        this.Tabletop = tabletopMock || Tabletop
 
-        this._processTheUrl();
+        this._processTheUrl()
     }
 
     fetch (cb: Function) {
@@ -67,60 +67,60 @@ export class Sheet {
             "key": this.url,
             "sheetId": 1,
             "callback": (err, resData) => {
-                debug.log('Err: ', err);
+                debug.log('Err: ', err)
 
-                debug.log('Fetched data: ', resData);
+                debug.log('Fetched data: ', resData)
 
-                this.retrievedSheetNames = resData ? Object.keys(resData) : null;
+                this.retrievedSheetNames = resData ? Object.keys(resData) : null
 
-                debug.log(this.retrievedSheetNames);
+                debug.log(this.retrievedSheetNames)
 
                 if (!resData) {
-                    this.onError(this.messages.noData);
+                    this.onError(this.messages.noData)
                 } else if (!resData[this.sheetnameToFetch]) {
-                    this.onError(this.messages.sheetMissing);
+                    this.onError(this.messages.sheetMissing)
                 } else {
-                    const data: Object = this._filter(this.sheetnameToFetch, resData);
-                    this.data = data;
-                    this._validate(data);
+                    const data: Object = this._filter(this.sheetnameToFetch, resData)
+                    this.data = data
+                    this._validate(data)
                 }
 
-                debug.log('res', resData);
+                debug.log('res', resData)
 
-                return cb(err, resData, this.retrievedSheetNames);
+                return cb(err, resData, this.retrievedSheetNames)
             },
             "simpleSheet": false,
             "debug": this.debug
-        });
+        })
     }
 
     _processTheUrl (): void {
         if (!this.url) {
-            return this.onError(this.messages.urlNotInitialized);
+            return this.onError(this.messages.urlNotInitialized)
         }
 
-        const publicSpreadsheetUrl = this.url;
+        const publicSpreadsheetUrl = this.url
         if (publicSpreadsheetUrl && publicSpreadsheetUrl.match(/(?:\/edit#gid=[0-9]+|\/pubhtml)$/)) {
-            this.url = publicSpreadsheetUrl.replace(/\/edit#gid=[0-9]+$/, '/pubhtml');
+            this.url = publicSpreadsheetUrl.replace(/\/edit#gid=[0-9]+$/, '/pubhtml')
         }
     }
 
     _filter (sheetnameToFetch: string, data: Object): Object {
         _.forEach(data[sheetnameToFetch].elements, (ele, i, arr) => {
             if (arr[i].correction) {
-                arr[i].correction = escapeHtml(arr[i].correction);
+                arr[i].correction = escapeHtml(arr[i].correction)
             } else if(arr[i].message) { // for backwards spreadsheet compatibility ...
-                arr[i].message = escapeHtml(arr[i].message);
+                arr[i].message = escapeHtml(arr[i].message)
             }
-        });
+        })
 
         // Filter out those items that are "ON"
-        return data[sheetnameToFetch].elements.filter((ele) => ele.toggle === 'on');
+        return data[sheetnameToFetch].elements.filter((ele) => ele.toggle === 'on')
     }
 
     _validate (data: Object): void {
         if (!data || !data.length) {
-            return this.onError(this.messages.noDataToValidate);
+            return this.onError(this.messages.noDataToValidate)
         }
 
         const validKeys = [
@@ -134,13 +134,13 @@ export class Sheet {
             'case_sensitive',
             'match_type',
             'comment'
-        ];
+        ]
 
-        const sheetKeys = Object.keys(data[0]);
+        const sheetKeys = Object.keys(data[0])
 
         for (let i = 0; i < validKeys.length; i++) {
             if (!sheetKeys.includes(validKeys[i])) {
-                return this.onValidationError(`${this.messages.headerError}\nColumns ${_.difference(validKeys, sheetKeys).join(' ')} are missing or contain a typo.`);
+                return this.onValidationError(`${this.messages.headerError}\nColumns ${_.difference(validKeys, sheetKeys).join(' ')} are missing or contain a typo.`)
             }
         }
     }

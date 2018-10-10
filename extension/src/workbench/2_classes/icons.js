@@ -1,6 +1,6 @@
 // Copyright © 2016 Eirik Birkeland. All rights reserved.
 // NEW! I can just do chrome.extension.getURL('icons/arrow-move.png') to retrieve an extension URL and then use that directly on the webpage if I like. Wow.
-import _ from 'lodash';
+import _ from 'lodash'
 
 export const icons = (() => {
    const icons = {
@@ -37,14 +37,14 @@ export const icons = (() => {
       "lockIceOnState": 'icons/upper/lock--minus.png',
       "lockIceOffState": 'icons/upper/lock--plus.png',
       "lockIceBodyIcon": 'icons/body/lock.png'
-   };
+   }
 
    // Wrap addresses to get the proper URL:
    _.forOwn(icons, (val, key) => {
       if (/^icons/.test(icons[key])) {
-         icons[key] = chrome.runtime.getURL(val);
+         icons[key] = chrome.runtime.getURL(val)
       }
-   });
+   })
 
-   return icons;
-})();
+   return icons
+})()

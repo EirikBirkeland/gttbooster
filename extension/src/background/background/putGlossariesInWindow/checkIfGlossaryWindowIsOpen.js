@@ -8,5 +8,5 @@
  * @returns {boolean}
  */
 export default function checkIfGlossaryWindowIsOpen () {
-   return Boolean(window.wind);
+   return Boolean(window.wind)
 }

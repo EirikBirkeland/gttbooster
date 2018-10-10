@@ -1,10 +1,10 @@
 // Copyright © 2016 Eirik Birkeland. All rights reserved.
 
 
-const currentLanguages = require('./currentLanguages');
-require('cth-prototype');
+const currentLanguages = require('./currentLanguages')
+require('cth-prototype')
 
-const aspellLangCodes = Object.freeze('af am ar bg bg-w_english bg-wo_english bn br ca ca-general ca-valencia cs cy da de de-neu de_AT de_AT de_AT-neu de_CH de_CH de_CH-neu de_DE de_DE de_DE-neu el en en-variant_0 en-variant_1 en-variant_2 en-w_accents en-wo_accents en_CA en_CA-variant_0 en_CA-variant_1 en_CA-w_accents en_CA-wo_accents en_GB en_GB-ise en_GB-ise-w_accents en_GB-ise-wo_accents en_GB-ize en_GB-ize-w_accents en_GB-ize-wo_accents en_GB-variant_0 en_GB-variant_1 en_GB-w_accents en_GB-wo_accents en_US en_US-variant_0 en_US-variant_1 en_US-w_accents en_US-wo_accents eo es et eu fa fa-common fa-generic fa-scientific fo fr-40 fr fr-60 fr-80 fr-lrg fr-med fr-sml fr_CH-40 fr_CH-60 fr_CH fr_CH-80 fr_CH-lrg fr_CH-med fr_CH-sml fr_FR-40 fr_FR fr_FR-60 fr_FR-80 fr_FR-lrg fr_FR-med fr_FR-sml ga gu he hi hr hu hy id is it kk kn ku lt lv ml mr nb nl nn no nr ns or pa pl pt_BR pt_PT ro ru sk sk_SK sl ss st sv ta te tl tl_PH tn tr ts uk uz xh zu'.split(' '));
+const aspellLangCodes = Object.freeze('af am ar bg bg-w_english bg-wo_english bn br ca ca-general ca-valencia cs cy da de de-neu de_AT de_AT de_AT-neu de_CH de_CH de_CH-neu de_DE de_DE de_DE-neu el en en-variant_0 en-variant_1 en-variant_2 en-w_accents en-wo_accents en_CA en_CA-variant_0 en_CA-variant_1 en_CA-w_accents en_CA-wo_accents en_GB en_GB-ise en_GB-ise-w_accents en_GB-ise-wo_accents en_GB-ize en_GB-ize-w_accents en_GB-ize-wo_accents en_GB-variant_0 en_GB-variant_1 en_GB-w_accents en_GB-wo_accents en_US en_US-variant_0 en_US-variant_1 en_US-w_accents en_US-wo_accents eo es et eu fa fa-common fa-generic fa-scientific fo fr-40 fr fr-60 fr-80 fr-lrg fr-med fr-sml fr_CH-40 fr_CH-60 fr_CH fr_CH-80 fr_CH-lrg fr_CH-med fr_CH-sml fr_FR-40 fr_FR fr_FR-60 fr_FR-80 fr_FR-lrg fr_FR-med fr_FR-sml ga gu he hi hr hu hy id is it kk kn ku lt lv ml mr nb nl nn no nr ns or pa pl pt_BR pt_PT ro ru sk sk_SK sl ss st sv ta te tl tl_PH tn tr ts uk uz xh zu'.split(' '))
 
 // All Google language codes:
 const accountToAspellCodeConversionTable = {
@@ -620,29 +620,29 @@ const accountToAspellCodeConversionTable = {
       "code": 'zu',
       "language": 'Zulu'
    }
-};
+}
 
 const aspellLangCodeReordered = function () {
-   const acronyms = currentLanguages;
+   const acronyms = currentLanguages
 
    // Use Set for unique values instead of sort+uniq
-   const convertedAccountCodes = acronyms.sort().uniq().map((ele) => accountToAspellCodeConversionTable[ele.code]).truthy();
+   const convertedAccountCodes = acronyms.sort().uniq().map((ele) => accountToAspellCodeConversionTable[ele.code]).truthy()
 
    // Logger.log(convertedAccountCodes)
-   return aspellLangCodes.filter((code) => convertedAccountCodes.some((ele) => ele.match(code)));
-};
+   return aspellLangCodes.filter((code) => convertedAccountCodes.some((ele) => ele.match(code)))
+}
 
 const reorderedAccordingToAvailableAccounts = function () {
-   let arr = aspellLangCodeReordered();
+   let arr = aspellLangCodeReordered()
    // Separator for view
-   arr.push('---------');
-   arr = arr.concat(aspellLangCodes);
-   return arr;
-};
+   arr.push('---------')
+   arr = arr.concat(aspellLangCodes)
+   return arr
+}
 
 module.exports = {
    aspellLangCodes,
    accountToAspellCodeConversionTable,
    aspellLangCodeReordered,
    reorderedAccordingToAvailableAccounts
-};
+}

@@ -3,8 +3,8 @@
  * Created by eb on 26.07.2016.
  */
 
-import test from 'ava';
+import test from 'ava'
 
 test('placeholder dummy test', (t) => {
-   t.pass();
-});
+   t.pass()
+})

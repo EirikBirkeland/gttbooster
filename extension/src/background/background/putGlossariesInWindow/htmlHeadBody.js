@@ -74,8 +74,8 @@ export const getHead = function () {
             display: block;
         }
     </style>
-</head>`;
-};
+</head>`
+}
 
 export const getBody = function (content) {
    return `<body>
@@ -91,5 +91,5 @@ export const getBody = function (content) {
                         </button>
                     </div>
                     ${content || 'No glossary matches available.'}
-                </body>`;
-};
+                </body>`
+}

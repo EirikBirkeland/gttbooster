@@ -2,68 +2,68 @@
 /**
  * Created by eb on 18.03.2017.
  */
-import React, { Component } from 'react';
+import React, {Component} from 'react'
 // TODO: Change back from my fork to react-confirm-bootstrap in December if the author has decided to merge.
-import Confirm from 'react-confirm-bootstrap';
-import Button from 'react-bootstrap/lib/Button';
-import Nav from 'react-bootstrap/lib/Nav';
-import NavItem from 'react-bootstrap/lib/NavItem';
-import $ from 'jquery';
-import _ from 'lodash';
-import { store } from '../options-index';
+import Confirm from 'react-confirm-bootstrap'
+import Button from 'react-bootstrap/lib/Button'
+import Nav from 'react-bootstrap/lib/Nav'
+import NavItem from 'react-bootstrap/lib/NavItem'
+import $ from 'jquery'
+import _ from 'lodash'
+import {store} from '../options-index'
 
 
 export default class Header extends Component {
    constructor (props) {
-      super(props);
+      super(props)
       this.state = {
          "model": store,
          "settings": store.settings,
          "defaults": store.all
-      };
+      }
    }
 
    componentDidMount () {
       function reload () {
-         location.reload();
+         location.reload()
       }
 
       function rebind () {
-         $(window).bind('hashchange', reload);
+         $(window).bind('hashchange', reload)
       }
 
       const debouncedBind = _.debounce(rebind, 500, {
          "leading": false,
          "trailing": true
-      });
+      })
 
       function alterHashWithoutReload (cb) {
-         $(window).unbind('hashchange', reload);
-         cb();
-         debouncedBind();
+         $(window).unbind('hashchange', reload)
+         cb()
+         debouncedBind()
       }
 
-      const $navTabs = $('.nav-pills a');
+      const $navTabs = $('.nav-pills a')
 
       // EnableBootstrapNavTabs
       $navTabs.click(() => {
          alterHashWithoutReload(function () {
-            $(this).tab('show');
-         });
-      });
+            $(this).tab('show')
+         })
+      })
 
       // Change hash for page-reload
       $navTabs.on('shown.bs.tab', (e) => {
-         window.location.hash = e.target.hash;
-      });
+         window.location.hash = e.target.hash
+      })
 
       // JavaScript to enable link to tab
-      const loc = location.href.match(/(#.*)$/);
+      const loc = location.href.match(/(#.*)$/)
       if (loc && loc.length && loc[1].match(/#menu[0-9]/)) {
-         $('.nav-pills').find(`a[href='${loc[1]}']`).tab('show');
+         $('.nav-pills').find(`a[href='${loc[1]}']`).tab('show')
       }
 
-      $(window).bind('hashchange', reload);
+      $(window).bind('hashchange', reload)
    }
 
    render () {
@@ -96,6 +96,6 @@ export default class Header extends Component {
                <NavItem data-toggle="tab" eventKey={7} href="#menu7">Spreadsheet</NavItem>
             </Nav>
          </div>
-      );
+      )
    }
 }

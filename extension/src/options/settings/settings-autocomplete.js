@@ -36,4 +36,4 @@ export const autocompleteSettings = {
       "description": 'Number of letters typed before giving suggestions',
       "tooltip": ''
    }
-};
+}

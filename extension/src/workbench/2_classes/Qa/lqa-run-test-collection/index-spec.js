@@ -6,10 +6,10 @@
  * Import $ from 'jquery'
  * import _ from 'lodash'
  */
-import test from 'ava';
-import { runChecksCollection } from './index';
+import test from 'ava'
+import {runChecksCollection} from './index'
 
-const debug = require('cth-debug')(__filename);
+const debug = require('cth-debug')(__filename)
 
 /*
  * TODO: I need to test some faulty patterns and see if catastrophic backtracking results.
@@ -20,23 +20,23 @@ const debug = require('cth-debug')(__filename);
 const seg0 = [
     'I like AdWords',
     'Jeg liker AdGrants'
-];
+]
 const seg1 = [
     'yes 1 and 2 and 3',
     'ja 2 og 3 og 4'
-];
+]
 const seg2 = [
     'I have apple, cake and dog',
     'Jeg har apple, cake og dog'
-];
+]
 const seg3 = [
     'da parens( )are missing n stuff yo',
     'ein parantes (  mangler'
-];
+]
 const seg4 = [
     'This has two words',
     'Dette har to to ord'
-];
+]
 
 const checksCollection = [
     {
@@ -49,9 +49,9 @@ const checksCollection = [
         "target_pattern": '-"AdWords"',
         "toggle": 'on'
     }
-];
+]
 
 test.cb('source regular, target inverted', (t) => {
-    t.deepEqual('Untranslatable "<strong><code>AdWords</code></strong>" missing in translation.', runChecksCollection(seg0[0], seg0[1], checksCollection)[0].result);
-    t.end();
-});
+    t.deepEqual('Untranslatable "<strong><code>AdWords</code></strong>" missing in translation.', runChecksCollection(seg0[0], seg0[1], checksCollection)[0].result)
+    t.end()
+})

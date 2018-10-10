@@ -2,34 +2,34 @@
 /**
  * Created by eb on 20.03.2017.
  */
-import React, { Component } from 'react';
+import React, {Component} from 'react'
 
-import qaSheetFetch from './Spreadsheet/fetchQaSheet';
-import CleverInput from '../../components/CleverInput.js';
-import Checkbox from '../../components/CheckboxAndLabel.js';
-import addCustomValidation from './Spreadsheet/validator';
-import Grid from 'react-bootstrap/lib/Grid';
-import Row from 'react-bootstrap/lib/Row';
-import Col from 'react-bootstrap/lib/Col';
-import Alert from 'react-bootstrap/lib/Alert';
-import 'cth-prototype';
+import qaSheetFetch from './Spreadsheet/fetchQaSheet'
+import CleverInput from '../../components/CleverInput.js'
+import Checkbox from '../../components/CheckboxAndLabel.js'
+import addCustomValidation from './Spreadsheet/validator'
+import Grid from 'react-bootstrap/lib/Grid'
+import Row from 'react-bootstrap/lib/Row'
+import Col from 'react-bootstrap/lib/Col'
+import Alert from 'react-bootstrap/lib/Alert'
+import 'cth-prototype'
 
-import _ from 'lodash';
+import _ from 'lodash'
 
 export default class Spreadsheet extends Component {
    constructor (props) {
-      super(props);
+      super(props)
 
       this.state = {
          "bsStyle": 'success',
          "visible": 'none',
-         "content": { "__html": '' }
-      };
+         "content": {"__html": ''}
+      }
    }
 
    componentDidMount () {
       qaSheetFetch((sheetNames) => {
-         const html = sheetNames.sort().map((ele) => `<li><code>${ele}</code></li>`).join('');
+         const html = sheetNames.sort().map((ele) => `<li><code>${ele}</code></li>`).join('')
 
          this.setState({
             "bsStyle": 'success',
@@ -40,11 +40,11 @@ export default class Spreadsheet extends Component {
                         <br/>
                         Please enter one above.`.clean()
             }
-         });
+         })
 
-         addCustomValidation('.cth-spreadsheet-form', sheetNames);
-         this.forceUpdate();
-      });
+         addCustomValidation('.cth-spreadsheet-form', sheetNames)
+         this.forceUpdate()
+      })
    }
 
    render () {
@@ -74,7 +74,7 @@ export default class Spreadsheet extends Component {
                   <Col md={8} lg={12}>
                      <Alert
                         bsStyle={this.state.bsStyle}
-                        style={{ "display": this.state.visible }}
+                        style={{"display": this.state.visible}}
                      >
                         <div dangerouslySetInnerHTML={this.state.content}/>
                      </Alert>
@@ -87,6 +87,6 @@ export default class Spreadsheet extends Component {
                </Row>
             </Grid>
          </div>
-      );
+      )
    }
 }

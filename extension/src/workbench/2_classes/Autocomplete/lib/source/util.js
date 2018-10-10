@@ -8,8 +8,8 @@
  * @return {function(*): boolean}
  */
 export const upperCaseFilterAccordingToProp = function (propertyName: string) {
-   return (ele: Object) => ele[propertyName].charAt(0) === ele[propertyName].charAt(0).toUpperCase();
-};
+   return (ele: Object) => ele[propertyName].charAt(0) === ele[propertyName].charAt(0).toUpperCase()
+}
 
 /**
  *
@@ -17,8 +17,8 @@ export const upperCaseFilterAccordingToProp = function (propertyName: string) {
  * @return {function(*): boolean}
  */
 export const lowerCaseFilterAccordingToProp = function (propertyName: string) {
-   return (ele: Object) => ele[propertyName].charAt(0) === ele[propertyName].charAt(0).toLowerCase();
-};
+   return (ele: Object) => ele[propertyName].charAt(0) === ele[propertyName].charAt(0).toLowerCase()
+}
 
 /**
  *
@@ -28,8 +28,8 @@ export const lowerCaseFilterAccordingToProp = function (propertyName: string) {
 export const uniqFilterAccordingToProp = function (propertyName: string) {
    return (x: Object, i: Number, arr: Object) => {
       if (!x[propertyName]) {
-         return false;
+         return false
       }
-      return arr.map((y) => y[propertyName]).indexOf(x[propertyName]) === i;
-   };
-};
+      return arr.map((y) => y[propertyName]).indexOf(x[propertyName]) === i
+   }
+}

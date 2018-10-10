@@ -3,7 +3,7 @@
  */
 
 export default function getCthSelection () {
-   const obj = cth.dom.targetDoc.getSelection();
+   const obj = cth.dom.targetDoc.getSelection()
 
    /**
     *
@@ -11,8 +11,8 @@ export default function getCthSelection () {
     */
    obj.moveCaretToOffset = function moveCaretToOffset (offset) {
       for (let i = 0; i < offset; i++) {
-         this.modify('move', 'right', 'character');
+         this.modify('move', 'right', 'character')
       }
-   };
-   return obj;
+   }
+   return obj
 }
