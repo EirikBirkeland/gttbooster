@@ -21,7 +21,7 @@ import removeAndUpdateDatastore from './putGlossariesInWindow/removeAndUpdateDat
 
 const debug = require('cth-debug')(__filename)
 
-function putGlossariesInWindow(content) {
+function putGlossariesInWindow (content) {
     let wind
     
     if (!wind) {

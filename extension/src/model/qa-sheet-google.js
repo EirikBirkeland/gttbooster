@@ -49,7 +49,7 @@ export class Sheet {
      * @param {Function} opts.onError - a callback to execute if error occurs.
      * @param {Function} opts.TabletopReplacement
      */
-    constructor(opts: Object) {
+    constructor (opts: Object) {
         const { url, sheetname, onValidationError, onError, debug, tabletopMock } = opts
 
         this.url = url
@@ -62,7 +62,7 @@ export class Sheet {
         this._processTheUrl()
     }
 
-    fetch(cb: Function) {
+    fetch (cb: Function) {
         this.Tabletop.init({
             "key": this.url,
             "sheetId": 1,
@@ -94,7 +94,7 @@ export class Sheet {
         })
     }
 
-    _processTheUrl(): void {
+    _processTheUrl (): void {
         if (!this.url) {
             return this.onError(this.messages.urlNotInitialized)
         }
@@ -105,22 +105,20 @@ export class Sheet {
         }
     }
 
-    _filter(sheetnameToFetch: string, data: Object): Object {
+    _filter (sheetnameToFetch: string, data: Object): Object {
         _.forEach(data[sheetnameToFetch].elements, (ele, i, arr) => {
-
             if (arr[i].correction) {
                 arr[i].correction = escapeHtml(arr[i].correction)
             } else if(arr[i].message) { // for backwards spreadsheet compatibility ...
                 arr[i].message = escapeHtml(arr[i].message)
             }
-
         })
 
         // Filter out those items that are "ON"
         return data[sheetnameToFetch].elements.filter((ele) => ele.toggle === 'on')
     }
 
-    _validate(data: Object): void {
+    _validate (data: Object): void {
         if (!data || !data.length) {
             return this.onError(this.messages.noDataToValidate)
         }
