@@ -5,6 +5,8 @@ import $ from 'jquery';
 import GoogleDiff from 'diff-match-patch';
 import { customPrettyHtml } from '../custom-pretty-html';
 
+const DOM_NODE_QUERY = ".gtc-trans-title";
+
 /*
  * For reference:
  * cth.docInfo.docStatusOnLoad
@@ -67,7 +69,13 @@ import { customPrettyHtml } from '../custom-pretty-html';
             $(unit).prepend(copy);
             $original.hide();
         });
-        // add sth like a modal warning (with option to leave ChangeReport mode)
+        // Add highly visible button to leave mode easily
+        $(DOM_NODE_QUERY).append(
+            $('<button />').html("Exit ChangeReport mode").on('click', function () {
+                this.remove();
+                ChangeReport.deleteNodesAndShowOriginal();
+            })
+        );
     },
 
     deleteNodesAndShowOriginal () {

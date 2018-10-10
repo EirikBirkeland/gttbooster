@@ -26,7 +26,7 @@ bodyEmitter.initListeners = function () {
     observeForTransEditor(thing);
 
     observeForDocStatusChange((string) => {
-        alert("HI")
+        alert("HI");
         switch (string) {
             case "OK":
                 bodyEmitter.emit('doc-status-copyedit', string);
@@ -34,7 +34,6 @@ bodyEmitter.initListeners = function () {
                 break;
             default:
                 bodyEmitter.emit('doc-status-changed', string);
-                console.warn(string);
                 break;
         }
     });

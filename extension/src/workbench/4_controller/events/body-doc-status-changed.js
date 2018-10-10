@@ -16,7 +16,7 @@ bodyEmitter.on('doc-status-changed', (res) => {
 });
 
 bodyEmitter.on('doc-status-copyedit', () => {
-    alert("HI")
+    alert("HI");
     // Save changeReport when user switched to copy edit
 
     // first retrieve ay existing documents

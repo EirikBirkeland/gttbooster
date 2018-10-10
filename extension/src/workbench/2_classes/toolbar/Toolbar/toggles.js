@@ -17,8 +17,6 @@ import toggleItem from './toggles/toggleItem';
 
 let qa = null;
 
-console.warn(Autocomplete);
-
 const Toggles = {
    trados () {
       toggleItem({

@@ -8,11 +8,8 @@ export default function observeForStatusChange (cb) {
     $(document).on("click", ".goog-menuitem-content", function (event) {
         const text = event.target.childNodes[1];
 
-        console.info(text);
-
         switch (text) {
             case "In translation":
-                console.info("In translation");
                 cb("In translation");
                 break;
             default:
