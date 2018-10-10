@@ -19,7 +19,7 @@ export default function observeForStatusChange (cb) {
                 break;
         }
     });
-$(document).on("click", ".gtc-dialog-confirm", function (event) {
+    $(document).on("click", ".gtc-dialog-confirm", function (event) {
         const dialogText = event.target.parentNode.parentNode.innerText;
 
         if (dialogText.match('Are you sure you want to change to "In copy edit" state?')) {
