@@ -9,7 +9,6 @@ import { customPrettyHtml } from '../custom-pretty-html';
  * For reference:
  * cth.docInfo.docStatusOnLoad
  */
-// TODO: Auto-select contrasting color?
 // TODO: Add ChangeReport modal with button to leave mode
  const ChangeReport = {
     init (documentStrings, cache) {

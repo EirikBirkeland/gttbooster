@@ -26,23 +26,19 @@
 .cth-meta-added-spacing {
     margin-top: 10px;
 }
-
-.cth_insertedSourceTextBreak {
-}
-
 .diffInserted {
-    color: purple;
+    color: black;
     background-color: #ccffcc;
 }
 
 .diffDeleted:not(:hover){
-    color: red;
+    color: black;
     background-color: #ffcccc;
     text-decoration: line-through !important;
 }
 
 .diffDeleted:hover {
-    color: red;
+    color: black;
     background-color: #ffcccc;
     text-decoration: none;
 }
