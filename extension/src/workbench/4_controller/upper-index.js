@@ -2,6 +2,9 @@
 /**
  * Created by eb on 23.06.2016.
  */
+
+ // TODO: Merge upper-index with upperEmitter (no particular changes needed - do the same for lower and body later)
+
 import { addNewDocname } from '../2_classes/upper-lib/addNewDocName';
 import { replaceTitle } from '../2_classes/upper-lib/replaceTitle';
 import { runCompletionCheck } from '../2_classes/upper-lib/runCompletionCheck';
