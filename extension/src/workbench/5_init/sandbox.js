@@ -35,7 +35,6 @@ export {
    Spellcheck,
    filterSegmentTypes,
    Segment,
-   scrollTo,
    TransEditor,
    SourceDocument,
    TargetDocument,

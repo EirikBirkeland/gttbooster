@@ -199,7 +199,7 @@ class Toolbar extends React.Component {
              id="cth_focusbutton"
              title="SmartFocus: (1) go to first untranslated segment from the top, or (2) bring any active segment into view."
              iconName="arrowIn"
-             onClick={TransEditor.scrollTo}
+             onClick={TransEditor.scrollIntoView}
              style={{"borderColor": 'green'}}
           />
           <Button
