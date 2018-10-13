@@ -10,8 +10,8 @@ function load () {
       '_setAccount',
       'UA-68260399-4'
    ])
-   _gaq.push(['_trackPageview'])
-   ;(function () {
+   _gaq.push(['_trackPageview']);
+(function () {
       const ga = document.createElement('script')
       ga.type = 'text/javascript'
       ga.async = true

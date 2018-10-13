@@ -1,5 +1,8 @@
 const test = require('ava')
-const {ChangeReport} = require('../ChangeReport')
+const ChangeReport = require('./ChangeReport.js').default
+
+// 1. on change to copy-edit, save current document to storage - this is the only time saving is needed
+// 2. when the document is opened later, diff should be visible, but in a way that doesn't prevent the user from working on the document if need be (thus, I should not modify the live dom if possible -- I should instead overlay diffed copies)
 
 ChangeReport.init(
    [

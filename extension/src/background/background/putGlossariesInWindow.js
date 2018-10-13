@@ -15,7 +15,7 @@
 
 import $ from 'jquery'
 import persistFontSize from './putGlossariesInWindow/persistFontSize'
-import { getBody, getHead } from './putGlossariesInWindow/htmlHeadBody'
+import {getBody, getHead} from './putGlossariesInWindow/htmlHeadBody'
 import hideDefinitionsStuff from './putGlossariesInWindow/hideDefinitionsStuff'
 import removeAndUpdateDatastore from './putGlossariesInWindow/removeAndUpdateDatastore'
 

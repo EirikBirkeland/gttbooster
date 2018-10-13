@@ -7,7 +7,7 @@
 /* global MutationObserver */
 
 import * as Panes from './Panes'
-import {TransEditor} from '../TransEditor/TransEditor'
+import TransEditor from '../TransEditor'
 import $ from 'jquery'
 import _ from 'lodash'
 import {notifier} from '../notifier'
@@ -115,7 +115,7 @@ function insertAll (opts = {}) {
 
       /*
        * I should probably refactor insertAll to a separate implementation file, which then uses the MergePanes class's functionality (minimalistically, without extra behavior that might conflict later, or I'll just add a separate 'refresh' method ... ?
-       * scrollTo({delay: 'fast', offset: 200})
+       * TransEditor.scrollIntoView({delay: 'fast', offset: 200})
        */
       Cursor.resetLoadIndication()
    }

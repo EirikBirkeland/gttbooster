@@ -1,14 +1,16 @@
 /* globals cth */
-import bodyEmitter from '../bodyEmitter'
 import $ from 'jquery'
 import _ from 'lodash'
 
-import {updateTheTransEditor} from '../../2_classes/TransEditor/updateTheTransEditor'
-import Autocomplete from '../../2_classes/Autocomplete/index.js'
-import {TransEditor} from '../../2_classes/TransEditor/TransEditor'
+import bodyEmitter from '../bodyEmitter'
+
+import TransEditor from '../../2_classes/TransEditor'
+import {checkForRepeatedSegmentsButtonAndHighlightIt} from '../../2_classes/TransEditor/lib/checkForRepeatedSegmentsButtonAndHighlightIt'
+
+import Autocomplete from '../../2_classes/Autocomplete'
+
 import runChecks from '../../2_classes/Qa/runChecks'
 import updateCurrentSegments from '../../2_classes/Segment/updateCurrentSegments'
-import {checkForRepeatedSegmentsButtonAndHighlightIt} from '../../2_classes/TransEditor/checkForRepeatedSegmentsButtonAndHighlightIt'
 import {Ice} from '../../2_classes/Ice/Ice'
 import {trados} from '../../2_classes/TradosMode/TradosMode'
 import {checkWhetherNew} from '../../2_classes/Glossaries/lib/checkWhetherNew'
@@ -18,6 +20,12 @@ import * as Hotkeys from '../../2_classes/Hotkeys'
 const debug = require('cth-debug')(__filename.replace(/^src\//, ''))
 
 const checkWhetherNewDebounce = _.debounce(checkWhetherNew, 300)
+
+const delays = function (fn, ...args)  {
+   args.forEach((delay)=>{
+      setTimeout(fn, delay)
+   })
+}
 
 bodyEmitter.on('move-trans-editor', (insertedNode, segmentArea) => {
    debug.log('event move-trans-editor triggered')
@@ -36,23 +44,14 @@ bodyEmitter.on('move-trans-editor', (insertedNode, segmentArea) => {
    }
 
    TransEditor.removeButtons()
+
    _.defer(() => TransEditor.expand(null, 1000))
 
-   const TIME = 300 // 200 or lower seems to cause race condition (at least on some computers)
-
-   _.delay(() => {
+   delays(() => {
       if (!TransEditor.isScrolledIntoView(cth.dom.targetDoc, $(cth.dom.targetDoc).find('#transEditor'))) {
-         debug.log(`transEditor is not scrolled into view. Scrolling in ${TIME} ms`)
-         scrollTo()
+         TransEditor.scrollIntoView()
       }
-   }, TIME)
-
-   _.delay(() => {
-      if (!TransEditor.isScrolledIntoView(cth.dom.targetDoc, $(cth.dom.targetDoc).find('#transEditor'))) {
-         debug.log(`transEditor is not scrolled into view. Scrolling in ${TIME} ms`)
-         scrollTo()
-      }
-   }, 500)
+   }, 400, 500)
 
    /**
     *  Should run a last check on the previous segment, to avoid leaving any messages
@@ -101,5 +100,5 @@ bodyEmitter.on('move-trans-editor', (insertedNode, segmentArea) => {
       }
    })
 
-   Dev(updateTheTransEditor)
+   Dev(TransEditor.update.bind(TransEditor))
 })

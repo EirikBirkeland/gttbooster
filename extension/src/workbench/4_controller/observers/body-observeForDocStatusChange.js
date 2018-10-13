@@ -2,47 +2,25 @@
 import $ from 'jquery'
 import _ from 'lodash'
 import {_retrieveStatusFromDoc} from '../../2_classes/upper-lib/runCompletionCheck/Completion'
-
 const debug = require('cth-debug')(__filename.replace(/^src\//, ''))
 
 export default function observeForStatusChange (cb) {
-   const fileMenuButton = $('.goog-inline-block.goog-imageless-menu-button.gtc-share-menu-button')[0]
-   const config = {
-      "characterData": true,
-      "attributes": true
-   }
+    $(document).on("click", ".goog-menuitem-content", function (event) {
+        const text = event.target.childNodes[1]
 
-   const observer = new MutationObserver((muts) => {
-      const debouncedWrapperCb = _.debounce(() => {
-         if (window.cth.docInfo.docStatusOnLoad !== _retrieveStatusFromDoc()) {
-            // Debugger
-            return cb()
-         }
-      }, {
-         "leading": false,
-         "trailing": true
-      }, 50)
+        switch (text) {
+            case "In translation":
+                cb("In translation")
+                break
+            default:
+                break
+        }
+    })
+    $(document).on("click", ".gtc-dialog-confirm", function (event) {
+        const dialogText = event.target.parentNode.parentNode.innerText
 
-      _.forEach(muts, (ele) => {
-         debouncedWrapperCb()
-         // The new button may spawn
-         const spawnedButton = $('.goog-buttonset-default.goog-buttonset-action')
-         spawnedButton.on('click', () => {
-            debug.log('clicked doc status button')
-            _.delay(() => debouncedWrapperCb('click'))
-         })
-      })
-
-      _.delay(debouncedWrapperCb, 2000)
-      _.delay(debouncedWrapperCb, 3000)
-      _.delay(debouncedWrapperCb, 4000)
-      _.delay(debouncedWrapperCb, 5000)
-      _.delay(debouncedWrapperCb, 10000)
-   })
-
-   if (fileMenuButton) {
-      observer.observe(fileMenuButton, config)
-   } else {
-      debug.log(`the fileMenuButton doesn't exist!`)
-   }
+        if (dialogText.match('Are you sure you want to change to "In copy edit" state?')) {
+            return cb("OK")
+        }
+    })
 }

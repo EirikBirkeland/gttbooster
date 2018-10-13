@@ -118,7 +118,7 @@ export function runChecksCollection (sourceSeg, targetSeg, checksCollection, opt
          }
       }
 
-      const testCorrection = test.correction || test.message || ''; // support for legacy spreadsheets...
+      const testCorrection = test.correction || test.message || '' // support for legacy spreadsheets...
 
       // Everything else:
       if (!invertSource && !invertTarget) {

@@ -105,6 +105,7 @@ del {
 }
 
 .diffDeleted:hover {
+    color: red;
     background-color: #ffcccc;
     text-decoration: none;
 }

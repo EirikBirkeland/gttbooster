@@ -43,7 +43,7 @@ function _configure () {
                 "red": 'danger'
             }
 
-            const span = $('<span/>').addClass('bootstrap-wrapper').append($('<span/>').css({ 'margin-right': '2px' }).addClass(`label label-${colorToBootstrap[item.color]}`).html(item.type))
+            const span = $('<span/>').addClass('bootstrap-wrapper').append($('<span/>').css({'margin-right': '2px'}).addClass(`label label-${colorToBootstrap[item.color]}`).html(item.type))
 
             result.find('div').prepend(span)
 
@@ -67,16 +67,16 @@ function _activate (minLength) {
         select // SelectFnNew
     })
 
-    DOM.$TARGET_NODE[0].addEventListener('keydown', ({ keyCode }) => {
+    DOM.$TARGET_NODE[0].addEventListener('keydown', ({keyCode}) => {
         const LEFT_ARROW_KEY_CODE = 37
-;const RIGHT_ARROW_KEY_CODE = 39
-;if (keyCode === LEFT_ARROW_KEY_CODE || keyCode === RIGHT_ARROW_KEY_CODE) {
+        const RIGHT_ARROW_KEY_CODE = 39
+        if (keyCode === LEFT_ARROW_KEY_CODE || keyCode === RIGHT_ARROW_KEY_CODE) {
             debug.log('CLOSING')
 
             _.defer(() => {
                 const $node = this.$TARGET_NODE
-;$node.autocomplete()
-;$node.autocomplete('close')
+                $node.autocomplete()
+                $node.autocomplete('close')
             })
         }
     })
@@ -88,7 +88,7 @@ const Autocomplete = {
             ? window.cth.option.autocompleteMinLength[1]
             : 2
 
-        _configure();
+        _configure()
 
         // TODO: Custom HTML select: https://jqueryui.com/autocomplete/#custom-data
         const delay = 5000
@@ -103,7 +103,8 @@ const Autocomplete = {
     },
     destroy: () => {
         const $node = DOM.$TARGET_NODE
-;$node.autocomplete(); // prevents unnecessary error msg: "cannot call methods on autocomplete prior to initialization; attempted to call method 'destroy'"
+        $node.autocomplete() // prevents unnecessary error msg: "cannot call methods on autocomplete prior to initialization; attempted to call method 'destroy'"
+
         $node.autocomplete('destroy')
     }
 }

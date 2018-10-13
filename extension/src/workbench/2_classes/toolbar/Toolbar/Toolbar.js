@@ -14,10 +14,11 @@ import {TargetDocument} from '../../Document/Document'
 import {timer as initTimer} from '../../upper-lib/timer'
 import listenForClick from '../../click-logging'
 import {KeywordFiltering} from '../../KeywordFiltering/KeywordFiltering'
-import {scrollTo} from '../../TransEditor/scrollTo'
+import TransEditor from '../../TransEditor'
 import {Font} from '../../Font/Font'
 import {Cursor} from '../../Cursor'
 import {qaSheet} from '../../Qa/qa-sheet'
+import changeReport from '../../ChangeReport/ChangeReport'
 
 import Button from './components/Button'
 import Input from './components/Input'
@@ -198,7 +199,7 @@ class Toolbar extends React.Component {
              id="cth_focusbutton"
              title="SmartFocus: (1) go to first untranslated segment from the top, or (2) bring any active segment into view."
              iconName="arrowIn"
-             onClick={scrollTo}
+             onClick={TransEditor.scrollIntoView}
              style={{"borderColor": 'green'}}
           />
           <Button
@@ -219,8 +220,9 @@ class Toolbar extends React.Component {
                   title="DEV"
                   dropup
                >
-                  <MenuItem onClick={replaceMtWithSource} eventKey="1">Copy source to MT</MenuItem>
-                  <MenuItem onClick={replaceFuzzyWithSource} eventKey="2">Copy source to fuzzies</MenuItem>
+                  <MenuItem onClick={()=> TransEditor.close() && replaceMtWithSource()} eventKey="1">Copy source to MT</MenuItem>
+                  <MenuItem onClick={()=> TransEditor.close() && replaceFuzzyWithSource()} eventKey="2">Copy source to fuzzies</MenuItem>
+                  <MenuItem onClick={changeReport.toggle.bind(changeReport)} eventKey="3">Toggle ChangeReport</MenuItem>
                </DropdownButton>
                : ''}
         </span>

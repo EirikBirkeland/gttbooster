@@ -6,7 +6,7 @@
 import $ from 'jquery'
 import _ from 'lodash'
 import XRegExp from 'xregexp'
-import {TransEditor} from '../TransEditor/TransEditor'
+import TransEditor from '../TransEditor'
 import hideUnhighlighted from './hideUnhighlighted'
 import {Diacritics} from '../../../../lib/Diacritics'
 

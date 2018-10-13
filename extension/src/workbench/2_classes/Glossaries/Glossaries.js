@@ -4,10 +4,10 @@
  */
 
 
-import { alphabetizeAndHighlight, sendToBackground } from './lib/organizeGlossaries'
-import { buildObject } from './lib/buildObject'
-import { extractDbFormatEntries } from './lib/extractDbFormatEntries'
-import { getUniqueTranslationsArray } from './lib/getUniqueTranslationsArray'
+import {alphabetizeAndHighlight, sendToBackground} from './lib/organizeGlossaries'
+import {buildObject} from './lib/buildObject'
+import {extractDbFormatEntries} from './lib/extractDbFormatEntries'
+import {getUniqueTranslationsArray} from './lib/getUniqueTranslationsArray'
 
 const debug = require('cth-debug')(__filename.replace(/^src\//, ''))
 
@@ -18,4 +18,4 @@ const Glossaries = {
     extractDbFormatEntries
 }
 
-export { Glossaries, buildObject }
+export {Glossaries, buildObject}

@@ -9,7 +9,7 @@ import Col from 'react-bootstrap/lib/Col'
 import showData from './Spellcheck/showData'
 import Checkbox from '../../components/CheckboxAndLabel.js'
 import Select from '../../components/Select.js'
-import { store } from '../../options-index'
+import {store} from '../../options-index'
 import uploadFile from './Spellcheck/uploadFile'
 
 const debug = require('cth-debug')(__filename)

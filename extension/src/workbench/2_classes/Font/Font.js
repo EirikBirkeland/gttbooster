@@ -6,7 +6,7 @@ let shiftKeyDown
 $(document).keydown(function (event) {
     if (event.shiftKey) {
         shiftKeyDown = true
-        return;
+        return
     }
     shiftKeyDown = false
 })
@@ -49,4 +49,4 @@ class Font {
     }
 }
 
-export { Font }
+export {Font}
