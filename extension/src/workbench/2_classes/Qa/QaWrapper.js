@@ -14,10 +14,11 @@ import {ProgressBar} from './ProgressBar'
 const debug = require('cth-debug')(__filename)
 
 const SPELLCHECK_OVERRIDE_TOGGLE = false
+
 class Qa {
    constructor () {
       this.sheet = window.cth.dataJSON ? window.cth.dataJSON[window.cth.option.sheetName] : null
-this.dataElements = this.sheet ? this.sheet.elements.filter(x=>x.toggle === 'on') : null
+      this.dataElements = this.sheet ? this.sheet.elements.filter(x=>x.toggle === 'on') : null
       this.qaObserveAll = null
       this.targetSegments = (() => {
          const visibleUnits = $(window.cth.dom.targetDoc).find('.goog-gtc-unit:visible')

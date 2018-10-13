@@ -104,6 +104,7 @@ const Autocomplete = {
     destroy: () => {
         const $node = DOM.$TARGET_NODE
         $node.autocomplete() // prevents unnecessary error msg: "cannot call methods on autocomplete prior to initialization; attempted to call method 'destroy'"
+
         $node.autocomplete('destroy')
     }
 }
