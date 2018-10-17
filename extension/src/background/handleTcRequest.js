@@ -19,3 +19,21 @@ export function handleTcRequest (info, tab) {
       window.open(url)
    })
 }
+
+export function handleTcRequestContentVersion () {
+   const data = (() => {
+      const source = cth.dom.sourceDoc.getSelection().toString()
+      const target = cth.dom.targetDoc.getSelection().toString()
+      const document = window.document.getSelection().toString()
+      const data = source || target || document
+
+      return data
+   })()
+
+   const language = cth.docInfo.dokumentSprak
+   const phraseToSearch = trimSymbols(data)
+   const adjustedPhraseToSearch = encodeurl(phraseToSearch.replace(/&/g, "%26"))
+
+   const url = `https://www.google.com/transconsole/externaltc/btviewer/searchresult?SearchText=${adjustedPhraseToSearch}&SearchField=search_field_src&SearchType=search_type_exact&ProductSelect=&LanguagesSelected=${language}&TranslationFilterStatus=translated&TranslationFilterAnyOrAll=any&TranslationFilterStage=LEVERAGED&ShowTranslationStage=showTranslationStage&CreatedAfter=&CreatedBefore=&ResourcesFilter=&IncludeObsolete=obsolete`
+   window.open(url)
+}

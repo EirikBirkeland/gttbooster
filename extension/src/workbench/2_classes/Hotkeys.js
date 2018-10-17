@@ -6,16 +6,16 @@
 import $ from 'jquery'
 import _ from 'lodash'
 import getCthSelection from './CthSelection'
-
+import { handleTcRequestContentVersion } from '../../background/handleTcRequest'
 const debug = require('cth-debug')(__filename.replace(/^src\//, ''))
 const dom = require('../5_init/init/doc-references').getDomRefs()
 
-export function hideTopMenus () {
+export function hideTopMenus() {
    $(document).keydown(hideMenu)
    $(dom.sourceDoc).keydown(hideMenu)
    $(dom.targetDoc).keydown(hideMenu)
 
-   function hideMenu (e) {
+   function hideMenu(e) {
       // Hide unnecessary parts of GUI
       if (e.keyCode === 66 && e.ctrlKey) {
          $(window.cth.dom.wbheader).toggle(250)
@@ -43,13 +43,13 @@ export function hideTopMenus () {
    }
 }
 
-export function insertEndash () {
+export function insertEndash() {
    $(document).keypress(insertEndash)
    $(dom.sourceDoc).keypress(insertEndash)
    $(dom.targetDoc).keypress(insertEndash)
 
    // Print endash at current caret position
-   function insertEndash (e) {
+   function insertEndash(e) {
       // Defer; thereby giving the string a chance to update before running the code
       _.defer(() => {
          if (e.keyCode === 45) {
@@ -71,37 +71,34 @@ export function insertEndash () {
    }
 }
 
-/*
-export function ctrlL() {
 
-   $(document).keypress(openTc)
-   $(dom.sourceDoc).keypress(openTc)
-   $(dom.targetDoc).keypress(openTc)
+export function ctrlK() {
+   $(document).keydown(openTc)
+   $(dom.sourceDoc).keydown(openTc)
+   $(dom.targetDoc).keydown(openTc)
 
    // Print endash at current caret position
    function openTc(e) {
-
-      // Defer; thereby giving the string a chance to update before running the code
-
-      if (e.keyCode === 76 && !!e.ctrl) {
-
+      debug.info(e)
+      const KEY_K = 75
+      if (e.keyCode === KEY_K && e.ctrlKey) {
+         // Defer; thereby giving the string a chance to update before running the code
+         _.defer(handleTcRequestContentVersion)
       }
-
    }
-
 }
-*/
 
-export function norwegianQuotes () {
+export function norwegianQuotes() {
    $(document).keypress(norwegianQuotes)
    $(dom.sourceDoc).keypress(norwegianQuotes)
    $(dom.targetDoc).keypress(norwegianQuotes)
 
    // Print endash at current caret position
-   function norwegianQuotes (e) {
+   function norwegianQuotes(e) {
       // Defer; thereby giving the string a chance to update before running the code
-      _.defer(() => {
-         if (e.keyCode === 34) {
+
+      if (e.keyCode === 34) {
+         _.defer(() => {
             const selection = getCthSelection()
             const textContent = selection.anchorNode.textContent
             const offset = selection.anchorOffset
@@ -121,12 +118,12 @@ export function norwegianQuotes () {
                selection.anchorNode.textContent = allTextBeforeCaret.replace(/(\s|\(|^)"$/, '$1«') + allTextAfterCaret
                selection.moveCaretToOffset(offset)
             }
-         }
-      })
+         })
+      }
    }
 }
 
-export function ctrl (e) {
+export function ctrl(e) {
    _.defer(() => {
       if (e.which === 124) {
          const sel = getCthSelection()

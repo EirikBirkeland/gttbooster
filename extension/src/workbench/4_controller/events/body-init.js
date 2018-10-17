@@ -29,6 +29,7 @@ bodyEmitter.on('init', (res) => {
     }
 
     _.delay(Hotkeys.insertEndash, 5000)
+    _.delay(Hotkeys.ctrlK, 5000)
     _.delay(() => Dev(Hotkeys.norwegianQuotes), 5000)
 
     Dev(convertAZippyToDiv)
