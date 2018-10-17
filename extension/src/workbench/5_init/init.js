@@ -88,8 +88,10 @@ function initWorkbench () {
    }, 1000)
 
    function _initWorkbenchModules () {
-      debug.log('Running initWorkbenchModules()')
+      debug.log('Running _initWorkbenchModules()')
 
+      require('../../../css/main.less')
+      
       injectCssSourceTargetDoc([
          'css/bothDocs.css',
          'css/localize-bootstrap.css',

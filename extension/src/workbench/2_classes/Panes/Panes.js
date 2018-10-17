@@ -11,21 +11,15 @@ const $rightPane = $gtcTransPanel.find('.goog-splitpane-second-container')
 const $separator = $('.gtc-splitpane-handle')
 
 function maximizeTransPane () {
-   $leftPane.css({"width": '0px'})
-   $rightPane.css({
-      "width": '100%',
-      "left": '5px'
-   })
-   $separator.css({"left": '0px'})
+   $leftPane.addClass('cth-pane left-maximize')
+   $rightPane.addClass('cth-pane right-maximize')
+   $separator.addClass('cth-pane separator-maximize')
 }
 
 function resetPanePositions () {
-   $leftPane.css({"width": '50%'})
-   $rightPane.css({
-      "width": '50%',
-      "left": $leftPane.css('width')
-   })
-   $separator.css({"left": '50%'})
+   $leftPane.removeClass('cth-pane left-maximize')
+   $rightPane.removeClass('cth-pane right-maximize')
+   $separator.removeClass('cth-pane separator-maximize')
 }
 
 export {maximizeTransPane, resetPanePositions}

@@ -11,8 +11,7 @@
     "content_scripts": [
         {
             "css": [
-                "css/sweetalert.css",
-                "css/main.css"
+                "css/sweetalert.css"
             ],
             "js": [
                 "vendor/jquery-3.1.1.js",
@@ -49,7 +48,7 @@
         "contextMenus"
     ],
     "update_url": "https://clients2.google.com/service/update2/crx",
-    "version": "7.171",
+    "version": "7.172",
     "web_accessible_resources": [
         "css/*.css",
         "dist/*.map",

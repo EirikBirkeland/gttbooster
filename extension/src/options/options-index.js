@@ -9,7 +9,7 @@ const debug = require('cth-debug')(__filename)
 
 require('bootstrap')
 require('../../css/sweetalert.css')
-require('../../css/main.css')
+require('../../css/main.less')
 
 /*
  * TODO: What is the difference between the two source css files?

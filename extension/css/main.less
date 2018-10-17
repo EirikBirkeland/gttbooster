@@ -109,3 +109,19 @@ del {
     background-color: #ffcccc;
     text-decoration: none;
 }
+
+@leftPaneWidth: 0px;
+@rightPaneWidth: 100%;
+
+.cth-pane {
+    &.left-maximize {
+        width: @leftPaneWidth !important;
+    }
+    &.right-maximize {
+        width: @rightPaneWidth !important;
+        left: @leftPaneWidth !important;
+    }
+    &.separator-maximize {
+        left: @rightPaneWidth !important;
+    }
+}
