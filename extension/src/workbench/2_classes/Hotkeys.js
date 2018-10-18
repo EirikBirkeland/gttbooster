@@ -79,6 +79,7 @@ export function ctrlK () {
 
    // Print endash at current caret position
    function openTc (e) {
+      e.preventDefault();
       debug.info(e)
       const KEY_K = 75
       if (e.keyCode === KEY_K && e.ctrlKey) {
