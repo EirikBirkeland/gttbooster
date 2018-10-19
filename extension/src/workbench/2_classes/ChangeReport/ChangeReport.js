@@ -16,7 +16,7 @@ const DOM_NODE_QUERY = ".gtc-trans-title";
     init (documentStrings, cache) {
         this.documentStrings = documentStrings;
         this.cache = cache || {};
-        this.togg = false;
+        this._toggle = false;
     },
 
     addDocumentSnapshot (storeDocState, content) {
@@ -51,12 +51,12 @@ const DOM_NODE_QUERY = ".gtc-trans-title";
     },
 
     toggle () {
-        if (this.togg) {
+        if (this._toggle) {
             this.copyNodesAndHideOriginal();
         } else {
             this.deleteNodesAndShowOriginal();
         }
-        this.togg = !this.togg;
+        this._toggle = !this._toggle;
     },
 
     copyNodesAndHideOriginal () {
