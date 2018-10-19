@@ -1,7 +1,7 @@
 const dom = require('../../5_init/init/doc-references').getDomRefs();
 
 // TWEAK: Allow customization by user ... settings screen tab
-export function highlightTextItems () {
+export default function highlightTextItems () {
    const description = dom.targetDoc.getElementsByClassName('messageHeader');
    const myArray = [
       '[0-9]+ characters',

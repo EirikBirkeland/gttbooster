@@ -2,7 +2,7 @@
 import { EventEmitter } from 'events';
 import $ from 'jquery';
 import _ from 'lodash';
-import TransEditor from '../2_classes/TransEditor';
+import TransEditor from 'workbench/2_classes/TransEditor';
 
 import observeForFindButtonClick from './observers/upper-observeForFindButtonClick';
 import observeForUnexpectedIframe from './observers/upper-observeForUnexpectedIframe';

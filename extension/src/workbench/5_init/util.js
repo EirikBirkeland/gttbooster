@@ -1,6 +1,6 @@
 import $ from 'jquery';
-import { replaceSegmentTypeWithSource } from '../2_classes/upper-lib/replaceSegmentTypeWithSource';
-import { notifier } from '../2_classes/notifier';
+import { replaceSegmentTypeWithSource } from 'workbench/2_classes/upper-lib/replaceSegmentTypeWithSource';
+import { notifier } from 'workbench/2_classes/notifier';
 
 const replaceMtWithSource = function () {
    replaceSegmentTypeWithSource('goog-gtc-from-mt', cth.dom.sourceDoc, cth.dom.targetSegments);
