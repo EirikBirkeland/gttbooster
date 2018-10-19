@@ -20,7 +20,7 @@ $(document).ready(() => {
       require('./workbench/5_init/init').initWorkbench()
    } else if (pathname.match(pathnames.list)) {
       require('./otherPages/inbox').initListModules()
-   } else if (fullHref.match(pathnames.lqe) && localStorage['cth-dev-mode']) {
+   } else if (fullHref.match(pathnames.lqe)) {
       window.Lqe = require('./otherPages/LQE').default
       window.Lqe.init()
       window.Lqe.run()
