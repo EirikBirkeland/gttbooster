@@ -7,16 +7,16 @@ import $ from 'jquery';
 import ReactDOM from 'react-dom';
 import React from 'react';
 
-import addFilteringButtonRow from '../../2_classes/SegmenttypeFiltering/segmenttype-filtering';
+import addFilteringButtonRow from '../SegmenttypeFiltering/segmenttype-filtering';
 
-import Toolbar from './Toolbar/Toolbar.js';
+import Toolbar from './lib/Toolbar.js';
 
 const debug = require('cth-debug')(__filename.replace(/^src\//, ''));
 
 export default function initToolbar () {
    const existingToolbar = cth.dom.existingToolbar;
 
-   const $newToolbar = $('<span/>').addClass('cth-main-toolbar').addClass('bootstrap-wrapper');
+   const $newToolbar = $('<span/>').addClass('cth-main-toolbar bootstrap-wrapper');
 
    $newToolbar.insertBefore(existingToolbar.lastChild);
 

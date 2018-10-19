@@ -4,7 +4,7 @@
 import $ from 'jquery'
 import {Storage} from 'cth-storage'
 import customPrettyHtml from '../4_other/custom-pretty-html'
-import convertPlaceholders from '../2_classes/Segment/convertPlaceholders'
+import convertPlaceholders from 'workbench/2_classes/Segment/convertPlaceholders'
 import notifier from '../4_other/notifier'
 
 import _ from 'lodash'

@@ -5,7 +5,7 @@ import localforage from 'localforage';
 import * as Analytics from './init/analytics';
 import { Storage } from '../../model/GeneralStorage';
 
-import { Segment } from '../2_classes/Segment/Segment';
+import { Segment } from 'workbench/2_classes/Segment/Segment';
 
 import upper from '../4_controller/upper-index';
 import * as body from '../4_controller/body-index';

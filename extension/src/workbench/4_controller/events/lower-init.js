@@ -4,7 +4,7 @@ import _ from 'lodash';
 import { Glossaries } from 'workbench/2_classes/Glossaries/Glossaries.js';
 import { checkWhetherNew } from 'workbench/2_classes/Glossaries/lib/checkWhetherNew';
 import { updateTmView } from 'workbench/2_classes/Tm/updateTmView';
-import { cleanupMt } from 'workbench/2_classes/mt/clean-up-mt';
+import { cleanupMt } from 'workbench/2_classes/Mt/clean-up-mt';
 
 const debug = require('cth-debug')(__filename);
 
