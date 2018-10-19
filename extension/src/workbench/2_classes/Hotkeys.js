@@ -77,9 +77,7 @@ export function ctrlK() {
    $(dom.sourceDoc).keydown(openTc)
    $(dom.targetDoc).keydown(openTc)
 
-   // Print endash at current caret position
    function openTc(e) {
-      debug.info(e)
       const KEY_K = 75
       if (e.keyCode === KEY_K && e.ctrlKey) {
          // Defer; thereby giving the string a chance to update before running the code
