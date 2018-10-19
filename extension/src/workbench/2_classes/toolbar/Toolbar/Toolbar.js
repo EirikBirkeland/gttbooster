@@ -12,7 +12,7 @@ import config from '@eirikbirkeland/ob-config';
 import { replaceFuzzyWithSource, replaceMtWithSource } from '../../../5_init/util';
 import { TargetDocument } from '../../Document/Document';
 import { timer as initTimer } from '../../upper-lib/timer';
-import listenForClick from '../../click-logging';
+import listenForClick from '../../ClickLogging';
 import { KeywordFiltering } from '../../KeywordFiltering/KeywordFiltering';
 import TransEditor from '../../TransEditor';
 import { Font } from '../../Font/Font';

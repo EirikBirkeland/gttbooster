@@ -1,8 +1,8 @@
 /* global cth */
 import _ from 'lodash';
 import { convertPlaceholders } from './convertPlaceholders';
-import consistencyCheck from '../../2_classes/Qa/checks/consistencyCheck';
-import { SourceDocument, TargetDocument } from '../../2_classes/Document/Document';
+import consistencyCheck from 'workbench/2_classes/Qa/checks/consistencyCheck';
+import { SourceDocument, TargetDocument } from 'workbench/2_classes/Document/Document';
 import filterSegmentTypes from './filterSegmentTypes';
 
 const $ = typeof window === 'undefined' ? require('cheerio') : require('jquery');

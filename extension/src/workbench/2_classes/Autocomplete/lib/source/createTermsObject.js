@@ -2,8 +2,8 @@
 /* global __filename */
 import $ from 'jquery';
 import escapeGoat from 'escape-goat';
-import { Glossaries } from '../../../Glossaries/Glossaries';
-import { Tm } from '../../../tm/Tm';
+import { Glossaries } from 'workbench/2_classes/Glossaries/Glossaries';
+import { Tm } from 'workbench/2_classes/Tm/Tm';
 import { uniqFilterAccordingToProp } from './util';
 import { sortLongestItemsFirst } from './termManipulations';
 import type { Term } from './Term-type';

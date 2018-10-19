@@ -11,7 +11,7 @@ const DOM_NODE_QUERY = ".gtc-trans-title";
  * For reference:
  * cth.docInfo.docStatusOnLoad
  */
-// TODO: Add ChangeReport modal with button to leave mode
+
  const ChangeReport = {
     init (documentStrings, cache) {
         this.documentStrings = documentStrings;

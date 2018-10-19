@@ -1,5 +1,5 @@
 const test = require('ava');
-const obj = require('../popularSimilar');
+const obj = require('./populateSimilar');
 
 const sessionTM = [
    {

@@ -1,6 +1,6 @@
 /* eslint-env browser, webextensions */
 const debug = require('cth-debug')(__filename);
-const Storage = require('../../model/GeneralStorage');
+const Storage = require('model/GeneralStorage');
 const dateFormat = require('date-format');
 
 /**

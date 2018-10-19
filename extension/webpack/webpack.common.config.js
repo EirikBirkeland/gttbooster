@@ -13,6 +13,10 @@ module.exports = {
     background: path.join(appRoot + '/background/background.js'),
     popup: path.join(appRoot + '../html/popup.js'),
   },
+  resolve: {
+    modules: [appRoot, 'node_modules'],
+    extensions: ['.js', '.jsx', '.json'],
+  },
   node: {
     __filename: true,
     __dirname: true

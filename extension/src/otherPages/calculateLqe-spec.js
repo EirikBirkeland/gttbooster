@@ -3,7 +3,7 @@
  * Copyright (C) 2016 Eirik Birkeland
  */
 import test from 'ava';
-import calculate from '../../../otherPages/calculateLqe';
+import calculate from './calculateLqe';
 
 // Const debug = require('cth-debug')(__filename)
 

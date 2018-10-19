@@ -15,7 +15,7 @@ import { Ice } from '../../2_classes/Ice/Ice';
 import { trados } from '../../2_classes/TradosMode/TradosMode';
 import { checkWhetherNew } from '../../2_classes/Glossaries/lib/checkWhetherNew';
 import { Dev } from '../../2_classes/Dev';
-import * as Hotkeys from '../../2_classes/Hotkeys';
+import * as Hotkeys from '../../2_classes/Hotkeys/Hotkeys';
 
 const debug = require('cth-debug')(__filename.replace(/^src\//, ''));
 

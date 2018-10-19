@@ -7,7 +7,7 @@
   "description": "project",
   "scripts": {
     "lint": "yarn eslint ./src",
-    "test": "yarn ava",
+    "test": "env NODE_PATH=src yarn ava",
     "clean": "rm -Rf dist",
     "circleci": "webpack --config ./webpack/webpack.circleci.config.js",
     "start": "yarn install && webpack --config ./webpack/webpack.dev.config.js",

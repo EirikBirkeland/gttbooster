@@ -4,7 +4,7 @@
  */
 
 import addExtraXRegExp from '../../2_classes/xreg';
-import * as Hotkeys from '../../2_classes/Hotkeys';
+import * as Hotkeys from '../../2_classes/Hotkeys/Hotkeys';
 
 function init (options) {
    addExtraXRegExp();
