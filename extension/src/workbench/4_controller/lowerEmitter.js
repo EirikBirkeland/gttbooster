@@ -1,4 +1,4 @@
-import {EventEmitter} from 'events'
+import { EventEmitter } from 'events';
 
-const lowerEmitter = new EventEmitter()
-export default lowerEmitter
+const lowerEmitter = new EventEmitter();
+export default lowerEmitter;

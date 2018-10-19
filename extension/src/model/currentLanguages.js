@@ -5,4 +5,4 @@
 
 
 module.exports = [
-    "no", "ja", "fr", "frca", "nl", "es419", "ptbr", "it", "sl", "ptpt", "af", "am", "ar", "de", "tr", "bn", "gu", "hi", "kn", "ml", "mr", "pa", "ta", "te", "iw", "ru", "pl"].sort()
+    "no", "ja", "fr", "frca", "nl", "es419", "ptbr", "it", "sl", "ptpt", "af", "am", "ar", "de", "tr", "bn", "gu", "hi", "kn", "ml", "mr", "pa", "ta", "te", "iw", "ru", "pl"].sort();

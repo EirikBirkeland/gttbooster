@@ -1,4 +1,4 @@
-import {ChromeProxy} from '../../model/ChromeProxy'
+import { ChromeProxy } from '../../model/ChromeProxy';
 
 export const spreadsheetSettings = {
    "spreadsheetURL": {
@@ -32,4 +32,4 @@ export const spreadsheetSettings = {
       "description": 'Display highly visible spreadsheet notifications in GTT if any issues are encountered.',
       "tooltip": 'Disable this if messages in the upper right corner are distracting you. Notifications will still be available in the console by pressing <kbd>CTRL+SHIFT+I</kbd>.'
    }
-}
+};

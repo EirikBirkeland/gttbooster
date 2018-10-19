@@ -4,11 +4,11 @@
  * Created by eb on 27.08.2016.
  */
 
-import {promisify} from '../workbench/2_classes/tool'
-import localforage from 'localforage'
-import {ChromeProxy} from './ChromeProxy'
+import { promisify } from '../workbench/2_classes/tool';
+import localforage from 'localforage';
+import { ChromeProxy } from './ChromeProxy';
 
-const debug = require('cth-debug')(__filename.replace(/^src\//, ''))
+const debug = require('cth-debug')(__filename.replace(/^src\//, ''));
 
 /**
  * Intended as a storage API to be used both on background and content page. Stuff is handled internally to make sure everything works.
@@ -16,33 +16,33 @@ const debug = require('cth-debug')(__filename.replace(/^src\//, ''))
 
 // TODO: This doesn't roll well with flow
 const Storage = (() => {
-   const errorLog = debug
+   const errorLog = debug;
    const backgroundVersion = (() => {
       function set (opts, key, value, cb) {
-         const store = localforage.createInstance({"name": opts.storeName})
+         const store = localforage.createInstance({ "name": opts.storeName });
          if (Array.isArray(key)) {
             key.forEachAsync((ele) => {
-               store.setItem(ele, value)
-            }, 1)
-            cb()
+               store.setItem(ele, value);
+            }, 1);
+            cb();
          } else {
-            store.setItem(key, value).then(cb).catch(errorLog)
+            store.setItem(key, value).then(cb).catch(errorLog);
          }
       }
 
       function get (opts, key, cb) {
-         const store = localforage.createInstance({"name": opts.storeName})
-         store.getItem(key).then(cb).catch(errorLog)
+         const store = localforage.createInstance({ "name": opts.storeName });
+         store.getItem(key).then(cb).catch(errorLog);
       }
 
       function remove (opts, key, cb) {
-         const store = localforage.createInstance({"name": opts.storeName})
-         store.removeItem(key).then(cb).catch(errorLog)
+         const store = localforage.createInstance({ "name": opts.storeName });
+         store.removeItem(key).then(cb).catch(errorLog);
       }
 
       function keys (opts, cb) {
-         const store = localforage.createInstance({"name": opts.storeName})
-         store.keys().then(cb).catch(errorLog)
+         const store = localforage.createInstance({ "name": opts.storeName });
+         store.keys().then(cb).catch(errorLog);
       }
 
       return {
@@ -50,12 +50,12 @@ const Storage = (() => {
          get,
          remove,
          keys
-      }
-   })()
+      };
+   })();
 
    const contentVersion = (() => {
-      const sendMessage = ChromeProxy.runtime.sendMessage
-      const common = {"header": 'storage'}
+      const sendMessage = ChromeProxy.runtime.sendMessage;
+      const common = { "header": 'storage' };
 
       /**
        *
@@ -71,10 +71,10 @@ const Storage = (() => {
                "type": 'get',
                key
             }
-         ), cb)
+         ), cb);
       }
 
-      const get = promisify(_get)
+      const get = promisify(_get);
 
       /**
        *
@@ -89,10 +89,10 @@ const Storage = (() => {
             "type": 'set',
             key,
             value
-         }), cb)
+         }), cb);
       }
 
-      const set = promisify(_set)
+      const set = promisify(_set);
 
       /**
        *
@@ -101,15 +101,15 @@ const Storage = (() => {
        */
       function _keys (opts, cb) {
          if (!opts.storeName) {
-            return debug.warn('Provide a storeName option.')
+            return debug.warn('Provide a storeName option.');
          }
          sendMessage(Object.assign(common, {
             "name": opts.storeName,
             "type": 'keys'
-         }), cb)
+         }), cb);
       }
 
-      const keys = promisify(_keys)
+      const keys = promisify(_keys);
 
       /**
        *
@@ -122,24 +122,24 @@ const Storage = (() => {
             "name": opts.storeName,
             "type": 'remove',
             key
-         }), cb)
+         }), cb);
       }
 
-      const remove = promisify(_remove)
+      const remove = promisify(_remove);
 
       return {
          set,
          get,
          keys,
          remove
-      }
-   })()
+      };
+   })();
 
    if (/background.html$/.test(location.href)) {
-      return backgroundVersion
+      return backgroundVersion;
    }
 
-   return contentVersion
-})()
+   return contentVersion;
+})();
 
-export {Storage}
+export { Storage };

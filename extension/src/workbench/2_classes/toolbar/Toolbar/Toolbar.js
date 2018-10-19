@@ -4,92 +4,92 @@
  * Created by eb on 03.09.2016.
  */
 
-import $ from 'jquery'
-import React from 'react'
-import DropdownButton from 'react-bootstrap/lib/DropdownButton'
-import MenuItem from 'react-bootstrap/lib/MenuItem'
-import config from '@eirikbirkeland/ob-config'
-import {replaceFuzzyWithSource, replaceMtWithSource} from '../../../5_init/util'
-import {TargetDocument} from '../../Document/Document'
-import {timer as initTimer} from '../../upper-lib/timer'
-import listenForClick from '../../click-logging'
-import {KeywordFiltering} from '../../KeywordFiltering/KeywordFiltering'
-import TransEditor from '../../TransEditor'
-import {Font} from '../../Font/Font'
-import {Cursor} from '../../Cursor'
-import {qaSheet} from '../../Qa/qa-sheet'
-import changeReport from '../../ChangeReport/ChangeReport'
+import $ from 'jquery';
+import React from 'react';
+import DropdownButton from 'react-bootstrap/lib/DropdownButton';
+import MenuItem from 'react-bootstrap/lib/MenuItem';
+import config from '@eirikbirkeland/ob-config';
+import { replaceFuzzyWithSource, replaceMtWithSource } from '../../../5_init/util';
+import { TargetDocument } from '../../Document/Document';
+import { timer as initTimer } from '../../upper-lib/timer';
+import listenForClick from '../../click-logging';
+import { KeywordFiltering } from '../../KeywordFiltering/KeywordFiltering';
+import TransEditor from '../../TransEditor';
+import { Font } from '../../Font/Font';
+import { Cursor } from '../../Cursor';
+import { qaSheet } from '../../Qa/qa-sheet';
+import changeReport from '../../ChangeReport/ChangeReport';
 
-import Button from './components/Button'
-import Input from './components/Input'
+import Button from './components/Button';
+import Input from './components/Input';
 
-import checkIfGlossaryWindowExistsAndActivate from './checkIfGlossaryWindowExistsAndActivate'
-import enableBootstrapTooltips from './Toolbar/enableBootstrapTooltips'
-import Toggles from './toggles'
+import checkIfGlossaryWindowExistsAndActivate from './checkIfGlossaryWindowExistsAndActivate';
+import enableBootstrapTooltips from './Toolbar/enableBootstrapTooltips';
+import Toggles from './toggles';
 
-const debug = require('cth-debug')(__filename)
+const debug = require('cth-debug')(__filename);
 
 // TODO: Get rid of IDs
 class Toolbar extends React.Component {
    componentDidMount () {
-      checkIfGlossaryWindowExistsAndActivate()
+      checkIfGlossaryWindowExistsAndActivate();
 
       if (window.cth.option.spreadsheetURL === '') {
-         debug.log('OK')
-         const $loadSheetButton = $('#cth_loadSheetButton').attr('title', 'Please specify a spreadsheet in the options screen')
+         debug.log('OK');
+         const $loadSheetButton = $('#cth_loadSheetButton').attr('title', 'Please specify a spreadsheet in the options screen');
          // ChangeOpacity($loadSheetButton, 0.3)
-         $loadSheetButton.off()
+         $loadSheetButton.off();
       }
 
-      enableBootstrapTooltips()
+      enableBootstrapTooltips();
 
       if (window.cth.option.autocompleteOnByDefault) {
-         Toggles.autocomplete()
+         Toggles.autocomplete();
       }
 
       if (localStorage['cth-ice-lock'] === 'true') {
-         Toggles.lockIce()
+         Toggles.lockIce();
       }
 
-      const targetDocument = TargetDocument
+      const targetDocument = TargetDocument;
 
       if (localStorage['cth-merge-panes'] === 'true' &&
          targetDocument.isShort()) {
-         Toggles.mergePanes()
+         Toggles.mergePanes();
       }
 
-      KeywordFiltering.run()
+      KeywordFiltering.run();
 
       /**
        * Add click logging for all items
        */
-      const toolbarItems = $(this.main).children()
+      const toolbarItems = $(this.main).children();
       toolbarItems.each((i, ele) => {
-         $(ele).bind('click', listenForClick)
-      })
+         $(ele).bind('click', listenForClick);
+      });
 
       if (window.cth.option.timerEnable === false) {
-         $('#cth_timerButton').hide()
+         $('#cth_timerButton').hide();
       } else {
-         initTimer()
+         initTimer();
       }
 
       if (!targetDocument.hasMessageBlocks()) {
-         $('#cth_descButton').children(0).css({"opacity": 0.3})
+         $('#cth_descButton').children(0).css({ "opacity": 0.3 });
       }
 
       if (!targetDocument.hasIceSegments()) {
-         $('#cth_lockIceButton').hide()
+         $('#cth_lockIceButton').hide();
       }
    }
 
    render () {
-      const hasMessageBlocks = $(window.cth.dom.targetDoc).find('.goog-gtt-messageblock').length
+      const hasMessageBlocks = $(window.cth.dom.targetDoc).find('.goog-gtt-messageblock').length;
 
       return (
          <span
             ref={(node) => {
-               this.main = node
+               this.main = node;
             }}
             className="btn-group"
          >
@@ -140,7 +140,7 @@ class Toolbar extends React.Component {
              title="Increase font size"
              iconName="plus"
              onClick={function () {
-                Font.resize('incr')
+                Font.resize('incr');
              }}
           />
           <Button
@@ -148,7 +148,7 @@ class Toolbar extends React.Component {
              title="Decrease font size"
              iconName="minus"
              onClick={function () {
-                Font.resize('decr')
+                Font.resize('decr');
              }}
           />
             <Button
@@ -168,15 +168,15 @@ class Toolbar extends React.Component {
                title="Reload spreadsheet"
                iconName="arrowCircleLarge"
                onClick={function () {
-                  Cursor.showLoadIndication()
+                  Cursor.showLoadIndication();
 
                   /**
                    * Reset after a while in case the spreadsheet fails to load and throws and uncatchable error.
                    */
-                  setTimeout(Cursor::Cursor.resetLoadIndication, 5000)
+                  setTimeout(Cursor::Cursor.resetLoadIndication, 5000);
                   qaSheet(() => {
-                     Cursor.resetLoadIndication()
-                  })
+                     Cursor.resetLoadIndication();
+                  });
                }}
             />
           <Button
@@ -184,7 +184,7 @@ class Toolbar extends React.Component {
              title="Load settings screen"
              iconName="settings"
              onClick={function () {
-                chrome.runtime.sendMessage({"header": 'openOptionsPage'})
+                chrome.runtime.sendMessage({ "header": 'openOptionsPage' });
              }}
           />
          {/*// TODO(eirik): migrate the Knowledge Base to be included with the extension*/}
@@ -200,7 +200,7 @@ class Toolbar extends React.Component {
              title="SmartFocus: (1) go to first untranslated segment from the top, or (2) bring any active segment into view."
              iconName="arrowIn"
              onClick={TransEditor.scrollIntoView}
-             style={{"borderColor": 'green'}}
+             style={{ "borderColor": 'green' }}
           />
           <Button
              id="cth_lockIceButton"
@@ -220,14 +220,14 @@ class Toolbar extends React.Component {
                   title="DEV"
                   dropup
                >
-                  <MenuItem onClick={()=> { TransEditor.close(); replaceMtWithSource()} } eventKey="1">Copy source to MT</MenuItem>
-                  <MenuItem onClick={()=> { TransEditor.close(); replaceFuzzyWithSource()} } eventKey="2">Copy source to fuzzies</MenuItem>
+                  <MenuItem onClick={()=> { TransEditor.close(); replaceMtWithSource();} } eventKey="1">Copy source to MT</MenuItem>
+                  <MenuItem onClick={()=> { TransEditor.close(); replaceFuzzyWithSource();} } eventKey="2">Copy source to fuzzies</MenuItem>
                   <MenuItem onClick={changeReport.toggle.bind(changeReport)} eventKey="3">Toggle ChangeReport</MenuItem>
                </DropdownButton>
                : ''}
         </span>
-      )
+      );
    }
 }
 
-export default Toolbar
+export default Toolbar;

@@ -21,4 +21,4 @@ export const spellcheckSettings = {
       "override": 'select',
       "values": []
    }
-}
+};

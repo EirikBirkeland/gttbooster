@@ -1,10 +1,10 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import {icons} from '../../../icons'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { icons } from '../../../icons';
 
 export default class Button extends React.Component {
    render () {
-      const id = this.props.id
+      const id = this.props.id;
 
       return (
          <button
@@ -18,7 +18,7 @@ export default class Button extends React.Component {
          >
             <img className="cth_buttonImage" src={icons[this.props.iconName]}/>
          </button>
-      )
+      );
    }
 }
 
@@ -27,4 +27,4 @@ Button.propTypes = {
    "title": PropTypes.string.isRequired,
    "onClick": PropTypes.func.isRequired,
    "iconName": PropTypes.string.isRequired
-}
+};

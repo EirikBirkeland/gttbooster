@@ -1,4 +1,4 @@
-import levenshteinWeighted from 'fast-levenshtein'
+import levenshteinWeighted from 'fast-levenshtein';
 
 /**
  *
@@ -7,17 +7,17 @@ import levenshteinWeighted from 'fast-levenshtein'
  * @returns {number}
  */
 export default function getRating (tmString, sourceString) {
-   let percent = Math.abs(_fuzzy(tmString, sourceString))
-   percent = Math.round(percent)
-   return percent
+   let percent = Math.abs(_fuzzy(tmString, sourceString));
+   percent = Math.round(percent);
+   return percent;
 
    function _fuzzy (str1, str2) {
-      let a
+      let a;
       if (str1.length < str2.length) {
-         a = levenshteinWeighted.get(str1, str2) / str2.length
+         a = levenshteinWeighted.get(str1, str2) / str2.length;
       } else {
-         a = levenshteinWeighted.get(str1, str2) / str1.length
+         a = levenshteinWeighted.get(str1, str2) / str1.length;
       }
-      return 100 - a * 100
+      return 100 - a * 100;
    }
 }

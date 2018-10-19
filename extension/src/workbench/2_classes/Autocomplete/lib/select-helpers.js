@@ -1,4 +1,4 @@
-const debug = require('cth-debug')(__filename)
+const debug = require('cth-debug')(__filename);
 
 /**
  *
@@ -9,12 +9,12 @@ const debug = require('cth-debug')(__filename)
 export function returnMatchingPortion (word1, word2) {
    for (let i = 0; i < word1.length; i++) {
       if (word1[i].match(new RegExp(word2[i], 'i'))) {
-         continue
+         continue;
       } else {
-         return word2.split('').slice(0, i).join('')
+         return word2.split('').slice(0, i).join('');
       }
    }
-   return word1
+   return word1;
 }
 
 /**
@@ -23,6 +23,6 @@ export function returnMatchingPortion (word1, word2) {
  * @returns {undefined}
  */
 export function moveCaretForward () {
-   debug.log('Moving caret 1 character to the right')
-   this.modify('move', 'forward', 'character')
+   debug.log('Moving caret 1 character to the right');
+   this.modify('move', 'forward', 'character');
 }

@@ -1,6 +1,6 @@
-import test from 'ava'
-import {lowerCaseFilterAccordingToProp, uniqFilterAccordingToProp, upperCaseFilterAccordingToProp} from './util'
-import type {Term} from './Term-type'
+import test from 'ava';
+import { lowerCaseFilterAccordingToProp, uniqFilterAccordingToProp, upperCaseFilterAccordingToProp } from './util';
+import type { Term } from './Term-type';
 
 const terms: Term = [
    {
@@ -23,7 +23,7 @@ const terms: Term = [
       "type": 'mt',
       "color": 'orange'
    }
-]
+];
 
 test('should uppercase filter terms according to property name', (t) => {
    t.deepEqual([
@@ -37,8 +37,8 @@ test('should uppercase filter terms according to property name', (t) => {
          "type": 'mt',
          "color": 'orange'
       }
-   ], terms.filter(upperCaseFilterAccordingToProp('label')))
-})
+   ], terms.filter(upperCaseFilterAccordingToProp('label')));
+});
 
 test('should uppercase filter terms according to property name', (t) => {
    t.deepEqual([
@@ -52,8 +52,8 @@ test('should uppercase filter terms according to property name', (t) => {
          "type": 'mt',
          "color": 'orange'
       }
-   ], terms.filter(lowerCaseFilterAccordingToProp('label')))
-})
+   ], terms.filter(lowerCaseFilterAccordingToProp('label')));
+});
 
 test('should unique filter according to property name', (t) => {
    const terms = [
@@ -72,15 +72,15 @@ test('should unique filter according to property name', (t) => {
          "type": 'tm',
          "color": 'blue'
       }
-   ]
+   ];
    t.deepEqual([
       {
          "label": 'pear',
          "type": 'tm',
          "color": 'blue'
       }
-   ], terms.filter(uniqFilterAccordingToProp('label')))
-})
+   ], terms.filter(uniqFilterAccordingToProp('label')));
+});
 
 test('should fail to unique filter according to property name because of erroneous data', (t) => {
    const terms = [
@@ -99,6 +99,6 @@ test('should fail to unique filter according to property name because of erroneo
          "type": 'tm',
          "color": 'blue'
       }
-   ]
-   t.deepEqual([], terms.filter(uniqFilterAccordingToProp('cat')))
-})
+   ];
+   t.deepEqual([], terms.filter(uniqFilterAccordingToProp('cat')));
+});

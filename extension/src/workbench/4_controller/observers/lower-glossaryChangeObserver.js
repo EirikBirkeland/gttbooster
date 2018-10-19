@@ -1,8 +1,8 @@
-import _ from 'lodash'
-import $ from 'jquery'
-import Mutant from 'cth-mutant'
+import _ from 'lodash';
+import $ from 'jquery';
+import Mutant from 'cth-mutant';
 
-const glossaryChangeObserver = Object.create(Mutant)
+const glossaryChangeObserver = Object.create(Mutant);
 
 glossaryChangeObserver.init = function (finalCb) {
    glossaryChangeObserver.observe({
@@ -14,10 +14,10 @@ glossaryChangeObserver.init = function (finalCb) {
       callback (muts) {
          // Console.log(muts)
          if (_.some(muts, (mut) => _.some(mut.addedNodes, (el) => $(el).hasClass('gtc-glossary-content-holder')))) {
-            finalCb()
+            finalCb();
          }
       }
-   })
-}
+   });
+};
 
-export {glossaryChangeObserver}
+export { glossaryChangeObserver };

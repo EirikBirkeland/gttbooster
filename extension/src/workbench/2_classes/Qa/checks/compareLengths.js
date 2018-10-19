@@ -2,7 +2,7 @@
 /**
  * Created by eb on 23.06.2016.
  */
-import * as eastAsianWidth from 'east-asian-width'
+import * as eastAsianWidth from 'east-asian-width';
 
 /**
  *
@@ -19,16 +19,16 @@ export default function compareLengths (str1, str2, opts) {
       "lengthPercent": 200,
       "shortMsg": 'Short translation',
       "longMsg": 'Long translation'
-   }, opts)
+   }, opts);
 
-   const sourceWidth = eastAsianWidth.str_width(str1)
-   const targetWidth = eastAsianWidth.str_width(str2)
+   const sourceWidth = eastAsianWidth.str_width(str1);
+   const targetWidth = eastAsianWidth.str_width(str2);
 
    if (targetWidth / sourceWidth > opts.lengthPercent / 100) {
-      return opts.longMsg
+      return opts.longMsg;
    }
    if (targetWidth / sourceWidth < 100 / opts.lengthPercent) {
-      return opts.shortMsg
+      return opts.shortMsg;
    }
-   return null
+   return null;
 }

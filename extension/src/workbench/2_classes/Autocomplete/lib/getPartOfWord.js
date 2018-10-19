@@ -1,6 +1,6 @@
 // TODO: So, this would need to be updated to snatch the word AFTER &gt; where applicable.
 
-import {RE_FOR_GETTING_WORD_BEFORE_CARET} from './regex-patterns'
+import { RE_FOR_GETTING_WORD_BEFORE_CARET } from './regex-patterns';
 
 /**
  *
@@ -16,11 +16,11 @@ const getPartOfWord = {
     */
    beforeCaret (selection, len) {
       if (selection.baseNode && selection.baseNode.nodeType === 3) {
-         const currentInputString = selection.baseNode.textContent.substr(0, selection.anchorOffset)
+         const currentInputString = selection.baseNode.textContent.substr(0, selection.anchorOffset);
          // "apple cake dog" -> "dog"
-         return currentInputString.split(RE_FOR_GETTING_WORD_BEFORE_CARET).slice(-len || -1).join(' ')
+         return currentInputString.split(RE_FOR_GETTING_WORD_BEFORE_CARET).slice(-len || -1).join(' ');
       }
-      return selection.baseNode.textContent
+      return selection.baseNode.textContent;
    },
 
    /**
@@ -31,11 +31,11 @@ const getPartOfWord = {
     */
    afterCaret (selection, len) {
       if (selection.baseNode && selection.baseNode.nodeType === 3) {
-         const currentInputString = selection.baseNode.textContent.substr(selection.anchorOffset)
-         return currentInputString.split(RE_FOR_GETTING_WORD_BEFORE_CARET).slice(-len || -1).join(' ')
+         const currentInputString = selection.baseNode.textContent.substr(selection.anchorOffset);
+         return currentInputString.split(RE_FOR_GETTING_WORD_BEFORE_CARET).slice(-len || -1).join(' ');
       }
-      return selection.baseNode.textContent
+      return selection.baseNode.textContent;
    }
-}
+};
 
-export default getPartOfWord
+export default getPartOfWord;

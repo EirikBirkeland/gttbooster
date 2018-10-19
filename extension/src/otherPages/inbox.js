@@ -3,21 +3,21 @@
  * Created by eb on 23.06.2016.
  */
 // GTT document other_pages
-import $ from 'jquery'
+import $ from 'jquery';
 
 function initListModules () {
-   replaceTitleInbox()
+   replaceTitleInbox();
 }
 
 function replaceTitleInbox () {
-   const nameRepresentation = $('.gb_Cb.gb_Db')[0].innerHTML.replace(/\s*\.$/, "")
-   const accountEmail = $('.gb_Eb')[0].innerHTML
+   const nameRepresentation = $('.gb_Cb.gb_Db')[0].innerHTML.replace(/\s*\.$/, "");
+   const accountEmail = $('.gb_Eb')[0].innerHTML;
 
    if (document.title.match('Google Translator Toolkit')) {
-      let extract = nameRepresentation || accountEmail
+      let extract = nameRepresentation || accountEmail;
 
-      extract = extract.replace(/(.*?)@.*/, '$1')
-      document.title = extract
+      extract = extract.replace(/(.*?)@.*/, '$1');
+      document.title = extract;
    }
 }
 
@@ -25,21 +25,21 @@ function replaceTitleInbox () {
  * Opens a list of URLs. Warns the user if they try to open more than 5 URLs at a time.
  */
 function openAllSelectedDocuments () {
-   const urls = getSelectedDocumentUrls()
+   const urls = getSelectedDocumentUrls();
 
    if (urls.length >= 5) {
-      const con = confirm('Are you sure you wish to open more than 5 documents at a time?')
+      const con = confirm('Are you sure you wish to open more than 5 documents at a time?');
       if (con === true) {
-         _open()
+         _open();
       }
    } else {
-      _open()
+      _open();
    }
 
    function _open () {
       ;[].forEach.call(urls, (ele) => {
-         window.open(ele)
-      })
+         window.open(ele);
+      });
    }
 }
 
@@ -48,10 +48,10 @@ function openAllSelectedDocuments () {
  * @returns {string[]} urls - returns a list of URLs that can be opened
  */
 function getSelectedDocumentUrls () {
-   const $selectedDocuments = $('.gtc-list-row-select')
-   const ids = [].map.call($selectedDocuments, (ele) => ele.id.replace(/^.*:(.*)$/, '$1'))
-   const urls = [].map.call(ids, (ele) => `https://translate.google.com/toolkit/workbench?did=${ele}`)
-   return urls
+   const $selectedDocuments = $('.gtc-list-row-select');
+   const ids = [].map.call($selectedDocuments, (ele) => ele.id.replace(/^.*:(.*)$/, '$1'));
+   const urls = [].map.call(ids, (ele) => `https://translate.google.com/toolkit/workbench?did=${ele}`);
+   return urls;
 }
 
-export {initListModules}
+export { initListModules };

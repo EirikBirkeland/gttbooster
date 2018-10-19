@@ -2,31 +2,31 @@
 /**
  * Created by eb on 20.03.2017.
  */
-import React, {Component} from 'react' // eslint-disable-line no-unused-vars
-import Grid from 'react-bootstrap/lib/Grid'
-import Row from 'react-bootstrap/lib/Row'
-import Col from 'react-bootstrap/lib/Col'
-import {store} from '../../options-index'
+import React, { Component } from 'react'; // eslint-disable-line no-unused-vars
+import Grid from 'react-bootstrap/lib/Grid';
+import Row from 'react-bootstrap/lib/Row';
+import Col from 'react-bootstrap/lib/Col';
+import { store } from '../../options-index';
 
-import CheckboxAndLabel from '../../components/CheckboxAndLabel.js'
-import InputRow from '../../components/row-components/InputRow'
+import CheckboxAndLabel from '../../components/CheckboxAndLabel.js';
+import InputRow from '../../components/row-components/InputRow';
 
 export default class Autocomplete extends Component {
    handleClick = (e) => {
-      this.forceUpdate()
+      this.forceUpdate();
    }
 
    constructor (props) {
-      super(props)
+      super(props);
       this.state = {
          "autocompleteTmThreshold": store.settings.autocompleteTmThreshold,
          "autocompleteMinLength": store.settings.autocompleteMinLength
-      }
+      };
    }
 
    render () {
-      const SM = this.props.sm || 6
-      const MD = this.props.md || 4
+      const SM = this.props.sm || 6;
+      const MD = this.props.md || 4;
 
       return (
          <div className="cth-content-container col-md-8 col-sm-12">
@@ -76,6 +76,6 @@ export default class Autocomplete extends Component {
                />
             </Grid>
          </div>
-      )
+      );
    }
 }

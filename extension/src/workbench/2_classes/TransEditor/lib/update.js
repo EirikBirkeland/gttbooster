@@ -1,6 +1,6 @@
-import _ from 'lodash'
-import {Segment} from '../../Segment/Segment'
-import _checkCurrentSegment from '../../Qa/checkCurrentSegment'
+import _ from 'lodash';
+import { Segment } from '../../Segment/Segment';
+import _checkCurrentSegment from '../../Qa/checkCurrentSegment';
 
 /**
  * Function to execute when the user types, as detected by listening for keyboard input
@@ -9,12 +9,12 @@ import _checkCurrentSegment from '../../Qa/checkCurrentSegment'
 const checkCurrentSegment = _.debounce(_checkCurrentSegment, 500, {
    "leading": false,
    "trailing": true
-})
+});
 
 export default function updateTheTransEditor () {
-   this.removeButtons()
+   this.removeButtons();
 
-   const currentSeg = Segment.create(cth.dom.currentTargetSegment)
+   const currentSeg = Segment.create(cth.dom.currentTargetSegment);
 
    if (currentSeg.hasInconsistencies) {
     this.addButtonsToBar([
@@ -25,12 +25,12 @@ export default function updateTheTransEditor () {
             "bgColor": 'red',
             "id": 'cth-inconsistent-segments-exist',
             onClick () {
-               currentSeg.copyContentsToDuplicates()
-               updateTheTransEditor()
-               checkCurrentSegment()
+               currentSeg.copyContentsToDuplicates();
+               updateTheTransEditor();
+               checkCurrentSegment();
             }
          }
-      ])
+      ]);
    } else if (currentSeg.hasDuplicates) {
     this.addButtonsToBar([
          {
@@ -40,7 +40,7 @@ export default function updateTheTransEditor () {
             "bgColor": 'yellow',
             "id": 'cth-duplicate-segments-exist'
          }
-      ])
+      ]);
    }
 
    this.addButtonsToBar([
@@ -56,7 +56,7 @@ export default function updateTheTransEditor () {
             currentSeg.toggleLabels({
                "bsStyle": 'info',
                "id": 'cth-label-1'
-            })
+            });
          }
       },
       {
@@ -71,7 +71,7 @@ export default function updateTheTransEditor () {
             currentSeg.toggleLabels({
                "bsStyle": 'warning',
                "id": 'cth-label-2'
-            })
+            });
          }
       },
       {
@@ -86,8 +86,8 @@ export default function updateTheTransEditor () {
             currentSeg.toggleLabels({
                "bsStyle": 'danger',
                "id": 'cth-label-3'
-            })
+            });
          }
       }
-   ])
+   ]);
 }
