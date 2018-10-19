@@ -8,7 +8,7 @@ import $ from 'jquery';
 import _ from 'lodash';
 
 import tinysort from '../../../../../vendor/tinysort';
-import {highlightRelevant} from './organizeGlossaries/highlightRelevant';
+import { highlightRelevant } from './organizeGlossaries/highlightRelevant';
 
 const notifier = typeof window !== 'undefined' ? require('../../notifier') : console;
 
@@ -72,4 +72,4 @@ const sendToBackground = (() => {
    };
 })();
 
-export {alphabetizeAndHighlight, sendToBackground};
+export { alphabetizeAndHighlight, sendToBackground };

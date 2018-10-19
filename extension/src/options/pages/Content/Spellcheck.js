@@ -2,14 +2,14 @@
 /**
  * Created by eb on 20.03.2017.
  */
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Grid from 'react-bootstrap/lib/Grid';
 import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
 import showData from './Spellcheck/showData';
 import Checkbox from '../../components/CheckboxAndLabel.js';
 import Select from '../../components/Select.js';
-import {store} from '../../options-index';
+import { store } from '../../options-index';
 import uploadFile from './Spellcheck/uploadFile';
 
 const debug = require('cth-debug')(__filename);
@@ -69,13 +69,13 @@ export default class Spellcheck extends Component {
 
             <br/>
 
-            <span id="message" style={{"display": 'none'}}>
+            <span id="message" style={{ "display": 'none' }}>
            No stored data available for the selected language code. Add some exceptions within GTT or add a file.
            </span>
 
             <table id="glossTable" className="table table-bordered table-condensed display"/>
 
-            <button id="cth-delete-button" style={{"display": 'none'}} disabled>
+            <button id="cth-delete-button" style={{ "display": 'none' }} disabled>
                Delete selected exceptions
             </button>
             <button id="cth-delete-all-button">

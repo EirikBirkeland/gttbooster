@@ -14,4 +14,4 @@ function init (options) {
    }
 }
 
-export {init};
+export { init };

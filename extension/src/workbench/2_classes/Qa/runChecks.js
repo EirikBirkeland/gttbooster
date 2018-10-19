@@ -8,18 +8,18 @@ import _ from 'lodash';
 import consistencyCheck from './checks/consistencyCheck';
 import runCharLimitCheck from './checks/charlimit-check';
 import compareLengths from './checks/compareLengths';
-import {runURLTest, targetEqualsSource} from './qa-misc';
+import { runURLTest, targetEqualsSource } from './qa-misc';
 import checkPlaceholders from './checks/checkPlaceholders';
-import {runChecksCollection} from './lqa-run-test-collection/index';
-import {convertPlaceholders} from '../Segment/convertPlaceholders';
+import { runChecksCollection } from './lqa-run-test-collection/index';
+import { convertPlaceholders } from '../Segment/convertPlaceholders';
 import coreTests from './checks/coreChecks';
 import * as LangSpecChecks from './checks/languageSpecific';
-import {Dev} from '../Dev';
+import { Dev } from '../Dev';
 
 import nuclearPoweredFilter from './runChecks/nuclearPoweredFilter';
 import assembleAndRenderOutput from './runChecks/assembleAndRenderOutput';
 
-import {Segment} from '../Segment/Segment';
+import { Segment } from '../Segment/Segment';
 
 const debug = require('cth-debug')(__filename.replace(/^src\//, ''));
 
@@ -33,7 +33,7 @@ const debug = require('cth-debug')(__filename.replace(/^src\//, ''));
  * @param {Function} [finalCallback] - a final callback after QA-ing all the segments
  */
 export default function runChecks (opts, finalCallback) {
-   let {sourceSegments, targetSegments, dataElements, iterationCallback} = opts;
+   let { sourceSegments, targetSegments, dataElements, iterationCallback } = opts;
 
    // Wrap the segment reference in an array if single node reference and no length prop:
    if (!sourceSegments.length) {
@@ -144,7 +144,7 @@ export default function runChecks (opts, finalCallback) {
 
 
          if (window.cth.option.lengthValidation[0]) {
-            output.nuclearPoweredFilter(compareLengths, sourceStripped, targetStripped, {"lengthPercent": window.cth.option.lengthValidation[1]});
+            output.nuclearPoweredFilter(compareLengths, sourceStripped, targetStripped, { "lengthPercent": window.cth.option.lengthValidation[1] });
          }
 
          if (window.cth.option.sourceTargetIdentical) {

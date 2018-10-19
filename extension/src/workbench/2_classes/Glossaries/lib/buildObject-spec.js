@@ -5,7 +5,7 @@
 
 
 import cheerio from 'cheerio';
-import {buildObject} from "./buildObject";
+import { buildObject } from "./buildObject";
 import test from 'ava';
 
 const $ = cheerio.load(glossariesArea());

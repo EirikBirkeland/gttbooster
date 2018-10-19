@@ -43,7 +43,7 @@ function _configure () {
                 "red": 'danger'
             };
 
-            const span = $('<span/>').addClass('bootstrap-wrapper').append($('<span/>').css({'margin-right': '2px'}).addClass(`label label-${colorToBootstrap[item.color]}`).html(item.type));
+            const span = $('<span/>').addClass('bootstrap-wrapper').append($('<span/>').css({ 'margin-right': '2px' }).addClass(`label label-${colorToBootstrap[item.color]}`).html(item.type));
 
             result.find('div').prepend(span);
 
@@ -67,7 +67,7 @@ function _activate (minLength) {
         select // SelectFnNew
     });
 
-    DOM.$TARGET_NODE[0].addEventListener('keydown', ({keyCode}) => {
+    DOM.$TARGET_NODE[0].addEventListener('keydown', ({ keyCode }) => {
         const LEFT_ARROW_KEY_CODE = 37;
         const RIGHT_ARROW_KEY_CODE = 39;
         if (keyCode === LEFT_ARROW_KEY_CODE || keyCode === RIGHT_ARROW_KEY_CODE) {

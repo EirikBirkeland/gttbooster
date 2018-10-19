@@ -1,5 +1,5 @@
 /* global chrome */
-import {handleTcRequest} from '../handleTcRequest';
+import { handleTcRequest } from '../handleTcRequest';
 
 const debug = require('cth-debug')(__filename);
 

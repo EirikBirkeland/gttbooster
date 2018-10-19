@@ -52,4 +52,4 @@ function init () {
     bodyEmitter.initListeners();
 }
 
-export {init, bodyEmitter};
+export { init, bodyEmitter };

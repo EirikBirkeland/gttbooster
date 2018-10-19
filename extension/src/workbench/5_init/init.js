@@ -3,19 +3,19 @@ import _ from 'lodash';
 import localforage from 'localforage';
 
 import * as Analytics from './init/analytics';
-import {Storage} from '../../model/GeneralStorage';
+import { Storage } from '../../model/GeneralStorage';
 
-import {Segment} from '../2_classes/Segment/Segment';
+import { Segment } from '../2_classes/Segment/Segment';
 
 import upper from '../4_controller/upper-index';
 import * as body from '../4_controller/body-index';
 import * as lower from '../4_controller/lower-index';
 import * as other from '../4_controller/emitters/other-index';
 
-import {getOptions} from './init/config';
-import {getDocInfo, getDomRefs, getModel} from './init/doc-references';
+import { getOptions } from './init/config';
+import { getDocInfo, getDomRefs, getModel } from './init/doc-references';
 import versionCheck from './init/version-check';
-import {injectCssSourceTargetDoc} from './init/injectCssTargetDoc';
+import { injectCssSourceTargetDoc } from './init/injectCssTargetDoc';
 // TODO: Implement as function
 import './init/onMessage';
 
@@ -109,4 +109,4 @@ function initWorkbench () {
    }
 }
 
-export {initWorkbench};
+export { initWorkbench };

@@ -4,11 +4,11 @@
  */
 const debug = require('cth-debug')(__filename);
 
-import {autocompleteSettings} from './settings/settings-autocomplete';
-import {languageSpecificQaSettings, qaSettings} from './settings/settings-qa';
-import {spreadsheetSettings} from './settings/settings-spreadsheet';
-import {spellcheckSettings} from './settings/settings-spellcheck';
-import {translationConsoleSettings} from './settings/settings-translationConsole';
+import { autocompleteSettings } from './settings/settings-autocomplete';
+import { languageSpecificQaSettings, qaSettings } from './settings/settings-qa';
+import { spreadsheetSettings } from './settings/settings-spreadsheet';
+import { spellcheckSettings } from './settings/settings-spellcheck';
+import { translationConsoleSettings } from './settings/settings-translationConsole';
 
 const otherSettings = {
    "newHighlightingStyle": {
@@ -92,7 +92,7 @@ const otherSettings = {
       "description": 'Remove "Computer Translation" text from the toolkit',
       "tooltip": 'This will increase vertical space for glossaries'
    },
-   "lockEnable": {"default": true},
+   "lockEnable": { "default": true },
    "autoSave": {
       "default": true,
       "tooltip": 'While this is active, any changes will be saved automatically.'
@@ -114,4 +114,4 @@ const defaults = Object.keys(settings).reduce((acc, ele) => {
    return acc;
 }, {});
 
-export {settings, defaults};
+export { settings, defaults };

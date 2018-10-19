@@ -33,11 +33,11 @@ test('should have one or more methods', (t) => {
 });
 
 test('Relative to the specified index, it should return a list of inconsistent target indices', (t) => {
-   t.deepEqual({"inconsistentIds": [3]}, consistencyCheck.init(0, sourceArr, targetArr).getResults());
+   t.deepEqual({ "inconsistentIds": [3] }, consistencyCheck.init(0, sourceArr, targetArr).getResults());
 });
 
 test('Relative to the specified index, it should return a list of inconsistent source indices', (t) => {
-   t.deepEqual({"inconsistentIds": [2]}, consistencyCheck.init(1, targetArr, sourceArr).getResults());
+   t.deepEqual({ "inconsistentIds": [2] }, consistencyCheck.init(1, targetArr, sourceArr).getResults());
 });
 
 test('should return a message indicating inconsistently translated indices', (t) => {
@@ -53,5 +53,5 @@ test('should return null, indicating that nothing is inconsistent(?)', (t) => {
 });
 
 test('Should return null (TODO: ... or an empty array?)', (t) => {
-   t.deepEqual({"inconsistentIds": null}, consistencyCheck.init(3, targetArr, sourceArr).getResults());
+   t.deepEqual({ "inconsistentIds": null }, consistencyCheck.init(3, targetArr, sourceArr).getResults());
 });

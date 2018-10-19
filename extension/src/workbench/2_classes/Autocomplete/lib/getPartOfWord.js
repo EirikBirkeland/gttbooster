@@ -1,6 +1,6 @@
 // TODO: So, this would need to be updated to snatch the word AFTER &gt; where applicable.
 
-import {RE_FOR_GETTING_WORD_BEFORE_CARET} from './regex-patterns';
+import { RE_FOR_GETTING_WORD_BEFORE_CARET } from './regex-patterns';
 
 /**
  *

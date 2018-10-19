@@ -6,4 +6,4 @@ function Dev (fn) {
    }
 }
 
-export {Dev};
+export { Dev };

@@ -26,8 +26,8 @@ const TransEditor = {
             minWidth = maxWidth;
          }
 
-         $(gtcTransInlineText).css({'min-width': `${minWidth - 10}px`});
-         $(gtcRichInputArea).css({'min-width': `${minWidth}px`});
+         $(gtcTransInlineText).css({ 'min-width': `${minWidth - 10}px` });
+         $(gtcRichInputArea).css({ 'min-width': `${minWidth}px` });
       });
    },
 
@@ -41,12 +41,12 @@ const TransEditor = {
    },
 
    moveToLastActiveSegmentAndFocus () {
-      this.scrollIntoView({"node": cth.dom.currentTargetSegment});
+      this.scrollIntoView({ "node": cth.dom.currentTargetSegment });
       $(cth.dom.currentTargetSegment).children().first().click();
    },
 
    moveToX (node) {
-      this.scrollIntoView({node});
+      this.scrollIntoView({ node });
       $(node).children().first().click();
    },
 

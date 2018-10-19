@@ -1,6 +1,6 @@
 import getRating from './getRating';
 import GoogleDiff from 'diff-match-patch';
-import {customPrettyHtml} from '../custom-pretty-html';
+import { customPrettyHtml } from '../custom-pretty-html';
 import $ from 'jquery';
 import _ from 'lodash';
 

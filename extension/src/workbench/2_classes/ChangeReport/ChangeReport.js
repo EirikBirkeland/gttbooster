@@ -3,7 +3,7 @@ import $ from 'jquery';
 
 // import { Storage } from '../../model/GeneralStorage'
 import GoogleDiff from 'diff-match-patch';
-import {customPrettyHtml} from '../custom-pretty-html';
+import { customPrettyHtml } from '../custom-pretty-html';
 
 const DOM_NODE_QUERY = ".gtc-trans-title";
 

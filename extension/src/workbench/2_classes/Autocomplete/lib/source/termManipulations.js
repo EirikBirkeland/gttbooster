@@ -1,9 +1,9 @@
 // @flow
 /* global __filename */
 import _ from 'lodash';
-import {lowerCaseFilterAccordingToProp, upperCaseFilterAccordingToProp} from './util';
-import type {Term} from './Term-type';
-import {trimSymbols as newTrimSymbols} from '../../../../../tools/trimSymbols';
+import { lowerCaseFilterAccordingToProp, upperCaseFilterAccordingToProp } from './util';
+import type { Term } from './Term-type';
+import { trimSymbols as newTrimSymbols } from '../../../../../tools/trimSymbols';
 
 const debug = require('cth-debug')(__filename.replace(/^src\//, ''));
 

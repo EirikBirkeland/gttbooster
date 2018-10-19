@@ -28,4 +28,4 @@ function runURLTest (source, target) {
    return null;
 }
 
-export {targetEqualsSource, runURLTest};
+export { targetEqualsSource, runURLTest };

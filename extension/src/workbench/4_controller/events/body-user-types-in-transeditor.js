@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import $ from 'jquery';
 import bodyEmitter from '../bodyEmitter';
-import {Dev} from '../../2_classes/Dev';
+import { Dev } from '../../2_classes/Dev';
 import _checkCurrentSegment from '../../2_classes/Qa/checkCurrentSegment';
 import TransEditor from '../../2_classes/TransEditor';
 

@@ -2,7 +2,7 @@
 /**
  * Created by eb on 20.03.2017.
  */
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 class Footer extends Component {
    constructor (props) {

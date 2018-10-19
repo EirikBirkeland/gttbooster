@@ -1,12 +1,12 @@
 /* global _gaq chrome */
 import $ from 'jquery';
-import {doneHandler, errorHandler, getChromeVersion, getExtensionVersion} from './background/helpers';
+import { doneHandler, errorHandler, getChromeVersion, getExtensionVersion } from './background/helpers';
 import putGlossariesInWindow from './background/putGlossariesInWindow';
 import * as Analytics from '../workbench/5_init/init/analytics';
 import './contextMenu';
 import checkIfGlossaryWindowIsOpen from './background/putGlossariesInWindow/checkIfGlossaryWindowIsOpen';
 // TODO: Implement for some statistics purpose ...
-import {handleTcRequest} from './handleTcRequest';
+import { handleTcRequest } from './handleTcRequest';
 import './hot-reload';
 
 const debug = require('cth-debug')(__filename.replace(/^src\//, ''));
@@ -51,7 +51,7 @@ chrome.runtime.onMessage.addListener((req, sender, sendResponse) => {
       case 'openOptionsPage':
          debug.log('openOptionsPage');
          if (req.suffix) {
-            chrome.tabs.create({"url": chrome.runtime.getURL(`html/options.html${req.suffix}`)});
+            chrome.tabs.create({ "url": chrome.runtime.getURL(`html/options.html${req.suffix}`) });
          } else { // Canonical way
             chrome.runtime.openOptionsPage();
          }
@@ -61,16 +61,16 @@ chrome.runtime.onMessage.addListener((req, sender, sendResponse) => {
          debug.log('storage');
          switch (req.type) {
             case 'get':
-               Storage.get({"storeName": req.name}, req.key, sendResponse);
+               Storage.get({ "storeName": req.name }, req.key, sendResponse);
                return true;
             case 'set':
-               Storage.set({"storeName": req.name}, req.key, req.value, sendResponse);
+               Storage.set({ "storeName": req.name }, req.key, req.value, sendResponse);
                return true;
             case 'keys':
-               Storage.keys({"storeName": req.name}, sendResponse);
+               Storage.keys({ "storeName": req.name }, sendResponse);
                return true;
             case 'remove':
-               Storage.remove({"storeName": req.name}, req.key, sendResponse);
+               Storage.remove({ "storeName": req.name }, req.key, sendResponse);
          }
          return true;
       case 'tcLookup':

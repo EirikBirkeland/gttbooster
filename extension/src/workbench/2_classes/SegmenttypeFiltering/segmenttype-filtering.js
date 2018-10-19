@@ -80,7 +80,7 @@ export default function addFilteringButtonRow () {
 
    const addButtons = (function () {
       const buttons = {};
-      const $button = $('<div/>').attr({"role": 'button'}).addClass('btn btn-lg');
+      const $button = $('<div/>').attr({ "role": 'button' }).addClass('btn btn-lg');
 
       return function (classObj, color) {
          const $container = $('<span/>').addClass('btn-group');
@@ -187,7 +187,7 @@ export default function addFilteringButtonRow () {
                 * In other words, doing throw { myFunc() } catch (err) { } without implementing err or equivalent can be a bad thing.
                 */
 
-               $(a.firstChild).css({"color": !a.firstChild.style.color ? 'LightGrey' : ''});
+               $(a.firstChild).css({ "color": !a.firstChild.style.color ? 'LightGrey' : '' });
                $(a).addClass('cth-filtering-exclude');
             }
 

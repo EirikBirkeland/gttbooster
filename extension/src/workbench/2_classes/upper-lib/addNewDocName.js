@@ -30,7 +30,7 @@ export function addNewDocname (option) {
 
       const $docnameContainer = $('<span/>').addClass('bootstrap-wrapper');
 
-      const $settingIcon = $('<button/>').html('⇄').invisible().css({"opacity": 0.5}).addClass('label label-info').attr('title', 'Click to switch between new and old title display style').on('click', () => {
+      const $settingIcon = $('<button/>').html('⇄').invisible().css({ "opacity": 0.5 }).addClass('label label-info').attr('title', 'Click to switch between new and old title display style').on('click', () => {
          debug.log('settingIcon clicked');
          toggleTitleStyle();
 
@@ -49,7 +49,7 @@ export function addNewDocname (option) {
 
       const $docnameNew = $docnameOld.clone();
 
-      $docnameNew.removeClass('goog-inline-block').attr({"id": 'cth_clonedDocName'});
+      $docnameNew.removeClass('goog-inline-block').attr({ "id": 'cth_clonedDocName' });
 
       // TODO: Finish implementing this option
       if (option && option === true) {

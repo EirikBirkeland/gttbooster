@@ -9,7 +9,7 @@ import path from 'path';
 import $ from 'cheerio';
 import fs from 'fs';
 
-import {convertPlaceholders} from './convertPlaceholders';
+import { convertPlaceholders } from './convertPlaceholders';
 
 const source = fs.readFileSync(path.join(__dirname, '/421537/sourceDoc.html'), 'utf8');
 const source2 = fs.readFileSync(path.join(__dirname, '/421663/sourceDoc.html'), 'utf8');

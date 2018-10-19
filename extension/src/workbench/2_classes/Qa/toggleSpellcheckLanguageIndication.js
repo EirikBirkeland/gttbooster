@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import {Spellcheck} from '../Spellcheck/Spellcheck';
+import { Spellcheck } from '../Spellcheck/Spellcheck';
 
 export default function toggleSpellcheckLanguageIndication () {
    const a = '#cth-spellcheck-language-indication';

@@ -7,9 +7,9 @@
 import $ from 'jquery';
 import _ from 'lodash';
 import runChecks from './runChecks';
-import {Spellcheck} from '../Spellcheck/Spellcheck';
+import { Spellcheck } from '../Spellcheck/Spellcheck';
 import toggleSpellcheckLanguageIndication from './toggleSpellcheckLanguageIndication';
-import {ProgressBar} from './ProgressBar';
+import { ProgressBar } from './ProgressBar';
 
 const debug = require('cth-debug')(__filename);
 

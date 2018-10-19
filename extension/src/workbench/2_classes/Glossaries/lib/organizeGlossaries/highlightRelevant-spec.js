@@ -1,5 +1,5 @@
 import test from 'ava';
-import {highlightRelevant} from './highlightRelevant';
+import { highlightRelevant } from './highlightRelevant';
 
 const cheerio = require('cheerio');
 const document = cheerio.load(domBefore());

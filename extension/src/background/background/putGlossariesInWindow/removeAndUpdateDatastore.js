@@ -5,7 +5,7 @@
 import $ from 'jquery';
 import localforage from 'localforage';
 
-const storage = localforage.createInstance({"name": 'glossaries'});
+const storage = localforage.createInstance({ "name": 'glossaries' });
 
 export default function removeAndUpdateDatastore () {
    this.remove();

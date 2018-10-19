@@ -5,16 +5,16 @@ import _ from 'lodash';
 import bodyEmitter from '../bodyEmitter';
 
 import TransEditor from '../../2_classes/TransEditor';
-import {checkForRepeatedSegmentsButtonAndHighlightIt} from '../../2_classes/TransEditor/lib/checkForRepeatedSegmentsButtonAndHighlightIt';
+import { checkForRepeatedSegmentsButtonAndHighlightIt } from '../../2_classes/TransEditor/lib/checkForRepeatedSegmentsButtonAndHighlightIt';
 
 import Autocomplete from '../../2_classes/Autocomplete';
 
 import runChecks from '../../2_classes/Qa/runChecks';
 import updateCurrentSegments from '../../2_classes/Segment/updateCurrentSegments';
-import {Ice} from '../../2_classes/Ice/Ice';
-import {trados} from '../../2_classes/TradosMode/TradosMode';
-import {checkWhetherNew} from '../../2_classes/Glossaries/lib/checkWhetherNew';
-import {Dev} from '../../2_classes/Dev';
+import { Ice } from '../../2_classes/Ice/Ice';
+import { trados } from '../../2_classes/TradosMode/TradosMode';
+import { checkWhetherNew } from '../../2_classes/Glossaries/lib/checkWhetherNew';
+import { Dev } from '../../2_classes/Dev';
 import * as Hotkeys from '../../2_classes/Hotkeys';
 
 const debug = require('cth-debug')(__filename.replace(/^src\//, ''));

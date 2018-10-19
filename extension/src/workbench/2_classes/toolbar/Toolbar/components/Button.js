@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {icons} from '../../../icons';
+import { icons } from '../../../icons';
 
 export default class Button extends React.Component {
    render () {

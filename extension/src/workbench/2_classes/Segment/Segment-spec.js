@@ -1,5 +1,5 @@
 import test from 'ava';
-import {Segment} from './Segment';
+import { Segment } from './Segment';
 import path from 'path';
 import $ from 'cheerio';
 import fs from 'fs';

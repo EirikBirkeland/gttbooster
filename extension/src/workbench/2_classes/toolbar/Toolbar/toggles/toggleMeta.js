@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import {TargetDocument} from '../../../Document/Document';
+import { TargetDocument } from '../../../Document/Document';
 
 const debug = require('cth-debug')(__filename);
 

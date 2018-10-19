@@ -4,9 +4,9 @@
  * Created by eb on 27.08.2016.
  */
 
-import {promisify} from '../workbench/2_classes/tool';
+import { promisify } from '../workbench/2_classes/tool';
 import localforage from 'localforage';
-import {ChromeProxy} from './ChromeProxy';
+import { ChromeProxy } from './ChromeProxy';
 
 const debug = require('cth-debug')(__filename.replace(/^src\//, ''));
 
@@ -19,7 +19,7 @@ const Storage = (() => {
    const errorLog = debug;
    const backgroundVersion = (() => {
       function set (opts, key, value, cb) {
-         const store = localforage.createInstance({"name": opts.storeName});
+         const store = localforage.createInstance({ "name": opts.storeName });
          if (Array.isArray(key)) {
             key.forEachAsync((ele) => {
                store.setItem(ele, value);
@@ -31,17 +31,17 @@ const Storage = (() => {
       }
 
       function get (opts, key, cb) {
-         const store = localforage.createInstance({"name": opts.storeName});
+         const store = localforage.createInstance({ "name": opts.storeName });
          store.getItem(key).then(cb).catch(errorLog);
       }
 
       function remove (opts, key, cb) {
-         const store = localforage.createInstance({"name": opts.storeName});
+         const store = localforage.createInstance({ "name": opts.storeName });
          store.removeItem(key).then(cb).catch(errorLog);
       }
 
       function keys (opts, cb) {
-         const store = localforage.createInstance({"name": opts.storeName});
+         const store = localforage.createInstance({ "name": opts.storeName });
          store.keys().then(cb).catch(errorLog);
       }
 
@@ -55,7 +55,7 @@ const Storage = (() => {
 
    const contentVersion = (() => {
       const sendMessage = ChromeProxy.runtime.sendMessage;
-      const common = {"header": 'storage'};
+      const common = { "header": 'storage' };
 
       /**
        *
@@ -142,4 +142,4 @@ const Storage = (() => {
    return contentVersion;
 })();
 
-export {Storage};
+export { Storage };

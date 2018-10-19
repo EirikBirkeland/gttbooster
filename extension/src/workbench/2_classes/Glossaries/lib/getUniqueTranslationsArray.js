@@ -1,6 +1,6 @@
 import $ from 'jquery';
-import {buildObject} from './buildObject';
-import {uniqFilter} from '../../tool';
+import { buildObject } from './buildObject';
+import { uniqFilter } from '../../tool';
 
 // Retrieve database entry if available
 export const getUniqueTranslationsArray = function () {

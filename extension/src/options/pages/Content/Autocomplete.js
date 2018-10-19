@@ -2,11 +2,11 @@
 /**
  * Created by eb on 20.03.2017.
  */
-import React, {Component} from 'react'; // eslint-disable-line no-unused-vars
+import React, { Component } from 'react'; // eslint-disable-line no-unused-vars
 import Grid from 'react-bootstrap/lib/Grid';
 import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
-import {store} from '../../options-index';
+import { store } from '../../options-index';
 
 import CheckboxAndLabel from '../../components/CheckboxAndLabel.js';
 import InputRow from '../../components/row-components/InputRow';

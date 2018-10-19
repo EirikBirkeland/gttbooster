@@ -50,7 +50,7 @@ export class Sheet {
      * @param {Function} opts.TabletopReplacement
      */
     constructor (opts: Object) {
-        const {url, sheetname, onValidationError, onError, debug, tabletopMock} = opts;
+        const { url, sheetname, onValidationError, onError, debug, tabletopMock } = opts;
 
         this.url = url;
         this.sheetnameToFetch = sheetname;

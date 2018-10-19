@@ -9,15 +9,15 @@ import React from 'react';
 import DropdownButton from 'react-bootstrap/lib/DropdownButton';
 import MenuItem from 'react-bootstrap/lib/MenuItem';
 import config from '@eirikbirkeland/ob-config';
-import {replaceFuzzyWithSource, replaceMtWithSource} from '../../../5_init/util';
-import {TargetDocument} from '../../Document/Document';
-import {timer as initTimer} from '../../upper-lib/timer';
+import { replaceFuzzyWithSource, replaceMtWithSource } from '../../../5_init/util';
+import { TargetDocument } from '../../Document/Document';
+import { timer as initTimer } from '../../upper-lib/timer';
 import listenForClick from '../../click-logging';
-import {KeywordFiltering} from '../../KeywordFiltering/KeywordFiltering';
+import { KeywordFiltering } from '../../KeywordFiltering/KeywordFiltering';
 import TransEditor from '../../TransEditor';
-import {Font} from '../../Font/Font';
-import {Cursor} from '../../Cursor';
-import {qaSheet} from '../../Qa/qa-sheet';
+import { Font } from '../../Font/Font';
+import { Cursor } from '../../Cursor';
+import { qaSheet } from '../../Qa/qa-sheet';
 import changeReport from '../../ChangeReport/ChangeReport';
 
 import Button from './components/Button';
@@ -75,7 +75,7 @@ class Toolbar extends React.Component {
       }
 
       if (!targetDocument.hasMessageBlocks()) {
-         $('#cth_descButton').children(0).css({"opacity": 0.3});
+         $('#cth_descButton').children(0).css({ "opacity": 0.3 });
       }
 
       if (!targetDocument.hasIceSegments()) {
@@ -184,7 +184,7 @@ class Toolbar extends React.Component {
              title="Load settings screen"
              iconName="settings"
              onClick={function () {
-                chrome.runtime.sendMessage({"header": 'openOptionsPage'});
+                chrome.runtime.sendMessage({ "header": 'openOptionsPage' });
              }}
           />
          {/*// TODO(eirik): migrate the Knowledge Base to be included with the extension*/}
@@ -200,7 +200,7 @@ class Toolbar extends React.Component {
              title="SmartFocus: (1) go to first untranslated segment from the top, or (2) bring any active segment into view."
              iconName="arrowIn"
              onClick={TransEditor.scrollIntoView}
-             style={{"borderColor": 'green'}}
+             style={{ "borderColor": 'green' }}
           />
           <Button
              id="cth_lockIceButton"

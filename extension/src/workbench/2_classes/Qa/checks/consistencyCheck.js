@@ -31,7 +31,7 @@ const consistencyCheck = (function () {
 
    cs.getResults = function () {
       const toRet = this.inconsistentIds.length > 0 ? this.inconsistentIds : null;
-      return {"inconsistentIds": toRet};
+      return { "inconsistentIds": toRet };
    };
 
    cs.getReport = function () {

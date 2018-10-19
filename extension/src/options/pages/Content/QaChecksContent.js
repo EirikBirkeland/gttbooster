@@ -1,16 +1,16 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Grid from 'react-bootstrap/lib/Grid';
 import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
 import CheckboxAndLabel from '../../components/CheckboxAndLabel.js';
 import InputRow from '../../components/row-components/InputRow';
 import ColorInputRow from '../../components/row-components/ColorInputRow';
-import {store} from '../../options-index';
+import { store } from '../../options-index';
 
 export default class QaChecksContent extends Component {
    constructor (props) {
       super(props);
-      this.state = {"all": store.all};
+      this.state = { "all": store.all };
    }
 
    render () {

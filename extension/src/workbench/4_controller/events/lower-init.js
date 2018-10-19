@@ -1,10 +1,10 @@
 import lowerEmitter from '../lowerEmitter';
 import _ from 'lodash';
 
-import {Glossaries} from '../../2_classes/Glossaries/Glossaries.js';
-import {checkWhetherNew} from '../../2_classes/Glossaries/lib/checkWhetherNew';
-import {updateTmView} from '../../2_classes/tm/updateTmView';
-import {cleanupMt} from '../../2_classes/mt/clean-up-mt';
+import { Glossaries } from '../../2_classes/Glossaries/Glossaries.js';
+import { checkWhetherNew } from '../../2_classes/Glossaries/lib/checkWhetherNew';
+import { updateTmView } from '../../2_classes/tm/updateTmView';
+import { cleanupMt } from '../../2_classes/mt/clean-up-mt';
 
 const debug = require('cth-debug')(__filename);
 

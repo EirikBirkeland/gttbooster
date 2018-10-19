@@ -2,15 +2,15 @@
 /**
  * Created by eb on 20.03.2017.
  */
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Grid from 'react-bootstrap/lib/Grid';
 import InputRow from '../../components/row-components/InputRow';
-import {store} from '../../options-index';
+import { store } from '../../options-index';
 
 export default class QaChecksContent2 extends Component {
    constructor (props) {
       super(props);
-      this.state = {"model": props.model || store};
+      this.state = { "model": props.model || store };
    }
 
    render () {

@@ -22,4 +22,4 @@ function resetPanePositions () {
    $separator.removeClass('cth-pane separator-maximize');
 }
 
-export {maximizeTransPane, resetPanePositions};
+export { maximizeTransPane, resetPanePositions };

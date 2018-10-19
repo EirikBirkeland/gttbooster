@@ -1,4 +1,4 @@
-import {uniqFilter} from '../tool';
+import { uniqFilter } from '../tool';
 import $ from 'jquery';
 
 function buildObject () {
@@ -22,4 +22,4 @@ const Tm = {
    getTargetWords
 };
 
-export {Tm};
+export { Tm };

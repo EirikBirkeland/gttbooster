@@ -4,7 +4,7 @@
  */
 /* eslint-env browser, webextensions */
 
-import {load} from '../../../model/SettingsStorage';
+import { load } from '../../../model/SettingsStorage';
 
 const defaults = require('../../../options/settings').defaults;
 const debug = require('cth-debug')(__filename);

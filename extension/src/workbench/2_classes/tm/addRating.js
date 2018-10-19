@@ -32,7 +32,7 @@ export default function addRating (sourceString) {
       })();
 
       const $result = $('<span/>');
-      $result.addClass(`cth-fuzzy label ${label}`).css({"color": 'white'}).html(percent);
+      $result.addClass(`cth-fuzzy label ${label}`).css({ "color": 'white' }).html(percent);
       $bootWrapper.append($result, $('<br/>'));
       $bootWrapper.insertAfter($(ele.parentNode).find('.gtc-tm-suggestion-message'));
    });

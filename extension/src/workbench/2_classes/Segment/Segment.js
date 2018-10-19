@@ -1,8 +1,8 @@
 /* global cth */
 import _ from 'lodash';
-import {convertPlaceholders} from './convertPlaceholders';
+import { convertPlaceholders } from './convertPlaceholders';
 import consistencyCheck from '../../2_classes/Qa/checks/consistencyCheck';
-import {SourceDocument, TargetDocument} from '../../2_classes/Document/Document';
+import { SourceDocument, TargetDocument } from '../../2_classes/Document/Document';
 import filterSegmentTypes from './filterSegmentTypes';
 
 const $ = typeof window === 'undefined' ? require('cheerio') : require('jquery');
@@ -29,10 +29,10 @@ const Segment = {
       this.translatable = $(googGtcUnit).find('.goog-gtc-translatable')[0];
       this.id = $(googGtcUnit).attr('id');
       this._isExcluded = false;
-      this.cache = {"index": null};
+      this.cache = { "index": null };
    },
 
-   toggleLabel ({bsStyle, id}) {
+   toggleLabel ({ bsStyle, id }) {
       const $thing = $(this.googGtcUnit).find(`.label-${bsStyle}`);
       if ($thing.length > 0) {
          $thing.parent().remove();
@@ -45,19 +45,19 @@ const Segment = {
          "addDate": Date.now()
       };
 
-      const $wrapper = $('<span/>').addClass('bootstrap-wrapper').css({"margin": '0.5em'}).attr('id', id);
+      const $wrapper = $('<span/>').addClass('bootstrap-wrapper').css({ "margin": '0.5em' }).attr('id', id);
 
       const $content = $('<span/>').html(`${bsStyle} <span class='cth-X'></span>`).addClass(`label-${bsStyle} label`);
 
       $content.find('.cth-X').click(() => {
          $wrapper.remove();
-      }).css({"cursor": 'pointer'});
+      }).css({ "cursor": 'pointer' });
 
       const $combined = $wrapper.append($content);
       $(this.googGtcUnit).append($combined);
    },
 
-   toggleLabels ({bsStyle, id}) {
+   toggleLabels ({ bsStyle, id }) {
       this.toggleLabel({
          bsStyle,
          id
@@ -222,4 +222,4 @@ const Segment = {
 // Prevent object consumer from adding new properties
 Object.preventExtensions(Segment);
 
-export {Segment};
+export { Segment };

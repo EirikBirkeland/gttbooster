@@ -61,4 +61,4 @@ function trados (insertedNode, segmentArea) {
    }
 }
 
-export {updateTrados, startTrados, trados};
+export { updateTrados, startTrados, trados };

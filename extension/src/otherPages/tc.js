@@ -1,6 +1,6 @@
-import {ChromeProxy} from '../model/ChromeProxy';
+import { ChromeProxy } from '../model/ChromeProxy';
 import $ from 'jquery';
-import {notifier} from '../workbench/2_classes/notifier';
+import { notifier } from '../workbench/2_classes/notifier';
 
 window.$ = $;
 
@@ -17,7 +17,7 @@ export default function addButton () {
    const $bottomButton = $buttonToInsert.clone().click(fn);
 
    function fn (e) {
-      ChromeProxy.storage.local.set({'tc-override': location.href}, () => {
+      ChromeProxy.storage.local.set({ 'tc-override': location.href }, () => {
          ChromeProxy.storage.local.get('tc-override', (res) => {
             if (res['tc-override']) {
                notifier.info('Saved successfully.');

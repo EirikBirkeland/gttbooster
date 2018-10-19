@@ -1,4 +1,4 @@
-import {moveCaretForward} from './select-helpers';
+import { moveCaretForward } from './select-helpers';
 import insertTheWord from './AutocompleteSelection/insertTheWord';
 import moveCaretToAfterInsertedWord from './AutocompleteSelection/moveCaretToAfterInsertedWord';
 

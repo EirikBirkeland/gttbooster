@@ -11,7 +11,7 @@ export type XliffData = {
 
 export const XliffBuilder = {
    createDoc (data: XliffData) {
-      const {docLang, date, sourceStrings, targetStrings} = data;
+      const { docLang, date, sourceStrings, targetStrings } = data;
       const header: string = this._createHeader(docLang, date);
       const xliffUnits: string = _.map(sourceStrings, (x, i) => this._createXliffUnit(docLang, sourceStrings[i], targetStrings[i], i + 1)).join("");
       const footer: string = this._createFooter();

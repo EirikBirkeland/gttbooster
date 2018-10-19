@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import {Segment} from '../../Segment/Segment';
+import { Segment } from '../../Segment/Segment';
 import _checkCurrentSegment from '../../Qa/checkCurrentSegment';
 
 /**

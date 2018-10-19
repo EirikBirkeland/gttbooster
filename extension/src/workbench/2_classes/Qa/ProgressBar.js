@@ -8,9 +8,9 @@ import $ from 'jquery';
  *
  */
 function add (opts) {
-   const {targetSegments, $targetNode} = opts;
+   const { targetSegments, $targetNode } = opts;
 
-   const $bootstrap = $('<div/>').attr({"class": 'bootstrap-wrapper'});
+   const $bootstrap = $('<div/>').attr({ "class": 'bootstrap-wrapper' });
 
    const bootstrapContents = `
                     <span class="progress">
@@ -20,7 +20,7 @@ function add (opts) {
 
    $bootstrap.html(bootstrapContents);
 
-   $bootstrap.attr({"id": 'cth-progress-container'});
+   $bootstrap.attr({ "id": 'cth-progress-container' });
    const br = $('<br/>')[0];
    $bootstrap.append(br);
 
@@ -46,7 +46,7 @@ function increment (i, targetSegments) {
    const width = (i + 1) / targetSegments.length * 100;
    const widthRounded = Math.round(width * 10) / 10;
 
-   $('#cth-progress-container').find('.progress-bar').attr({'aria-valuenow': i + 1}).css({"width": `${widthRounded}%`}).html(`${widthRounded} %`);
+   $('#cth-progress-container').find('.progress-bar').attr({ 'aria-valuenow': i + 1 }).css({ "width": `${widthRounded}%` }).html(`${widthRounded} %`);
 }
 
 export const ProgressBar = {

@@ -27,7 +27,7 @@ const ParensCheck = (() => {
       return results;
    }
 
-   return {compare};
+   return { compare };
 })();
 
 export default ParensCheck;

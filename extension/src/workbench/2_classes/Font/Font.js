@@ -49,4 +49,4 @@ class Font {
     }
 }
 
-export {Font};
+export { Font };

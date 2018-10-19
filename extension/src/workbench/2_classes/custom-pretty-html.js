@@ -31,4 +31,4 @@ function customPrettyHtml (diffs) {
    return html.join('');
 }
 
-export {customPrettyHtml};
+export { customPrettyHtml };

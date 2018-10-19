@@ -6,7 +6,7 @@
 import $ from 'jquery';
 import _ from 'lodash';
 import getCthSelection from './CthSelection';
-import {handleTcRequestContentVersion} from '../../background/handleTcRequest';
+import { handleTcRequestContentVersion } from '../../background/handleTcRequest';
 const debug = require('cth-debug')(__filename.replace(/^src\//, ''));
 const dom = require('../5_init/init/doc-references').getDomRefs();
 

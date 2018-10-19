@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import _ from 'lodash';
-import {buildObject} from './buildObject';
+import { buildObject } from './buildObject';
 
 const debug = require('cth-debug')(__filename);
 

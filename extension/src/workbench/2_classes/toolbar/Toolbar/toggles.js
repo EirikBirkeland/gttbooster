@@ -6,11 +6,11 @@
  */
 
 import Autocomplete from '../../../2_classes/Autocomplete';
-import {Glossaries} from '../../Glossaries/Glossaries';
-import {startTrados} from '../../TradosMode/TradosMode';
-import {MergePanes} from '../../Panes/MergePanes';
-import {Qa} from '../../Qa/QaWrapper';
-import {Ice} from '../../Ice/Ice';
+import { Glossaries } from '../../Glossaries/Glossaries';
+import { startTrados } from '../../TradosMode/TradosMode';
+import { MergePanes } from '../../Panes/MergePanes';
+import { Qa } from '../../Qa/QaWrapper';
+import { Ice } from '../../Ice/Ice';
 import TransEditor from '../../TransEditor';
 import toggleMeta from './toggles/toggleMeta';
 import toggleItem from './toggles/toggleItem';
@@ -40,7 +40,7 @@ const Toggles = {
             'autocompletionGrey'
          ],
          onFunc () {
-            Autocomplete.init({"fuzzyHigherThan": window.cth.option.autocompleteEnabled});
+            Autocomplete.init({ "fuzzyHigherThan": window.cth.option.autocompleteEnabled });
          },
          "offFunc": Autocomplete.destroy
       });

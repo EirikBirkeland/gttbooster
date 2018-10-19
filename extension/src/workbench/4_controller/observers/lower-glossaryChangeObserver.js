@@ -20,4 +20,4 @@ glossaryChangeObserver.init = function (finalCb) {
    });
 };
 
-export {glossaryChangeObserver};
+export { glossaryChangeObserver };

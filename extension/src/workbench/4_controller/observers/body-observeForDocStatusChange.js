@@ -1,7 +1,7 @@
 /* global MutationObserver */
 import $ from 'jquery';
 import _ from 'lodash';
-import {_retrieveStatusFromDoc} from '../../2_classes/upper-lib/runCompletionCheck/Completion';
+import { _retrieveStatusFromDoc } from '../../2_classes/upper-lib/runCompletionCheck/Completion';
 const debug = require('cth-debug')(__filename.replace(/^src\//, ''));
 
 export default function observeForStatusChange (cb) {

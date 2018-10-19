@@ -1,14 +1,14 @@
 import _ from 'lodash';
 import xRegExp from 'xregexp';
 
-import {contrastColor} from '../../tool';
+import { contrastColor } from '../../tool';
 
 require('../../xreg')();
 
 const debug = require('cth-debug')(__filename);
 
 const Stylez = {
-   "html": {"code": (str) => `<strong><code>${str}</code></strong>`}
+   "html": { "code": (str) => `<strong><code>${str}</code></strong>` }
    // "ansi": {code: (str) => chalk.bold(str)}
 };
 
@@ -101,7 +101,7 @@ export function runChecksCollection (sourceSeg, targetSeg, checksCollection, opt
       _initVars(config, 'invertSource', 'sourcePatternType', 'sourceMatchPattern', test);
       _initVars(config, 'invertTarget', 'targetPatternType', 'targetMatchPattern', test);
 
-      const {invertSource, invertTarget, sourceMatchPattern, targetMatchPattern, correctionMatchPattern} = config;
+      const { invertSource, invertTarget, sourceMatchPattern, targetMatchPattern, correctionMatchPattern } = config;
 
       const smp = sourceMatchPattern;
       const tmp = targetMatchPattern;

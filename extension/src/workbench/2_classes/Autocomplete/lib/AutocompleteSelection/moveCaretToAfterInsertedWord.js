@@ -25,7 +25,7 @@ export default function moveCaretToAfterInsertedWord (singleWordToAdd, originalC
 
       const newCaretOffset = () => this.baseOffset;
 
-      debug.log({"newCaretOffset": newCaretOffset()});
+      debug.log({ "newCaretOffset": newCaretOffset() });
 
       // First, move caret to where it used to be. IMPORTANT: This relies on having the original "originalCaretOffset" value.
       (function moveCaretToOriginalPosition () {

@@ -4,8 +4,8 @@
 /**
  *  This file should concern itself ONLY with the lower part of the page.
  */
-import {tmChangeObserver} from './observers/lower-tmChangeObserver';
-import {glossaryChangeObserver} from './observers/lower-glossaryChangeObserver';
+import { tmChangeObserver } from './observers/lower-tmChangeObserver';
+import { glossaryChangeObserver } from './observers/lower-glossaryChangeObserver';
 import lowerEmitter from './lowerEmitter';
 
 const debug = require('cth-debug')(__filename);
@@ -29,4 +29,4 @@ function init () {
    lowerEmitter.initListeners();
 }
 
-export {init, lowerEmitter};
+export { init, lowerEmitter };

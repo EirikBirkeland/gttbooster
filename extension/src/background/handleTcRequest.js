@@ -1,6 +1,6 @@
 import encodeurl from 'encodeurl';
-import {ChromeProxy} from '../model/ChromeProxy';
-import {trimSymbols} from '../tools/trimSymbols';
+import { ChromeProxy } from '../model/ChromeProxy';
+import { trimSymbols } from '../tools/trimSymbols';
 
 const debug = require('cth-debug')(__filename);
 

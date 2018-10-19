@@ -31,4 +31,4 @@ const ChromeProxy =
       ? chromeNamespaceMock
       : window.chrome;
 
-export {ChromeProxy};
+export { ChromeProxy };

@@ -2,11 +2,11 @@
 /* global __filename */
 import $ from 'jquery';
 import escapeGoat from 'escape-goat';
-import {Glossaries} from '../../../Glossaries/Glossaries';
-import {Tm} from '../../../tm/Tm';
-import {uniqFilterAccordingToProp} from './util';
-import {sortLongestItemsFirst} from './termManipulations';
-import type {Term} from './Term-type';
+import { Glossaries } from '../../../Glossaries/Glossaries';
+import { Tm } from '../../../tm/Tm';
+import { uniqFilterAccordingToProp } from './util';
+import { sortLongestItemsFirst } from './termManipulations';
+import type { Term } from './Term-type';
 
 const debug = require('cth-debug')(__filename.replace(/^src\//, ''));
 

@@ -7,7 +7,7 @@
  * import _ from 'lodash'
  */
 import test from 'ava';
-import {runChecksCollection} from './index';
+import { runChecksCollection } from './index';
 
 const debug = require('cth-debug')(__filename);
 
