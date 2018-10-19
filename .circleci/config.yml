@@ -41,7 +41,9 @@ jobs:
               APP_ID=$APP_ID_PRODUCTION
             else
               # TODO: Replace manifest.json icon with a dev icon
-              jq '.browser_action.default_icon = "icons/rocket-stars-cyan.png"' manifest.json | sponge manifest.json
+              jq '.browser_action.default_icon = "icons/rocket-stars-cyan.png"' extension/manifest.json | sponge extension/manifest.json
+              jq '.icons."128" = "icons/rocket-stars-cyan.png"' extension/manifest.json | sponge extension/manifest.json
+              jq '.name = "Google Translator Toolkit Booster DEV"' extension/manifest.json | sponge extension/manifest.json
               APP_ID=$APP_ID_DEVELOPMENT
             fi
               ACCESS_TOKEN=$(curl "https://accounts.google.com/o/oauth2/token" -d "client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&refresh_token=${REFRESH_TOKEN}&grant_type=refresh_token&redirect_uri=urn:ietf:wg:oauth:2.0:oob" | jq -r .access_token)
