@@ -7,7 +7,7 @@ const validTypes = [
    'goog-gtc-from-mt',
    'goog-gtc-from-human',
    'goog-gtc-from-source'
-]
+];
 
 /**
  *
@@ -17,8 +17,8 @@ const validTypes = [
 module.exports = function filterSegmentTypes (classList) {
    for (let i = 0; i < validTypes.length; i++) {
       if (Array.from(classList).includes(validTypes[i])) {
-         return validTypes[i]
+         return validTypes[i];
       }
    }
-   return null
-}
+   return null;
+};

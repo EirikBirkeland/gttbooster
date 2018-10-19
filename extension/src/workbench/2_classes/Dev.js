@@ -1,9 +1,9 @@
 function Dev (fn) {
    if (localStorage['cth-dev-mode']) {
-      fn()
+      fn();
    } else {
-      return null
+      return null;
    }
 }
 
-export {Dev}
+export {Dev};

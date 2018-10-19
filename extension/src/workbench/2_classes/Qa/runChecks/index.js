@@ -1,13 +1,13 @@
 function removeSourceLabels ($sourceLabels) {
    if ($sourceLabels) {
-      $sourceLabels.contents().unwrap()
+      $sourceLabels.contents().unwrap();
    }
 }
 
 function removeTargetLabels ($targetLabels) {
    if ($targetLabels) {
-      $targetLabels.remove()
+      $targetLabels.remove();
    }
 }
 
-export {removeSourceLabels, removeTargetLabels}
+export {removeSourceLabels, removeTargetLabels};

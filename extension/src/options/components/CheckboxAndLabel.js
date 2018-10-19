@@ -1,14 +1,14 @@
-import React, {Component} from 'react'
-import handleError from '../model/handleError'
-import PropTypes from 'prop-types'
-import {store} from '../options-index'
-import Toggle from 'react-toggle'
+import React, {Component} from 'react';
+import handleError from '../model/handleError';
+import PropTypes from 'prop-types';
+import {store} from '../options-index';
+import Toggle from 'react-toggle';
 
-const debug = require('cth-debug')(__filename)
+const debug = require('cth-debug')(__filename);
 
 // Exclude for unit-testing.
 if (window) {
-   require('../../../node_modules/react-toggle/style.css')
+   require('../../../node_modules/react-toggle/style.css');
 }
 
 export default class CheckboxAndLabel extends Component {
@@ -17,36 +17,36 @@ export default class CheckboxAndLabel extends Component {
       "model": PropTypes.object
    }
    handleChange = (e) => {
-      const optionName = this.props.optionName
-      const settings = this.state.model.settings
+      const optionName = this.props.optionName;
+      const settings = this.state.model.settings;
 
       if (settings[optionName].length) {
-         settings[optionName][0] = e.target.checked
+         settings[optionName][0] = e.target.checked;
       } else {
-         settings[optionName] = e.target.checked
+         settings[optionName] = e.target.checked;
       }
 
-      this.forceUpdate()
+      this.forceUpdate();
    }
 
    constructor (props) {
-      super(props)
-      this.state = {"model": store}
+      super(props);
+      this.state = {"model": store};
    }
 
    render () {
-      const optionName = this.props.optionName
+      const optionName = this.props.optionName;
 
       if (typeof this.state.model.all[optionName] === 'undefined') {
-         debug.warn('optionName', optionName)
-         handleError('optionName')
+         debug.warn('optionName', optionName);
+         handleError('optionName');
       }
 
-      const {tooltip, description} = this.state.model.all[optionName]
-      const model = this.state.model
+      const {tooltip, description} = this.state.model.all[optionName];
+      const model = this.state.model;
       const optionToggle = model.settings[optionName].length
          ? model.settings[optionName][0]
-         : model.settings[optionName]
+         : model.settings[optionName];
 
       return (
          <label data-toggle="tooltip" title={tooltip || ''}>
@@ -60,6 +60,6 @@ export default class CheckboxAndLabel extends Component {
             />
             {` ${description}`}
          </label>
-      )
+      );
    }
 }

@@ -1,5 +1,5 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 export default class Input extends React.Component {
    render () {
@@ -12,7 +12,7 @@ export default class Input extends React.Component {
             size="8"
             data-toggle="tooltip"
          />
-      )
+      );
    }
 }
 
@@ -25,4 +25,4 @@ Input.propTypes = {
       PropTypes.string,
       PropTypes.number
    ])
-}
+};

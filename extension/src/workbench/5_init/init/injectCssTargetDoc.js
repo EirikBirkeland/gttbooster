@@ -1,4 +1,4 @@
-import $ from 'jquery'
+import $ from 'jquery';
 
 /**
  *
@@ -6,16 +6,16 @@ import $ from 'jquery'
  */
 function injectCssSourceTargetDoc (cssFiles) {
    if (typeof cssFiles === 'string') {
-      cssFiles = [cssFiles]
+      cssFiles = [cssFiles];
    }
 
-   const urls = cssFiles.map((ele) => chrome.runtime.getURL(ele))
+   const urls = cssFiles.map((ele) => chrome.runtime.getURL(ele));
 
    urls.forEach((url) => {
-      const link = `<link rel="stylesheet" type="text/css" href=${url}>`
-      $(window.cth.dom.targetDoc.head).append(link)
-      $(window.cth.dom.sourceDoc.head).append(link)
-   })
+      const link = `<link rel="stylesheet" type="text/css" href=${url}>`;
+      $(window.cth.dom.targetDoc.head).append(link);
+      $(window.cth.dom.sourceDoc.head).append(link);
+   });
 }
 
-export {injectCssSourceTargetDoc}
+export {injectCssSourceTargetDoc};

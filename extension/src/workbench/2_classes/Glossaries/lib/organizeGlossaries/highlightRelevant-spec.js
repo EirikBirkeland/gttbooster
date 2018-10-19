@@ -1,23 +1,23 @@
-import test from 'ava'
-import {highlightRelevant} from './highlightRelevant'
+import test from 'ava';
+import {highlightRelevant} from './highlightRelevant';
 
-const cheerio = require('cheerio')
-const document = cheerio.load(domBefore())
+const cheerio = require('cheerio');
+const document = cheerio.load(domBefore());
 
 test('should mutate the DOM as expected', (t) => {
    // 1. Mutate the dom
-   highlightRelevant("Chrome", document)
+   highlightRelevant("Chrome", document);
 
-   const mutatedText = document.html()
+   const mutatedText = document.html();
 
    // 2. Conform changes
    if (mutatedText.match(`<span style="color:blue"><b>Product Names</b></span>`)
    ) {
-      return t.pass()
+      return t.pass();
    }
 
-   t.fail()
-})
+   t.fail();
+});
 
 function domBefore () {
    return `<div class="gtc-tab-contentpane gtc-tools-autosearch" style=""><div class="gtc-tool-left-floating"><div class="gtc-tool-title gtc-tool-tm">Translation Search Results</div><div class="gtc-tool-content "><div class="gtc-tm-suggestion-holder"><span class="gtc-tm-suggestion-source-holder"><span class="gtc-tm-suggestion-source"><span class="gtc-tm-suggestion-hilite">Watch Google Play videos on your TV</span></span>
@@ -272,7 +272,7 @@ function domBefore () {
 <img src="./images/arrow.png" alt="" height="20" id="gtc-glossary-suggestion-img0"></a>
 <div id="gtc-glossary-suggestion-list0" class="gtc-glossary-list" style="display: none;"><ol><li class="gtc-glossary-match-holder"><span class="gtc-glossary-source" id="gtc-gl-source-3">Play video</span>
 <span class="gtc-glossary-terms"><span class="gtc-glossary-translation">Spill av videoen</span>
-<span id="gtc-gl-name-3" class="gtc-glossary-source-name">Source: Photos</span></span></li></ol></div></div></div></div></div></div>`
+<span id="gtc-gl-name-3" class="gtc-glossary-source-name">Source: Photos</span></span></li></ol></div></div></div></div></div></div>`;
 }
 
 function domAfter () {
@@ -528,5 +528,5 @@ function domAfter () {
 <span class="gtc-glossary-terms" style="cursor: default;"><span class="gtc-glossary-translation" style="cursor: default;">Sett</span>
 <span class="gtc-glossary-pos" style="cursor: default;">noun</span>
 <span id="gtc-gl-name-0" class="gtc-glossary-source-name" style="cursor: default;">Source: Google Plus</span>
-<span class="gtc-glossary-description" style="cursor: default;">Plural noun. This comes from the verb “to watch”. Watches is a Google+ feature within Diary which shows all the videos that you have watched (from YouTube or Netflix, for example).</span></span></li></ol></div></div></div></div></div></div>`
+<span class="gtc-glossary-description" style="cursor: default;">Plural noun. This comes from the verb “to watch”. Watches is a Google+ feature within Diary which shows all the videos that you have watched (from YouTube or Netflix, for example).</span></span></li></ol></div></div></div></div></div></div>`;
 }

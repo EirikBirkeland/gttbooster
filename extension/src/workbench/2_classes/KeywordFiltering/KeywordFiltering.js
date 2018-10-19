@@ -3,172 +3,172 @@
 /**
  * Created by eb on 2016/02/13.
  */
-import $ from 'jquery'
-import _ from 'lodash'
-import XRegExp from 'xregexp'
-import TransEditor from '../TransEditor'
-import hideUnhighlighted from './hideUnhighlighted'
-import {Diacritics} from '../../../../lib/Diacritics'
+import $ from 'jquery';
+import _ from 'lodash';
+import XRegExp from 'xregexp';
+import TransEditor from '../TransEditor';
+import hideUnhighlighted from './hideUnhighlighted';
+import {Diacritics} from '../../../../lib/Diacritics';
 
-const debug = require('cth-debug')(__filename.replace(/^src\//, ''))
-const cthGoogGtcTranslatableMirroredClass = 'cth-goog-gtc-translatable-mirrored'
+const debug = require('cth-debug')(__filename.replace(/^src\//, ''));
+const cthGoogGtcTranslatableMirroredClass = 'cth-goog-gtc-translatable-mirrored';
 
 // TODO: keyword filtering should not highlight the innerHTML of "notranslate" tags.
 
 class SearchAndHighlight {
    constructor (opts) {
-      this.segments = opts.segments
-      this.otherSegments = opts.otherSegments
-      this.doc = opts.doc
-      this.docName = opts.docName
-      this.otherDoc = opts.otherDoc
-      this.otherDocName = opts.otherDocName
-      this.docLabel = opts.docLabel
-      this.searchFieldId = opts.searchFieldId
-      this.special = opts.special
+      this.segments = opts.segments;
+      this.otherSegments = opts.otherSegments;
+      this.doc = opts.doc;
+      this.docName = opts.docName;
+      this.otherDoc = opts.otherDoc;
+      this.otherDocName = opts.otherDocName;
+      this.docLabel = opts.docLabel;
+      this.searchFieldId = opts.searchFieldId;
+      this.special = opts.special;
 
-      this.transEditorWasOpenBeforeInitiatingSearch = null
-      this.sourceFieldPreviouslyUsedThisSession = null
-      this.cachedSegmentId = null
+      this.transEditorWasOpenBeforeInitiatingSearch = null;
+      this.sourceFieldPreviouslyUsedThisSession = null;
+      this.cachedSegmentId = null;
    }
 
    initListeners () {
-      const $searchField = $(`#${this.searchFieldId}`)
+      const $searchField = $(`#${this.searchFieldId}`);
 
       $searchField.on('keypress', (event) => {
          if (!(this instanceof SearchAndHighlight)) {
-            debug.log('OH NO!')
+            debug.log('OH NO!');
          }
          if (event.keyCode === 13) {
-            window.cth.shouldBeRunning = true
+            window.cth.shouldBeRunning = true;
             if (TransEditor.isOpen()) {
-               this.transEditorWasOpenBeforeInitiatingSearch = true
-               this.cachedSegmentId = cth.dom.currentTargetSegment.id
-               TransEditor.close()
+               this.transEditorWasOpenBeforeInitiatingSearch = true;
+               this.cachedSegmentId = cth.dom.currentTargetSegment.id;
+               TransEditor.close();
             }
 
-            this.highlightMatchingKeyword(event)
+            this.highlightMatchingKeyword(event);
          }
-      })
+      });
 
       $searchField.on('click', (event) => {
          if (!(this instanceof SearchAndHighlight)) {
-            debug.log('OH NO!')
+            debug.log('OH NO!');
          }
 
-         window.cth.shouldBeRunning = false
+         window.cth.shouldBeRunning = false;
 
          if ($searchField.val() &&
             this.sourceFieldPreviouslyUsedThisSession
          ) {
-            debug.log(`$searchSourceField.val():${$searchField.val()}`)
-            this.transEditorWasOpenBeforeInitiatingSearch = false
+            debug.log(`$searchSourceField.val():${$searchField.val()}`);
+            this.transEditorWasOpenBeforeInitiatingSearch = false;
             _.defer(() => {
-               TransEditor.moveToX($(cth.dom.targetDoc).find(`#${this.cachedSegmentId}`))
-            })
+               TransEditor.moveToX($(cth.dom.targetDoc).find(`#${this.cachedSegmentId}`));
+            });
          }
 
-         this.sourceFieldPreviouslyUsedThisSession = true
+         this.sourceFieldPreviouslyUsedThisSession = true;
 
-         $searchField.val('')
+         $searchField.val('');
 
          $searchField.css({
             'border-color': '',
             'border-width': ''
-         })
+         });
 
-         this.removeHighlightingAndNormalizeNodes()
+         this.removeHighlightingAndNormalizeNodes();
 
-         $(this.doc).find(`.cth-hidden-${this.docName}`).removeClass(`cth-hidden-${this.docName}`)
+         $(this.doc).find(`.cth-hidden-${this.docName}`).removeClass(`cth-hidden-${this.docName}`);
 
-         $(this.otherDoc).find(`.cth-hidden-${this.docName}`).removeClass(`cth-hidden-${this.docName}`)
+         $(this.otherDoc).find(`.cth-hidden-${this.docName}`).removeClass(`cth-hidden-${this.docName}`);
 
          if (this.special) {
-            $(this.segments).find('.goog-gtc-translatable').show()
-            $(this.segments).find(`.${cthGoogGtcTranslatableMirroredClass}`).remove()
+            $(this.segments).find('.goog-gtc-translatable').show();
+            $(this.segments).find(`.${cthGoogGtcTranslatableMirroredClass}`).remove();
 
             // Remove any remaining highlighting for source items in "combined" view.
-            $(cth.dom.targetDoc).find('.cth-searchHighlight-container-source').contents().unwrap()
-            $(cth.dom.targetDoc).find('.cth-searchHighlight-highlight-source').contents().unwrap()
+            $(cth.dom.targetDoc).find('.cth-searchHighlight-container-source').contents().unwrap();
+            $(cth.dom.targetDoc).find('.cth-searchHighlight-highlight-source').contents().unwrap();
          }
-      })
+      });
    }
 
    removeHighlightingAndNormalizeNodes () {
-      $(this.doc).find(`.cth-searchHighlight-container-${this.docName}`).contents().unwrap()
-      $(this.doc).find(`.cth-searchHighlight-highlight-${this.docName}`).contents().unwrap()
+      $(this.doc).find(`.cth-searchHighlight-container-${this.docName}`).contents().unwrap();
+      $(this.doc).find(`.cth-searchHighlight-highlight-${this.docName}`).contents().unwrap();
 
       /*
        * Sometimes source highlighting sneaks its way into the target
        * $(this.doc).find('.cth-searchHighlight-highlight-source').contents().unwrap()
        * Concatenate adjecent text nodes and similar. Node.normalize() is awesome.
        */
-      _.forEach(this.segments, (ele) => ele.normalize())
+      _.forEach(this.segments, (ele) => ele.normalize());
    }
 
    highlightMatchingKeyword (event) {
-      let $$segments
+      let $$segments;
 
       if (this.special) {
          _.forEach(cth.dom.sourceSegments, (ele, i, arr) => {
-            const clone = $(arr[i]).children().first().clone()
-            $(clone).removeClass('goog-gtc-translatable').addClass(cthGoogGtcTranslatableMirroredClass).hide()
-            $(arr[i]).append(clone)
-         })
+            const clone = $(arr[i]).children().first().clone();
+            $(clone).removeClass('goog-gtc-translatable').addClass(cthGoogGtcTranslatableMirroredClass).hide();
+            $(arr[i]).append(clone);
+         });
 
-         $$segments = $(this.segments).find(`.${cthGoogGtcTranslatableMirroredClass}`)
-         $$segments.show()
-         $(this.segments).find('.goog-gtc-translatable').hide()
+         $$segments = $(this.segments).find(`.${cthGoogGtcTranslatableMirroredClass}`);
+         $$segments.show();
+         $(this.segments).find('.goog-gtc-translatable').hide();
       } else {
-         $$segments = $(this.segments).find('.goog-gtc-translatable')
+         $$segments = $(this.segments).find('.goog-gtc-translatable');
       }
 
-      const className = `cth-searchHighlight-highlight-${this.docName}`
+      const className = `cth-searchHighlight-highlight-${this.docName}`;
 
-      this.removeHighlightingAndNormalizeNodes()
+      this.removeHighlightingAndNormalizeNodes();
 
-      let val = event.target.value
+      let val = event.target.value;
 
       /**
        *   If input length is 0, close cth-hidden-${this.docName}
        */
       if (val.length === 0) {
-         $(window.cth.dom.sourceDoc).find(`.cth-hidden-${this.docName}`).removeClass(`cth-hidden-${this.docName}`)
-         $(window.cth.dom.targetDoc).find(`.cth-hidden-${this.docName}`).removeClass(`cth-hidden-${this.docName}`)
+         $(window.cth.dom.sourceDoc).find(`.cth-hidden-${this.docName}`).removeClass(`cth-hidden-${this.docName}`);
+         $(window.cth.dom.targetDoc).find(`.cth-hidden-${this.docName}`).removeClass(`cth-hidden-${this.docName}`);
          $(event.target).css({
             'border-color': '',
             'border-width': ''
-         })
-         return
+         });
+         return;
       }
-      debug.log('The target is: ')
-      debug.log(event.target)
+      debug.log('The target is: ');
+      debug.log(event.target);
       $(event.target).css({
          'border-color': 'orange',
          'border-width': '2px'
-      })
+      });
 
       /**
        *  Escape any regex characters
        */
-      val = XRegExp.escape(val)
+      val = XRegExp.escape(val);
 
       /**
        * If option is set, normalize diacritics
        */
       if (window.cth.option.normalizeDiacritics === true) {
-         val = Diacritics.normalizeDiacritics(val)
+         val = Diacritics.normalizeDiacritics(val);
       }
 
       /**
        *
        * Wrap the val for capturing, while ignoring case differences
        */
-      const inputKeyword = new RegExp(`(${val})`, 'ig')
-      debug.log(val)
-      debug.log(inputKeyword)
+      const inputKeyword = new RegExp(`(${val})`, 'ig');
+      debug.log(val);
+      debug.log(inputKeyword);
 
-      replaceSpecialSpacesWithLiteralSpaces()
+      replaceSpecialSpacesWithLiteralSpaces();
 
       /**
        *   Iterate through the doc segments, highlighting any matching text nodes
@@ -178,31 +178,31 @@ class SearchAndHighlight {
          _.forEach($(getTextNodesIn(ele)), (ele) => {
             if (ele.nodeValue.match(inputKeyword)) {
                if (!$(ele.parentNode).hasClass('notranslate')) {
-                  const $newSpan = $(ele).wrap(`<span class="cth-searchHighlight-container-${this.docName}"/>`)[0].parentNode
-                  $newSpan.innerHTML = $newSpan.innerHTML.replace(inputKeyword, `<span class="${className}" style="color: red">$1</span>`)
+                  const $newSpan = $(ele).wrap(`<span class="cth-searchHighlight-container-${this.docName}"/>`)[0].parentNode;
+                  $newSpan.innerHTML = $newSpan.innerHTML.replace(inputKeyword, `<span class="${className}" style="color: red">$1</span>`);
                }
             }
-         })
-      })
+         });
+      });
 
-      hideUnhighlighted(this.segments, this.docName)
+      hideUnhighlighted(this.segments, this.docName);
 
       function getTextNodesIn (el) {
          return $(el).find(':not(iframe)').addBack().contents().filter(function () {
-            return this.nodeType === 3
-         })
+            return this.nodeType === 3;
+         });
       }
 
       function replaceSpecialSpacesWithLiteralSpaces () {
-         const toFind = 'span.goog-gtc-inchars-highlight.goog-gtc-inchars-space.goog-gtc-highlight'
-         const a = $(window.cth.dom.sourceSegments).find(toFind)
-         const b = $(window.cth.dom.targetSegments).find(toFind)
+         const toFind = 'span.goog-gtc-inchars-highlight.goog-gtc-inchars-space.goog-gtc-highlight';
+         const a = $(window.cth.dom.sourceSegments).find(toFind);
+         const b = $(window.cth.dom.targetSegments).find(toFind);
          _.forEach(a, (ele) => {
-            ele.outerHTML = ' '
-         })
+            ele.outerHTML = ' ';
+         });
          _.forEach(b, (ele) => {
-            ele.outerHTML = ' '
-         })
+            ele.outerHTML = ' ';
+         });
       }
    }
 }
@@ -219,8 +219,8 @@ function run () {
       "otherDocName": 'target',
       "searchFieldId": 'cth_searchSourceField',
       "special": true
-   })
-   source.initListeners()
+   });
+   source.initListeners();
 
    const target = new SearchAndHighlight({
       "segments": cth.dom.targetSegments,
@@ -231,8 +231,8 @@ function run () {
       "otherDocName": 'source',
       "searchFieldId": 'cth_searchTargetField',
       "special": false
-   })
-   target.initListeners()
+   });
+   target.initListeners();
 }
 
-export const KeywordFiltering = {run}
+export const KeywordFiltering = {run};

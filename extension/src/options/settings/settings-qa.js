@@ -58,7 +58,7 @@ export const qaSettings = {
       "description": 'Check for unlocalized URL entities like hl=en and intl/en',
       "tooltip": ''
    }
-}
+};
 
 export const languageSpecificQaSettings = {
    "endPunctuationRedundant": {
@@ -98,4 +98,4 @@ export const languageSpecificQaSettings = {
       ],
       "description": 'Consecutive punctuation'
    }
-}
+};

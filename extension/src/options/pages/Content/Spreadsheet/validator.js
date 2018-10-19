@@ -8,35 +8,35 @@ export default function validator (node, sheetNames) {
        */
       "custom": {
          equals ($el) {
-            const dataEquals = $el.data('equals')
+            const dataEquals = $el.data('equals');
 
             /**
              *  Don't do a thing if data("equals") is falsy.
              */
             if (!dataEquals) {
-               return false
+               return false;
             }
 
             /**
              * $el.val() should match the provided data("equals")
              */
             if (!$el.val().match(dataEquals)) {
-               return true || `Hey, that's not valid! It's gotta be ${dataEquals}`
+               return true || `Hey, that's not valid! It's gotta be ${dataEquals}`;
             }
          },
          inlist ($el) {
-            const dataInlist = $el.data('inlist')
+            const dataInlist = $el.data('inlist');
             if (!dataInlist) {
-               return false
+               return false;
             }
 
-            const list = sheetNames
+            const list = sheetNames;
 
             // Note: Allowing trailing and leading spaces for user convenience
             if (!list.length || !list.includes($el.val().trim())) {
-               return true
+               return true;
             }
          }
       }
-   })
+   });
 }

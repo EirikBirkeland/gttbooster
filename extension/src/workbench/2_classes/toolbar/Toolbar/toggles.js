@@ -5,17 +5,17 @@
  * Created by eb on 14.09.2016.
  */
 
-import Autocomplete from '../../../2_classes/Autocomplete'
-import {Glossaries} from '../../Glossaries/Glossaries'
-import {startTrados} from '../../TradosMode/TradosMode'
-import {MergePanes} from '../../Panes/MergePanes'
-import {Qa} from '../../Qa/QaWrapper'
-import {Ice} from '../../Ice/Ice'
-import TransEditor from '../../TransEditor'
-import toggleMeta from './toggles/toggleMeta'
-import toggleItem from './toggles/toggleItem'
+import Autocomplete from '../../../2_classes/Autocomplete';
+import {Glossaries} from '../../Glossaries/Glossaries';
+import {startTrados} from '../../TradosMode/TradosMode';
+import {MergePanes} from '../../Panes/MergePanes';
+import {Qa} from '../../Qa/QaWrapper';
+import {Ice} from '../../Ice/Ice';
+import TransEditor from '../../TransEditor';
+import toggleMeta from './toggles/toggleMeta';
+import toggleItem from './toggles/toggleItem';
 
-let qa = null
+let qa = null;
 
 const Toggles = {
    trados () {
@@ -29,7 +29,7 @@ const Toggles = {
          ],
          "onFunc": startTrados,
          "offFunc": startTrados
-      })
+      });
    },
    autocomplete () {
       toggleItem({
@@ -40,10 +40,10 @@ const Toggles = {
             'autocompletionGrey'
          ],
          onFunc () {
-            Autocomplete.init({"fuzzyHigherThan": window.cth.option.autocompleteEnabled})
+            Autocomplete.init({"fuzzyHigherThan": window.cth.option.autocompleteEnabled});
          },
          "offFunc": Autocomplete.destroy
-      })
+      });
    },
    mergePanes () {
       toggleItem({
@@ -54,14 +54,14 @@ const Toggles = {
             'sourceArrowOffState'
          ],
          "onFunc": () => {
-            localStorage['cth-merge-panes'] = 'true'
-            MergePanes.insertAll()
+            localStorage['cth-merge-panes'] = 'true';
+            MergePanes.insertAll();
          },
          "offFunc": () => {
-            localStorage['cth-merge-panes'] = 'false'
-            MergePanes.removeAll()
+            localStorage['cth-merge-panes'] = 'false';
+            MergePanes.removeAll();
          }
-      })
+      });
    },
    sendGlossariesToBackground () {
       toggleItem({
@@ -73,7 +73,7 @@ const Toggles = {
          ],
          "onFunc": Glossaries.sendToBackground,
          "offFunc": null
-      })
+      });
    },
    hideMeta () {
       toggleItem({
@@ -85,10 +85,10 @@ const Toggles = {
          ],
          "onFunc": toggleMeta,
          "offFunc": () => {
-            toggleMeta()
-            TransEditor.focus()
+            toggleMeta();
+            TransEditor.focus();
          }
-      })
+      });
    },
    qa () {
       toggleItem({
@@ -99,13 +99,13 @@ const Toggles = {
             'binocularsOffState'
          ],
          "onFunc": () => {
-            qa = qa || new Qa()
-            qa.start()
+            qa = qa || new Qa();
+            qa.start();
          },
          "offFunc": () => {
-            qa.stop()
+            qa.stop();
          }
-      })
+      });
    },
    lockIce () {
       toggleItem({
@@ -116,15 +116,15 @@ const Toggles = {
             'lockIceOffState'
          ],
          "onFunc": () => {
-            localStorage['cth-ice-lock'] = 'true'
-            Ice.add()
+            localStorage['cth-ice-lock'] = 'true';
+            Ice.add();
          },
          "offFunc": () => {
-            localStorage['cth-ice-lock'] = 'false'
-            Ice.remove()
+            localStorage['cth-ice-lock'] = 'false';
+            Ice.remove();
          }
-      })
+      });
    }
-}
+};
 
-export default Toggles
+export default Toggles;

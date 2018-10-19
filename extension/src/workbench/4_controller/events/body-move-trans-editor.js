@@ -1,34 +1,34 @@
 /* globals cth */
-import $ from 'jquery'
-import _ from 'lodash'
+import $ from 'jquery';
+import _ from 'lodash';
 
-import bodyEmitter from '../bodyEmitter'
+import bodyEmitter from '../bodyEmitter';
 
-import TransEditor from '../../2_classes/TransEditor'
-import {checkForRepeatedSegmentsButtonAndHighlightIt} from '../../2_classes/TransEditor/lib/checkForRepeatedSegmentsButtonAndHighlightIt'
+import TransEditor from '../../2_classes/TransEditor';
+import {checkForRepeatedSegmentsButtonAndHighlightIt} from '../../2_classes/TransEditor/lib/checkForRepeatedSegmentsButtonAndHighlightIt';
 
-import Autocomplete from '../../2_classes/Autocomplete'
+import Autocomplete from '../../2_classes/Autocomplete';
 
-import runChecks from '../../2_classes/Qa/runChecks'
-import updateCurrentSegments from '../../2_classes/Segment/updateCurrentSegments'
-import {Ice} from '../../2_classes/Ice/Ice'
-import {trados} from '../../2_classes/TradosMode/TradosMode'
-import {checkWhetherNew} from '../../2_classes/Glossaries/lib/checkWhetherNew'
-import {Dev} from '../../2_classes/Dev'
-import * as Hotkeys from '../../2_classes/Hotkeys'
+import runChecks from '../../2_classes/Qa/runChecks';
+import updateCurrentSegments from '../../2_classes/Segment/updateCurrentSegments';
+import {Ice} from '../../2_classes/Ice/Ice';
+import {trados} from '../../2_classes/TradosMode/TradosMode';
+import {checkWhetherNew} from '../../2_classes/Glossaries/lib/checkWhetherNew';
+import {Dev} from '../../2_classes/Dev';
+import * as Hotkeys from '../../2_classes/Hotkeys';
 
-const debug = require('cth-debug')(__filename.replace(/^src\//, ''))
+const debug = require('cth-debug')(__filename.replace(/^src\//, ''));
 
-const checkWhetherNewDebounce = _.debounce(checkWhetherNew, 300)
+const checkWhetherNewDebounce = _.debounce(checkWhetherNew, 300);
 
 const delays = function (fn, ...args) {
    args.forEach((delay) => {
-      setTimeout(fn, delay)
-   })
-}
+      setTimeout(fn, delay);
+   });
+};
 
 bodyEmitter.on('move-trans-editor', (insertedNode, segmentArea) => {
-   debug.log('event move-trans-editor triggered')
+   debug.log('event move-trans-editor triggered');
 
    /*
     * Debug.log("insertedNode: ", insertedNode)
@@ -38,20 +38,20 @@ bodyEmitter.on('move-trans-editor', (insertedNode, segmentArea) => {
    /**
     *  Just delete the annoying frame that gets in the way sometimes!
     */
-   const $a = $('.gtc-translation').find('.gtc-revision-frame.gtc-document-frame')
+   const $a = $('.gtc-translation').find('.gtc-revision-frame.gtc-document-frame');
    if ($a) {
-      $a.remove()
+      $a.remove();
    }
 
-   TransEditor.removeButtons()
+   TransEditor.removeButtons();
 
-   _.defer(() => TransEditor.expand(null, 1000))
+   _.defer(() => TransEditor.expand(null, 1000));
 
    delays(() => {
       if (!TransEditor.isScrolledIntoView(cth.dom.targetDoc, $(cth.dom.targetDoc).find('#transEditor'))) {
-         TransEditor.scrollIntoView()
+         TransEditor.scrollIntoView();
       }
-   }, 400, 500)
+   }, 400, 500);
 
    /**
     *  Should run a last check on the previous segment, to avoid leaving any messages
@@ -62,45 +62,45 @@ bodyEmitter.on('move-trans-editor', (insertedNode, segmentArea) => {
          "sourceSegments": window.cth.dom.currentSourceSegment,
          "targetSegments": window.cth.dom.currentTargetSegment,
          "dataElements": window.cth.dataJSON
-      })
+      });
    }
 
-   updateCurrentSegments()
+   updateCurrentSegments();
 
-   trados(insertedNode, segmentArea)
+   trados(insertedNode, segmentArea);
 
    if (cth.option.ICE_LOCK) {
-      Ice.add()
+      Ice.add();
    } else {
-      Ice.remove()
+      Ice.remove();
    }
 
    /**
     *  Reinitialize Autocomplete entirely, to avoid creeping lag
     */
    if (cth.option.AUTOCOMPLETE_TOGGLE) {
-      Autocomplete.destroy()
-      Autocomplete.init()
+      Autocomplete.destroy();
+      Autocomplete.init();
    }
 
    // TODO: Detach the other TranssEditor.expand() call from MergePanes object and use this place instead.
    if (!cth.option.SOURCE_TOGGLE) {
       // TODO: put transPaneWidth inside TransEditor as an option
-      const transPaneWidth = parseInt($('.goog-splitpane-second-container').find('.gtc-translation').closest('.goog-splitpane-second-container')[0].style.width)
-      TransEditor.expand(null, transPaneWidth - 25)
+      const transPaneWidth = parseInt($('.goog-splitpane-second-container').find('.gtc-translation').closest('.goog-splitpane-second-container')[0].style.width);
+      TransEditor.expand(null, transPaneWidth - 25);
    }
 
-   _.defer(checkForRepeatedSegmentsButtonAndHighlightIt)
-   _.defer(checkWhetherNewDebounce)
+   _.defer(checkForRepeatedSegmentsButtonAndHighlightIt);
+   _.defer(checkWhetherNewDebounce);
 
    // Nbsp check
    _.defer(() => {
       if ($(cth.dom.currentSourceSegment).find('.goog-gtc-inchars-nbsp').length > 0) {
-         $(cth.dom.targetDoc).on('keypress', Hotkeys.ctrl)
+         $(cth.dom.targetDoc).on('keypress', Hotkeys.ctrl);
       } else {
-         $(cth.dom.targetDoc).off('keypress', Hotkeys.ctrl)
+         $(cth.dom.targetDoc).off('keypress', Hotkeys.ctrl);
       }
-   })
+   });
 
-   Dev(TransEditor.update.bind(TransEditor))
-})
+   Dev(TransEditor.update.bind(TransEditor));
+});

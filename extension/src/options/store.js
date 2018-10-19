@@ -1,7 +1,7 @@
-import {Storage} from '../model/GeneralStorage'
-import Aspell from '../model/Aspell'
+import {Storage} from '../model/GeneralStorage';
+import Aspell from '../model/Aspell';
 
-const debug = require('cth-debug')(__filename)
+const debug = require('cth-debug')(__filename);
 
 // TODO: Upgrade store to Redux for practice.
 
@@ -13,16 +13,16 @@ const debug = require('cth-debug')(__filename)
 export const store = {
    "all": Object.freeze(require('./settings').settings),
    "settings": require('./settings').defaults
-}
+};
 
 // Additional operation for Options screen
 Aspell.aspellLangCodes.forEach((ele) => {
    Storage.keys({"storeName": ele}).then((res) => {
       if (res && res.length) {
          // Logger.warn('res', res)
-         store.all.spellcheckStoreSelector.values.push(ele)
+         store.all.spellcheckStoreSelector.values.push(ele);
       }
-   }).catch((err) => debug.log(err))
-})
+   }).catch((err) => debug.log(err));
+});
 
-store.all.spellcheckOverride.values = Aspell.reorderedAccordingToAvailableAccounts()
+store.all.spellcheckOverride.values = Aspell.reorderedAccordingToAvailableAccounts();

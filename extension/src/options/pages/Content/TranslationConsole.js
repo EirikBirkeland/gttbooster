@@ -2,27 +2,27 @@
 /**
  * Created by eb on 29.11.2017.
  */
-import React, {Component} from 'react'
-import Grid from 'react-bootstrap/lib/Grid'
-import Row from 'react-bootstrap/lib/Row'
-import Col from 'react-bootstrap/lib/Col'
-import Checkbox from '../../components/CheckboxAndLabel.js'
-import Select from '../../components/Select.js'
-import {store} from '../../options-index'
+import React, {Component} from 'react';
+import Grid from 'react-bootstrap/lib/Grid';
+import Row from 'react-bootstrap/lib/Row';
+import Col from 'react-bootstrap/lib/Col';
+import Checkbox from '../../components/CheckboxAndLabel.js';
+import Select from '../../components/Select.js';
+import {store} from '../../options-index';
 
-const debug = require('cth-debug')(__filename)
+const debug = require('cth-debug')(__filename);
 
 export default class TranslationConsole extends Component {
    constructor (props) {
-      super(props)
+      super(props);
       this.state = {
          model: store,
-      }
+      };
    }
 
    render () {
-      const SM = this.props.sm || 6
-      const MD = this.props.md || 4
+      const SM = this.props.sm || 6;
+      const MD = this.props.md || 4;
 
       return (
          <div className="cth-content-container col-md-8 col-sm-12">
@@ -37,6 +37,6 @@ export default class TranslationConsole extends Component {
                </Row>
             </Grid>
          </div>
-      )
+      );
    }
 }

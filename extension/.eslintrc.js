@@ -33,7 +33,7 @@ module.exports = {
       "no-unused-vars": "off",
       "indent": ["off", 3, {SwitchCase: 1}],
       "object-curly-spacing": ["warn", "never"],
-      "semi": ["warn", "never"],
+      "semi": ["warn", "always"],
       "semi-style": ["warn", "last"],
       "no-extra-semi": ["off"],
       "func-names": ["off", "always"],

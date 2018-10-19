@@ -1,24 +1,24 @@
-const debug = require('cth-debug')(__filename.replace(/^src\//, ''))
+const debug = require('cth-debug')(__filename.replace(/^src\//, ''));
 
 /* global _gaq ga */
 
 function load () {
-   debug.log('Running loadAnalytics()')
+   debug.log('Running loadAnalytics()');
 
-   window._gaq = window._gaq || []
+   window._gaq = window._gaq || [];
    _gaq.push([
       '_setAccount',
       'UA-68260399-4'
-   ])
+   ]);
    _gaq.push(['_trackPageview']);
 (function () {
-      const ga = document.createElement('script')
-      ga.type = 'text/javascript'
-      ga.async = true
-      ga.src = 'https://ssl.google-analytics.com/ga.js'
-      const s = document.getElementsByTagName('script')[0]
-      s.parentNode.insertBefore(ga, s)
-   }())
+      const ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = 'https://ssl.google-analytics.com/ga.js';
+      const s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+   }());
 }
 
 function loadNew () {
@@ -42,30 +42,30 @@ function loadNew () {
 }
 
 function addButtonListeners () {
-   const buttons = document.querySelectorAll('button')
-   const input = document.querySelectorAll('input')
+   const buttons = document.querySelectorAll('button');
+   const input = document.querySelectorAll('input');
    for (let i = 0; i < buttons.length; i++) {
-      buttons[i].addEventListener('click', _trackButtonClick)
+      buttons[i].addEventListener('click', _trackButtonClick);
    }
    for (let i = 0; i < input.length; i++) {
-      input[i].addEventListener('click', _trackButtonClick)
+      input[i].addEventListener('click', _trackButtonClick);
    }
 
    function _trackButtonClick (e) {
-      debug.log(e)
-      debug.log(e.target.id)
+      debug.log(e);
+      debug.log(e.target.id);
 
       /**
        *  Sometimes the damn parentNode has the id I need -- i.e. when clicking images on buttons.
        */
       const theId = (() => {
          if (!e.target.id && e.target.parentNode.id) {
-            return e.target.parentNode.id
+            return e.target.parentNode.id;
          }
-         return e.target.id
-      })()
+         return e.target.id;
+      })();
 
-      debug.log('theId: ', theId)
+      debug.log('theId: ', theId);
       chrome.runtime.sendMessage({
          "header": 'click',
          "obj": {
@@ -75,9 +75,9 @@ function addButtonListeners () {
             "eventLabel": 'theEventLabel'
          }
       }, (res) => {
-         debug.log('sent click')
-      })
+         debug.log('sent click');
+      });
    }
 }
 
-export {load, loadNew, addButtonListeners}
+export {load, loadNew, addButtonListeners};

@@ -144,6 +144,6 @@ const coreTests = [
       "comment": '',
       "optionName": 'localizeUrls'
    }
-]
+];
 
-export default coreTests
+export default coreTests;
