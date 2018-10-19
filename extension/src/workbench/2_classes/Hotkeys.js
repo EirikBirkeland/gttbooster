@@ -82,7 +82,6 @@ export function ctrlK() {
       debug.info(e)
       const KEY_K = 75
       if (e.keyCode === KEY_K && e.ctrlKey) {
-         e.preventDefault();
          // Defer; thereby giving the string a chance to update before running the code
          _.defer(handleTcRequestContentVersion)
       }
