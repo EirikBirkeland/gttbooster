@@ -29,7 +29,11 @@ bodyEmitter.on('init', (res) => {
 
     _.delay(Hotkeys.insertEndash, 5000);
     _.delay(Hotkeys.ctrlK, 5000);
-    _.delay(() => Dev(Hotkeys.norwegianQuotes), 5000);
+
+    // Allow anyone to use dev mode without getting the quotes
+    if (cth.docInfo.dokumentSprak.match(/^no$/i)) {
+        _.delay(() => Dev(Hotkeys.norwegianQuotes), 5000);
+    }
 
     Dev(convertAZippyToDiv);
     Dev(TransEditor.update.bind(TransEditor));
