@@ -8,7 +8,7 @@ import $ from 'jquery';
 const $gtcTransPanel = $('.gtc-translation-panel');
 const $leftPane = $gtcTransPanel.find('.goog-splitpane-first-container');
 const $rightPane = $gtcTransPanel.find('.goog-splitpane-second-container');
-const $separator = $('.gtc-splitpane-handle');
+const $separator = $('.gtc-splitpane-handle').eq(0);
 
 function maximizeTransPane () {
    $leftPane.addClass('cth-pane left-maximize');
