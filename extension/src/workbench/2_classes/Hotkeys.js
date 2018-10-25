@@ -52,7 +52,8 @@ export function insertEndash () {
    function insertEndash (e) {
       // Defer; thereby giving the string a chance to update before running the code
       _.defer(() => {
-         if (e.keyCode === 45) {
+         const KEY_ENDASH = 45;
+         if (e.keyCode === KEY_ENDASH) {
             const sel = getCthSelection();
             const textContent = sel.anchorNode.textContent;
             const offset = sel.anchorOffset;
@@ -95,7 +96,8 @@ export function norwegianQuotes () {
    function norwegianQuotes (e) {
       // Defer; thereby giving the string a chance to update before running the code
 
-      if (e.keyCode === 34) {
+      const KEY_QUOTE = 34;
+      if (e.keyCode === KEY_QUOTE) {
          _.defer(() => {
             const selection = getCthSelection();
             const textContent = selection.anchorNode.textContent;

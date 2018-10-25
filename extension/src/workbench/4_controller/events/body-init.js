@@ -32,9 +32,11 @@ bodyEmitter.on('init', (res) => {
     _.delay(Hotkeys.ctrlK, 5000);
 
     // Allow anyone to use dev mode without getting the quotes
-    if (cth.docInfo.dokumentSprak && cth.docInfo.dokumentSprak.match(/^no$/i)) {
-        _.delay(Hotkeys.norwegianQuotes, 5000);
-    }
+    _.delay(function () {
+        if (cth.docInfo.dokumentSprak && cth.docInfo.dokumentSprak.match(/^no$/i)) {
+            Hotkeys.norwegianQuotes();
+        }
+    }, 5000);
 
     Dev(convertAZippyToDiv);
     Dev(TransEditor.update.bind(TransEditor));
