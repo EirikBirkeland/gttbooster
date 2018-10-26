@@ -56,12 +56,12 @@ export default function hideOtherExtraneous (nodeId, docName) {
    const googGtcUnitChildren = Array.from($messageBlock.find('.goog-gtc-unit'));
    debug.log(`length of googGtcUnitChildren is: ${googGtcUnitChildren.length}`);
 
-   const $googGtcUnitChildrenEachContainHighlighting = googGtcUnitChildren.every((ele) => Boolean($(ele).find(`.${highlightingClass}`).length));
+   const $googGtcUnitChildrenEachContainHighlighting = googGtcUnitChildren.every(ele => Boolean($(ele).find(`.${highlightingClass}`).length));
 
    if ($messageBlock.length) {
       // Hide if every googGtcUnit contains highlighting.
       if (messageBlockHasHighlighting || messageBlockHasContainerHighlighting) {
-         // Alert("1")
+         // do nothing
       } else {
          debug.log('Hiding source messageBlock');
          hideMessageBlock($sourceNode);

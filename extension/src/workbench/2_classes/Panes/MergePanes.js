@@ -67,20 +67,20 @@ function insertSourceSingle (sourceSegment) {
       return;
    }
 
-   const sourceSegCopy = (() => {
-      const mirrored = $(sourceSegment).find(`.${cthGoogGtcTranslatableMirrored}`);
-      if (mirrored.length) {
-         return mirrored.clone()[0];
+   const $sourceSegCopy = (() => {
+      const $mirrored = $(sourceSegment).find(`.${cthGoogGtcTranslatableMirrored}`);
+      if ($mirrored.length) {
+         return $mirrored.clone();
       }
-      return $(sourceSegment).find('.goog-gtc-translatable').clone()[0];
+      return $(sourceSegment).find('.goog-gtc-translatable').clone();
    })();
 
    debug.log(`targetSegRef: ${targetSegRef}`);
 
-   const a = $(window.cth.dom.targetDoc).find(`.cth_insertedSourceText.${targetSegRef.id}`);
+   const $x = $(window.cth.dom.targetDoc).find(`.cth_insertedSourceText.${targetSegRef.id}`);
 
-   if (a.length) {
-      a[0].innerHTML = sourceSegCopy.innerHTML;
+   if ($x.length) {
+      $x.html($sourceSegCopy.html());
    } else {
       debug.warn('inserted source text was not defined; not updating innerHTML');
    }

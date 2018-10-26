@@ -8,7 +8,7 @@ import hideOtherExtraneous from './hideOtherExtraneous';
 
 const debug = require('cth-debug')(__filename.replace(/^src\//, ''));
 
-export default function hideUnhighlighted (nodeListMain, docName) {
+export default function hideUnhighlighted(nodeListMain, docName) {
    const notHighlighted = _.filter(nodeListMain, (ele) => $(ele).find(`.cth-searchHighlight-container-${docName}`).length === 0);
    const notHighlightedIds = notHighlighted.map((ele) => ele.id);
 

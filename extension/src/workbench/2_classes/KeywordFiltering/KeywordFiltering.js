@@ -34,9 +34,6 @@ class SearchAndHighlight {
       const $searchField = $(`#${this.searchFieldId}`);
 
       $searchField.on('keypress', (event) => {
-         if (!(this instanceof SearchAndHighlight)) {
-            debug.log('OH NO!');
-         }
          if (event.keyCode === 13) {
             window.cth.shouldBeRunning = true;
             if (TransEditor.isOpen()) {
@@ -50,10 +47,6 @@ class SearchAndHighlight {
       });
 
       $searchField.on('click', (event) => {
-         if (!(this instanceof SearchAndHighlight)) {
-            debug.log('OH NO!');
-         }
-
          window.cth.shouldBeRunning = false;
 
          if ($searchField.val() &&
@@ -110,7 +103,7 @@ class SearchAndHighlight {
       if (this.special) {
          _.forEach(cth.dom.sourceSegments, (ele, i, arr) => {
             const clone = $(arr[i]).children().first().clone();
-            $(clone).removeClass('goog-gtc-translatable').addClass(cthGoogGtcTranslatableMirroredClass).hide();
+            $(clone).removeClass('goog-gtc-translatable').addClass(cthGoogGtcTranslatableMirroredClass);
             $(arr[i]).append(clone);
          });
 
