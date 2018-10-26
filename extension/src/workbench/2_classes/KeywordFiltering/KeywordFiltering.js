@@ -13,10 +13,8 @@ import { Diacritics } from '../../../../lib/Diacritics';
 const debug = require('cth-debug')(__filename.replace(/^src\//, ''));
 const cthGoogGtcTranslatableMirroredClass = 'cth-goog-gtc-translatable-mirrored';
 
-// TODO: keyword filtering should not highlight the innerHTML of "notranslate" tags.
-
 class SearchAndHighlight {
-   constructor (opts) {
+   constructor(opts) {
       this.segments = opts.segments;
       this.otherSegments = opts.otherSegments;
       this.doc = opts.doc;
@@ -32,7 +30,7 @@ class SearchAndHighlight {
       this.cachedSegmentId = null;
    }
 
-   initListeners () {
+   initListeners() {
       const $searchField = $(`#${this.searchFieldId}`);
 
       $searchField.on('keypress', (event) => {
@@ -94,7 +92,7 @@ class SearchAndHighlight {
       });
    }
 
-   removeHighlightingAndNormalizeNodes () {
+   removeHighlightingAndNormalizeNodes() {
       $(this.doc).find(`.cth-searchHighlight-container-${this.docName}`).contents().unwrap();
       $(this.doc).find(`.cth-searchHighlight-highlight-${this.docName}`).contents().unwrap();
 
@@ -106,7 +104,7 @@ class SearchAndHighlight {
       _.forEach(this.segments, (ele) => ele.normalize());
    }
 
-   highlightMatchingKeyword (event) {
+   highlightMatchingKeyword(event) {
       let $$segments;
 
       if (this.special) {
@@ -187,13 +185,13 @@ class SearchAndHighlight {
 
       hideUnhighlighted(this.segments, this.docName);
 
-      function getTextNodesIn (el) {
+      function getTextNodesIn(el) {
          return $(el).find(':not(iframe)').addBack().contents().filter(function () {
             return this.nodeType === 3;
          });
       }
 
-      function replaceSpecialSpacesWithLiteralSpaces () {
+      function replaceSpecialSpacesWithLiteralSpaces() {
          const toFind = 'span.goog-gtc-inchars-highlight.goog-gtc-inchars-space.goog-gtc-highlight';
          const a = $(window.cth.dom.sourceSegments).find(toFind);
          const b = $(window.cth.dom.targetSegments).find(toFind);
@@ -207,7 +205,7 @@ class SearchAndHighlight {
    }
 }
 
-function run () {
+function run() {
    // Then, just show/hide as necessary during keyword filtering, and apply the highlighting to the mirrored segment.
 
    const source = new SearchAndHighlight({
