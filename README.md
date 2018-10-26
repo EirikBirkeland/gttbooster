@@ -1,7 +1,7 @@
 ### GTT Booster
 
 GTT Booster is an Open Source Chrome Extension for Google Translator Toolkit.
-Its intended user is a professional translator working for Google. This tool is NOT intended for a general audience.
+Its intended user is a professional translator working for Google. This tool is NOT intended for a general audience in its current state.
 
 Core functionality may be lacking if you are using this on a non-Google account!
 
