@@ -29,7 +29,8 @@ bodyEmitter.on('init', (res) => {
     }
 
     _.delay(Hotkeys.insertEndash, 5000);
-    _.delay(Hotkeys.ctrlK, 5000);
+    // Disabled ctrlK because of conflicting GTT hotkey
+    // _.delay(Hotkeys.ctrlK, 5000);
 
     // Allow anyone to use dev mode without getting the quotes
     _.delay(function () {
