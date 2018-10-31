@@ -15,7 +15,7 @@ export function handleTcRequest (info, tab) {
       const adjustedPhraseToSearch = encodeurl(phraseToSearch.replace(/&/g, "%26"));
 
       debug.warn(res);
-      const url = `https://www.google.com/transconsole/externaltc/btviewer/searchresult?SearchText=${adjustedPhraseToSearch}&SearchField=search_field_src&SearchType=search_type_exact&ProductSelect=&LanguagesSelected=${res.language}&TranslationFilterStatus=translated&TranslationFilterAnyOrAll=any&TranslationFilterStage=LEVERAGED&ShowTranslationStage=showTranslationStage&CreatedAfter=&CreatedBefore=&ResourcesFilter=&IncludeObsolete=obsolete`;
+      const url = `https://www.google.com/transconsole/externaltc/btviewer/searchresult?SearchText=${adjustedPhraseToSearch}&SearchField=search_field_src&SearchType=search_type_exact&ProductSelect=&LanguagesSelected=${res.language}&TranslationFilterStatus=translated&TranslationFilterAnyOrAll=any&TranslationFilterStage=LEVERAGED&ShowTranslationStage=showTranslationStage&CreatedAfter=&CreatedBefore=&ResourcesFilter`;
       window.open(url);
    });
 }
@@ -34,6 +34,6 @@ export function handleTcRequestContentVersion () {
    const phraseToSearch = trimSymbols(data);
    const adjustedPhraseToSearch = encodeurl(phraseToSearch.replace(/&/g, "%26"));
 
-   const url = `https://www.google.com/transconsole/externaltc/btviewer/searchresult?SearchText=${adjustedPhraseToSearch}&SearchField=search_field_src&SearchType=search_type_exact&ProductSelect=&LanguagesSelected=${language}&TranslationFilterStatus=translated&TranslationFilterAnyOrAll=any&TranslationFilterStage=LEVERAGED&ShowTranslationStage=showTranslationStage&CreatedAfter=&CreatedBefore=&ResourcesFilter=&IncludeObsolete=obsolete`;
+   const url = `https://www.google.com/transconsole/externaltc/btviewer/searchresult?SearchText=${adjustedPhraseToSearch}&SearchField=search_field_src&SearchType=search_type_exact&ProductSelect=&LanguagesSelected=${language}&TranslationFilterStatus=translated&TranslationFilterAnyOrAll=any&TranslationFilterStage=LEVERAGED&ShowTranslationStage=showTranslationStage&CreatedAfter=&CreatedBefore=&ResourcesFilter`;
    window.open(url);
 }
