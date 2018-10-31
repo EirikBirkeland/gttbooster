@@ -36,7 +36,7 @@ function addTCLink () {
    img.src = 'https://www.google.com/transconsole/externaltc/static/images/world.ico';
    img.style.width = '16px';
    const toInsert = document.createElement('a');
-   toInsert.href = `https://www.google.com/transconsole/externaltc/btviewer/search?ModifySearch=true&TranslationFilterAnyOrAll=any&TranslationFilterStage=LEVERAGED&ShowTranslationStage=showTranslationStage&ResourcesFilter&SearchField=search_field_src&ProductSelect&LanguagesSelected=${cth.docInfo.dokumentSprak}&CreatedAfter&TranslationFilterStatus=translated&SearchType=search_type_exact&CreatedBefore&IncludeObsolete=obsolete`;
+   toInsert.href = `https://www.google.com/transconsole/externaltc/btviewer/search?ModifySearch=true&TranslationFilterAnyOrAll=any&TranslationFilterStage=LEVERAGED&ShowTranslationStage=showTranslationStage&ResourcesFilter&SearchField=search_field_src&ProductSelect&LanguagesSelected=${cth.docInfo.dokumentSprak}&CreatedAfter&TranslationFilterStatus=translated&SearchType=search_type_exact&CreatedBefore`;
    toInsert.target = '_blank';
    toInsert.title = 'Translation Console';
    toInsert.appendChild(img);
