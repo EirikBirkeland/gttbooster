@@ -9,6 +9,7 @@ import XRegExp from 'xregexp';
 import TransEditor from '../TransEditor';
 import hideUnhighlighted from './hideUnhighlighted';
 import { Diacritics } from '../../../../lib/Diacritics';
+import { Cursor } from '../Cursor';
 
 const debug = require('cth-debug')(__filename.replace(/^src\//, ''));
 const cthGoogGtcTranslatableMirroredClass = 'cth-goog-gtc-translatable-mirrored';
@@ -98,6 +99,7 @@ class SearchAndHighlight {
    }
 
    highlightMatchingKeyword(event) {
+      Cursor.showLoadIndication();
       let $$segments;
 
       if (this.special) {
@@ -176,7 +178,9 @@ class SearchAndHighlight {
          });
       });
 
-      hideUnhighlighted(this.segments, this.docName);
+      hideUnhighlighted(this.segments, this.docName, () => {
+         Cursor.resetLoadIndication();
+      });
 
       function getTextNodesIn(el) {
          return $(el).find(':not(iframe)').addBack().contents().filter(function () {

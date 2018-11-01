@@ -8,13 +8,13 @@ import hideOtherExtraneous from './hideOtherExtraneous';
 
 const debug = require('cth-debug')(__filename.replace(/^src\//, ''));
 
-export default function hideUnhighlighted(nodeListMain, docName) {
+export default function hideUnhighlighted(nodeListMain, docName, cb) {
    const notHighlighted = _.filter(nodeListMain, (ele) => $(ele).find(`.cth-searchHighlight-container-${docName}`).length === 0);
    const notHighlightedIds = notHighlighted.map((ele) => ele.id);
 
    debug.log('notHighlightedIds', notHighlightedIds);
 
-   notHighlightedIds.forEachAsync((ele) => {
+   notHighlightedIds.forEachAsync((ele, i, arr) => {
       if (!window.cth.shouldBeRunning) {
          return;
       }
@@ -47,5 +47,9 @@ export default function hideUnhighlighted(nodeListMain, docName) {
 
       // Disabled due to being extremely slow:
       hideOtherExtraneous(theId, docName);
+
+      if(i == arr.length -1) {
+         cb();
+      }
    }, 1);
 }
