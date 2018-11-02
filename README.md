@@ -9,9 +9,10 @@ GTT Booster is freely available under the GPL 3.0 or later. You may [download an
 
 **HOT TIP**: Type `localStorage['cth-dev-mode'] = true` in your browser console, and you will get some development features that you may find useful ;) These are still being tested, and performance may be impacted slightly.
 
-![features](img/features.png)
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YGBBU43NQHYWA)
+
+![features](img/features.png)
 
 ### Bug fixes and reports
 
