@@ -105,7 +105,7 @@ class SearchAndHighlight {
       if (this.special) {
          _.forEach(cth.dom.sourceSegments, (ele, i, arr) => {
             const clone = $(arr[i]).children().first().clone();
-            $(clone).removeClass('goog-gtc-translatable').addClass(cthGoogGtcTranslatableMirroredClass);
+            $(clone).removeClass('goog-gtc-translatable').addClass(cthGoogGtcTranslatableMirroredClass).hide();
             $(arr[i]).append(clone);
          });
 
