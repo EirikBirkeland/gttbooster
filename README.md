@@ -1,7 +1,4 @@
 ### GTT Booster
-<p align="center">
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YGBBU43NQHYWA)
-</p>
 
 GTT Booster is a [free](https://www.fsf.org/about/what-is-free-software) Chrome Extension for Google Translator Toolkit.
 Its intended user is a professional translator working with glossaries and other parts of Google's ecosystem. This tool is NOT intended for a general audience in its current state, but you may benefit from some features, so don't be shy to give it a try!
@@ -13,6 +10,8 @@ GTT Booster is freely available under the GPL 3.0 or later. You may [download an
 HOT TIP: Type `localStorage['cth-dev-mode'] = true` in the browser console, and you will get some development features that you may find useful ;) I just haven't gotten around to publishing them yet.
 
 ![features](img/features.png)
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YGBBU43NQHYWA)
 
 ### Bug fixes and reports
 
