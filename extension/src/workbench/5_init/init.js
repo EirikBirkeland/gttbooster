@@ -19,6 +19,9 @@ import { injectCssSourceTargetDoc } from './init/injectCssTargetDoc';
 // TODO: Implement as function
 import './init/onMessage';
 
+import * as Sentry from '@sentry/browser';
+Sentry.init({ dsn: 'https://ef8dacc8c76346b5a1857f4fc49d083d@sentry.io/266142' });
+
 const debug = require('cth-debug')(__filename);
 
 require('../../../vendor/jquery-ui-compact/jquery-ui.min');

@@ -147,6 +147,60 @@
     recompose "0.28.0 - 0.30.0"
     warning "^4.0.1"
 
+"@sentry/browser@4.2.4":
+  version "4.2.4"
+  resolved "https://registry.yarnpkg.com/@sentry/browser/-/browser-4.2.4.tgz#d20c24b8d62e8a03baa062ae2c4318cbee5ac570"
+  dependencies:
+    "@sentry/core" "4.2.4"
+    "@sentry/types" "4.2.4"
+    "@sentry/utils" "4.2.4"
+
+"@sentry/core@4.2.4":
+  version "4.2.4"
+  resolved "https://registry.yarnpkg.com/@sentry/core/-/core-4.2.4.tgz#e4a331512a4db149f14a2976b75a5b3c8ef47f87"
+  dependencies:
+    "@sentry/hub" "4.2.4"
+    "@sentry/minimal" "4.2.4"
+    "@sentry/types" "4.2.4"
+    "@sentry/utils" "4.2.4"
+
+"@sentry/hub@4.2.4":
+  version "4.2.4"
+  resolved "https://registry.yarnpkg.com/@sentry/hub/-/hub-4.2.4.tgz#0248ad50e3a3e248a2086612a19914838694314c"
+  dependencies:
+    "@sentry/types" "4.2.4"
+    "@sentry/utils" "4.2.4"
+
+"@sentry/minimal@4.2.4":
+  version "4.2.4"
+  resolved "https://registry.yarnpkg.com/@sentry/minimal/-/minimal-4.2.4.tgz#6d7fc8a06395176be53d0941244b8e4a3d74a802"
+  dependencies:
+    "@sentry/hub" "4.2.4"
+    "@sentry/types" "4.2.4"
+
+"@sentry/node@4.2.4":
+  version "4.2.4"
+  resolved "https://registry.yarnpkg.com/@sentry/node/-/node-4.2.4.tgz#0ae4b6c7303a941fcafa066702ab0b3272d61c1e"
+  dependencies:
+    "@sentry/core" "4.2.4"
+    "@sentry/hub" "4.2.4"
+    "@sentry/types" "4.2.4"
+    "@sentry/utils" "4.2.4"
+    cookie "0.3.1"
+    lsmod "1.0.0"
+    md5 "2.2.1"
+    stack-trace "0.0.10"
+
+"@sentry/types@4.2.4":
+  version "4.2.4"
+  resolved "https://registry.yarnpkg.com/@sentry/types/-/types-4.2.4.tgz#c77f5ecdbe38cc826451b11746cde9faf50cb40f"
+
+"@sentry/utils@4.2.4":
+  version "4.2.4"
+  resolved "https://registry.yarnpkg.com/@sentry/utils/-/utils-4.2.4.tgz#6e5f49d8a67b109c48fbe9762e793c8f453513b2"
+  dependencies:
+    "@sentry/types" "4.2.4"
+
 "@types/jquery@^3.3.10":
   version "3.3.10"
   resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-3.3.10.tgz#d0afaec7ee55f591992e74c607df5dc7cd9c76ab"
@@ -5517,7 +5571,7 @@ md5.js@^1.3.4:
     hash-base "^3.0.0"
     inherits "^2.0.1"
 
-md5@^2.1.0, md5@^2.2.1:
+md5@2.2.1, md5@^2.1.0:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/md5/-/md5-2.2.1.tgz#53ab38d5fe3c8891ba465329ea23fac0540126f9"
   dependencies:
@@ -6866,17 +6920,6 @@ range-parser@~1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/range-parser/-/range-parser-1.2.0.tgz#f49be6b487894ddc40dcc94a322f611092e00d5e"
 
-raven@^2.4.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/raven/-/raven-2.4.0.tgz#49b7d5f838e5893f31dd72f82d05a35e42203f60"
-  dependencies:
-    cookie "0.3.1"
-    lsmod "1.0.0"
-    md5 "^2.2.1"
-    stack-trace "0.0.9"
-    timed-out "4.0.1"
-    uuid "3.0.0"
-
 raw-body@2.3.2:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/raw-body/-/raw-body-2.3.2.tgz#bcd60c77d3eb93cde0050295c3f379389bc88f89"
@@ -7838,9 +7881,9 @@ sshpk@^1.7.0:
     jsbn "~0.1.0"
     tweetnacl "~0.14.0"
 
-stack-trace@0.0.9:
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/stack-trace/-/stack-trace-0.0.9.tgz#a8f6eaeca90674c333e7c43953f275b451510695"
+stack-trace@0.0.10:
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/stack-trace/-/stack-trace-0.0.10.tgz#547c70b347e8d32b4e108ea1a2a159e5fdde19c0"
 
 stack-utils@^1.0.1:
   version "1.0.1"
@@ -8221,7 +8264,7 @@ time-zone@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/time-zone/-/time-zone-1.0.0.tgz#99c5bf55958966af6d06d83bdf3800dc82faec5d"
 
-timed-out@4.0.1, timed-out@^4.0.0:
+timed-out@^4.0.0:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/timed-out/-/timed-out-4.0.1.tgz#f32eacac5a175bea25d7fab565ab3ed8741ef56f"
 
@@ -8529,10 +8572,6 @@ util@0.10.3, "util@>=0.10.3 <1", util@^0.10.3:
 utils-merge@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/utils-merge/-/utils-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
-
-uuid@3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.0.0.tgz#6728fc0459c450d796a99c31837569bdf672d728"
 
 uuid@^3.0.0, uuid@^3.1.0:
   version "3.2.1"
