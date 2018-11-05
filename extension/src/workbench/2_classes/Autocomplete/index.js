@@ -54,6 +54,10 @@ function _configure () {
 }
 
 function _activate (minLength) {
+    if(!DOM.$TARGET_NODE) {
+        return;
+    }
+    
     DOM.$TARGET_NODE.autocomplete({
         minLength: minLength,
         multiple: true,
