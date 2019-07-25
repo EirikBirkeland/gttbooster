@@ -1,4 +1,4 @@
-### GTT Booster
+### GTT Booster – SUPPORT DISCONTINUED ... Fork and hack to your heart's content
 
 GTT Booster is a [free](https://www.fsf.org/about/what-is-free-software) Chrome Extension for Google Translator Toolkit.
 Its intended user is a professional translator working with glossaries and other parts of Google's ecosystem. This tool is NOT intended for a general audience in its current state, but you may benefit from some features – so don't hesitate to give it a try!
